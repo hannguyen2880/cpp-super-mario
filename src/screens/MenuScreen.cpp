@@ -3,18 +3,22 @@
 #include "../raygui.h"
 #include <iostream>
 #include <unistd.h>
+#include <cmath>
 
 MenuScreen::MenuScreen() {
     originalMarioX = 55;
     originalMarioY = 199;
     cloud1X = 684;
     cloud1Y = 68;
-    cloud1Speed = 1.0f;
+    cloud1Speed = 0.5f;
     cloud1MovingRight = true;
-    cloud2X = 684;
-    cloud2Y = 168;
-    cloud2Speed = 1.5f;
+    cloud2X = 950;
+    cloud2Y = 27;
+    cloud2Speed = 0.75f;
     cloud2MovingRight = true;
+    framesCounter = 0;
+    time = 0;
+    isLoading = true;
 }
 
 void MenuScreen::Init() {
@@ -35,13 +39,17 @@ void MenuScreen::Init() {
 }
 
 void MenuScreen::Update() {
-    if (isLoading) {
-        loadingTimer += GetFrameTime();
-        if (loadingTimer >= 3.0f) {
-            isLoading = false;
-        }
-        return;
+    if (framesCounter > 180) {
+        isLoading = false;
+        //return;
     }
+
+    // Update time
+    time = (float)framesCounter / 60.0f;
+    framesCounter++;
+
+    // Mario movement (up and down)
+    originalMarioY = 199 + sin(time * 2.0f) * 20;
 
     // Cloud 1 movement
     if (cloud1MovingRight) {
@@ -68,15 +76,6 @@ void MenuScreen::Update() {
             cloud2MovingRight = true;
         }
     }
-    
-    // Button logic
-    if (GuiButton(playBtnBounds, "Play Game")) {
-        Game::SetState(GameState::GAMEPLAY);
-    }
-    
-    if (GuiButton(instructBtnBounds, "Instructions")) {
-        Game::SetState(GameState::INSTRUCTIONS);
-    }
 }
 
 void MenuScreen::Draw() {
@@ -89,11 +88,12 @@ void MenuScreen::Draw() {
     DrawTexture(mario, originalMarioX, originalMarioY, WHITE);
     DrawTexture(cloud, cloud1X, cloud1Y, WHITE);
     DrawTexture(cloud, cloud2X, cloud2Y, WHITE);
-}
-
-void MenuScreen::Unload() {
-    UnloadTexture(loadingTexture);
-    UnloadTexture(background);
-    UnloadTexture(mario);
-    UnloadTexture(cloud);
+    // Button logic
+    if (GuiButton(playBtnBounds, "Play Game")) {
+        Game::SetState(GameState::GAMEPLAY);
+    }
+    
+    if (GuiButton(instructBtnBounds, "Instructions")) {
+        Game::SetState(GameState::INSTRUCTIONS);
+    }
 }

@@ -16,9 +16,10 @@ private:
     Rectangle instructBtnBounds;
     // for loading screen
     Texture2D loadingTexture;
-    float loadingTimer;
+    
     bool isLoading;
-
+    float time;  // Add this for time tracking
+    int framesCounter;  // Add this for frame tracking
 public:
     MenuScreen();
     ~MenuScreen() {
@@ -31,5 +32,4 @@ public:
     void Init() override;
     void Update() override;
     void Draw() override;
-    void Unload() override;
 };
