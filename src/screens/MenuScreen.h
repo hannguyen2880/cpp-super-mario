@@ -10,13 +10,13 @@ private:
     float originalMarioX, originalMarioY;
     float cloud1X, cloud1Y, cloud1Speed;
     float cloud2X, cloud2Y, cloud2Speed;
-    bool cloud1MovingRight, cloud2MovingRight;
+    bool cloud1MovingLeft, cloud2MovingRight;
     
     Rectangle playBtnBounds;
     Rectangle instructBtnBounds;
     // for loading screen
     Texture2D loadingTexture;
-    float loadingTimer;
+    float elapsedTime;
     bool isLoading;
 
 public:

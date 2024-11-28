@@ -315,7 +315,9 @@
 
 #ifndef RAYGUI_H
 #define RAYGUI_H
-float TextToFloat(const char *text);
+
+//float TextToFloat(const char *text);
+
 #define RAYGUI_VERSION_MAJOR 4
 #define RAYGUI_VERSION_MINOR 1
 #define RAYGUI_VERSION_PATCH 0

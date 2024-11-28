@@ -7,22 +7,28 @@
 MenuScreen::MenuScreen() {
     originalMarioX = 55;
     originalMarioY = 199;
-    cloud1X = 684;
-    cloud1Y = 68;
-    cloud1Speed = 1.0f;
-    cloud1MovingRight = true;
-    cloud2X = 684;
-    cloud2Y = 168;
-    cloud2Speed = 1.5f;
+    cloud1X = 649;
+    cloud1Y = 72;
+    cloud1Speed = 1.3f;
+    cloud1MovingLeft = true;
+    cloud2X = 845;
+    cloud2Y = 23;
+    cloud2Speed = 1.3f;
     cloud2MovingRight = true;
 }
 
 void MenuScreen::Init() {
     loadingTexture = LoadTexture("../assets/images/Loading_menu.png");
+    if (loadingTexture.id <= 0) {
+        std::cout << "Failed to load loading texture" << std::endl;
+    }
     background = LoadTexture("../assets/images/menu-2.png");
     if (background.id <= 0) {
         std::cout << "Failed to load background texture" << std::endl;
     }
+
+    isLoading = true;
+    elapsedTime = 0.0f;
 
     mario = LoadTexture("../assets/images/Mario.png");
     cloud = LoadTexture("../assets/images/Clouds.png");
@@ -36,23 +42,23 @@ void MenuScreen::Init() {
 
 void MenuScreen::Update() {
     if (isLoading) {
-        loadingTimer += GetFrameTime();
-        if (loadingTimer >= 3.0f) {
+        elapsedTime += GetFrameTime();
+        if (elapsedTime >= 3.0f) {
             isLoading = false;
         }
         return;
     }
 
     // Cloud 1 movement
-    if (cloud1MovingRight) {
+    if (cloud1MovingLeft) {
         cloud1X += cloud1Speed;
         if (cloud1X + cloud.width >= Game::GetScreenWidth()) {
-            cloud1MovingRight = false;
+            cloud1MovingLeft = false;
         }
     } else {
         cloud1X -= cloud1Speed;
         if (cloud1X <= 640) {
-            cloud1MovingRight = true;
+            cloud1MovingLeft = true;
         }
     }
     

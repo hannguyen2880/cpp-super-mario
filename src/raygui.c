@@ -31,9 +31,9 @@
 #include <stdlib.h>  // Thêm tệp tiêu đề này để sử dụng strtof và NULL
 
 // Định nghĩa hàm TextToFloat
-float TextToFloat(const char *text) {
-    return strtof(text, NULL);
-}
+// float TextToFloat(const char *text) {
+//     return strtof(text, NULL);
+// }
 
 //----------------------------------------------------------------------------------
 // Defines and Macros
