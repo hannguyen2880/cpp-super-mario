@@ -1,5 +1,6 @@
 // src/ui/Button.cpp
 #include "Button.h"
+#include <iostream>
 
 Button::Button(const char* buttonText, float x, float y, float width, float height, 
                const char* customFontPath, ButtonStyle buttonStyle, float size) {
@@ -10,7 +11,11 @@ Button::Button(const char* buttonText, float x, float y, float width, float heig
     
     // Load font
     font = LoadFont(fontPath.c_str());
-    
+    if (font.baseSize == 0) {
+        std::cout << "Failed to load font: " << fontPath << std::endl;
+    }
+    else std::cout << "Load successful" << std::endl;
+
     isHovered = false;
     isPressed = false;
     
@@ -25,21 +30,21 @@ void Button::SetStyle(ButtonStyle newStyle) {
 
 void Button::ApplyStyle(ButtonStyle style) {
     switch(style) {
-        case ButtonStyle::GOLD:
+        case ButtonStyle::GOLD_STYLE:
             normalColor = {255, 203, 0, 255};    // Gold
             hoverColor = {255, 213, 10, 255};    // Light Gold
             activeColor = {245, 193, 0, 255};    // Dark Gold
             textColor = BLACK;
             break;
             
-        case ButtonStyle::BLUE:
+        case ButtonStyle::BLUE_STYLE:
             normalColor = {0, 121, 241, 255};    // Blue
             hoverColor = {10, 131, 251, 255};    // Light Blue
             activeColor = {0, 111, 231, 255};    // Dark Blue
             textColor = WHITE;
             break;
             
-        case ButtonStyle::GREEN:
+        case ButtonStyle::GREEN_STYLE:
             normalColor = {0, 228, 48, 255};     // Green
             hoverColor = {10, 238, 58, 255};     // Light Green
             activeColor = {0, 218, 38, 255};     // Dark Green
@@ -103,29 +108,3 @@ void Button::Draw() {
     
     DrawTextEx(font, text.c_str(), {textX, textY}, fontSize, 1, textColor);
 }
-
-// ... rest of the implementation remains the same ...
-
-/*
-Use in MenuScreen:
-// In MenuScreen.h
-private:
-    Button playButton;
-    Button instructionsButton;
-    Button exitButton;
-
-// In MenuScreen.cpp
-MenuScreen::MenuScreen() 
-    : playButton("Play Game", 380, 220, 200, 50, "assets/fonts/SuperMario256.ttf", ButtonStyle::GOLD),
-      instructionsButton("Instructions", 380, 290, 200, 50, "assets/fonts/Arial.ttf", ButtonStyle::BLUE),
-      exitButton("Exit", 380, 360, 200, 50, "assets/fonts/Pixel.ttf", ButtonStyle::DEFAULT)
-{
-    // Custom button if needed
-    Color purple = {148, 0, 211, 255};
-    Color lightPurple = {158, 10, 221, 255};
-    Color darkPurple = {138, 0, 201, 255};
-    
-    exitButton.SetCustomColors(purple, lightPurple, darkPurple, WHITE);
-}
-
-*/

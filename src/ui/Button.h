@@ -1,14 +1,9 @@
+// include/ui/Button.h
 #pragma once
+
 #include "raylib.h"
 #include <string>
-
-enum class ButtonStyle {
-    DEFAULT,
-    YELLOW,
-    BLUE,
-    GREEN,
-    CUSTOM
-};
+#include "ButtonStyle.h"
 
 class Button {
 private:
@@ -26,11 +21,14 @@ private:
     ButtonStyle style;
 
 public:
+    Button() {};
     Button(const char* buttonText, float x, float y, float width, float height, 
-           const char* fontPath = "assets/fonts/COMIC.ttf", 
+           const char* fontPath = "../assets/fonts/comici.ttf", 
            ButtonStyle style = ButtonStyle::DEFAULT,
            float size = 20.0f);
-    ~Button();
+    ~Button() {
+        UnloadFont(font);
+    };
     
     void SetStyle(ButtonStyle newStyle);
     void SetCustomColors(Color normal, Color hover, Color active, Color text);

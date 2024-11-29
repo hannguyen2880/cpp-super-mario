@@ -1,5 +1,7 @@
 #pragma once
 #include "Screen.h"
+#include <string>
+#include "../ui/Button.h"
 
 class MenuScreen : public Screen {
 private:
@@ -20,16 +22,16 @@ private:
     bool isLoading;
     float time;  // Add this for time tracking
     int framesCounter;  // Add this for frame tracking
+
+    Button playButton;
+    Button instructionsButton;
+
 public:
     MenuScreen();
-    ~MenuScreen() {
-        UnloadTexture(loadingTexture);
-        UnloadTexture(background);
-        UnloadTexture(mario);
-        UnloadTexture(cloud);
-    };
+    ~MenuScreen();
     
     void Init() override;
     void Update() override;
     void Draw() override;
+    void Unload() override;
 };

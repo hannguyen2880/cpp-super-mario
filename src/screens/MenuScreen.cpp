@@ -1,11 +1,17 @@
+// src/screens/MenuScreen.cpp
 #include "MenuScreen.h"
 #include "../game/Game.h"
-#include "../raygui.h"
 #include <iostream>
-#include <unistd.h>
 #include <cmath>
 
 MenuScreen::MenuScreen() {
+    const char* PLAY_TEXT = "Play Game";
+    const char* INSTRUCTIONS_TEXT = "Instructions";
+    const char* FONT_PATH = "../assets/fonts/comici.ttf";
+
+    playButton = Button(PLAY_TEXT, 380, 220, 200, 50, FONT_PATH, ButtonStyle::GOLD_STYLE);
+    instructionsButton = Button(INSTRUCTIONS_TEXT, 380, 290, 200, 50, FONT_PATH, ButtonStyle::GOLD_STYLE);
+
     originalMarioX = 55;
     originalMarioY = 199;
     cloud1X = 684;
@@ -21,34 +27,31 @@ MenuScreen::MenuScreen() {
     isLoading = true;
 }
 
-void MenuScreen::Init() {
-    loadingTexture = LoadTexture("../assets/images/Loading_menu.png");
-    background = LoadTexture("../assets/images/menu-2.png");
-    if (background.id <= 0) {
-        std::cout << "Failed to load background texture" << std::endl;
-    }
-
-    mario = LoadTexture("../assets/images/Mario.png");
-    cloud = LoadTexture("../assets/images/Clouds.png");
-    playBtnBounds = {Game::GetScreenWidth()/2 - 100, 
-                     Game::GetScreenHeight()/2 - 50, 
-                     200, 50};
-    instructBtnBounds = {Game::GetScreenWidth()/2 - 100, 
-                        Game::GetScreenHeight()/2 + 50, 
-                        200, 50};
+MenuScreen::~MenuScreen() {
+    Unload();
 }
 
+void MenuScreen::Init() {
+    background = LoadTexture("../assets/images/menu-2.png");
+    loadingTexture = LoadTexture("../assets/images/Loading_menu.png");
+    mario = LoadTexture("../assets/images/Mario.png");
+    cloud = LoadTexture("../assets/images/Clouds.png");
+}
+
+void MenuScreen::Unload() {
+    UnloadTexture(loadingTexture);
+    UnloadTexture(background);
+    UnloadTexture(mario);
+    UnloadTexture(cloud);
+}
 void MenuScreen::Update() {
     if (framesCounter > 180) {
         isLoading = false;
-        //return;
     }
 
-    // Update time
     time = (float)framesCounter / 60.0f;
     framesCounter++;
 
-    // Mario movement (up and down)
     originalMarioY = 199 + sin(time * 2.0f) * 20;
 
     // Cloud 1 movement
@@ -76,6 +79,15 @@ void MenuScreen::Update() {
             cloud2MovingRight = true;
         }
     }
+
+    if (!isLoading) {
+        if (playButton.Update()) {
+            Game::SetState(GameState::GAMEPLAY);
+        }
+        if (instructionsButton.Update()) {
+            Game::SetState(GameState::INSTRUCTIONS);
+        }
+    }
 }
 
 void MenuScreen::Draw() {
@@ -83,17 +95,12 @@ void MenuScreen::Draw() {
         DrawTexture(loadingTexture, 0, 0, WHITE);
         return;
     }
-    //DrawText("Menu Screen", 360, 200, 40, BLACK);
+
     DrawTexture(background, 0, 0, WHITE);
     DrawTexture(mario, originalMarioX, originalMarioY, WHITE);
     DrawTexture(cloud, cloud1X, cloud1Y, WHITE);
     DrawTexture(cloud, cloud2X, cloud2Y, WHITE);
-    // Button logic
-    if (GuiButton(playBtnBounds, "Play Game")) {
-        Game::SetState(GameState::GAMEPLAY);
-    }
     
-    if (GuiButton(instructBtnBounds, "Instructions")) {
-        Game::SetState(GameState::INSTRUCTIONS);
-    }
+    playButton.Draw();
+    instructionsButton.Draw();
 }
