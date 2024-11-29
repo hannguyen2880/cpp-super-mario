@@ -3,8 +3,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/super-mario.dir/src/game/Game.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/main.cpp.o"
   "CMakeFiles/super-mario.dir/src/main.cpp.o.d"
+  "CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o"
+  "CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o"
   "CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o.d"
+  "CMakeFiles/super-mario.dir/src/ui/Button.cpp.o"
+  "CMakeFiles/super-mario.dir/src/ui/Button.cpp.o.d"
   "super-mario"
   "super-mario.pdb"
 )

@@ -4,16 +4,30 @@
 
 GameState Game::currentState = GameState::MAIN_MENU;
 std::unique_ptr<Screen> Game::currentScreen = nullptr;
+Music Game::backgroundMusic = { 0 };
 
 void Game::Init() {
+    backgroundMusic = LoadMusicStream("../../assets/sounds/background_sound.mp3");
+    SetMusicVolume(backgroundMusic, 1.0f);
+    PlayMusicStream(backgroundMusic);
+
+    // Set to loop automatically
+    backgroundMusic.looping = true;
     currentScreen = std::make_unique<MenuScreen>();
     currentScreen->Init();
 }
 
 void Game::Update() {
+    UpdateMusicStream(backgroundMusic);
+
     if (currentScreen) {
         currentScreen->Update();
     }
+}
+void Game::Unload() {
+    UnloadMusicStream(backgroundMusic);
+    //UnloadSound(jumpSound);
+    //UnloadSound(coinSound);
 }
 
 void Game::Draw() {
