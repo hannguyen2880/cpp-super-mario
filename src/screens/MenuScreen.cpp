@@ -5,13 +5,9 @@
 #include <cmath>
 
 MenuScreen::MenuScreen() {
-    const char* PLAY_TEXT = "Play Game";
-    const char* INSTRUCTIONS_TEXT = "Instructions";
-    const char* FONT_PATH = "../assets/fonts/comici.ttf";
-
-    playButton = Button(PLAY_TEXT, 380, 220, 200, 50, FONT_PATH, ButtonStyle::GOLD_STYLE);
-    instructionsButton = Button(INSTRUCTIONS_TEXT, 380, 290, 200, 50, FONT_PATH, ButtonStyle::GOLD_STYLE);
-
+    playButton = ImageButton("../assets/images/StartGameButton.png", 372, 262);
+    instructionButton = ImageButton("../assets/images/InstructionButton.png", 372, 362);
+    
     originalMarioX = 55;
     originalMarioY = 199;
     cloud1X = 684;
@@ -43,6 +39,8 @@ void MenuScreen::Unload() {
     UnloadTexture(background);
     UnloadTexture(mario);
     UnloadTexture(cloud);
+    playButton.~ImageButton();
+    instructionButton.~ImageButton();
 }
 void MenuScreen::Update() {
     if (framesCounter > 180) {
@@ -84,7 +82,7 @@ void MenuScreen::Update() {
         if (playButton.Update()) {
             Game::SetState(GameState::GAMEPLAY);
         }
-        if (instructionsButton.Update()) {
+        if (instructionButton.Update()) {
             Game::SetState(GameState::INSTRUCTIONS);
         }
     }
@@ -102,5 +100,5 @@ void MenuScreen::Draw() {
     DrawTexture(cloud, cloud2X, cloud2Y, WHITE);
     
     playButton.Draw();
-    instructionsButton.Draw();
+    instructionButton.Draw();
 }

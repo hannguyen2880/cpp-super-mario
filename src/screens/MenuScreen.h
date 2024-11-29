@@ -2,6 +2,7 @@
 #include "Screen.h"
 #include <string>
 #include "../ui/Button.h"
+#include "../ui/ImageButton.h"
 
 class MenuScreen : public Screen {
 private:
@@ -23,8 +24,8 @@ private:
     float time;  // Add this for time tracking
     int framesCounter;  // Add this for frame tracking
 
-    Button playButton;
-    Button instructionsButton;
+    ImageButton playButton;
+    ImageButton instructionButton;
 
 public:
     MenuScreen();

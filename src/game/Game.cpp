@@ -7,7 +7,7 @@ std::unique_ptr<Screen> Game::currentScreen = nullptr;
 Music Game::backgroundMusic = { 0 };
 
 void Game::Init() {
-    backgroundMusic = LoadMusicStream("../../assets/sounds/background_sound.mp3");
+    backgroundMusic = LoadMusicStream("../assets/sounds/background_sound.mp3");
     SetMusicVolume(backgroundMusic, 1.0f);
     PlayMusicStream(backgroundMusic);
 

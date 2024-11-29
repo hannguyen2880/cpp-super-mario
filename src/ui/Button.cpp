@@ -3,23 +3,14 @@
 #include <iostream>
 
 Button::Button(const char* buttonText, float x, float y, float width, float height, 
-               const char* customFontPath, ButtonStyle buttonStyle, float size) {
+               ButtonStyle buttonStyle, float size) {
     text = buttonText;
     bounds = {x, y, width, height};
     fontSize = size;
-    fontPath = customFontPath;
     
-    // Load font
-    font = LoadFont(fontPath.c_str());
-    if (font.baseSize == 0) {
-        std::cout << "Failed to load font: " << fontPath << std::endl;
-    }
-    else std::cout << "Load successful" << std::endl;
-
     isHovered = false;
     isPressed = false;
     
-    // Apply initial style
     SetStyle(buttonStyle);
 }
 
@@ -69,12 +60,6 @@ void Button::SetCustomColors(Color normal, Color hover, Color active, Color text
     textColor = text;
 }
 
-void Button::SetFont(const char* newFontPath) {
-    UnloadFont(font);
-    fontPath = newFontPath;
-    font = LoadFont(fontPath.c_str());
-}
-
 bool Button::Update() {
     Vector2 mousePoint = GetMousePosition();
     isHovered = CheckCollisionPointRec(mousePoint, bounds);
@@ -102,9 +87,9 @@ void Button::Draw() {
     DrawRectangleRec(bounds, currentColor);
     
     // Draw text centered
-    Vector2 textSize = MeasureTextEx(font, text.c_str(), fontSize, 1);
-    float textX = bounds.x + (bounds.width - textSize.x) / 2;
-    float textY = bounds.y + (bounds.height - textSize.y) / 2;
+    int textWidth = MeasureText(text.c_str(), fontSize);
+    float textX = bounds.x + (bounds.width - textWidth) / 2;
+    float textY = bounds.y + (bounds.height - fontSize) / 2;
     
-    DrawTextEx(font, text.c_str(), {textX, textY}, fontSize, 1, textColor);
+    DrawText(text.c_str(), textX, textY, fontSize, textColor);
 }

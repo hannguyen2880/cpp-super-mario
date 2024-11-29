@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/ui/Button.cpp.o"
   "CMakeFiles/super-mario.dir/src/ui/Button.cpp.o.d"
+  "CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o"
+  "CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o.d"
   "super-mario"
   "super-mario.pdb"
 )

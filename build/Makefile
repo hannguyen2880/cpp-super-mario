@@ -249,6 +249,30 @@ src/ui/Button.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/Button.cpp.s
 .PHONY : src/ui/Button.cpp.s
 
+src/ui/ImageButton.o: src/ui/ImageButton.cpp.o
+.PHONY : src/ui/ImageButton.o
+
+# target to build an object file
+src/ui/ImageButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o
+.PHONY : src/ui/ImageButton.cpp.o
+
+src/ui/ImageButton.i: src/ui/ImageButton.cpp.i
+.PHONY : src/ui/ImageButton.i
+
+# target to preprocess a source file
+src/ui/ImageButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.i
+.PHONY : src/ui/ImageButton.cpp.i
+
+src/ui/ImageButton.s: src/ui/ImageButton.cpp.s
+.PHONY : src/ui/ImageButton.s
+
+# target to generate assembly for a file
+src/ui/ImageButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.s
+.PHONY : src/ui/ImageButton.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... src/ui/Button.o"
 	@echo "... src/ui/Button.i"
 	@echo "... src/ui/Button.s"
+	@echo "... src/ui/ImageButton.o"
+	@echo "... src/ui/ImageButton.i"
+	@echo "... src/ui/ImageButton.s"
 .PHONY : help
 
 
