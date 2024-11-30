@@ -5,7 +5,10 @@
 BeforeGameScreen::BeforeGameScreen()
     : yesButton("../assets/images/YesButton.png", 300, 390),
       noButton("../assets/images/NoButton.png", 500, 390),
-      backButton("Back", 20, 480, 150, 40, ButtonStyle::GOLD_STYLE, 20)
+      backButton("Back", 20, 480, 150, 40, ButtonStyle::GOLD_STYLE, 20),
+      easyButton("Easy", 380, 200, 200, 50, ButtonStyle::GREEN_STYLE),
+      mediumButton("Medium", 380, 280, 200, 50, ButtonStyle::GOLD_STYLE),
+      hardButton("Hard", 380, 360, 200, 50, ButtonStyle::DEFAULT)
 {
     panelTargetY = 161;
     panelCurrentY = 600;
@@ -38,13 +41,31 @@ void BeforeGameScreen::Update() {
         return;
     }
 
-    if (yesButton.Update()) {
-        Game::SetState(GameState::GAMEPLAY);
+    if (currentPanel == PanelState::RESUME_PANEL) {
+        if (yesButton.Update()) {
+            Game::SetState(GameState::GAMEPLAY);
+        }
+        if (noButton.Update()) {
+            currentPanel = PanelState::DIFFICULTY_PANEL;
+            isAnimating = true;  // Trigger animation for new panel
+            panelCurrentY = 600; // Reset position for new panel
+        }
     }
-    if (noButton.Update()) {
-        // Ask level selection
-        Game::SetState(GameState::GAMEPLAY);
+    else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
+        if (easyButton.Update()) {
+            Game::SetDifficulty(GameDifficulty::EASY);
+            Game::SetState(GameState::GAMEPLAY);
+        }
+        if (mediumButton.Update()) {
+            Game::SetDifficulty(GameDifficulty::MEDIUM);
+            Game::SetState(GameState::GAMEPLAY);
+        }
+        if (hardButton.Update()) {
+            Game::SetDifficulty(GameDifficulty::HARD);
+            Game::SetState(GameState::GAMEPLAY);
+        }
     }
+
     if (backButton.Update()) {
         Game::SetState(GameState::MAIN_MENU);
     }
@@ -54,11 +75,26 @@ void BeforeGameScreen::Draw() {
     DrawTexture(background, 0, 0, WHITE);
 
     Color panelColor = {255, 255, 255, (unsigned char)(panelAlpha * 255)};
-    DrawTexture(resumeGamePanel, 228, panelCurrentY, panelColor);
+    
+    if (currentPanel == PanelState::RESUME_PANEL) {
+        DrawTexture(resumeGamePanel, 228, panelCurrentY, panelColor);
+        if (!isAnimating) {
+            yesButton.Draw();
+            noButton.Draw();
+        }
+    }
+    else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
+        DrawRectangle(228, panelCurrentY, 504, 300, 
+                     ColorAlpha(BLACK, panelAlpha * 0.7f));
+        
+        if (!isAnimating) {
+            easyButton.Draw();
+            mediumButton.Draw();
+            hardButton.Draw();
+        }
+    }
 
     if (!isAnimating) {
-        yesButton.Draw();
-        noButton.Draw();
         backButton.Draw();
     }
 }

@@ -13,3 +13,8 @@ enum class GameDifficulty {
     MEDIUM,
     HARD
 };
+
+enum class GameplayMode {
+    NEW_GAME,
+    RESUME_GAME
+};

@@ -80,3 +80,8 @@ void Game::SetState(GameState newState) {
         currentScreen->Init();
     }
 }
+
+void Game::SetDifficulty(GameDifficulty diff) {
+    difficulty = diff;
+    std::cout << "Difficulty set to: " << static_cast<int>(diff) << std::endl;
+}

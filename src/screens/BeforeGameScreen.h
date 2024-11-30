@@ -7,6 +7,15 @@
 
 class BeforeGameScreen : public Screen {
 private:
+    enum class PanelState {
+        RESUME_PANEL,
+        DIFFICULTY_PANEL
+    };
+    Button easyButton;
+    Button mediumButton;
+    Button hardButton;
+    PanelState currentPanel;
+    
     Texture2D background;
     Texture2D resumeGamePanel;
     

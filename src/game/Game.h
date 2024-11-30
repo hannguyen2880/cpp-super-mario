@@ -10,6 +10,7 @@ private:
     static const int screenWidth = 960;
     static const int screenHeight = 540;
     static GameDifficulty difficulty;
+    static GameplayMode gameplayMode;
 
     static Music backgroundMusic;
     //static Sound jumpSound;
@@ -27,4 +28,6 @@ public:
     static float GetScreenHeight() { return 1.0 * screenHeight; }
     static void SetDifficulty(GameDifficulty diff);
     static GameDifficulty GetDifficulty() { return difficulty; }
+    static GameplayMode GetGameplayMode() { return gameplayMode; }
+    static void SetGameplayMode(GameplayMode mode) { gameplayMode = mode; }
 };
