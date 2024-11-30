@@ -39,11 +39,11 @@ void MenuScreen::Unload() {
     UnloadTexture(background);
     UnloadTexture(mario);
     UnloadTexture(cloud);
-    playButton.~ImageButton();
-    instructionButton.~ImageButton();
+    //playButton.~ImageButton();
+    //instructionButton.~ImageButton();
 }
 void MenuScreen::Update() {
-    if (framesCounter > 180) {
+    if (framesCounter > 120) {
         isLoading = false;
     }
 
@@ -80,11 +80,14 @@ void MenuScreen::Update() {
 
     if (!isLoading) {
         if (playButton.Update()) {
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(GameState::BEFOREGAME);
+            return;
         }
         if (instructionButton.Update()) {
             Game::SetState(GameState::INSTRUCTIONS);
+            return;
         }
+        
     }
 }
 

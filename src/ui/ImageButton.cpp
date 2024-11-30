@@ -13,8 +13,12 @@ ImageButton::ImageButton(const char* texturePath, float x, float y) {
     tint = WHITE;
 }
 
-ImageButton::~ImageButton() {
+void ImageButton::Unload() {
     UnloadTexture(texture);
+}
+
+ImageButton::~ImageButton() {
+    Unload();
 }
 
 bool ImageButton::Update() {
