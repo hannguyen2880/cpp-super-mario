@@ -1,21 +1,19 @@
-// src/screens/InstructionScreen.cpp
-/*
 #include "InstructionScreen.h"
 #include "../game/Game.h"
 
 InstructionScreen::InstructionScreen()
-    : backButton("Back", 20, 480, 150, 40, "assets/fonts/comicz.ttf", ButtonStyle::GOLD_STYLE)
+    : backButton("Back", 20, 480, 150, 40, ButtonStyle::GOLD_STYLE, 20)
 {
-    panelTargetY = 50;          // Final position from top
-    panelCurrentY = 600;        // Start below screen
-    panelAlpha = 0.0f;         // Start fully transparent
-    animationSpeed = 800.0f;    // Pixels per second
+    panelTargetY = 161;
+    panelCurrentY = 600;
+    panelAlpha = 0.0f;
+    animationSpeed = 800.0f;
     isAnimating = true;
 }
 
 void InstructionScreen::Init() {
-    background = LoadTexture("../assets/images/background_instruction.png");
-    instructionPanel = LoadTexture("../assets/images/instruction_panel.png");
+    background = LoadTexture("../assets/images/Screen_background.png");
+    instructionPanel = LoadTexture("../assets/images/InstructionPanel.png");
 }
 
 void InstructionScreen::Update() {
@@ -45,23 +43,27 @@ void InstructionScreen::Update() {
 }
 
 void InstructionScreen::Draw() {
-    // Draw background
     DrawTexture(background, 0, 0, WHITE);
 
-    // Draw instruction panel with current position and alpha
+    int panelX = 228;
+    
     Color panelColor = {255, 255, 255, (unsigned char)(panelAlpha * 255)};
     DrawTexture(instructionPanel, 
-                (Game::GetScreenWidth() - instructionPanel.width) / 2,
-                panelCurrentY, 
+                panelX,
+                panelCurrentY,
                 panelColor);
 
-    // Only draw back button when animation is complete
     if (!isAnimating) {
         backButton.Draw();
     }
 }
 
 InstructionScreen::~InstructionScreen() {
+    Unload();
+}
+
+void InstructionScreen::Unload() {
     UnloadTexture(background);
     UnloadTexture(instructionPanel);
-}*/
+    //backButton.~Button();
+}

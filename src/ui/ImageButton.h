@@ -16,6 +16,7 @@ private:
 public:
     ImageButton() {};
     ImageButton(const char* texturePath, float x, float y);
+    void Unload();
     ~ImageButton();
     bool Update();
     void Draw();

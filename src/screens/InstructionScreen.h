@@ -1,10 +1,8 @@
-// include/screens/InstructionScreen.h
-
 #pragma once
 #include "Screen.h"
 #include "../ui/Button.h"
 #include <string>
-/*
+
 class InstructionScreen : public Screen {
 private:
     Texture2D background;
@@ -23,5 +21,5 @@ public:
     void Init() override;
     void Update() override;
     void Draw() override;
+    void Unload() override;
 };
-*/

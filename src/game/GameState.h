@@ -3,6 +3,18 @@
 enum class GameState {
     LOGO,
     MAIN_MENU,
-    GAMEPLAY,
-    INSTRUCTIONS
+    BEFOREGAME,
+    INSTRUCTIONS,
+    GAMEPLAY
+};
+
+enum class GameDifficulty {
+    EASY,
+    MEDIUM,
+    HARD
+};
+
+enum class GameplayMode {
+    NEW_GAME,
+    RESUME_GAME
 };
