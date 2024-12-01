@@ -1,7 +1,7 @@
 #pragma once
-#include "../screens/Screen.h"
-#include "GameState.h"
-#include "Game.h"
+#include "Screen.h"
+#include "../game/GameState.h"
+#include "../game/Game.h"
 
 class GameplayScreen : public Screen {
 private:

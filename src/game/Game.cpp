@@ -8,14 +8,13 @@ GameState Game::currentState = GameState::MAIN_MENU;
 std::unique_ptr<Screen> Game::currentScreen = nullptr;
 Music Game::backgroundMusic = { 0 };
 GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
+GameplayMode Game::gameplayMode = GameplayMode::NEW_GAME;
 
 void Game::Init() {
     backgroundMusic = LoadMusicStream("../assets/sounds/background_sound.mp3");
     SetMusicVolume(backgroundMusic, 1.0f);
     PlayMusicStream(backgroundMusic);
     backgroundMusic.looping = true;
-    std::cout << "Music length (seconds): " << GetMusicTimeLength(backgroundMusic) << std::endl;
-    std::cout << "Music looping enabled: " << backgroundMusic.looping << std::endl;
 
     currentScreen = std::make_unique<MenuScreen>();
     currentScreen->Init();
@@ -83,5 +82,4 @@ void Game::SetState(GameState newState) {
 
 void Game::SetDifficulty(GameDifficulty diff) {
     difficulty = diff;
-    std::cout << "Difficulty set to: " << static_cast<int>(diff) << std::endl;
 }

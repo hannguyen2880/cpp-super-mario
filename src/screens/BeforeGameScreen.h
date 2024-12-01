@@ -1,4 +1,3 @@
-// include/screens/BeforeGameScreen.h
 #pragma once
 #include "Screen.h"
 #include "../ui/ImageButton.h"
@@ -15,7 +14,7 @@ private:
     Button mediumButton;
     Button hardButton;
     PanelState currentPanel;
-    
+
     Texture2D background;
     Texture2D resumeGamePanel;
     

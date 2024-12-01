@@ -201,6 +201,30 @@ src/screens/BeforeGameScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s
 .PHONY : src/screens/BeforeGameScreen.cpp.s
 
+src/screens/GamePlayScreen.o: src/screens/GamePlayScreen.cpp.o
+.PHONY : src/screens/GamePlayScreen.o
+
+# target to build an object file
+src/screens/GamePlayScreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o
+.PHONY : src/screens/GamePlayScreen.cpp.o
+
+src/screens/GamePlayScreen.i: src/screens/GamePlayScreen.cpp.i
+.PHONY : src/screens/GamePlayScreen.i
+
+# target to preprocess a source file
+src/screens/GamePlayScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i
+.PHONY : src/screens/GamePlayScreen.cpp.i
+
+src/screens/GamePlayScreen.s: src/screens/GamePlayScreen.cpp.s
+.PHONY : src/screens/GamePlayScreen.s
+
+# target to generate assembly for a file
+src/screens/GamePlayScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s
+.PHONY : src/screens/GamePlayScreen.cpp.s
+
 src/screens/InstructionScreen.o: src/screens/InstructionScreen.cpp.o
 .PHONY : src/screens/InstructionScreen.o
 
@@ -315,6 +339,9 @@ help:
 	@echo "... src/screens/BeforeGameScreen.o"
 	@echo "... src/screens/BeforeGameScreen.i"
 	@echo "... src/screens/BeforeGameScreen.s"
+	@echo "... src/screens/GamePlayScreen.o"
+	@echo "... src/screens/GamePlayScreen.i"
+	@echo "... src/screens/GamePlayScreen.s"
 	@echo "... src/screens/InstructionScreen.o"
 	@echo "... src/screens/InstructionScreen.i"
 	@echo "... src/screens/InstructionScreen.s"

@@ -1,4 +1,3 @@
-// src/screens/BeforeGameScreen.cpp
 #include "BeforeGameScreen.h"
 #include "../game/Game.h"
 

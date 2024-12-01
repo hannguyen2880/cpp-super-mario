@@ -114,10 +114,24 @@ CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/BeforeGameScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s
 
+CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp
+CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp
+
+CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp > CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i
+
+CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s
+
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o: CMakeFiles/super-mario.dir/flags.make
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/InstructionScreen.cpp
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/InstructionScreen.cpp
 
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.s: cmake_force
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o: CMakeFiles/super-mario.dir/flags.make
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/MenuScreen.cpp
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/MenuScreen.cpp
 
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s: cmake_force
 CMakeFiles/super-mario.dir/src/ui/Button.cpp.o: CMakeFiles/super-mario.dir/flags.make
 CMakeFiles/super-mario.dir/src/ui/Button.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/Button.cpp
 CMakeFiles/super-mario.dir/src/ui/Button.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/super-mario.dir/src/ui/Button.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/super-mario.dir/src/ui/Button.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/ui/Button.cpp.o -MF CMakeFiles/super-mario.dir/src/ui/Button.cpp.o.d -o CMakeFiles/super-mario.dir/src/ui/Button.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/Button.cpp
 
 CMakeFiles/super-mario.dir/src/ui/Button.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/super-mario.dir/src/ui/Button.cpp.s: cmake_force
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o: CMakeFiles/super-mario.dir/flags.make
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/ImageButton.cpp
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o -MF CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o.d -o CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/ImageButton.cpp
 
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.i: cmake_force
@@ -175,6 +189,7 @@ super__mario_OBJECTS = \
 "CMakeFiles/super-mario.dir/src/game/Game.cpp.o" \
 "CMakeFiles/super-mario.dir/src/main.cpp.o" \
 "CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o" \
+"CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o" \
 "CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o" \
 "CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o" \
 "CMakeFiles/super-mario.dir/src/ui/Button.cpp.o" \
@@ -186,6 +201,7 @@ super__mario_EXTERNAL_OBJECTS =
 super-mario: CMakeFiles/super-mario.dir/src/game/Game.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/main.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/ui/Button.cpp.o
@@ -193,7 +209,7 @@ super-mario: CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o
 super-mario: CMakeFiles/super-mario.dir/build.make
 super-mario: /opt/homebrew/lib/libraylib.dylib
 super-mario: CMakeFiles/super-mario.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable super-mario"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable super-mario"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/super-mario.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
