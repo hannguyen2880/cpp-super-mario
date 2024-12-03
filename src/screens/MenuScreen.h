@@ -21,7 +21,7 @@ private:
     Texture2D loadingTexture;
     
     bool isLoading;
-    float time;  // Add this for time tracking
+    float loadingTime, animationTime;
     int framesCounter;  // Add this for frame tracking
 
     ImageButton playButton;

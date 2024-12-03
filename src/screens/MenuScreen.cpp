@@ -19,7 +19,6 @@ MenuScreen::MenuScreen() {
     cloud2Speed = 0.75f;
     cloud2MovingRight = true;
     framesCounter = 0;
-    time = 0;
     isLoading = true;
 }
 
@@ -27,11 +26,21 @@ MenuScreen::~MenuScreen() {
     Unload();
 }
 
+static bool firstLaunchCompleted = false;
+
 void MenuScreen::Init() {
     background = LoadTexture("../assets/images/menu-2.png");
     loadingTexture = LoadTexture("../assets/images/Loading_menu.png");
     mario = LoadTexture("../assets/images/Mario.png");
     cloud = LoadTexture("../assets/images/Clouds.png");
+
+    isLoading = !firstLaunchCompleted;
+    if (isLoading) {
+        firstLaunchCompleted = true;
+    }
+    loadingTime = 0;
+    animationTime = 0;
+    framesCounter = 0;
 }
 
 void MenuScreen::Unload() {
@@ -42,15 +51,21 @@ void MenuScreen::Unload() {
     //playButton.~ImageButton();
     //instructionButton.~ImageButton();
 }
+
+bool isRepeat = true;
+
 void MenuScreen::Update() {
-    if (framesCounter > 120) {
-        isLoading = false;
+    if (isLoading) {
+        if (framesCounter > 120) {
+            isLoading = false;
+        }
+        loadingTime = (float)framesCounter / 60.0f;
+        framesCounter++;
+        return;
     }
 
-    time = (float)framesCounter / 60.0f;
-    framesCounter++;
-
-    originalMarioY = 199 + sin(time * 2.0f) * 20;
+    animationTime += GetFrameTime();
+    originalMarioY = 199 + sin(animationTime * 2.0f) * 20;
 
     // Cloud 1 movement
     if (cloud1MovingRight) {
