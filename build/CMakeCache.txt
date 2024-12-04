@@ -219,6 +219,15 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
 
+//The directory containing a CMake configuration file for box2d.
+box2d_DIR:PATH=/opt/homebrew/lib/cmake/box2d
+
+//The directory containing a CMake configuration file for glfw3.
+glfw3_DIR:PATH=/opt/homebrew/lib/cmake/glfw3
+
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=/opt/homebrew/share/cmake/nlohmann_json
+
 //The directory containing a CMake configuration file for raylib.
 raylib_DIR:PATH=/opt/homebrew/lib/cmake/raylib
 
@@ -236,6 +245,9 @@ super-mario_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 super-mario_SOURCE_DIR:STATIC=/Users/hannguyen/Desktop/data/cpp-super-mario
+
+//The directory containing a CMake configuration file for tinyxml2.
+tinyxml2_DIR:PATH=/opt/homebrew/lib/cmake/tinyxml2
 
 
 ########################
@@ -314,6 +326,8 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/Users/hannguyen/Desktop/data/cpp-super-mario
@@ -381,6 +395,10 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/opt/homebrew/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.11.3(3.11.2)]
 //Details about finding raylib
 FIND_PACKAGE_MESSAGE_DETAILS_raylib:INTERNAL=[/opt/homebrew/lib/libraylib.dylib][/opt/homebrew/include][v()]
 PC_RAYLIB_CFLAGS:INTERNAL=
