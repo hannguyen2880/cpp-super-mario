@@ -2,7 +2,7 @@
 #include "../game/Game.h"
 
 InstructionScreen::InstructionScreen()
-    : backButton("Back", 20, 480, 150, 40, ButtonStyle::GOLD_STYLE, 20)
+    :backButton("../assets/images/BackButton.png", 20, 480)
 {
     panelTargetY = 161;
     panelCurrentY = 600;

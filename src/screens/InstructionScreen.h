@@ -1,13 +1,15 @@
 #pragma once
 #include "Screen.h"
 #include "../ui/Button.h"
+#include "../ui/ImageButton.h"
 #include <string>
 
 class InstructionScreen : public Screen {
 private:
     Texture2D background;
     Texture2D instructionPanel;
-    Button backButton;
+    //Button backButton;
+    ImageButton backButton;
 
     float panelTargetY;     // Final Y position
     float panelCurrentY;    // Current Y position

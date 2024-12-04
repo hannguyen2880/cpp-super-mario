@@ -4,10 +4,10 @@
 BeforeGameScreen::BeforeGameScreen()
     : yesButton("../assets/images/YesButton.png", 300, 390),
       noButton("../assets/images/NoButton.png", 500, 390),
-      backButton("Back", 20, 480, 150, 40, ButtonStyle::GOLD_STYLE, 20),
-      easyButton("Easy", 380, 200, 200, 50, ButtonStyle::GREEN_STYLE),
-      mediumButton("Medium", 380, 280, 200, 50, ButtonStyle::GOLD_STYLE),
-      hardButton("Hard", 380, 360, 200, 50, ButtonStyle::DEFAULT)
+      backButton("../assets/images/BackButton.png", 20, 480),
+      easyButton("../assets/images/EasyButton.png", 380, 200),
+      mediumButton("../assets/images/MediumButton.png", 380, 280),
+      hardButton("../assets/images/HardButton.png", 380, 360)
 {
     panelTargetY = 161;
     panelCurrentY = 600;

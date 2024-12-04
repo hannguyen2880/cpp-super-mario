@@ -10,18 +10,14 @@ private:
         RESUME_PANEL,
         DIFFICULTY_PANEL
     };
-    Button easyButton;
-    Button mediumButton;
-    Button hardButton;
     PanelState currentPanel;
 
     Texture2D background;
     Texture2D resumeGamePanel;
     
-    ImageButton yesButton;
-    ImageButton noButton;
-    Button backButton;
-
+    ImageButton yesButton, noButton;
+    ImageButton backButton;
+    ImageButton easyButton, mediumButton, hardButton;
     float panelTargetY;
     float panelCurrentY;
     float panelAlpha;

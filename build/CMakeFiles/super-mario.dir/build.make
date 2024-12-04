@@ -208,6 +208,7 @@ super-mario: CMakeFiles/super-mario.dir/src/ui/Button.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o
 super-mario: CMakeFiles/super-mario.dir/build.make
 super-mario: /opt/homebrew/lib/libraylib.dylib
+super-mario: /opt/homebrew/lib/libglfw.3.4.dylib
 super-mario: CMakeFiles/super-mario.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable super-mario"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/super-mario.dir/link.txt --verbose=$(VERBOSE)
