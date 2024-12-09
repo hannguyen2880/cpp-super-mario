@@ -1,0 +1,14 @@
+{ "columns":1,
+ "image":"KTroopa_L_1.png",
+ "imageheight":32,
+ "imagewidth":16,
+ "margin":0,
+ "name":"KTroopa_L_1",
+ "spacing":0,
+ "tilecount":2,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

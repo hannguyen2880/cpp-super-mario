@@ -1,0 +1,15 @@
+{ "columns":24,
+ "image":"tiles-custom-17.png",
+ "imageheight":205,
+ "imagewidth":424,
+ "margin":1,
+ "name":"tiles-custom-17",
+ "spacing":1,
+ "tilecount":288,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#6f3198",
+ "type":"tileset",
+ "version":"1.10"
+}
