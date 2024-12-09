@@ -1,24 +1,20 @@
-// src/ui/ImageButton.cpp
 #include "ImageButton.h"
 #include <iostream>
 
-ImageButton::ImageButton(const char* texturePath, float x, float y) {
-    pathTexture = texturePath;
+ImageButton::ImageButton(const char* texturePath, float x, float y) : Button(x, y, 0, 0), pathTexture(texturePath) {
     texture = LoadTexture(pathTexture);
-
-    bounds = {x, y, (float)texture.width, (float)texture.height};
-    isHovered = false;
-    isPressed = false;
+    bounds.width = (float)texture.width;
+    bounds.height = (float)texture.height;
     scale = 1.0f;
     tint = WHITE;
 }
 
-void ImageButton::Unload() {
-    UnloadTexture(texture);
-}
-
 ImageButton::~ImageButton() {
     Unload();
+}
+
+void ImageButton::Unload() {
+    UnloadTexture(texture);
 }
 
 bool ImageButton::Update() {

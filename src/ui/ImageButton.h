@@ -1,23 +1,21 @@
-// include/ui/ImageButton.h
 #pragma once
+#include "Button.h"
 #include "raylib.h"
 #include <string>
 
-class ImageButton {
+class ImageButton : public Button {
 private:
-    Rectangle bounds;
     Texture2D texture;
     const char* pathTexture;
-    bool isHovered;
-    bool isPressed;
     float scale;
     Color tint;
 
 public:
     ImageButton() {};
     ImageButton(const char* texturePath, float x, float y);
-    void Unload();
     ~ImageButton();
-    bool Update();
-    void Draw();
+    
+    void Unload();
+    bool Update() override;
+    void Draw() override;
 };
