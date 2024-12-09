@@ -1,0 +1,15 @@
+{ "columns":5,
+ "image":"smallCastle.png",
+ "imageheight":80,
+ "imagewidth":80,
+ "margin":0,
+ "name":"smallCastle",
+ "spacing":0,
+ "tilecount":25,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#00298c",
+ "type":"tileset",
+ "version":"1.10"
+}

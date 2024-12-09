@@ -1,25 +1,18 @@
-// src/ui/Button.cpp
-#include "Button.h"
+#include "FontButton.h"
 #include <iostream>
 
-Button::Button(const char* buttonText, float x, float y, float width, float height, 
-               ButtonStyle buttonStyle, float size) {
-    text = buttonText;
-    bounds = {x, y, width, height};
-    fontSize = size;
-    
-    isHovered = false;
-    isPressed = false;
-    
+FontButton::FontButton(const char* buttonText, float x, float y, float width, float height, 
+                       ButtonStyle buttonStyle, float size) 
+    : Button(x, y, width, height), text(buttonText), fontSize(size) {
     SetStyle(buttonStyle);
 }
 
-void Button::SetStyle(ButtonStyle newStyle) {
+void FontButton::SetStyle(ButtonStyle newStyle) {
     style = newStyle;
     ApplyStyle(style);
 }
 
-void Button::ApplyStyle(ButtonStyle style) {
+void FontButton::ApplyStyle(ButtonStyle style) {
     switch(style) {
         case ButtonStyle::GOLD_STYLE:
             normalColor = {255, 203, 0, 255};    // Gold
@@ -52,7 +45,7 @@ void Button::ApplyStyle(ButtonStyle style) {
     }
 }
 
-void Button::SetCustomColors(Color normal, Color hover, Color active, Color text) {
+void FontButton::SetCustomColors(Color normal, Color hover, Color active, Color text) {
     style = ButtonStyle::CUSTOM;
     normalColor = normal;
     hoverColor = hover;
@@ -60,7 +53,7 @@ void Button::SetCustomColors(Color normal, Color hover, Color active, Color text
     textColor = text;
 }
 
-bool Button::Update() {
+bool FontButton::Update() {
     Vector2 mousePoint = GetMousePosition();
     isHovered = CheckCollisionPointRec(mousePoint, bounds);
     
@@ -78,7 +71,7 @@ bool Button::Update() {
     return false;
 }
 
-void Button::Draw() {
+void FontButton::Draw() {
     // Draw button background
     Color currentColor = normalColor;
     if (isPressed) currentColor = activeColor;

@@ -22,6 +22,7 @@ public:
     static void Draw();
     static void SetState(GameState newState);
     static void Unload();
+    static void Run();
     //static void PlaySound(const char* soundName);
 
     static float GetScreenWidth() { return 1.0 * screenWidth; }

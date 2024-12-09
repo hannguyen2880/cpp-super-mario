@@ -1,0 +1,15 @@
+{ "columns":30,
+ "image":"castle.png",
+ "imageheight":188,
+ "imagewidth":510,
+ "margin":1,
+ "name":"castle",
+ "spacing":1,
+ "tilecount":330,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#c5c1ff",
+ "type":"tileset",
+ "version":"1.10"
+}

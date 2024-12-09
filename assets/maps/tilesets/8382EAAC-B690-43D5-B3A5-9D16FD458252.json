@@ -1,0 +1,15 @@
+{ "columns":39,
+ "image":"8382EAAC-B690-43D5-B3A5-9D16FD458252.png",
+ "imageheight":515,
+ "imagewidth":669,
+ "margin":1,
+ "name":"8382EAAC-B690-43D5-B3A5-9D16FD458252",
+ "spacing":1,
+ "tilecount":1170,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#c5c1ff",
+ "type":"tileset",
+ "version":"1.10"
+}

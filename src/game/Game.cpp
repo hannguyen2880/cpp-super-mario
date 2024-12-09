@@ -2,6 +2,7 @@
 #include "../screens/MenuScreen.h"
 #include "../screens/InstructionScreen.h"
 #include "../screens/BeforeGameScreen.h"
+#include "../screens/GamePlayScreen.h"
 #include <iostream>
 
 GameState Game::currentState = GameState::MAIN_MENU;
@@ -18,6 +19,22 @@ void Game::Init() {
 
     currentScreen = std::make_unique<MenuScreen>();
     currentScreen->Init();
+}
+
+void Game::Run() {
+    InitWindow(960, 540, "Super Mario Bros.");
+    InitAudioDevice();
+    SetTargetFPS(60);
+    Init();
+    
+    while (!WindowShouldClose()) {
+        Update();
+        Draw();
+    }
+    
+    Unload();
+    CloseAudioDevice();
+    CloseWindow();
 }
 
 void Game::Update() {
