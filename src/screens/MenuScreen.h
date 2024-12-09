@@ -1,5 +1,8 @@
 #pragma once
 #include "Screen.h"
+#include <string>
+#include "../ui/Button.h"
+#include "../ui/ImageButton.h"
 
 class MenuScreen : public Screen {
 private:
@@ -16,17 +19,17 @@ private:
     Rectangle instructBtnBounds;
     // for loading screen
     Texture2D loadingTexture;
-    float elapsedTime;
+    
     bool isLoading;
+    float loadingTime, animationTime;
+    int framesCounter;  // Add this for frame tracking
+
+    ImageButton playButton;
+    ImageButton instructionButton;
 
 public:
     MenuScreen();
-    ~MenuScreen() {
-        UnloadTexture(loadingTexture);
-        UnloadTexture(background);
-        UnloadTexture(mario);
-        UnloadTexture(cloud);
-    };
+    ~MenuScreen();
     
     void Init() override;
     void Update() override;

@@ -177,6 +177,78 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/screens/BeforeGameScreen.o: src/screens/BeforeGameScreen.cpp.o
+.PHONY : src/screens/BeforeGameScreen.o
+
+# target to build an object file
+src/screens/BeforeGameScreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o
+.PHONY : src/screens/BeforeGameScreen.cpp.o
+
+src/screens/BeforeGameScreen.i: src/screens/BeforeGameScreen.cpp.i
+.PHONY : src/screens/BeforeGameScreen.i
+
+# target to preprocess a source file
+src/screens/BeforeGameScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.i
+.PHONY : src/screens/BeforeGameScreen.cpp.i
+
+src/screens/BeforeGameScreen.s: src/screens/BeforeGameScreen.cpp.s
+.PHONY : src/screens/BeforeGameScreen.s
+
+# target to generate assembly for a file
+src/screens/BeforeGameScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s
+.PHONY : src/screens/BeforeGameScreen.cpp.s
+
+src/screens/GamePlayScreen.o: src/screens/GamePlayScreen.cpp.o
+.PHONY : src/screens/GamePlayScreen.o
+
+# target to build an object file
+src/screens/GamePlayScreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o
+.PHONY : src/screens/GamePlayScreen.cpp.o
+
+src/screens/GamePlayScreen.i: src/screens/GamePlayScreen.cpp.i
+.PHONY : src/screens/GamePlayScreen.i
+
+# target to preprocess a source file
+src/screens/GamePlayScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i
+.PHONY : src/screens/GamePlayScreen.cpp.i
+
+src/screens/GamePlayScreen.s: src/screens/GamePlayScreen.cpp.s
+.PHONY : src/screens/GamePlayScreen.s
+
+# target to generate assembly for a file
+src/screens/GamePlayScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s
+.PHONY : src/screens/GamePlayScreen.cpp.s
+
+src/screens/InstructionScreen.o: src/screens/InstructionScreen.cpp.o
+.PHONY : src/screens/InstructionScreen.o
+
+# target to build an object file
+src/screens/InstructionScreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o
+.PHONY : src/screens/InstructionScreen.cpp.o
+
+src/screens/InstructionScreen.i: src/screens/InstructionScreen.cpp.i
+.PHONY : src/screens/InstructionScreen.i
+
+# target to preprocess a source file
+src/screens/InstructionScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.i
+.PHONY : src/screens/InstructionScreen.cpp.i
+
+src/screens/InstructionScreen.s: src/screens/InstructionScreen.cpp.s
+.PHONY : src/screens/InstructionScreen.s
+
+# target to generate assembly for a file
+src/screens/InstructionScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.s
+.PHONY : src/screens/InstructionScreen.cpp.s
+
 src/screens/MenuScreen.o: src/screens/MenuScreen.cpp.o
 .PHONY : src/screens/MenuScreen.o
 
@@ -201,6 +273,54 @@ src/screens/MenuScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s
 .PHONY : src/screens/MenuScreen.cpp.s
 
+src/ui/Button.o: src/ui/Button.cpp.o
+.PHONY : src/ui/Button.o
+
+# target to build an object file
+src/ui/Button.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/Button.cpp.o
+.PHONY : src/ui/Button.cpp.o
+
+src/ui/Button.i: src/ui/Button.cpp.i
+.PHONY : src/ui/Button.i
+
+# target to preprocess a source file
+src/ui/Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/Button.cpp.i
+.PHONY : src/ui/Button.cpp.i
+
+src/ui/Button.s: src/ui/Button.cpp.s
+.PHONY : src/ui/Button.s
+
+# target to generate assembly for a file
+src/ui/Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/Button.cpp.s
+.PHONY : src/ui/Button.cpp.s
+
+src/ui/ImageButton.o: src/ui/ImageButton.cpp.o
+.PHONY : src/ui/ImageButton.o
+
+# target to build an object file
+src/ui/ImageButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o
+.PHONY : src/ui/ImageButton.cpp.o
+
+src/ui/ImageButton.i: src/ui/ImageButton.cpp.i
+.PHONY : src/ui/ImageButton.i
+
+# target to preprocess a source file
+src/ui/ImageButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.i
+.PHONY : src/ui/ImageButton.cpp.i
+
+src/ui/ImageButton.s: src/ui/ImageButton.cpp.s
+.PHONY : src/ui/ImageButton.s
+
+# target to generate assembly for a file
+src/ui/ImageButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.s
+.PHONY : src/ui/ImageButton.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,9 +336,24 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/screens/BeforeGameScreen.o"
+	@echo "... src/screens/BeforeGameScreen.i"
+	@echo "... src/screens/BeforeGameScreen.s"
+	@echo "... src/screens/GamePlayScreen.o"
+	@echo "... src/screens/GamePlayScreen.i"
+	@echo "... src/screens/GamePlayScreen.s"
+	@echo "... src/screens/InstructionScreen.o"
+	@echo "... src/screens/InstructionScreen.i"
+	@echo "... src/screens/InstructionScreen.s"
 	@echo "... src/screens/MenuScreen.o"
 	@echo "... src/screens/MenuScreen.i"
 	@echo "... src/screens/MenuScreen.s"
+	@echo "... src/ui/Button.o"
+	@echo "... src/ui/Button.i"
+	@echo "... src/ui/Button.s"
+	@echo "... src/ui/ImageButton.o"
+	@echo "... src/ui/ImageButton.i"
+	@echo "... src/ui/ImageButton.s"
 .PHONY : help
 
 

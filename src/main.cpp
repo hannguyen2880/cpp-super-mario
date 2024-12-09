@@ -5,6 +5,7 @@
 
 int main(void) {
     InitWindow(960, 540, "Super Mario Bros.");
+    InitAudioDevice();
     SetTargetFPS(60);
     Game::Init();
     int screenWidth, screenHeight;
@@ -12,7 +13,8 @@ int main(void) {
         Game::Update();
         Game::Draw();
     }
-    
+    Game::Unload();
+    CloseAudioDevice();
     CloseWindow();
     return 0;
 }
