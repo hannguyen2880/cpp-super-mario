@@ -1,0 +1,15 @@
+{ "columns":48,
+ "image":"Custom Edited - Mario Customs - Super Mario Bros 2 Tileset SMM-Style.png",
+ "imageheight":825,
+ "imagewidth":817,
+ "margin":1,
+ "name":"Custom Edited - Mario Customs - Super Mario Bros 2 Tileset SMM-Style",
+ "spacing":1,
+ "tilecount":2304,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#93bbec",
+ "type":"tileset",
+ "version":"1.10"
+}
