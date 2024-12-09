@@ -8,7 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hannguyen/Desktop/data/cpp-super-mario/src/Entity/Entity.cpp" "CMakeFiles/super-mario.dir/src/Entity/Entity.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/Entity/Entity.cpp.o.d"
+  "/Users/hannguyen/Desktop/data/cpp-super-mario/src/Entity/DynamicEntity.cpp" "CMakeFiles/super-mario.dir/src/Entity/DynamicEntity.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/Entity/DynamicEntity.cpp.o.d"
+  "/Users/hannguyen/Desktop/data/cpp-super-mario/src/Entity/Enemy/Enemy.cpp" "CMakeFiles/super-mario.dir/src/Entity/Enemy/Enemy.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/Entity/Enemy/Enemy.cpp.o.d"
+  "/Users/hannguyen/Desktop/data/cpp-super-mario/src/Entity/KinematicEntity.cpp" "CMakeFiles/super-mario.dir/src/Entity/KinematicEntity.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/Entity/KinematicEntity.cpp.o.d"
+  "/Users/hannguyen/Desktop/data/cpp-super-mario/src/Entity/StaticEntity.cpp" "CMakeFiles/super-mario.dir/src/Entity/StaticEntity.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/Entity/StaticEntity.cpp.o.d"
   "/Users/hannguyen/Desktop/data/cpp-super-mario/src/game/Game.cpp" "CMakeFiles/super-mario.dir/src/game/Game.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/Game.cpp.o.d"
   "/Users/hannguyen/Desktop/data/cpp-super-mario/src/main.cpp" "CMakeFiles/super-mario.dir/src/main.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/main.cpp.o.d"
   "/Users/hannguyen/Desktop/data/cpp-super-mario/src/raylib-tileson.cpp" "CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o.d"

@@ -1,8 +1,8 @@
-#include "Entity.h"
+#include "KinematicEntity.h"
 
-Entity::Entity(b2World* world, Vector2 position, bool isDynamic, Texture2D texture) : texture(texture) {
+KinematicEntity::KinematicEntity(b2World* world, Vector2 position, Texture2D texture) : Entity(world, position, texture) {
     b2BodyDef bodyDef;
-    bodyDef.type = isDynamic ? b2_dynamicBody : b2_staticBody;
+    bodyDef.type = b2_kinematicBody;
     bodyDef.position.Set(position.x, position.y);
     body = world->CreateBody(&bodyDef);
 
@@ -11,12 +11,12 @@ Entity::Entity(b2World* world, Vector2 position, bool isDynamic, Texture2D textu
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &boxShape;
-    fixtureDef.density = isDynamic ? 1.0f : 0.0f;
+    fixtureDef.density = 0.0f;
     fixtureDef.friction = 0.3f;
 
     body->CreateFixture(&fixtureDef);
 }
 
-Entity::~Entity() {
-    UnloadTexture(texture);
+KinematicEntity::~KinematicEntity() {
+    // Additional cleanup if needed
 }
