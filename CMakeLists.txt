@@ -31,11 +31,13 @@ add_subdirectory(external/raylib-tmx)
 file(GLOB_RECURSE SOURCES_CPP 
     "src/*.cpp"
     "src/*/*.cpp"
+    "src/*/*/*.cpp"
 )
 
 file(GLOB_RECURSE SOURCES_H 
     "include/*.h"
     "include/*/*.h"
+    "include/*/*/*.h"
 )
 
 # Create executable
