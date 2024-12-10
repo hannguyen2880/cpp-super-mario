@@ -7,15 +7,18 @@
 
 GameState Game::currentState = GameState::MAIN_MENU;
 std::unique_ptr<Screen> Game::currentScreen = nullptr;
-Music Game::backgroundMusic = { 0 };
 GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
 GameplayMode Game::gameplayMode = GameplayMode::NEW_GAME;
 
 void Game::Init() {
-    backgroundMusic = LoadMusicStream("../assets/sounds/background_sound.mp3");
-    SetMusicVolume(backgroundMusic, 1.0f);
-    PlayMusicStream(backgroundMusic);
-    backgroundMusic.looping = true;
+    InitAudioDevice(); 
+
+    AudioManager::GetInstance().LoadMusics("background", "../assets/sounds/background_sound.mp3");
+    AudioManager::GetInstance().PlayMusics("background");
+
+    // Load sounds using AudioManager
+    //AudioManager::GetInstance().LoadSounds("jump", "../assets/sounds/jump.wav");
+    //AudioManager::GetInstance().LoadSounds("coin", "../assets/sounds/coin.wav");
 
     currentScreen = std::make_unique<MenuScreen>();
     currentScreen->Init();
@@ -38,14 +41,13 @@ void Game::Run() {
 }
 
 void Game::Update() {
-    UpdateMusicStream(backgroundMusic);
-    // Debug print current music time
-    float currentTime = GetMusicTimePlayed(backgroundMusic);
-    float totalTime = GetMusicTimeLength(backgroundMusic);
+    UpdateMusicStream(AudioManager::GetInstance().GetMusic("background"));
+    float currentTime = GetMusicTimePlayed(AudioManager::GetInstance().GetMusic("background"));
+    float totalTime = GetMusicTimeLength(AudioManager::GetInstance().GetMusic("background"));
     if (currentTime >= totalTime - 0.1f) {
         // Reset music if near end
-        StopMusicStream(backgroundMusic);
-        PlayMusicStream(backgroundMusic);
+        AudioManager::GetInstance().StopMusics("background");
+        AudioManager::GetInstance().PlayMusics("background");
     }
 
     if (currentScreen) {
@@ -53,9 +55,8 @@ void Game::Update() {
     }
 }
 void Game::Unload() {
-    UnloadMusicStream(backgroundMusic);
-    //UnloadSound(jumpSound);
-    //UnloadSound(coinSound);
+    //AudioManager::GetInstance().UnloadAllSounds();
+   // AudioManager::GetInstance().UnloadAllMusics();
 }
 
 void Game::Draw() {

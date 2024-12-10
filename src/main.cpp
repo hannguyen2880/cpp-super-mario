@@ -48,10 +48,8 @@
 //     return 0;
 // }
 
-#include "raylib.h"
-#include <box2d/box2d.h>
-#include "game/Game.h"
 #include <iostream>
+#include "game/Game.h"
 
 int main(void) {
     Game::Run();

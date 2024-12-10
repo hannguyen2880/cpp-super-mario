@@ -14,3 +14,8 @@ public:
     virtual void Update() = 0;
     virtual void Draw() = 0;
 };
+
+void Entity::Draw() {
+    Vector2 position = { body->GetPosition().x, body->GetPosition().y };
+    DrawTexture(texture, position.x, position.y, WHITE);
+}
