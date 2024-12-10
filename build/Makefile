@@ -532,101 +532,125 @@ raylib-tmx-test/fast:
 	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build
 .PHONY : raylib-tmx-test/fast
 
-src/Entity/DynamicEntity.o: src/Entity/DynamicEntity.cpp.o
-.PHONY : src/Entity/DynamicEntity.o
+src/audio/AudioManager.o: src/audio/AudioManager.cpp.o
+.PHONY : src/audio/AudioManager.o
 
 # target to build an object file
-src/Entity/DynamicEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/DynamicEntity.cpp.o
-.PHONY : src/Entity/DynamicEntity.cpp.o
+src/audio/AudioManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o
+.PHONY : src/audio/AudioManager.cpp.o
 
-src/Entity/DynamicEntity.i: src/Entity/DynamicEntity.cpp.i
-.PHONY : src/Entity/DynamicEntity.i
+src/audio/AudioManager.i: src/audio/AudioManager.cpp.i
+.PHONY : src/audio/AudioManager.i
 
 # target to preprocess a source file
-src/Entity/DynamicEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/DynamicEntity.cpp.i
-.PHONY : src/Entity/DynamicEntity.cpp.i
+src/audio/AudioManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i
+.PHONY : src/audio/AudioManager.cpp.i
 
-src/Entity/DynamicEntity.s: src/Entity/DynamicEntity.cpp.s
-.PHONY : src/Entity/DynamicEntity.s
+src/audio/AudioManager.s: src/audio/AudioManager.cpp.s
+.PHONY : src/audio/AudioManager.s
 
 # target to generate assembly for a file
-src/Entity/DynamicEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/DynamicEntity.cpp.s
-.PHONY : src/Entity/DynamicEntity.cpp.s
+src/audio/AudioManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s
+.PHONY : src/audio/AudioManager.cpp.s
 
-src/Entity/Enemy/Enemy.o: src/Entity/Enemy/Enemy.cpp.o
-.PHONY : src/Entity/Enemy/Enemy.o
+src/entity/DynamicEntity.o: src/entity/DynamicEntity.cpp.o
+.PHONY : src/entity/DynamicEntity.o
 
 # target to build an object file
-src/Entity/Enemy/Enemy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/Enemy/Enemy.cpp.o
-.PHONY : src/Entity/Enemy/Enemy.cpp.o
+src/entity/DynamicEntity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o
+.PHONY : src/entity/DynamicEntity.cpp.o
 
-src/Entity/Enemy/Enemy.i: src/Entity/Enemy/Enemy.cpp.i
-.PHONY : src/Entity/Enemy/Enemy.i
+src/entity/DynamicEntity.i: src/entity/DynamicEntity.cpp.i
+.PHONY : src/entity/DynamicEntity.i
 
 # target to preprocess a source file
-src/Entity/Enemy/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/Enemy/Enemy.cpp.i
-.PHONY : src/Entity/Enemy/Enemy.cpp.i
+src/entity/DynamicEntity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.i
+.PHONY : src/entity/DynamicEntity.cpp.i
 
-src/Entity/Enemy/Enemy.s: src/Entity/Enemy/Enemy.cpp.s
-.PHONY : src/Entity/Enemy/Enemy.s
+src/entity/DynamicEntity.s: src/entity/DynamicEntity.cpp.s
+.PHONY : src/entity/DynamicEntity.s
 
 # target to generate assembly for a file
-src/Entity/Enemy/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/Enemy/Enemy.cpp.s
-.PHONY : src/Entity/Enemy/Enemy.cpp.s
+src/entity/DynamicEntity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.s
+.PHONY : src/entity/DynamicEntity.cpp.s
 
-src/Entity/KinematicEntity.o: src/Entity/KinematicEntity.cpp.o
-.PHONY : src/Entity/KinematicEntity.o
+src/entity/Enemy/Enemy.o: src/entity/Enemy/Enemy.cpp.o
+.PHONY : src/entity/Enemy/Enemy.o
 
 # target to build an object file
-src/Entity/KinematicEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/KinematicEntity.cpp.o
-.PHONY : src/Entity/KinematicEntity.cpp.o
+src/entity/Enemy/Enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o
+.PHONY : src/entity/Enemy/Enemy.cpp.o
 
-src/Entity/KinematicEntity.i: src/Entity/KinematicEntity.cpp.i
-.PHONY : src/Entity/KinematicEntity.i
+src/entity/Enemy/Enemy.i: src/entity/Enemy/Enemy.cpp.i
+.PHONY : src/entity/Enemy/Enemy.i
 
 # target to preprocess a source file
-src/Entity/KinematicEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/KinematicEntity.cpp.i
-.PHONY : src/Entity/KinematicEntity.cpp.i
+src/entity/Enemy/Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.i
+.PHONY : src/entity/Enemy/Enemy.cpp.i
 
-src/Entity/KinematicEntity.s: src/Entity/KinematicEntity.cpp.s
-.PHONY : src/Entity/KinematicEntity.s
+src/entity/Enemy/Enemy.s: src/entity/Enemy/Enemy.cpp.s
+.PHONY : src/entity/Enemy/Enemy.s
 
 # target to generate assembly for a file
-src/Entity/KinematicEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/KinematicEntity.cpp.s
-.PHONY : src/Entity/KinematicEntity.cpp.s
+src/entity/Enemy/Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.s
+.PHONY : src/entity/Enemy/Enemy.cpp.s
 
-src/Entity/StaticEntity.o: src/Entity/StaticEntity.cpp.o
-.PHONY : src/Entity/StaticEntity.o
+src/entity/KinematicEntity.o: src/entity/KinematicEntity.cpp.o
+.PHONY : src/entity/KinematicEntity.o
 
 # target to build an object file
-src/Entity/StaticEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/StaticEntity.cpp.o
-.PHONY : src/Entity/StaticEntity.cpp.o
+src/entity/KinematicEntity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o
+.PHONY : src/entity/KinematicEntity.cpp.o
 
-src/Entity/StaticEntity.i: src/Entity/StaticEntity.cpp.i
-.PHONY : src/Entity/StaticEntity.i
+src/entity/KinematicEntity.i: src/entity/KinematicEntity.cpp.i
+.PHONY : src/entity/KinematicEntity.i
 
 # target to preprocess a source file
-src/Entity/StaticEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/StaticEntity.cpp.i
-.PHONY : src/Entity/StaticEntity.cpp.i
+src/entity/KinematicEntity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.i
+.PHONY : src/entity/KinematicEntity.cpp.i
 
-src/Entity/StaticEntity.s: src/Entity/StaticEntity.cpp.s
-.PHONY : src/Entity/StaticEntity.s
+src/entity/KinematicEntity.s: src/entity/KinematicEntity.cpp.s
+.PHONY : src/entity/KinematicEntity.s
 
 # target to generate assembly for a file
-src/Entity/StaticEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Entity/StaticEntity.cpp.s
-.PHONY : src/Entity/StaticEntity.cpp.s
+src/entity/KinematicEntity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.s
+.PHONY : src/entity/KinematicEntity.cpp.s
+
+src/entity/StaticEntity.o: src/entity/StaticEntity.cpp.o
+.PHONY : src/entity/StaticEntity.o
+
+# target to build an object file
+src/entity/StaticEntity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o
+.PHONY : src/entity/StaticEntity.cpp.o
+
+src/entity/StaticEntity.i: src/entity/StaticEntity.cpp.i
+.PHONY : src/entity/StaticEntity.i
+
+# target to preprocess a source file
+src/entity/StaticEntity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.i
+.PHONY : src/entity/StaticEntity.cpp.i
+
+src/entity/StaticEntity.s: src/entity/StaticEntity.cpp.s
+.PHONY : src/entity/StaticEntity.s
+
+# target to generate assembly for a file
+src/entity/StaticEntity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.s
+.PHONY : src/entity/StaticEntity.cpp.s
 
 src/game/Game.o: src/game/Game.cpp.o
 .PHONY : src/game/Game.o
@@ -884,18 +908,21 @@ help:
 	@echo "... raylib-tmx-example"
 	@echo "... raylib-tmx-test"
 	@echo "... super-mario"
-	@echo "... src/Entity/DynamicEntity.o"
-	@echo "... src/Entity/DynamicEntity.i"
-	@echo "... src/Entity/DynamicEntity.s"
-	@echo "... src/Entity/Enemy/Enemy.o"
-	@echo "... src/Entity/Enemy/Enemy.i"
-	@echo "... src/Entity/Enemy/Enemy.s"
-	@echo "... src/Entity/KinematicEntity.o"
-	@echo "... src/Entity/KinematicEntity.i"
-	@echo "... src/Entity/KinematicEntity.s"
-	@echo "... src/Entity/StaticEntity.o"
-	@echo "... src/Entity/StaticEntity.i"
-	@echo "... src/Entity/StaticEntity.s"
+	@echo "... src/audio/AudioManager.o"
+	@echo "... src/audio/AudioManager.i"
+	@echo "... src/audio/AudioManager.s"
+	@echo "... src/entity/DynamicEntity.o"
+	@echo "... src/entity/DynamicEntity.i"
+	@echo "... src/entity/DynamicEntity.s"
+	@echo "... src/entity/Enemy/Enemy.o"
+	@echo "... src/entity/Enemy/Enemy.i"
+	@echo "... src/entity/Enemy/Enemy.s"
+	@echo "... src/entity/KinematicEntity.o"
+	@echo "... src/entity/KinematicEntity.i"
+	@echo "... src/entity/KinematicEntity.s"
+	@echo "... src/entity/StaticEntity.o"
+	@echo "... src/entity/StaticEntity.i"
+	@echo "... src/entity/StaticEntity.s"
 	@echo "... src/game/Game.o"
 	@echo "... src/game/Game.i"
 	@echo "... src/game/Game.s"
