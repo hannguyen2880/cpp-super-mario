@@ -1,13 +1,11 @@
-#include "raylib.h"
-#define RAYLIB_TILESON_IMPLEMENTATION
-
 #include <iostream>
 #include <vector>
 #include <cmath>
 #include <string>
 #include <map>
-#include "raylib-tileson.h"
-#include "tileson.hpp"
+
+#include "raylib/raylib-cpp.hpp"
+#include "TileMap2D.h"
 
 #define SCREEN_WIDTH 960
 #define SCREEN_HEIGHT 540
@@ -18,6 +16,7 @@
 #define MAX_JUMP_TIME 10 // Maximum frames for holding the jump button
 #define MAPHEIGHT 240.0
 #define MAPWIDTH 2400.0
+#define MAP_SCALE 1.0
 
 enum Direction { LEFT, RIGHT };
 enum MotionState { STILL, WALK, AIRBORNE };
@@ -47,41 +46,6 @@ void LoadSpriteGroup(std::vector<Texture2D>& spriteGroup, const std::vector<std:
     }
 }
 
-// Map LoadMap(const char* mapFilePath) {
-//     return LoadTiled(mapFilePath);
-// }
-
-// Check for landing on the floor or objects
-bool CheckLanding(Player& player, Map& map) {
-    bool landed = false;
-    RaylibTilesonData* data = (RaylibTilesonData*)map.data;
-    if (data == NULL) {
-        TraceLog(LOG_WARNING, "TILESON: Cannot draw empty map");
-        return landed;
-    }
-    tson::Map* tsonMap = data->map;
-    auto &layers = tsonMap->getLayers();
-    for (const auto& layer : layers) {
-        if (layer.getType() == tson::LayerType::ObjectGroup) {
-            auto objectLayer = layer;
-            for (const auto& object : objectLayer.getObjects()) {
-                if (player.positionX < object.getPosition().x + object.getSize().x &&
-                    player.positionX + player.spriteWidth > object.getPosition().x &&
-                    player.positionY + player.spriteWidth > object.getPosition().y &&
-                    player.positionY < object.getPosition().y + object.getSize().y) {
-                    player.positionY = object.getPosition().y; // Điều chỉnh theo đối tượng
-                    player.motionState = STILL;
-                    player.velocityY = 0;
-                    landed = true;
-                    break;
-                }
-            }
-        }
-    }
-    return landed;
-}
-
-// Apply smooth acceleration and deceleration for horizontal movement
 void ApplyHorizontalVelocity(Player& player) {
     if (player.velocityX < player.targetVelocityX) {
         player.velocityX += 0.2f; 
@@ -89,114 +53,92 @@ void ApplyHorizontalVelocity(Player& player) {
         player.velocityX -= 0.2f; 
     }
 
-    if (fabs(player.velocityX) < 0.1f) {
+    if (std::fabs(player.velocityX) < 0.1f) {
         player.velocityX = 0.0f;
     }
 }
 
-// Bound player position within the screen
 void BoundPlayerPosition(Player& player) {
     if (player.positionX < 0) player.positionX = 0;
     if (player.positionX > MAPWIDTH - (marioFramesLeft[player.currentFrame].width) * 1.5f) 
         player.positionX = MAPWIDTH - (marioFramesLeft[player.currentFrame].width  * 1.5f);
 }
 
-// Update the camera based on player's position and velocity
 void UpdateCamera(Camera2D& camera, Player& player) {
-   
     const float cameraSpeed = 0.1f; 
     float targetCameraX = player.positionX;
 
-    // Bound the camera horizontally to the map boundaries
     if (targetCameraX < SCREEN_WIDTH / 2.0f / camera.zoom) targetCameraX = SCREEN_WIDTH / 2.0f / camera.zoom;
     if (targetCameraX > MAPWIDTH - SCREEN_WIDTH / 2.0f / camera.zoom) targetCameraX = MAPWIDTH - SCREEN_WIDTH / 2.0f / camera.zoom;
 
-    
     camera.target.x += (targetCameraX - camera.target.x) * cameraSpeed;
-
-    // Keep the camera's vertical position centered
     camera.target.y = MAPHEIGHT / 2.0f;
 }
 
-void UpdatePlayerAndCamera(Player& player, Camera2D& camera, Map& map) {
-    // Handle jump initiation
+void UpdatePlayerAndCamera(Player& player, Camera2D& camera, TileMap2D& map) {
     if ((IsKeyPressed(KEY_SPACE) || IsKeyPressed(KEY_UP)) && player.motionState != AIRBORNE) {
         player.velocityY = JUMP_SPEED;
         player.motionState = AIRBORNE;
-        player.jumpTime = 0; // Reset jump time
+        player.jumpTime = 0;
     }
 
-    // Handle holding the jump button to jump higher
     if ((IsKeyDown(KEY_SPACE) || IsKeyDown(KEY_UP)) && player.motionState == AIRBORNE && player.jumpTime < MAX_JUMP_TIME) {
-        player.velocityY = JUMP_SPEED; // Continue applying jump speed
+        player.velocityY = JUMP_SPEED;
         player.jumpTime++;
     }
 
-    // Update vertical motion (gravity, jumping)
     if (player.motionState == AIRBORNE) {
         player.velocityY += GRAVITY;
         if (player.velocityY > MAX_FALL_SPEED) player.velocityY = MAX_FALL_SPEED;
         player.positionY += player.velocityY;
 
-        // Check if player lands on floor or objects
-        //bool landed = CheckLanding(player, map);
-        if (player.positionY >= FLOOR_HEIGHT) { // Default ground level fallback
+        if (player.positionY >= FLOOR_HEIGHT) {
             player.positionY = FLOOR_HEIGHT;
             player.motionState = STILL;
             player.velocityY = 0;
         }
     }
 
-    // Update horizontal movement
     if (IsKeyDown(KEY_RIGHT)) {
-        player.targetVelocityX = 1.5f;  // Move right
+        player.targetVelocityX = 1.5f;
         player.heading = RIGHT;
         if (player.motionState != AIRBORNE) {
-            player.motionState = WALK; // Set motion state to WALK
+            player.motionState = WALK;
         }
     } else if (IsKeyDown(KEY_LEFT)) {
-        player.targetVelocityX = -1.5f; // Move left
+        player.targetVelocityX = -1.5f;
         player.heading = LEFT;
         if (player.motionState != AIRBORNE) {
-            player.motionState = WALK; // Set motion state to WALK
+            player.motionState = WALK;
         }
     } else {
-        player.targetVelocityX = 0.0f;  // Stop moving
+        player.targetVelocityX = 0.0f;
         if (player.motionState != AIRBORNE) {
-            player.motionState = STILL; // Set motion state to STILL if no keys are pressed
+            player.motionState = STILL;
         }
     }
 
-    // Apply horizontal velocity with smooth acceleration/deceleration
     ApplyHorizontalVelocity(player);
-
-    // Update the player's position
     player.positionX += player.velocityX;
-
-    // Bound player position to screen
     BoundPlayerPosition(player);
-
-    // Update Camera movement (combined with player velocity)
     UpdateCamera(camera, player);
 }
-
 
 void UpdateAnimation(Player& player) {
     player.animationTimer--;
     if (player.animationTimer <= 0) {
-        player.animationTimer = 12; // Reset animation timer
+        player.animationTimer = 12;
         if (player.motionState == WALK) {
-            player.animationFrame = (player.animationFrame + 1) % 3; // Cycle through walking frames (1, 2, 3)
+            player.animationFrame = (player.animationFrame + 1) % 3;
         } else player.animationFrame = (player.animationFrame + 1) % 2;
     }
 
-    // Update sprite based on motion
     if (player.motionState == STILL) {
-        player.currentFrame = 0; // Idle frame
+        player.currentFrame = 0;
     } else if (player.motionState == WALK) {
-        player.currentFrame = 1 + player.animationFrame; // Walking frames (1, 2, 3)
+        player.currentFrame = 1 + player.animationFrame;
     } else if (player.motionState == AIRBORNE) {
-        player.currentFrame = 4; // Jumping frame
+        player.currentFrame = 4;
     }
 }
 
@@ -210,31 +152,28 @@ void DrawPlayer(Player& player, float scale) {
 }
 
 int main() {
-    // Initialize raylib
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Mario Sprite Demo");
 
-    // Load Mario sprite frames for left and right directions
     std::vector<std::string> spritePathsLeft = {
-        "../mario_imgs/mario_left1.png",  // Idle frame
-        "../mario_imgs/mario_left2.png",  // Walking frame 1
-        "../mario_imgs/mario_left3.png",  // Walking frame 2
-        "../mario_imgs/mario_left4.png",  // Walking frame 3
-        "../mario_imgs/mario_left_jump1.png" // Jumping frame
+        "../mario_imgs/mario_left1.png",
+        "../mario_imgs/mario_left2.png",
+        "../mario_imgs/mario_left3.png",
+        "../mario_imgs/mario_left4.png",
+        "../mario_imgs/mario_left_jump1.png"
     };
     std::vector<std::string> spritePathsRight = {
-        "../mario_imgs/mario_right1.png",  // Idle frame
-        "../mario_imgs/mario_right2.png",  // Walking frame 1
-        "../mario_imgs/mario_right3.png",  // Walking frame 2
-        "../mario_imgs/mario_right4.png",  // Walking frame 3
-        "../mario_imgs/mario_right_jump1.png" // Jumping frame
+        "../mario_imgs/mario_right1.png",
+        "../mario_imgs/mario_right2.png",
+        "../mario_imgs/mario_right3.png",
+        "../mario_imgs/mario_right4.png",
+        "../mario_imgs/mario_right_jump1.png"
     };
     LoadSpriteGroup(marioFramesLeft, spritePathsLeft);
     LoadSpriteGroup(marioFramesRight, spritePathsRight);
 
-    // Load map
-    Map map = LoadTiled("../tilesets/map1.json");
-
-    // Camera setup
+    //std::unique_ptr<tson::Map> map = loadTileMap("../Tiled/map1.json");
+    std::string mapFilePath = "../Tiled/map1.json";
+    TileMap2D tileMap(mapFilePath);
     Camera2D camera = { 0 };
     camera.offset = { SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f };
     Vector2 position = { 0.0f, 0.0f };
@@ -243,41 +182,44 @@ int main() {
 
     Player player = { 0.0f, FLOOR_HEIGHT, 0.0f, 0.0f, 0.0f, RIGHT, STILL, 0, 0, 12, 0, 16 };
     camera.target = { player.positionX, player.positionY };
-    SetTargetFPS(60); // Set 60 FPS
+
+    //Physics world setup (if required for collision)
+    b2Vec2 gravity(0.0f, -9.8f);  // Set gravity for the physics world
+    b2World physicsWorld(gravity);
+    tileMap.generatePhysicsObjects(physicsWorld, MAP_SCALE);
+
+    SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        // Handle player input and movement
-        UpdatePlayerAndCamera(player, camera, map);
-        
+        UpdatePlayerAndCamera(player, camera, tileMap);
         UpdateAnimation(player);
 
-        // Begin drawing
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        // Draw the map and player
         BeginMode2D(camera);
-            DrawTiled(map, 0, 0, WHITE);
+            //DrawTiled(*map, 0, 0, WHITE);
+        tileMap.draw(camera, MAP_SCALE);              // Draw the tile map
+        tileMap.drawGrid(camera, MAP_SCALE);          // Draw grid (optional)
+        tileMap.drawCollisionShapes(camera, MAP_SCALE); // Draw collision shapes (optional)
             DrawPlayer(player, 0.5f);
         EndMode2D();
 
-        // Debug info./
         DrawText(TextFormat("Position: %.0f, %.0f", player.positionX, player.positionY), 10, 10, 20, BLACK);
         DrawFPS(10, 50);
 
         EndDrawing();
     }
 
-    // Unload textures and map
     for (Texture2D texture : marioFramesLeft) {
         UnloadTexture(texture);
     }
     for (Texture2D texture : marioFramesRight) {
         UnloadTexture(texture);
     }
-    UnloadMap(map);
 
-    CloseWindow(); // Close window and OpenGL context
+    CloseWindow();
 
     return 0;
 }
+      
