@@ -28,6 +28,7 @@ int main() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Character Actor Test");
 
     std::string mapFilePath = "../Tiled/map1.json";
+    std::unique_ptr<tson::Map> loadTileMap(const std::string & mapFilePath);
     TileMap2D tileMap(mapFilePath);
 
     Camera2D camera = { 0 };
@@ -41,15 +42,16 @@ int main() {
 
     // Create and initialize the CharacterActor
     CharacterActor character(0.5f);
-    float initialX = 5.0f; // Initial horizontal position of the character
+    float initialX = 340.0f; // Initial horizontal position of the character
     float initialY = GROUND_HEIGHT; // Character starts at ground height
     character.setInitialPosition(physicsWorld, MAP_SCALE, initialX, initialY);
+
 
     // Input handler
     InputHandler inputHandler;
 
     SetTargetFPS(60);
-
+    bool first = true;
     while (!WindowShouldClose()) {
         // Update character based on input
         character.updateFromInput(inputHandler);
@@ -68,7 +70,8 @@ int main() {
         tileMap.draw(camera, MAP_SCALE);              // Draw the tile map
         tileMap.drawGrid(camera, MAP_SCALE);          // Draw grid (optional)
         tileMap.drawCollisionShapes(camera, MAP_SCALE); // Draw collision shapes (optional)
-        character.draw(1.0);                   // Draw the character
+        character.draw(0.5, first);  // Draw the character
+        first = false;
         EndMode2D();
 
         DrawText(TextFormat("Position: %.2f, %.2f", character.getPositionX(), character.getPositionY()), 10, 10, 20, BLACK);
@@ -76,8 +79,4 @@ int main() {
 
         EndDrawing();
     }
-
-    CloseWindow();
-
-    return 0;
 }

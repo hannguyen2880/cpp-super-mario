@@ -19,7 +19,7 @@ public:
     void createPhysicsBody(b2World& world, float worldScale, const b2Vec2& position, const b2Vec2& velocity) override;
     void updateFromInput(InputHandler& input);
     void updateAnimation();
-    void draw(float scale);
+    void draw(float scale, bool first);
 
     float getPositionX() const;
     float getPositionY() const;
@@ -38,6 +38,7 @@ private:
     float walkSpeed;
     float widthScale;
     float spriteWidth;
+    float spriteHeight;
     PhysicsObject groundSensor;
     int groundContactCount;
     PhysicsObject legsFrictionAdjuster;

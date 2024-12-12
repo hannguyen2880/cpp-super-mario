@@ -56,7 +56,7 @@ public:
 	 * @param worldScale the scale factor from world coordinates to display coordinates
 	 * NOTE: Exclude additional camera zoom, or your camera zoom effect may not work
 	 */
-	virtual void drawBoundingBox(const Color& color, float worldScale);
+	virtual void drawBoundingBox(const Color& color, float worldScale, const b2Vec2& position, bool first);
 
 	/** Returns this actor's bounding box in world coordinages (i.e., the smallest
 	 * rectangle that contains this actor, including all its sub-components).
@@ -64,7 +64,7 @@ public:
 	 * @param worldScale the scale factor from world coordinates to display coordinates
 	 * NOTE: Exclude additional camera zoom, or your camera zoom effect may not work
 	 */
-	virtual raylib::Rectangle getBoundingBox(float worldScale);
+	virtual raylib::Rectangle getBoundingBox(float worldScale, const b2Vec2& position);
 
 	/** Gets the actor's position in the world.
 	 */

@@ -5,6 +5,7 @@
 #include "raylib/Text.hpp"
 
 #include <cfloat>
+#include <iostream>
 
 static const b2Vec2 zeroVec(0.0f, 0.0f);
 
@@ -44,16 +45,20 @@ int Actor::getWalletValue() const {
 	return walletValue;
 }
 
-void Actor::drawBoundingBox(const Color& color, float worldScale) {
-	auto boundingBox = getBoundingBox(worldScale);
-
+void Actor::drawBoundingBox(const Color& color, float worldScale, const b2Vec2& position, bool first) {
+	auto boundingBox = getBoundingBox(worldScale, position);
+	if (first) { std::cout << "BoundingBox Position: (" << position.x << ", " << position.y << ") " << std::endl; }
 	float lineThickness = 2.0f * 0.5 / worldScale;
 	DrawRectangleLinesEx(boundingBox, lineThickness, color);
 }
 
-raylib::Rectangle Actor::getBoundingBox(float worldScale) {
-	const auto& position = getPosition();
-	return raylib::Rectangle(position.x, position.y);
+raylib::Rectangle Actor::getBoundingBox(float worldScale, const b2Vec2& position) {
+	/*float width = spriteWidth / worldScale;
+	float height = spriteHeight / worldScale;*/
+	float width = 8.0f / worldScale;
+	float height = 8.0f / worldScale;
+
+	return raylib::Rectangle(position.x, position.y, width, height);
 }
 
 const b2Vec2& Actor::getPosition() const {
