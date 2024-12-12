@@ -205,82 +205,99 @@ void TileMap2D::updateAnimations(float elapsedTime) {
 
 //we just have polyline(polygons) and rectangle shapes
 void TileMap2D::generatePhysicsObjects(b2World& physicsWorld, float worldScale) {
-	// Create vertices variable here to avoid repeated construction/destruction overhead (for every tile)
-	std::vector<b2Vec2> vertices;
 	const float defaultFriction = 1.0f;
 
+	// Get all layers from the tileMap
 	auto& layers = tileMap->getLayers();
-	auto tileSizeTson = tileMap->getTileSize();
-	b2Vec2 tileSize_2(tileSizeTson.x / (2.0f * worldScale), tileSizeTson.y / (2.0f * worldScale));
+
+	// Check if TerrainLayerIdx corresponds to a valid ObjectGroup layer
 	if (TerrainLayerIdx < layers.size()) {
 		auto& layer = layers[TerrainLayerIdx];
 
-		auto layerOffsetTson = layer.getOffset();
-		b2Vec2 layerOffset(layerOffsetTson.x / worldScale, layerOffsetTson.y / worldScale);
+		// Ensure the layer is of type ObjectGroup
+		if (layer.getType() != tson::LayerType::objectgroup) {
+			std::cout << "DEBUG: Selected layer is not an ObjectGroup. Layer type: " << (int)layer.getType() << std::endl;
+			return;
+		}
 
+		b2Vec2 layerOffset(layer.getOffset().x / worldScale, layer.getOffset().y / worldScale);
 
-		for (auto& [pos, tileObject] : layer.getTileObjects()) {
-			tson::Tile* tile = tileObject.getTile();
-			auto tilePos = tileObject.getPosition();
-			b2Vec2 tileOffset = b2Vec2(tilePos.x / worldScale, tilePos.y / worldScale) + layerOffset;
+		// Iterate over objects in the ObjectGroup layer
+		for (auto& object : layer.getObjects()) {
+			// Skip invisible objects
+			if (!object.isVisible()) {
+				continue;
+			}
 
-			auto& objectGroup = tile->getObjectgroup();
-			auto collisionShapes = objectGroup.getObjects();
+			auto objectType = object.getObjectType();
+			auto shapePos = object.getPosition();
+			b2Vec2 shapeOffset = b2Vec2((float)shapePos.x / worldScale, (float)shapePos.y / worldScale) + layerOffset;
 
-			for (auto& shape : collisionShapes) {
-				auto& shapePos = shape.getPosition();
-				b2Vec2 shapeOffset = b2Vec2((float)shapePos.x / worldScale,
-					(float)shapePos.y / worldScale) + tileOffset;
+			b2BodyDef bodyDef;
+			bodyDef.type = b2_staticBody;
+			bodyDef.fixedRotation = true;
+			bodyDef.position = shapeOffset; // Object position in world coordinates
+			b2Body* physicsBody = physicsWorld.CreateBody(&bodyDef);
 
-				b2BodyDef bodyDef;
-				bodyDef.type = b2_staticBody;
-				bodyDef.fixedRotation = true;
-				bodyDef.position = shapeOffset + tileSize_2; //note: center of the tile
-				b2Body* tileBody = physicsWorld.CreateBody(&bodyDef);
-				b2Fixture* tileFixture = NULL;
+			b2Fixture* fixture = nullptr;
+			std::vector<b2Vec2> vertices;
 
-				float tileFriction = defaultFriction;
-
-				switch (shape.getObjectType()) {
-				case tson::ObjectType::Polygon:
-				case tson::ObjectType::Polyline: // NOTE: Treating a polyline as a polygon for collision
-				{
+			switch (objectType) {
+			case tson::ObjectType::Rectangle:
+			{
+				auto rectSize = object.getSize();
+				b2PolygonShape shape;
+				shape.SetAsBox((float)rectSize.x / (2.0f * worldScale), (float)rectSize.y / (2.0f * worldScale));
+				fixture = physicsBody->CreateFixture(&shape, 0.0f);
+				break;
+			}
+			case tson::ObjectType::Polygon:
+			{
+				auto& polygon = object.getPolygons();
+				if (polygon.size() >= 3) {
 					vertices.clear();
-					auto& polygon = shape.getPolygons();
-					if (polygon.size() >= 3) {
-						for (auto& currPoint : polygon) {
-							b2Vec2 currPos = b2Vec2((float)currPoint.x / worldScale,
-								(float)currPoint.y / worldScale) - tileSize_2;
-							vertices.push_back(currPos);
-						}
-						b2ChainShape shape;
-						shape.CreateLoop(vertices.data(), (int32)vertices.size());
-						tileFixture = tileBody->CreateFixture(&shape, 0.0f);
+					for (auto& currPoint : polygon) {
+						vertices.emplace_back((float)currPoint.x / worldScale, (float)currPoint.y / worldScale);
 					}
-					break;
-				}
-				case tson::ObjectType::Rectangle:
-				{
-					auto& rectSize = shape.getSize();
-					raylib::Rectangle rect((float)shapeOffset.x, (float)shapeOffset.y,
-						(float)rectSize.x / worldScale, (float)rectSize.y / worldScale);
 					b2PolygonShape shape;
-					shape.SetAsBox((float)rectSize.x / (2.0f * worldScale),
-						(float)rectSize.y / (2.0f * worldScale));
-					tileFixture = tileBody->CreateFixture(&shape, 0.0f);
-					break;
+					shape.Set(vertices.data(), (int32)vertices.size());
+					fixture = physicsBody->CreateFixture(&shape, 0.0f);
 				}
-				default:
-					TraceLog(LOG_ERROR, "Error: Unrecognized collision shape object type: %u", shape.getObjectType());
-				}
+				break;
+			}
+			case tson::ObjectType::Polyline:
+			{
+				auto& polyline = object.getPolygons();
+				if (polyline.size() >= 2) {
+					vertices.clear();
+					for (auto& currPoint : polyline) {
+						vertices.emplace_back((float)currPoint.x / worldScale, (float)currPoint.y / worldScale);
+					}
+					b2Vec2 prevVertex = vertices.front() - b2Vec2(1.0f / worldScale, 0.0f); // Example offset for ghost vertex
+					b2Vec2 nextVertex = vertices.back() + b2Vec2(1.0f / worldScale, 0.0f);  // Example offset for ghost vertex
 
-				if (tileFixture) {
-					tileFixture->SetFriction(tileFriction);
+					b2ChainShape shape;
+					shape.CreateChain(vertices.data(), (int32)vertices.size(), prevVertex, nextVertex);
+					fixture = physicsBody->CreateFixture(&shape, 0.0f);
 				}
+				break;
+			}
+			default:
+				TraceLog(LOG_WARNING, "Unrecognized object type: %u", objectType);
+				break;
+			}
+
+			// Set fixture properties if it was created
+			if (fixture) {
+				fixture->SetFriction(defaultFriction);
 			}
 		}
 	}
+	else {
+		std::cout << "DEBUG: TerrainLayerIdx is out of bounds or invalid." << std::endl;
+	}
 }
+
 
 Vector2 TileMap2D::getMapSize() const {
 	auto size = tileMap->getSize();

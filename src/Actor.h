@@ -5,7 +5,7 @@
 
 #include <climits>
 
-class Collectable;
+//class Collectable;
 
 // Used to indicate that an actor has no wallet (and therefore cannot collect/earn anything)
 #define ACTOR_NO_WALLET INT_MIN
@@ -41,7 +41,8 @@ public:
 	 *
 	 * @return bool true if this actor collected the item, false otherwise
 	 */
-	virtual bool collect(Collectable* collectable);
+	
+	//     virtual bool collect(Collectable* collectable);
 
 	/** Gets the value of the actor's wallet (i.e., the value of all collected items).
 	 */

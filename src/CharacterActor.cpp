@@ -3,6 +3,8 @@
 #include <cmath>
 #include <vector>
 #include <string>
+#include <iostream>
+
 
 #define MOVING_FRICTION 0.2f
 #define STANDING_FRICTION 1.0f
@@ -17,6 +19,10 @@ float CharacterActor::getPositionY() const {
 
 b2Vec2 CharacterActor::getPosition() const {
     return physicsBody->GetPosition();
+}
+
+void CharacterActor::setFriction(float friction) {
+    this->friction = friction;
 }
 
 CharacterActor::CharacterActor(float widthScale) :
@@ -67,16 +73,76 @@ void CharacterActor::init(float widthScale) {
 
 void CharacterActor::createPhysicsBody(b2World& world, float worldScale, const b2Vec2& position, const b2Vec2& velocity) {
     raylib::Rectangle boundingBox = getBoundingBox(worldScale);
-
+    std::cout << "Bounding box: " << boundingBox.x << ", " << boundingBox.y << ", " << boundingBox.width << ", " << boundingBox.height << std::endl;
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.fixedRotation = true;
     bodyDef.position = position;
     bodyDef.linearVelocity = velocity;
 
-    float halfWidth = boundingBox.width * widthScale / 2.0f;
-    float halfHeight = boundingBox.height / 2.0f;
+    physicsBody = world.CreateBody(&bodyDef);
 
+    // Torso shape setup
+    float halfWidth = boundingBox.width * widthScale / 2.0f;
+    float torsoHeight = boundingBox.height - halfWidth;
+    float torsoHalfHeight = torsoHeight / 2.0f;
+    b2Vec2 boxCentre(0.0f, -boundingBox.height + torsoHalfHeight);
+    std::cout << "Half width: " << halfWidth << ", torso half height: " << torsoHalfHeight << std::endl;
+    b2PolygonShape torsoShape;
+    if (halfWidth > 0.0f && torsoHalfHeight > 0.0f) {  // Validate dimensions
+        torsoShape.SetAsBox(halfWidth, torsoHalfHeight, boxCentre, 0.0f);
+
+        b2FixtureDef torsoDef;
+        torsoDef.shape = &torsoShape;
+        torsoDef.density = 1.0f;
+        torsoPhysicsObject.attachToFixture(torsoDef);
+        physicsBody->CreateFixture(&torsoDef);
+    }
+    else {
+        TraceLog(LOG_ERROR, "Invalid torso dimensions: halfWidth=%.2f, torsoHalfHeight=%.2f", halfWidth, torsoHalfHeight);
+    }
+
+    // Legs shape setup (circle to prevent vertex catching)
+    b2CircleShape legsShape;
+    legsShape.m_radius = halfWidth + 1.0f / worldScale;
+    legsShape.m_p.y = -halfWidth;
+
+    if (legsShape.m_radius > 0.0f) {  // Validate radius
+        b2FixtureDef legsDef;
+        legsDef.shape = &legsShape;
+        legsDef.density = 1.0f;
+        legsFrictionAdjuster.attachToFixture(legsDef);
+        physicsBody->CreateFixture(&legsDef);
+    }
+    else {
+        TraceLog(LOG_ERROR, "Invalid legs radius: %.2f", legsShape.m_radius);
+    }
+
+    // Ground sensor contact handler
+    groundSensor.setContactHandler([this](PhysicsObject* thisObject, PhysicsObject* otherObject, b2Contact* contact, bool contactBegin) {
+        groundContactCount += contactBegin ? 1 : -1;
+        isOnGround = (groundContactCount != 0);
+        std::cout << "Ground contact count: " << groundContactCount << ", Is on ground: " << isOnGround << std::endl;
+        });
+
+    // Ground sensor for detecting if the character is on the ground
+    float footSensorOffset = 0.5f / worldScale;
+    b2CircleShape footSensor;
+    footSensor.m_radius = halfWidth;
+    footSensor.m_p.y = legsShape.m_p.y + footSensorOffset;
+
+    if (footSensor.m_radius > 0.0f) {  // Validate sensor radius
+        b2FixtureDef footSensorDef;
+        footSensorDef.shape = &footSensor;
+        footSensorDef.isSensor = true;
+        groundSensor.attachToFixture(footSensorDef);
+        physicsBody->CreateFixture(&footSensorDef);
+    }
+    else {
+        TraceLog(LOG_ERROR, "Invalid foot sensor radius: %.2f", footSensor.m_radius);
+    }
+
+    // Pre-solve callback for friction adjustments
     legsFrictionAdjuster.setPreSolveFunc([this](PhysicsObject* thisObject, PhysicsObject* otherObject, b2Contact* contact, const b2Manifold* oldManifold) {
         float otherFriction = friction;
         thisObject->getOurFixture(contact)->SetFriction(friction);
@@ -86,43 +152,13 @@ void CharacterActor::createPhysicsBody(b2World& world, float worldScale, const b
         contact->SetFriction(adjustedFriction);
         });
 
-    physicsBody = world.CreateBody(&bodyDef);
+    
+}
 
-    float torsoHeight = boundingBox.height - halfWidth;
-    float torsoHalfHeight = torsoHeight / 2.0f;
-
-    b2PolygonShape torsoShape;
-    b2Vec2 boxCentre(0.0f, -boundingBox.height + torsoHalfHeight);
-    torsoShape.SetAsBox(halfWidth, torsoHalfHeight, boxCentre, 0.0f);
-    b2FixtureDef torsoDef;
-    torsoDef.shape = &torsoShape;
-    torsoDef.density = 1.0f;
-    torsoPhysicsObject.attachToFixture(torsoDef);
-    physicsBody->CreateFixture(&torsoDef);
-
-    b2CircleShape legsShape;
-    legsShape.m_radius = halfWidth + 1.0f / worldScale;
-    legsShape.m_p.y = -halfWidth;
-    b2FixtureDef legsDef;
-    legsDef.shape = &legsShape;
-    legsDef.density = 1.0f;
-    legsFrictionAdjuster.attachToFixture(legsDef);
-    physicsBody->CreateFixture(&legsDef);
-
-    groundSensor.setContactHandler([this](PhysicsObject* thisObject, PhysicsObject* otherObject, b2Contact* contact, bool contactBegin) {
-        groundContactCount += contactBegin ? 1 : -1;
-        isOnGround = (groundContactCount != 0);
-        });
-
-    float footSensorOffset = 3.0f / worldScale;
-    b2CircleShape footSensor;
-    footSensor.m_radius = halfWidth;
-    footSensor.m_p.y = legsShape.m_p.y + footSensorOffset;
-    b2FixtureDef footSensorDef;
-    footSensorDef.shape = &footSensor;
-    footSensorDef.isSensor = true;
-    groundSensor.attachToFixture(footSensorDef);
-    physicsBody->CreateFixture(&footSensorDef);
+void CharacterActor::setInitialPosition(b2World& world, float worldScale, float x, float y) {
+    b2Vec2 initialPosition(x / worldScale, y / worldScale);
+    b2Vec2 initialVelocity(0.0f, 0.0f);
+    createPhysicsBody(world, worldScale, initialPosition, initialVelocity);
 }
 
 void CharacterActor::updateFromInput(InputHandler& input) {
@@ -174,10 +210,16 @@ void CharacterActor::updateAnimation() {
     }
 }
 
-void CharacterActor::loadSpriteGroup(std::vector<Texture2D>& spriteGroup, const std::vector<std::string>& spritePaths) {
+void CharacterActor::loadSpriteGroup(std::vector<Texture>& spriteGroup, const std::vector<std::string>& spritePaths) {
     for (const auto& path : spritePaths) {
-        Texture2D sprite = LoadTexture(path.c_str());
+        Texture sprite = LoadTexture(path.c_str());
         spriteGroup.push_back(sprite);
+    }
+
+    // Set sprite width and height based on the first loaded sprite
+    if (spriteGroup.size() == 1) {
+        spriteWidth = static_cast<float>(sprite.width);   // Width of the sprite
+        spriteHeight = static_cast<float>(sprite.height); // Height of the sprite
     }
 }
 

@@ -24,6 +24,7 @@ public:
     float getPositionX() const;
     float getPositionY() const;
     b2Vec2 getPosition() const;
+    void setInitialPosition(b2World& world, float worldScale, float x, float y);
 
 protected:
     void setFriction(float friction);
@@ -31,7 +32,7 @@ protected:
 private:
     void init(float widthScale);
     void loadSpriteGroup(std::vector<Texture2D>& spriteGroup, const std::vector<std::string>& spritePaths);
-
+    
     bool facingRight;
     float jumpSpeed;
     float walkSpeed;
