@@ -5,4 +5,6 @@ class KinematicEntity : public Entity {
 public:
     KinematicEntity(b2World* world, Vector2 position, Texture2D texture);
     virtual ~KinematicEntity();
+    virtual void Update() = 0;
+    virtual void Draw() = 0;
 };

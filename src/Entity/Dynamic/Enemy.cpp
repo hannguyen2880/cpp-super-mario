@@ -11,3 +11,7 @@ Enemy::~Enemy() {
 void Enemy::Update() {
     // Implement enemy-specific update logic here
 }
+
+void Enemy::Draw() {
+    //DynamicEntity::Draw();
+}

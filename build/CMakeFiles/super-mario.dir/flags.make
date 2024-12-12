@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = -DRAYGUI_IMPLEMENTATION
 
-CXX_INCLUDES = -I/Users/hannguyen/Desktop/data/cpp-super-mario/include -I/opt/homebrew/Cellar/box2d/2.4.2/include -I/opt/homebrew/Cellar/tinyxml2/10.0.0/include -I/opt/homebrew/Cellar/tmx/1.10.0/include -I/Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx/src/../include -isystem /opt/homebrew/include -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/libxml2
+CXX_INCLUDES = -I/Users/hannguyen/Desktop/data/cpp-super-mario/include -I/opt/homebrew/Cellar/box2d/2.4.2/include -I/Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-cpp/include -I/Users/hannguyen/Desktop/data/cpp-super-mario/external/tileson/include -I/Users/hannguyen/Desktop/data/cpp-super-mario/external/pocketlzma/src -I/Users/hannguyen/Desktop/data/cpp-super-mario/external/pocketlzma -isystem /opt/homebrew/include
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.5
 

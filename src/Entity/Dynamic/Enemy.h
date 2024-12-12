@@ -6,4 +6,5 @@ public:
     Enemy(b2World* world, Vector2 position, Texture2D texture);
     virtual ~Enemy();
     void Update() override;
+    void Draw() override;
 };

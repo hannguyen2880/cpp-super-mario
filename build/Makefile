@@ -129,408 +129,125 @@ super-mario/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/build
 .PHONY : super-mario/fast
 
-#=============================================================================
-# Target rules for targets named Experimental
-
-# Build rule for target.
-Experimental: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Experimental
-.PHONY : Experimental
-
-# fast build rule for target.
-Experimental/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/Experimental.dir/build.make external/raylib-tmx/CMakeFiles/Experimental.dir/build
-.PHONY : Experimental/fast
-
-#=============================================================================
-# Target rules for targets named Nightly
-
-# Build rule for target.
-Nightly: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Nightly
-.PHONY : Nightly
-
-# fast build rule for target.
-Nightly/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/Nightly.dir/build.make external/raylib-tmx/CMakeFiles/Nightly.dir/build
-.PHONY : Nightly/fast
-
-#=============================================================================
-# Target rules for targets named Continuous
-
-# Build rule for target.
-Continuous: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Continuous
-.PHONY : Continuous
-
-# fast build rule for target.
-Continuous/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/Continuous.dir/build.make external/raylib-tmx/CMakeFiles/Continuous.dir/build
-.PHONY : Continuous/fast
-
-#=============================================================================
-# Target rules for targets named NightlyMemoryCheck
-
-# Build rule for target.
-NightlyMemoryCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemoryCheck
-.PHONY : NightlyMemoryCheck
-
-# fast build rule for target.
-NightlyMemoryCheck/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyMemoryCheck.dir/build.make external/raylib-tmx/CMakeFiles/NightlyMemoryCheck.dir/build
-.PHONY : NightlyMemoryCheck/fast
-
-#=============================================================================
-# Target rules for targets named NightlyStart
-
-# Build rule for target.
-NightlyStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyStart
-.PHONY : NightlyStart
-
-# fast build rule for target.
-NightlyStart/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyStart.dir/build.make external/raylib-tmx/CMakeFiles/NightlyStart.dir/build
-.PHONY : NightlyStart/fast
-
-#=============================================================================
-# Target rules for targets named NightlyUpdate
-
-# Build rule for target.
-NightlyUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyUpdate
-.PHONY : NightlyUpdate
-
-# fast build rule for target.
-NightlyUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyUpdate.dir/build.make external/raylib-tmx/CMakeFiles/NightlyUpdate.dir/build
-.PHONY : NightlyUpdate/fast
-
-#=============================================================================
-# Target rules for targets named NightlyConfigure
-
-# Build rule for target.
-NightlyConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyConfigure
-.PHONY : NightlyConfigure
-
-# fast build rule for target.
-NightlyConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyConfigure.dir/build.make external/raylib-tmx/CMakeFiles/NightlyConfigure.dir/build
-.PHONY : NightlyConfigure/fast
-
-#=============================================================================
-# Target rules for targets named NightlyBuild
-
-# Build rule for target.
-NightlyBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyBuild
-.PHONY : NightlyBuild
-
-# fast build rule for target.
-NightlyBuild/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyBuild.dir/build.make external/raylib-tmx/CMakeFiles/NightlyBuild.dir/build
-.PHONY : NightlyBuild/fast
-
-#=============================================================================
-# Target rules for targets named NightlyTest
-
-# Build rule for target.
-NightlyTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyTest
-.PHONY : NightlyTest
-
-# fast build rule for target.
-NightlyTest/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyTest.dir/build.make external/raylib-tmx/CMakeFiles/NightlyTest.dir/build
-.PHONY : NightlyTest/fast
-
-#=============================================================================
-# Target rules for targets named NightlyCoverage
-
-# Build rule for target.
-NightlyCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyCoverage
-.PHONY : NightlyCoverage
-
-# fast build rule for target.
-NightlyCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyCoverage.dir/build.make external/raylib-tmx/CMakeFiles/NightlyCoverage.dir/build
-.PHONY : NightlyCoverage/fast
-
-#=============================================================================
-# Target rules for targets named NightlyMemCheck
-
-# Build rule for target.
-NightlyMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemCheck
-.PHONY : NightlyMemCheck
-
-# fast build rule for target.
-NightlyMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlyMemCheck.dir/build.make external/raylib-tmx/CMakeFiles/NightlyMemCheck.dir/build
-.PHONY : NightlyMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named NightlySubmit
-
-# Build rule for target.
-NightlySubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlySubmit
-.PHONY : NightlySubmit
-
-# fast build rule for target.
-NightlySubmit/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/NightlySubmit.dir/build.make external/raylib-tmx/CMakeFiles/NightlySubmit.dir/build
-.PHONY : NightlySubmit/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalStart
-
-# Build rule for target.
-ExperimentalStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalStart
-.PHONY : ExperimentalStart
-
-# fast build rule for target.
-ExperimentalStart/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalStart.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalStart.dir/build
-.PHONY : ExperimentalStart/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalUpdate
-
-# Build rule for target.
-ExperimentalUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalUpdate
-.PHONY : ExperimentalUpdate
-
-# fast build rule for target.
-ExperimentalUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalUpdate.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalUpdate.dir/build
-.PHONY : ExperimentalUpdate/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalConfigure
-
-# Build rule for target.
-ExperimentalConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalConfigure
-.PHONY : ExperimentalConfigure
-
-# fast build rule for target.
-ExperimentalConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalConfigure.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalConfigure.dir/build
-.PHONY : ExperimentalConfigure/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalBuild
-
-# Build rule for target.
-ExperimentalBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalBuild
-.PHONY : ExperimentalBuild
-
-# fast build rule for target.
-ExperimentalBuild/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/build
-.PHONY : ExperimentalBuild/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalTest
-
-# Build rule for target.
-ExperimentalTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalTest
-.PHONY : ExperimentalTest
-
-# fast build rule for target.
-ExperimentalTest/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalTest.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalTest.dir/build
-.PHONY : ExperimentalTest/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalCoverage
-
-# Build rule for target.
-ExperimentalCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalCoverage
-.PHONY : ExperimentalCoverage
-
-# fast build rule for target.
-ExperimentalCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalCoverage.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalCoverage.dir/build
-.PHONY : ExperimentalCoverage/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalMemCheck
-
-# Build rule for target.
-ExperimentalMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalMemCheck
-.PHONY : ExperimentalMemCheck
-
-# fast build rule for target.
-ExperimentalMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalMemCheck.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalMemCheck.dir/build
-.PHONY : ExperimentalMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalSubmit
-
-# Build rule for target.
-ExperimentalSubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalSubmit
-.PHONY : ExperimentalSubmit
-
-# fast build rule for target.
-ExperimentalSubmit/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ExperimentalSubmit.dir/build.make external/raylib-tmx/CMakeFiles/ExperimentalSubmit.dir/build
-.PHONY : ExperimentalSubmit/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousStart
-
-# Build rule for target.
-ContinuousStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousStart
-.PHONY : ContinuousStart
-
-# fast build rule for target.
-ContinuousStart/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousStart.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousStart.dir/build
-.PHONY : ContinuousStart/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousUpdate
-
-# Build rule for target.
-ContinuousUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousUpdate
-.PHONY : ContinuousUpdate
-
-# fast build rule for target.
-ContinuousUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousUpdate.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousUpdate.dir/build
-.PHONY : ContinuousUpdate/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousConfigure
-
-# Build rule for target.
-ContinuousConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousConfigure
-.PHONY : ContinuousConfigure
-
-# fast build rule for target.
-ContinuousConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousConfigure.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousConfigure.dir/build
-.PHONY : ContinuousConfigure/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousBuild
-
-# Build rule for target.
-ContinuousBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousBuild
-.PHONY : ContinuousBuild
-
-# fast build rule for target.
-ContinuousBuild/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousBuild.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousBuild.dir/build
-.PHONY : ContinuousBuild/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousTest
-
-# Build rule for target.
-ContinuousTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousTest
-.PHONY : ContinuousTest
-
-# fast build rule for target.
-ContinuousTest/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousTest.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousTest.dir/build
-.PHONY : ContinuousTest/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousCoverage
-
-# Build rule for target.
-ContinuousCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousCoverage
-.PHONY : ContinuousCoverage
-
-# fast build rule for target.
-ContinuousCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousCoverage.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousCoverage.dir/build
-.PHONY : ContinuousCoverage/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousMemCheck
-
-# Build rule for target.
-ContinuousMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousMemCheck
-.PHONY : ContinuousMemCheck
-
-# fast build rule for target.
-ContinuousMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousMemCheck.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousMemCheck.dir/build
-.PHONY : ContinuousMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named ContinuousSubmit
-
-# Build rule for target.
-ContinuousSubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousSubmit
-.PHONY : ContinuousSubmit
-
-# fast build rule for target.
-ContinuousSubmit/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/CMakeFiles/ContinuousSubmit.dir/build.make external/raylib-tmx/CMakeFiles/ContinuousSubmit.dir/build
-.PHONY : ContinuousSubmit/fast
-
-#=============================================================================
-# Target rules for targets named raylib-tmx
-
-# Build rule for target.
-raylib-tmx: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib-tmx
-.PHONY : raylib-tmx
-
-# fast build rule for target.
-raylib-tmx/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/src/CMakeFiles/raylib-tmx.dir/build.make external/raylib-tmx/src/CMakeFiles/raylib-tmx.dir/build
-.PHONY : raylib-tmx/fast
-
-#=============================================================================
-# Target rules for targets named raylib-tmx-example
-
-# Build rule for target.
-raylib-tmx-example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib-tmx-example
-.PHONY : raylib-tmx-example
-
-# fast build rule for target.
-raylib-tmx-example/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/build.make external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/build
-.PHONY : raylib-tmx-example/fast
-
-#=============================================================================
-# Target rules for targets named raylib-tmx-test
-
-# Build rule for target.
-raylib-tmx-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib-tmx-test
-.PHONY : raylib-tmx-test
-
-# fast build rule for target.
-raylib-tmx-test/fast:
-	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build
-.PHONY : raylib-tmx-test/fast
+src/CommandListener/CommandListener.o: src/CommandListener/CommandListener.cpp.o
+.PHONY : src/CommandListener/CommandListener.o
+
+# target to build an object file
+src/CommandListener/CommandListener.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/CommandListener/CommandListener.cpp.o
+.PHONY : src/CommandListener/CommandListener.cpp.o
+
+src/CommandListener/CommandListener.i: src/CommandListener/CommandListener.cpp.i
+.PHONY : src/CommandListener/CommandListener.i
+
+# target to preprocess a source file
+src/CommandListener/CommandListener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/CommandListener/CommandListener.cpp.i
+.PHONY : src/CommandListener/CommandListener.cpp.i
+
+src/CommandListener/CommandListener.s: src/CommandListener/CommandListener.cpp.s
+.PHONY : src/CommandListener/CommandListener.s
+
+# target to generate assembly for a file
+src/CommandListener/CommandListener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/CommandListener/CommandListener.cpp.s
+.PHONY : src/CommandListener/CommandListener.cpp.s
+
+src/InputHandler.o: src/InputHandler.cpp.o
+.PHONY : src/InputHandler.o
+
+# target to build an object file
+src/InputHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/InputHandler.cpp.o
+.PHONY : src/InputHandler.cpp.o
+
+src/InputHandler.i: src/InputHandler.cpp.i
+.PHONY : src/InputHandler.i
+
+# target to preprocess a source file
+src/InputHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/InputHandler.cpp.i
+.PHONY : src/InputHandler.cpp.i
+
+src/InputHandler.s: src/InputHandler.cpp.s
+.PHONY : src/InputHandler.s
+
+# target to generate assembly for a file
+src/InputHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/InputHandler.cpp.s
+.PHONY : src/InputHandler.cpp.s
+
+src/actor/Actor.o: src/actor/Actor.cpp.o
+.PHONY : src/actor/Actor.o
+
+# target to build an object file
+src/actor/Actor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/Actor.cpp.o
+.PHONY : src/actor/Actor.cpp.o
+
+src/actor/Actor.i: src/actor/Actor.cpp.i
+.PHONY : src/actor/Actor.i
+
+# target to preprocess a source file
+src/actor/Actor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/Actor.cpp.i
+.PHONY : src/actor/Actor.cpp.i
+
+src/actor/Actor.s: src/actor/Actor.cpp.s
+.PHONY : src/actor/Actor.s
+
+# target to generate assembly for a file
+src/actor/Actor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/Actor.cpp.s
+.PHONY : src/actor/Actor.cpp.s
+
+src/actor/CharacterActor.o: src/actor/CharacterActor.cpp.o
+.PHONY : src/actor/CharacterActor.o
+
+# target to build an object file
+src/actor/CharacterActor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/CharacterActor.cpp.o
+.PHONY : src/actor/CharacterActor.cpp.o
+
+src/actor/CharacterActor.i: src/actor/CharacterActor.cpp.i
+.PHONY : src/actor/CharacterActor.i
+
+# target to preprocess a source file
+src/actor/CharacterActor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/CharacterActor.cpp.i
+.PHONY : src/actor/CharacterActor.cpp.i
+
+src/actor/CharacterActor.s: src/actor/CharacterActor.cpp.s
+.PHONY : src/actor/CharacterActor.s
+
+# target to generate assembly for a file
+src/actor/CharacterActor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/CharacterActor.cpp.s
+.PHONY : src/actor/CharacterActor.cpp.s
+
+src/actor/MarioCharacter.o: src/actor/MarioCharacter.cpp.o
+.PHONY : src/actor/MarioCharacter.o
+
+# target to build an object file
+src/actor/MarioCharacter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/MarioCharacter.cpp.o
+.PHONY : src/actor/MarioCharacter.cpp.o
+
+src/actor/MarioCharacter.i: src/actor/MarioCharacter.cpp.i
+.PHONY : src/actor/MarioCharacter.i
+
+# target to preprocess a source file
+src/actor/MarioCharacter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/MarioCharacter.cpp.i
+.PHONY : src/actor/MarioCharacter.cpp.i
+
+src/actor/MarioCharacter.s: src/actor/MarioCharacter.cpp.s
+.PHONY : src/actor/MarioCharacter.s
+
+# target to generate assembly for a file
+src/actor/MarioCharacter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/actor/MarioCharacter.cpp.s
+.PHONY : src/actor/MarioCharacter.cpp.s
 
 src/audio/AudioManager.o: src/audio/AudioManager.cpp.o
 .PHONY : src/audio/AudioManager.o
@@ -556,6 +273,78 @@ src/audio/AudioManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s
 .PHONY : src/audio/AudioManager.cpp.s
 
+src/camera/TrackingCamera2D.o: src/camera/TrackingCamera2D.cpp.o
+.PHONY : src/camera/TrackingCamera2D.o
+
+# target to build an object file
+src/camera/TrackingCamera2D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/camera/TrackingCamera2D.cpp.o
+.PHONY : src/camera/TrackingCamera2D.cpp.o
+
+src/camera/TrackingCamera2D.i: src/camera/TrackingCamera2D.cpp.i
+.PHONY : src/camera/TrackingCamera2D.i
+
+# target to preprocess a source file
+src/camera/TrackingCamera2D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/camera/TrackingCamera2D.cpp.i
+.PHONY : src/camera/TrackingCamera2D.cpp.i
+
+src/camera/TrackingCamera2D.s: src/camera/TrackingCamera2D.cpp.s
+.PHONY : src/camera/TrackingCamera2D.s
+
+# target to generate assembly for a file
+src/camera/TrackingCamera2D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/camera/TrackingCamera2D.cpp.s
+.PHONY : src/camera/TrackingCamera2D.cpp.s
+
+src/entity/Dynamic/Enemy.o: src/entity/Dynamic/Enemy.cpp.o
+.PHONY : src/entity/Dynamic/Enemy.o
+
+# target to build an object file
+src/entity/Dynamic/Enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Enemy.cpp.o
+.PHONY : src/entity/Dynamic/Enemy.cpp.o
+
+src/entity/Dynamic/Enemy.i: src/entity/Dynamic/Enemy.cpp.i
+.PHONY : src/entity/Dynamic/Enemy.i
+
+# target to preprocess a source file
+src/entity/Dynamic/Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Enemy.cpp.i
+.PHONY : src/entity/Dynamic/Enemy.cpp.i
+
+src/entity/Dynamic/Enemy.s: src/entity/Dynamic/Enemy.cpp.s
+.PHONY : src/entity/Dynamic/Enemy.s
+
+# target to generate assembly for a file
+src/entity/Dynamic/Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Enemy.cpp.s
+.PHONY : src/entity/Dynamic/Enemy.cpp.s
+
+src/entity/Dynamic/Player.o: src/entity/Dynamic/Player.cpp.o
+.PHONY : src/entity/Dynamic/Player.o
+
+# target to build an object file
+src/entity/Dynamic/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Player.cpp.o
+.PHONY : src/entity/Dynamic/Player.cpp.o
+
+src/entity/Dynamic/Player.i: src/entity/Dynamic/Player.cpp.i
+.PHONY : src/entity/Dynamic/Player.i
+
+# target to preprocess a source file
+src/entity/Dynamic/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Player.cpp.i
+.PHONY : src/entity/Dynamic/Player.cpp.i
+
+src/entity/Dynamic/Player.s: src/entity/Dynamic/Player.cpp.s
+.PHONY : src/entity/Dynamic/Player.s
+
+# target to generate assembly for a file
+src/entity/Dynamic/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Player.cpp.s
+.PHONY : src/entity/Dynamic/Player.cpp.s
+
 src/entity/DynamicEntity.o: src/entity/DynamicEntity.cpp.o
 .PHONY : src/entity/DynamicEntity.o
 
@@ -579,30 +368,6 @@ src/entity/DynamicEntity.s: src/entity/DynamicEntity.cpp.s
 src/entity/DynamicEntity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.s
 .PHONY : src/entity/DynamicEntity.cpp.s
-
-src/entity/Enemy/Enemy.o: src/entity/Enemy/Enemy.cpp.o
-.PHONY : src/entity/Enemy/Enemy.o
-
-# target to build an object file
-src/entity/Enemy/Enemy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o
-.PHONY : src/entity/Enemy/Enemy.cpp.o
-
-src/entity/Enemy/Enemy.i: src/entity/Enemy/Enemy.cpp.i
-.PHONY : src/entity/Enemy/Enemy.i
-
-# target to preprocess a source file
-src/entity/Enemy/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.i
-.PHONY : src/entity/Enemy/Enemy.cpp.i
-
-src/entity/Enemy/Enemy.s: src/entity/Enemy/Enemy.cpp.s
-.PHONY : src/entity/Enemy/Enemy.s
-
-# target to generate assembly for a file
-src/entity/Enemy/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.s
-.PHONY : src/entity/Enemy/Enemy.cpp.s
 
 src/entity/KinematicEntity.o: src/entity/KinematicEntity.cpp.o
 .PHONY : src/entity/KinematicEntity.o
@@ -699,6 +464,126 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/map/TileMap2D.o: src/map/TileMap2D.cpp.o
+.PHONY : src/map/TileMap2D.o
+
+# target to build an object file
+src/map/TileMap2D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/TileMap2D.cpp.o
+.PHONY : src/map/TileMap2D.cpp.o
+
+src/map/TileMap2D.i: src/map/TileMap2D.cpp.i
+.PHONY : src/map/TileMap2D.i
+
+# target to preprocess a source file
+src/map/TileMap2D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/TileMap2D.cpp.i
+.PHONY : src/map/TileMap2D.cpp.i
+
+src/map/TileMap2D.s: src/map/TileMap2D.cpp.s
+.PHONY : src/map/TileMap2D.s
+
+# target to generate assembly for a file
+src/map/TileMap2D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/TileMap2D.cpp.s
+.PHONY : src/map/TileMap2D.cpp.s
+
+src/map/TileMap2DLoader.o: src/map/TileMap2DLoader.cpp.o
+.PHONY : src/map/TileMap2DLoader.o
+
+# target to build an object file
+src/map/TileMap2DLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/TileMap2DLoader.cpp.o
+.PHONY : src/map/TileMap2DLoader.cpp.o
+
+src/map/TileMap2DLoader.i: src/map/TileMap2DLoader.cpp.i
+.PHONY : src/map/TileMap2DLoader.i
+
+# target to preprocess a source file
+src/map/TileMap2DLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/TileMap2DLoader.cpp.i
+.PHONY : src/map/TileMap2DLoader.cpp.i
+
+src/map/TileMap2DLoader.s: src/map/TileMap2DLoader.cpp.s
+.PHONY : src/map/TileMap2DLoader.s
+
+# target to generate assembly for a file
+src/map/TileMap2DLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/TileMap2DLoader.cpp.s
+.PHONY : src/map/TileMap2DLoader.cpp.s
+
+src/objects/PhysicsObject.o: src/objects/PhysicsObject.cpp.o
+.PHONY : src/objects/PhysicsObject.o
+
+# target to build an object file
+src/objects/PhysicsObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/objects/PhysicsObject.cpp.o
+.PHONY : src/objects/PhysicsObject.cpp.o
+
+src/objects/PhysicsObject.i: src/objects/PhysicsObject.cpp.i
+.PHONY : src/objects/PhysicsObject.i
+
+# target to preprocess a source file
+src/objects/PhysicsObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/objects/PhysicsObject.cpp.i
+.PHONY : src/objects/PhysicsObject.cpp.i
+
+src/objects/PhysicsObject.s: src/objects/PhysicsObject.cpp.s
+.PHONY : src/objects/PhysicsObject.s
+
+# target to generate assembly for a file
+src/objects/PhysicsObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/objects/PhysicsObject.cpp.s
+.PHONY : src/objects/PhysicsObject.cpp.s
+
+src/physics/DrawPhysics.o: src/physics/DrawPhysics.cpp.o
+.PHONY : src/physics/DrawPhysics.o
+
+# target to build an object file
+src/physics/DrawPhysics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/DrawPhysics.cpp.o
+.PHONY : src/physics/DrawPhysics.cpp.o
+
+src/physics/DrawPhysics.i: src/physics/DrawPhysics.cpp.i
+.PHONY : src/physics/DrawPhysics.i
+
+# target to preprocess a source file
+src/physics/DrawPhysics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/DrawPhysics.cpp.i
+.PHONY : src/physics/DrawPhysics.cpp.i
+
+src/physics/DrawPhysics.s: src/physics/DrawPhysics.cpp.s
+.PHONY : src/physics/DrawPhysics.s
+
+# target to generate assembly for a file
+src/physics/DrawPhysics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/DrawPhysics.cpp.s
+.PHONY : src/physics/DrawPhysics.cpp.s
+
+src/physics/PhysicsContactHandler.o: src/physics/PhysicsContactHandler.cpp.o
+.PHONY : src/physics/PhysicsContactHandler.o
+
+# target to build an object file
+src/physics/PhysicsContactHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/PhysicsContactHandler.cpp.o
+.PHONY : src/physics/PhysicsContactHandler.cpp.o
+
+src/physics/PhysicsContactHandler.i: src/physics/PhysicsContactHandler.cpp.i
+.PHONY : src/physics/PhysicsContactHandler.i
+
+# target to preprocess a source file
+src/physics/PhysicsContactHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/PhysicsContactHandler.cpp.i
+.PHONY : src/physics/PhysicsContactHandler.cpp.i
+
+src/physics/PhysicsContactHandler.s: src/physics/PhysicsContactHandler.cpp.s
+.PHONY : src/physics/PhysicsContactHandler.s
+
+# target to generate assembly for a file
+src/physics/PhysicsContactHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/PhysicsContactHandler.cpp.s
+.PHONY : src/physics/PhysicsContactHandler.cpp.s
 
 src/raylib-tileson.o: src/raylib-tileson.cpp.o
 .PHONY : src/raylib-tileson.o
@@ -876,47 +761,37 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Continuous"
-	@echo "... ContinuousBuild"
-	@echo "... ContinuousConfigure"
-	@echo "... ContinuousCoverage"
-	@echo "... ContinuousMemCheck"
-	@echo "... ContinuousStart"
-	@echo "... ContinuousSubmit"
-	@echo "... ContinuousTest"
-	@echo "... ContinuousUpdate"
-	@echo "... Experimental"
-	@echo "... ExperimentalBuild"
-	@echo "... ExperimentalConfigure"
-	@echo "... ExperimentalCoverage"
-	@echo "... ExperimentalMemCheck"
-	@echo "... ExperimentalStart"
-	@echo "... ExperimentalSubmit"
-	@echo "... ExperimentalTest"
-	@echo "... ExperimentalUpdate"
-	@echo "... Nightly"
-	@echo "... NightlyBuild"
-	@echo "... NightlyConfigure"
-	@echo "... NightlyCoverage"
-	@echo "... NightlyMemCheck"
-	@echo "... NightlyMemoryCheck"
-	@echo "... NightlyStart"
-	@echo "... NightlySubmit"
-	@echo "... NightlyTest"
-	@echo "... NightlyUpdate"
-	@echo "... raylib-tmx"
-	@echo "... raylib-tmx-example"
-	@echo "... raylib-tmx-test"
 	@echo "... super-mario"
+	@echo "... src/CommandListener/CommandListener.o"
+	@echo "... src/CommandListener/CommandListener.i"
+	@echo "... src/CommandListener/CommandListener.s"
+	@echo "... src/InputHandler.o"
+	@echo "... src/InputHandler.i"
+	@echo "... src/InputHandler.s"
+	@echo "... src/actor/Actor.o"
+	@echo "... src/actor/Actor.i"
+	@echo "... src/actor/Actor.s"
+	@echo "... src/actor/CharacterActor.o"
+	@echo "... src/actor/CharacterActor.i"
+	@echo "... src/actor/CharacterActor.s"
+	@echo "... src/actor/MarioCharacter.o"
+	@echo "... src/actor/MarioCharacter.i"
+	@echo "... src/actor/MarioCharacter.s"
 	@echo "... src/audio/AudioManager.o"
 	@echo "... src/audio/AudioManager.i"
 	@echo "... src/audio/AudioManager.s"
+	@echo "... src/camera/TrackingCamera2D.o"
+	@echo "... src/camera/TrackingCamera2D.i"
+	@echo "... src/camera/TrackingCamera2D.s"
+	@echo "... src/entity/Dynamic/Enemy.o"
+	@echo "... src/entity/Dynamic/Enemy.i"
+	@echo "... src/entity/Dynamic/Enemy.s"
+	@echo "... src/entity/Dynamic/Player.o"
+	@echo "... src/entity/Dynamic/Player.i"
+	@echo "... src/entity/Dynamic/Player.s"
 	@echo "... src/entity/DynamicEntity.o"
 	@echo "... src/entity/DynamicEntity.i"
 	@echo "... src/entity/DynamicEntity.s"
-	@echo "... src/entity/Enemy/Enemy.o"
-	@echo "... src/entity/Enemy/Enemy.i"
-	@echo "... src/entity/Enemy/Enemy.s"
 	@echo "... src/entity/KinematicEntity.o"
 	@echo "... src/entity/KinematicEntity.i"
 	@echo "... src/entity/KinematicEntity.s"
@@ -929,6 +804,21 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/map/TileMap2D.o"
+	@echo "... src/map/TileMap2D.i"
+	@echo "... src/map/TileMap2D.s"
+	@echo "... src/map/TileMap2DLoader.o"
+	@echo "... src/map/TileMap2DLoader.i"
+	@echo "... src/map/TileMap2DLoader.s"
+	@echo "... src/objects/PhysicsObject.o"
+	@echo "... src/objects/PhysicsObject.i"
+	@echo "... src/objects/PhysicsObject.s"
+	@echo "... src/physics/DrawPhysics.o"
+	@echo "... src/physics/DrawPhysics.i"
+	@echo "... src/physics/DrawPhysics.s"
+	@echo "... src/physics/PhysicsContactHandler.o"
+	@echo "... src/physics/PhysicsContactHandler.i"
+	@echo "... src/physics/PhysicsContactHandler.s"
 	@echo "... src/raylib-tileson.o"
 	@echo "... src/raylib-tileson.i"
 	@echo "... src/raylib-tileson.s"
