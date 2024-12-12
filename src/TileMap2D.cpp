@@ -90,7 +90,7 @@ void TileMap2D::draw(const Camera2D& camera, float worldScale, const Color& tint
 void TileMap2D::drawGrid(const Camera2D& camera, float worldScale, const Color& color) {
 	auto& layers = tileMap->getLayers();
 	if (TerrainLayerIdx < layers.size()) {
-		std::cout << "DEBUG: TerrainLayerIdx = " << TerrainLayerIdx << std::endl;
+		//std::cout << "DEBUG: TerrainLayerIdx = " << TerrainLayerIdx << std::endl;
 		auto& layer = layers[TerrainLayerIdx];
 		Vector2 offset = calcLayerOffset(layer, camera, worldScale);
 		//auto mapSize = layer.getSize();
@@ -114,58 +114,88 @@ void TileMap2D::drawGrid(const Camera2D& camera, float worldScale, const Color& 
 }
 
 void TileMap2D::drawCollisionShapes(const Camera2D& camera, float worldScale, const Color& color) {
-	//std::cout << "DEBUG: TerrainLayerIdx = " << TerrainLayerIdx << std::endl;
 	const float lineThickness = 2 / worldScale;
+
+	// Get all layers from the tileMap
 	auto& layers = tileMap->getLayers();
+
+	// Check if TerrainLayerIdx corresponds to a valid ObjectGroup layer
 	if (TerrainLayerIdx < layers.size()) {
 		auto& layer = layers[TerrainLayerIdx];
-		raylib::Vector2 offset = calcLayerOffset(layer, camera, worldScale);
-		for (auto& [pos, tileObject] : layer.getTileObjects()) {
-			tson::Tile* tile = tileObject.getTile();
-			/*if (tile == nullptr) {
-				std::cout << "DEBUG: tile is null\n" << std::endl;
-				continue;
-			}*/
-			auto tilePos = tileObject.getPosition();
-			raylib::Vector2 tileOffset = raylib::Vector2(tilePos.x, tilePos.y) / worldScale + offset;
-			auto& objectGroup = tile->getObjectgroup();
-			auto collisionShapes = objectGroup.getObjects();
-			//std::cout << "DEBUG: collisionShapes = " << collisionShapes.size() << std::endl;
-			for (auto& shape : collisionShapes) {
-				auto& shapePos = shape.getPosition();
-				raylib::Vector2 shapeOffset = raylib::Vector2((float)shapePos.x, (float)shapePos.y) / worldScale + tileOffset;
 
-				switch (shape.getObjectType()) {
-				case tson::ObjectType::Polygon:
-				case tson::ObjectType::Polyline: // NOTE: Treating a polyline as a polygon for collision
-				{
-					auto& polygon = shape.getPolygons();
-					if (polygon.size() > 0) {
-						auto& lastPos = polygon[polygon.size() - 1];
-						raylib::Vector2 prevPos = raylib::Vector2((float)lastPos.x, (float)lastPos.y) / worldScale + shapeOffset;
-						for (auto& currPoint : polygon) {
-							raylib::Vector2 currPos = raylib::Vector2((float)currPoint.x, (float)currPoint.y) / worldScale + shapeOffset;
-							DrawLineEx(prevPos, currPos, lineThickness, color);
-							std::cout << "DEBUG: DrawPolygon " << std::endl;
-							prevPos = currPos;
-						}
+		// Ensure the layer is of type ObjectGroup
+		if (layer.getType() != tson::LayerType::objectgroup) {
+			std::cout << "DEBUG: Selected layer is not an ObjectGroup. Layer type: " << (int)layer.getType() << std::endl;
+			return;
+		}
+
+		raylib::Vector2 offset = calcLayerOffset(layer, camera, worldScale);
+
+		// Iterate over objects in the ObjectGroup layer
+		for (auto& object : layer.getObjects()) {
+			// Skip invisible objects
+			if (!object.isVisible()) {
+				continue;
+			}
+
+			auto objectType = object.getObjectType();
+			auto shapePos = object.getPosition();
+			raylib::Vector2 shapeOffset = raylib::Vector2((float)shapePos.x, (float)shapePos.y) / worldScale + offset;
+
+			switch (objectType) {
+			case tson::ObjectType::Rectangle:
+			{
+				auto rectSize = object.getSize();
+				raylib::Rectangle rect(
+					(float)shapeOffset.x, (float)shapeOffset.y,
+					(float)rectSize.x / worldScale, (float)rectSize.y / worldScale
+				);
+				DrawRectangleLinesEx(rect, lineThickness, color);
+				/*std::cout << "DEBUG: Rectangle drawn at (" << rect.x << ", " << rect.y
+					<< "), size (" << rect.width << ", " << rect.height << ")." << std::endl;*/
+				break;
+			}
+			case tson::ObjectType::Polygon:
+			{
+				auto& polygon = object.getPolygons();
+				if (!polygon.empty()) {
+					auto lastPoint = polygon.back();
+					raylib::Vector2 prevPos = raylib::Vector2((float)lastPoint.x, (float)lastPoint.y) / worldScale + shapeOffset;
+
+					// Draw each line segment of the polygon
+					for (auto& currPoint : polygon) {
+						raylib::Vector2 currPos = raylib::Vector2((float)currPoint.x, (float)currPoint.y) / worldScale + shapeOffset;
+						DrawLineEx(prevPos, currPos, lineThickness, color);
+						prevPos = currPos;
 					}
-					break;
+					//std::cout << "DEBUG: Polygon drawn with " << polygon.size() << " points." << std::endl;
 				}
-				case tson::ObjectType::Rectangle:
-				{
-					auto& rectSize = shape.getSize();
-					raylib::Rectangle rect((float)shapeOffset.x, (float)shapeOffset.y,
-						(float)rectSize.x / worldScale, (float)rectSize.y / worldScale);
-					DrawRectangleLinesEx(rect, lineThickness, color);
-					std::cout << "DEBUG: rectangle " << std::endl;
-					break;
+				break;
+			}
+			case tson::ObjectType::Polyline:
+			{
+				auto& polyline = object.getPolygons();
+				if (!polyline.empty()) {
+					auto prevPos = raylib::Vector2((float)polyline.front().x, (float)polyline.front().y) / worldScale + shapeOffset;
+
+					// Draw each line segment of the polyline
+					for (auto& currPoint : polyline) {
+						raylib::Vector2 currPos = raylib::Vector2((float)currPoint.x, (float)currPoint.y) / worldScale + shapeOffset;
+						DrawLineEx(prevPos, currPos, lineThickness, color);
+						prevPos = currPos;
+					}
+					//std::cout << "DEBUG: Polyline drawn with " << polyline.size() << " points." << std::endl;
 				}
-				default:
-					TraceLog(LOG_ERROR, "Error: Unrecognized collision shape object type: %u", shape.getObjectType());
-				}
+				break;
+			}
+			default:
+				TraceLog(LOG_WARNING, "Unrecognized object type: %u", objectType);
+				break;
 			}
 		}
+	}
+	else {
+		std::cout << "DEBUG: TerrainLayerIdx is out of bounds or invalid." << std::endl;
 	}
 }
 
