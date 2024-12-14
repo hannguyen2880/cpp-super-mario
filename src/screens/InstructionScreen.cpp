@@ -2,7 +2,7 @@
 #include "../game/Game.h"
 
 InstructionScreen::InstructionScreen()
-    :backButton("../assets/images/BackButton.png", 20, 480)
+    :backButton("../assets/images/Buttons/BackButton.png", 20, 480)
 {
     panelTargetY = 161;
     panelCurrentY = 600;
@@ -53,9 +53,7 @@ void InstructionScreen::Draw() {
                 panelCurrentY,
                 panelColor);
 
-    if (!isAnimating) {
-        backButton.Draw();
-    }
+    backButton.Draw();
 }
 
 InstructionScreen::~InstructionScreen() {

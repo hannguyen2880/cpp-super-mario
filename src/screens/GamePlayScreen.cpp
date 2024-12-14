@@ -3,6 +3,7 @@
 GameplayScreen::GameplayScreen() {
     currentDifficulty = Game::GetDifficulty();
     currentMode = Game::GetGameplayMode();
+    isPaused = false;
 }
 
 void GameplayScreen::Init() {

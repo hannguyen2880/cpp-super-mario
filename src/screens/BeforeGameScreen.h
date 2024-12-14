@@ -8,7 +8,8 @@ class BeforeGameScreen : public Screen {
 private:
     enum class PanelState {
         RESUME_PANEL,
-        DIFFICULTY_PANEL
+        DIFFICULTY_PANEL,
+        CHARACTER_SELECTION_PANEL
     };
     PanelState currentPanel;
 
@@ -18,6 +19,7 @@ private:
     ImageButton yesButton, noButton;
     ImageButton backButton;
     ImageButton easyButton, mediumButton, hardButton;
+    ImageButton marioButton, luigiButton;
     float panelTargetY;
     float panelCurrentY;
     float panelAlpha;

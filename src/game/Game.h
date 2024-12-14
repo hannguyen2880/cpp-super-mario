@@ -11,6 +11,7 @@ private:
     static const int screenHeight = 540;
     static GameDifficulty difficulty;
     static GameplayMode gameplayMode;
+    static Character character;
     
 public:
     static void Init();
@@ -22,8 +23,11 @@ public:
 
     static float GetScreenWidth() { return 1.0 * screenWidth; }
     static float GetScreenHeight() { return 1.0 * screenHeight; }
-    static void SetDifficulty(GameDifficulty diff);
     static GameDifficulty GetDifficulty() { return difficulty; }
     static GameplayMode GetGameplayMode() { return gameplayMode; }
-    static void SetGameplayMode(GameplayMode mode) { gameplayMode = mode; }
+    static Character GetCharacter() { return character; }
+
+    static void SetDifficulty(GameDifficulty diff);
+    static void SetGameplayMode(GameplayMode mode);
+    static void SetCharacter(Character charac);
 };

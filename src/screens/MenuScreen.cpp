@@ -5,9 +5,9 @@
 #include <cmath>
 
 MenuScreen::MenuScreen() {
-    playButton = ImageButton("../assets/images/StartGameButton.png", 372, 262);
-    instructionButton = ImageButton("../assets/images/InstructionButton.png", 372, 362);
-    
+    playButton = ImageButton("../assets/images/Buttons/StartGameButton.png", 353, 200);
+    instructionButton = ImageButton("../assets/images/Buttons/InstructionButton.png", 353, 293);
+    scoreboardButton = ImageButton("../assets/images/Buttons/ScoreboardButton.png", 353, 389);
     originalMarioX = 55;
     originalMarioY = 199;
     cloud1X = 684;
@@ -102,7 +102,10 @@ void MenuScreen::Update() {
             Game::SetState(GameState::INSTRUCTIONS);
             return;
         }
-        
+        if (scoreboardButton.Update()) {
+            Game::SetState(GameState::SCOREBOARD);
+            return;
+        }
     }
 }
 
@@ -119,4 +122,5 @@ void MenuScreen::Draw() {
     
     playButton.Draw();
     instructionButton.Draw();
+    scoreboardButton.Draw();
 }

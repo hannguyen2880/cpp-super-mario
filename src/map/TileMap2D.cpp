@@ -6,34 +6,36 @@ static raylib::Rectangle toRayLibRect(tson::Rect rect) {
 	return raylib::Rectangle((float)rect.x, (float)rect.y, (float)rect.width, (float)rect.height);
 }
 
+// In TileMap2D.cpp
 TileMap2D::TileMap2D(const std::string& fileName, const std::string& groundLayerName) {
-	tileMap = loadTileMap(fileName);
+    tileMap = loadTileMap(fileName);
+    
+    if (tileMap->getStatus() != tson::ParseStatus::OK) {
+        throw std::runtime_error("Failed to load tile-map");
+    }
 
-	if (tileMap->getStatus() != tson::ParseStatus::OK) {
-		throw std::runtime_error(TextFormat("Failed to load tile-map %s. Error: %s",
-			fileName.c_str(), tileMap->getStatusMessage().c_str()));
-	}
+    loadTileLayers(fileName);
 
-	loadTileLayers(fileName);
-
-	// Find the ground layer
-	TerrainLayerIdx = 0;
-	auto& layers = tileMap->getLayers();
-	for (auto& layer : layers) {
-		if (groundLayerName.compare(layer.getName()) == 0 && layer.getType() == tson::LayerType::objectgroup) {
-			// Found
-			break;
-		}
-		++TerrainLayerIdx;
-	}
-
-	//std::cout << "DEBUG: TerrainLayerIdx = " << TerrainLayerIdx << std::endl;
-
-	bool foundGround = TerrainLayerIdx < layers.size();
-	if (!foundGround) {
-		throw std::runtime_error(TextFormat("Couldn't find ground layer %s in tile-map %s",
-			groundLayerName.c_str(), fileName.c_str()));
-	}
+    // Find the ground layer
+    auto& layers = tileMap->getLayers();
+    for (size_t i = 0; i < layers.size(); ++i) {
+        auto& layer = layers[i];
+        if (layer.getName() == groundLayerName && layer.getType() == tson::LayerType::objectgroup) {
+            TerrainLayerIdx = i;
+            // Load collision objects from ground layer
+            auto& objects = layer.getObjects();
+            for (auto& obj : objects) {
+                Rectangle rect = {
+                    (float)obj.getPosition().x,
+                    (float)obj.getPosition().y,
+                    (float)obj.getSize().x,
+                    (float)obj.getSize().y
+                };
+                solidTiles.push_back(rect);
+            }
+            break;
+        }
+    }
 }
 
 void TileMap2D::loadTileLayers(const std::string& fileName) {
@@ -173,85 +175,6 @@ void TileMap2D::updateAnimations(float elapsedTime) {
 	// ##### FIXME! ###### To-do
 }
 
-//we just have polyline(polygons) and rectangle shapes
-void TileMap2D::generatePhysicsObjects(b2World& physicsWorld, float worldScale) {
-	// Create vertices variable here to avoid repeated construction/destruction overhead (for every tile)
-	std::vector<b2Vec2> vertices;
-	const float defaultFriction = 1.0f;
-
-	auto& layers = tileMap->getLayers();
-	auto tileSizeTson = tileMap->getTileSize();
-	b2Vec2 tileSize_2(tileSizeTson.x / (2.0f * worldScale), tileSizeTson.y / (2.0f * worldScale));
-	if (TerrainLayerIdx < layers.size()) {
-		auto& layer = layers[TerrainLayerIdx];
-
-		auto layerOffsetTson = layer.getOffset();
-		b2Vec2 layerOffset(layerOffsetTson.x / worldScale, layerOffsetTson.y / worldScale);
-
-
-		for (auto& [pos, tileObject] : layer.getTileObjects()) {
-			tson::Tile* tile = tileObject.getTile();
-			auto tilePos = tileObject.getPosition();
-			b2Vec2 tileOffset = b2Vec2(tilePos.x / worldScale, tilePos.y / worldScale) + layerOffset;
-
-			auto& objectGroup = tile->getObjectgroup();
-			auto collisionShapes = objectGroup.getObjects();
-
-			for (auto& shape : collisionShapes) {
-				auto& shapePos = shape.getPosition();
-				b2Vec2 shapeOffset = b2Vec2((float)shapePos.x / worldScale,
-					(float)shapePos.y / worldScale) + tileOffset;
-
-				b2BodyDef bodyDef;
-				bodyDef.type = b2_staticBody;
-				bodyDef.fixedRotation = true;
-				bodyDef.position = shapeOffset + tileSize_2; //note: center of the tile
-				b2Body* tileBody = physicsWorld.CreateBody(&bodyDef);
-				b2Fixture* tileFixture = NULL;
-
-				float tileFriction = defaultFriction;
-
-				switch (shape.getObjectType()) {
-				case tson::ObjectType::Polygon:
-				case tson::ObjectType::Polyline: // NOTE: Treating a polyline as a polygon for collision
-				{
-					vertices.clear();
-					auto& polygon = shape.getPolygons();
-					if (polygon.size() >= 3) {
-						for (auto& currPoint : polygon) {
-							b2Vec2 currPos = b2Vec2((float)currPoint.x / worldScale,
-								(float)currPoint.y / worldScale) - tileSize_2;
-							vertices.push_back(currPos);
-						}
-						b2ChainShape shape;
-						shape.CreateLoop(vertices.data(), (int32)vertices.size());
-						tileFixture = tileBody->CreateFixture(&shape, 0.0f);
-					}
-					break;
-				}
-				case tson::ObjectType::Rectangle:
-				{
-					auto& rectSize = shape.getSize();
-					raylib::Rectangle rect((float)shapeOffset.x, (float)shapeOffset.y,
-						(float)rectSize.x / worldScale, (float)rectSize.y / worldScale);
-					b2PolygonShape shape;
-					shape.SetAsBox((float)rectSize.x / (2.0f * worldScale),
-						(float)rectSize.y / (2.0f * worldScale));
-					tileFixture = tileBody->CreateFixture(&shape, 0.0f);
-					break;
-				}
-				default:
-					TraceLog(LOG_ERROR, "Error: Unrecognized collision shape object type: %u", shape.getObjectType());
-				}
-
-				if (tileFixture) {
-					tileFixture->SetFriction(tileFriction);
-				}
-			}
-		}
-	}
-}
-
 Vector2 TileMap2D::getMapSize() const {
 	auto size = tileMap->getSize();
 	auto tileSize = tileMap->getTileSize();
@@ -366,3 +289,27 @@ void TileMap2D::loadImage(const std::string& baseDir, const std::string& fileNam
 	textures[fileName] = std::make_shared<raylib::Texture>(fullPath);
 }
 
+std::vector<Rectangle> TileMap2D::getSolidTiles() const {
+    std::vector<Rectangle> tiles;
+    auto& layers = tileMap->getLayers();
+    
+    if (TerrainLayerIdx < layers.size()) {
+        auto& layer = layers[TerrainLayerIdx];
+        auto& objects = layer.getObjects();
+        
+        for (auto& obj : objects) {
+            // Handle different object types
+            if (obj.getObjectType() == tson::ObjectType::Rectangle) {
+                Rectangle rect = {
+                    (float)obj.getPosition().x,
+                    (float)obj.getPosition().y, 
+                    (float)obj.getSize().x,
+                    (float)obj.getSize().y
+                };
+                tiles.push_back(rect);
+            }
+            // Add handling for polygons if needed
+        }
+    }
+    return tiles;
+}

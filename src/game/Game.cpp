@@ -9,6 +9,7 @@ GameState Game::currentState = GameState::MAIN_MENU;
 std::unique_ptr<Screen> Game::currentScreen = nullptr;
 GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
 GameplayMode Game::gameplayMode = GameplayMode::NEW_GAME;
+Character Game::character = Character::MARIO;
 
 void Game::Init() {
     InitAudioDevice(); 
@@ -87,6 +88,10 @@ void Game::SetState(GameState newState) {
             currentScreen = std::make_unique<InstructionScreen>();
             break;
         }
+        case GameState::SCOREBOARD: {
+            currentScreen = std::make_unique<InstructionScreen>();
+            break;
+        }
         case GameState::BEFOREGAME: {
             currentScreen = std::make_unique<BeforeGameScreen>();
             break;
@@ -100,4 +105,11 @@ void Game::SetState(GameState newState) {
 
 void Game::SetDifficulty(GameDifficulty diff) {
     difficulty = diff;
+}
+
+void Game::SetGameplayMode(GameplayMode mode) {
+    gameplayMode = mode;
+}
+void Game::SetCharacter(Character charac) {
+    character = charac;
 }

@@ -2,12 +2,14 @@
 #include "../game/Game.h"
 
 BeforeGameScreen::BeforeGameScreen()
-    : yesButton("../assets/images/YesButton.png", 300, 390),
-      noButton("../assets/images/NoButton.png", 500, 390),
-      backButton("../assets/images/BackButton.png", 20, 480),
-      easyButton("../assets/images/EasyButton.png", 380, 200),
-      mediumButton("../assets/images/MediumButton.png", 380, 280),
-      hardButton("../assets/images/HardButton.png", 380, 360)
+    : yesButton("../assets/images/Buttons/YesButton.png", 300, 390),
+      noButton("../assets/images/Buttons/NoButton.png", 500, 390),
+      backButton("../assets/images/Buttons/BackButton.png", 20, 480),
+      easyButton("../assets/images/Buttons/EasyButton.png", 380, 200),
+      mediumButton("../assets/images/Buttons/MediumButton.png", 380, 280),
+      hardButton("../assets/images/Buttons/HardButton.png", 380, 360),
+      marioButton("../assets/images/Buttons/mario.png", 500, 238),
+      luigiButton("../assets/images/Buttons/luigi.png", 280, 238)
 {
     panelTargetY = 161;
     panelCurrentY = 600;
@@ -43,12 +45,25 @@ void BeforeGameScreen::Update() {
     if (currentPanel == PanelState::RESUME_PANEL) {
         if (yesButton.Update()) {
             Game::SetState(GameState::GAMEPLAY);
+            Game::SetGameplayMode(GameplayMode::RESUME_GAME);
         }
         if (noButton.Update()) {
-            currentPanel = PanelState::DIFFICULTY_PANEL;
+            currentPanel = PanelState::CHARACTER_SELECTION_PANEL;
             isAnimating = true;  // Trigger animation for new panel
             panelCurrentY = 600; // Reset position for new panel
+            Game::SetGameplayMode(GameplayMode::NEW_GAME);
         }
+    }
+    else if (currentPanel == PanelState::CHARACTER_SELECTION_PANEL) {
+        if (marioButton.Update()) {
+            Game::SetCharacter(Character::MARIO);
+            currentPanel = PanelState::DIFFICULTY_PANEL;
+        }
+        if (luigiButton.Update()) {
+            Game::SetCharacter(Character::LUIGI);
+            currentPanel = PanelState::DIFFICULTY_PANEL;
+        }
+        
     }
     else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
         if (easyButton.Update()) {
@@ -64,7 +79,7 @@ void BeforeGameScreen::Update() {
             Game::SetState(GameState::GAMEPLAY);
         }
     }
-
+    
     if (backButton.Update()) {
         Game::SetState(GameState::MAIN_MENU);
     }
@@ -82,6 +97,15 @@ void BeforeGameScreen::Draw() {
             noButton.Draw();
         }
     }
+    else if (currentPanel == PanelState::CHARACTER_SELECTION_PANEL) {
+        DrawRectangle(228, panelCurrentY, 504, 300, 
+                     ColorAlpha(PINK, panelAlpha * 0.9f));
+        DrawText("Choose your character", 300, 180, 30, BLACK);
+        if (!isAnimating) {
+            marioButton.Draw();
+            luigiButton.Draw();
+        }
+    }
     else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
         DrawRectangle(228, panelCurrentY, 504, 300, 
                      ColorAlpha(BLACK, panelAlpha * 0.7f));
@@ -93,9 +117,7 @@ void BeforeGameScreen::Draw() {
         }
     }
 
-    if (!isAnimating) {
-        backButton.Draw();
-    }
+    backButton.Draw();
 }
 
 void BeforeGameScreen::Unload() {

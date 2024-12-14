@@ -5,6 +5,7 @@ enum class GameState {
     MAIN_MENU,
     BEFOREGAME,
     INSTRUCTIONS,
+    SCOREBOARD,
     GAMEPLAY
 };
 
@@ -17,4 +18,9 @@ enum class GameDifficulty {
 enum class GameplayMode {
     NEW_GAME,
     RESUME_GAME
+};
+
+enum class Character {
+    MARIO,
+    LUIGI
 };

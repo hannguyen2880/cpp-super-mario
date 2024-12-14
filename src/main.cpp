@@ -7,7 +7,7 @@
 #include "raylib-cpp.hpp"
 #include "map/TileMap2D.h"
 #include "actor/MarioCharacter.h"
-
+#include "Collision/CollisionManager.h"
 #define SCREEN_WIDTH 960
 #define SCREEN_HEIGHT 540
 #define FLOOR_HEIGHT 192
@@ -39,40 +39,61 @@ int main() {
     std::string mapFilePath = "../assets/maps/Tiled/map1.json";
     TileMap2D tileMap(mapFilePath);
     Camera2D camera = { 0 };
-    camera.offset = { SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f };
-    Vector2 position = { 0.0f, 0.0f };
     
     camera.zoom = (float)SCREEN_HEIGHT / MAPHEIGHT;
 
     MarioCharacter player(spritePathsLeft, spritePathsRight);
-    camera.target = { player.positionX, player.positionY };
+    camera.target = { 0.0f, 0.0f };
+    camera.offset = { SCREEN_WIDTH/2.0f, SCREEN_HEIGHT/2.0f };
 
-    //Physics world setup (if required for collision)
-    b2Vec2 gravity(0.0f, -9.8f);  // Set gravity for the physics world
-    b2World physicsWorld(gravity);
-    tileMap.generatePhysicsObjects(physicsWorld, MAP_SCALE);
+    player.setPosition(20.0f, FLOOR_HEIGHT);  // Starting position
 
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        player.UpdatePlayerAndCamera(camera, tileMap);
-        player.UpdateAnimation();
+    // Update
+    player.UpdatePlayerAndCamera(camera, tileMap);
+    CollisionManager::HandlePlayerMapCollision(player, tileMap);
+    player.UpdateAnimation();
 
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
+    BeginDrawing();
+    ClearBackground(RAYWHITE);
 
-        BeginMode2D(camera);
-        tileMap.draw(camera, MAP_SCALE);              // Draw the tile map
-        //tileMap.drawGrid(camera, MAP_SCALE);          // Draw grid (optional)
-        //tileMap.drawCollisionShapes(camera, MAP_SCALE); // Draw collision shapes (optional)
-            player.draw(0.5f);
-        EndMode2D();
+    BeginMode2D(camera);
+        // Draw map
+        tileMap.draw(camera, MAP_SCALE);
+        player.draw(0.5f);
+        
+        // Debug drawing
+        // Draw player collision box
+        Rectangle playerRect = {
+            player.getPositionX(),
+            player.getPositionY(),
+            player.getWidth(),
+            player.getHeight()
+        };
+        DrawRectangleLinesEx(playerRect, 2.0f, RED);
 
-        DrawText(TextFormat("Position: %.0f, %.0f", player.positionX, player.positionY), 10, 10, 20, BLACK);
-        DrawFPS(10, 50);
+        auto solidTiles = tileMap.getSolidTiles();
+        for (const auto& tile : solidTiles) {
+            DrawRectangleLinesEx(tile, 2.0f, GREEN);
+            // Print coordinates for debugging
+            DrawText(TextFormat("X:%.0f Y:%.0f", tile.x, tile.y), 
+                    tile.x, tile.y, 10, RED);
+        }
 
-        EndDrawing();
-    }
+        // Draw collision info
+        DrawText(TextFormat("Player Pos: %.2f, %.2f", 
+            player.getPositionX(), player.getPositionY()), 
+            10, 70, 20, RED);
+        DrawText(TextFormat("On Ground: %s", 
+            player.isOnGround ? "Yes" : "No"),
+            10, 90, 20, RED);
+    EndMode2D();
+
+    DrawFPS(10, 50);
+    EndDrawing();
+}
     CloseWindow();
 
     return 0;

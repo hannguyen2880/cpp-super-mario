@@ -17,35 +17,40 @@ void LoadSpriteGroup(std::vector<Texture2D>& spriteGroup, const std::vector<std:
     }
 }
 
-CharacterActor::CharacterActor() {
-    this->positionX = 0.0f;
-    this->positionY = FLOOR_HEIGHT;
-    this->velocityX = 0.0f;
-    this->velocityY = 0.0f;
-    this->targetVelocityX = 0.0f;
-    this->heading = RIGHT;
-    this->motionState = STILL;
-    this->animationFrame = 0;
-    this->currentFrame = 0;
-    this->animationTimer = 12;
-    this->jumpTime = 0;
-    this->spriteWidth = 16;
-    this->maxCameraX = 0.0f;
+CharacterActor::CharacterActor() : Actor() {
+    targetVelocityX = 0.0f;
+    heading = RIGHT;
+    motionState = STILL;
+    animationFrame = 0;
+    currentFrame = 0;
+    animationTimer = 12;
+    jumpTime = 0;
+    maxCameraX = 0.0f;
+    setSize(16.0f, 16.0f);
 }
 
-CharacterActor::CharacterActor(std::vector<std::string> spritePathsLeft, std::vector<std::string> spritePathsRight): CharacterActor() {
+CharacterActor::CharacterActor(std::vector<std::string> spritePathsLeft, 
+                             std::vector<std::string> spritePathsRight) 
+    : CharacterActor() {
     LoadSpriteGroup(FramesLeft, spritePathsLeft);
     LoadSpriteGroup(FramesRight, spritePathsRight);
+    
+    // if (!FramesLeft.empty()) {
+    //     setSize(FramesLeft[0].width, FramesLeft[0].height);
+    // }
 }
+
 void CharacterActor::ApplyHorizontalVelocity() {
+    const float ACCELERATION = 0.2f;
+    
     if (velocityX < targetVelocityX) {
-        this->velocityX += 0.2f; 
+        velocityX += ACCELERATION;
     } else if (velocityX > targetVelocityX) {
-        this->velocityX -= 0.2f; 
+        velocityX -= ACCELERATION;
     }
 
     if (std::fabs(velocityX) < 0.1f) {
-        this->velocityX = 0.0f;
+        velocityX = 0.0f;
     }
 }
 
@@ -145,9 +150,9 @@ void CharacterActor::UpdateAnimation() {
 
 void CharacterActor::draw(float scale) {
     Vector2 position = { positionX, positionY };
-    if (heading == LEFT) {
-        DrawTextureEx(FramesLeft[currentFrame], position, 0.0f, scale, WHITE);
-    } else {
-        DrawTextureEx(FramesRight[currentFrame], position, 0.0f, scale, WHITE);
+    const std::vector<Texture2D>& currentFrames = (heading == LEFT) ? FramesLeft : FramesRight;
+    
+    if (currentFrame < currentFrames.size()) {
+        DrawTextureEx(currentFrames[currentFrame], position, 0.0f, scale, WHITE);
     }
 }

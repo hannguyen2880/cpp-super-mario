@@ -26,7 +26,7 @@ private:
 
     ImageButton playButton;
     ImageButton instructionButton;
-
+    ImageButton scoreboardButton;
 public:
     MenuScreen();
     ~MenuScreen();

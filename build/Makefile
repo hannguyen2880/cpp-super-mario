@@ -129,6 +129,30 @@ super-mario/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/build
 .PHONY : super-mario/fast
 
+src/Collision/CollisionManager.o: src/Collision/CollisionManager.cpp.o
+.PHONY : src/Collision/CollisionManager.o
+
+# target to build an object file
+src/Collision/CollisionManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Collision/CollisionManager.cpp.o
+.PHONY : src/Collision/CollisionManager.cpp.o
+
+src/Collision/CollisionManager.i: src/Collision/CollisionManager.cpp.i
+.PHONY : src/Collision/CollisionManager.i
+
+# target to preprocess a source file
+src/Collision/CollisionManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Collision/CollisionManager.cpp.i
+.PHONY : src/Collision/CollisionManager.cpp.i
+
+src/Collision/CollisionManager.s: src/Collision/CollisionManager.cpp.s
+.PHONY : src/Collision/CollisionManager.s
+
+# target to generate assembly for a file
+src/Collision/CollisionManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/Collision/CollisionManager.cpp.s
+.PHONY : src/Collision/CollisionManager.cpp.s
+
 src/CommandListener/CommandListener.o: src/CommandListener/CommandListener.cpp.o
 .PHONY : src/CommandListener/CommandListener.o
 
@@ -273,150 +297,6 @@ src/audio/AudioManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s
 .PHONY : src/audio/AudioManager.cpp.s
 
-src/camera/TrackingCamera2D.o: src/camera/TrackingCamera2D.cpp.o
-.PHONY : src/camera/TrackingCamera2D.o
-
-# target to build an object file
-src/camera/TrackingCamera2D.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/camera/TrackingCamera2D.cpp.o
-.PHONY : src/camera/TrackingCamera2D.cpp.o
-
-src/camera/TrackingCamera2D.i: src/camera/TrackingCamera2D.cpp.i
-.PHONY : src/camera/TrackingCamera2D.i
-
-# target to preprocess a source file
-src/camera/TrackingCamera2D.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/camera/TrackingCamera2D.cpp.i
-.PHONY : src/camera/TrackingCamera2D.cpp.i
-
-src/camera/TrackingCamera2D.s: src/camera/TrackingCamera2D.cpp.s
-.PHONY : src/camera/TrackingCamera2D.s
-
-# target to generate assembly for a file
-src/camera/TrackingCamera2D.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/camera/TrackingCamera2D.cpp.s
-.PHONY : src/camera/TrackingCamera2D.cpp.s
-
-src/entity/Dynamic/Enemy.o: src/entity/Dynamic/Enemy.cpp.o
-.PHONY : src/entity/Dynamic/Enemy.o
-
-# target to build an object file
-src/entity/Dynamic/Enemy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Enemy.cpp.o
-.PHONY : src/entity/Dynamic/Enemy.cpp.o
-
-src/entity/Dynamic/Enemy.i: src/entity/Dynamic/Enemy.cpp.i
-.PHONY : src/entity/Dynamic/Enemy.i
-
-# target to preprocess a source file
-src/entity/Dynamic/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Enemy.cpp.i
-.PHONY : src/entity/Dynamic/Enemy.cpp.i
-
-src/entity/Dynamic/Enemy.s: src/entity/Dynamic/Enemy.cpp.s
-.PHONY : src/entity/Dynamic/Enemy.s
-
-# target to generate assembly for a file
-src/entity/Dynamic/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Enemy.cpp.s
-.PHONY : src/entity/Dynamic/Enemy.cpp.s
-
-src/entity/Dynamic/Player.o: src/entity/Dynamic/Player.cpp.o
-.PHONY : src/entity/Dynamic/Player.o
-
-# target to build an object file
-src/entity/Dynamic/Player.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Player.cpp.o
-.PHONY : src/entity/Dynamic/Player.cpp.o
-
-src/entity/Dynamic/Player.i: src/entity/Dynamic/Player.cpp.i
-.PHONY : src/entity/Dynamic/Player.i
-
-# target to preprocess a source file
-src/entity/Dynamic/Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Player.cpp.i
-.PHONY : src/entity/Dynamic/Player.cpp.i
-
-src/entity/Dynamic/Player.s: src/entity/Dynamic/Player.cpp.s
-.PHONY : src/entity/Dynamic/Player.s
-
-# target to generate assembly for a file
-src/entity/Dynamic/Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Dynamic/Player.cpp.s
-.PHONY : src/entity/Dynamic/Player.cpp.s
-
-src/entity/DynamicEntity.o: src/entity/DynamicEntity.cpp.o
-.PHONY : src/entity/DynamicEntity.o
-
-# target to build an object file
-src/entity/DynamicEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o
-.PHONY : src/entity/DynamicEntity.cpp.o
-
-src/entity/DynamicEntity.i: src/entity/DynamicEntity.cpp.i
-.PHONY : src/entity/DynamicEntity.i
-
-# target to preprocess a source file
-src/entity/DynamicEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.i
-.PHONY : src/entity/DynamicEntity.cpp.i
-
-src/entity/DynamicEntity.s: src/entity/DynamicEntity.cpp.s
-.PHONY : src/entity/DynamicEntity.s
-
-# target to generate assembly for a file
-src/entity/DynamicEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.s
-.PHONY : src/entity/DynamicEntity.cpp.s
-
-src/entity/KinematicEntity.o: src/entity/KinematicEntity.cpp.o
-.PHONY : src/entity/KinematicEntity.o
-
-# target to build an object file
-src/entity/KinematicEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o
-.PHONY : src/entity/KinematicEntity.cpp.o
-
-src/entity/KinematicEntity.i: src/entity/KinematicEntity.cpp.i
-.PHONY : src/entity/KinematicEntity.i
-
-# target to preprocess a source file
-src/entity/KinematicEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.i
-.PHONY : src/entity/KinematicEntity.cpp.i
-
-src/entity/KinematicEntity.s: src/entity/KinematicEntity.cpp.s
-.PHONY : src/entity/KinematicEntity.s
-
-# target to generate assembly for a file
-src/entity/KinematicEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.s
-.PHONY : src/entity/KinematicEntity.cpp.s
-
-src/entity/StaticEntity.o: src/entity/StaticEntity.cpp.o
-.PHONY : src/entity/StaticEntity.o
-
-# target to build an object file
-src/entity/StaticEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o
-.PHONY : src/entity/StaticEntity.cpp.o
-
-src/entity/StaticEntity.i: src/entity/StaticEntity.cpp.i
-.PHONY : src/entity/StaticEntity.i
-
-# target to preprocess a source file
-src/entity/StaticEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.i
-.PHONY : src/entity/StaticEntity.cpp.i
-
-src/entity/StaticEntity.s: src/entity/StaticEntity.cpp.s
-.PHONY : src/entity/StaticEntity.s
-
-# target to generate assembly for a file
-src/entity/StaticEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.s
-.PHONY : src/entity/StaticEntity.cpp.s
-
 src/game/Game.o: src/game/Game.cpp.o
 .PHONY : src/game/Game.o
 
@@ -440,6 +320,30 @@ src/game/Game.s: src/game/Game.cpp.s
 src/game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/Game.cpp.s
 .PHONY : src/game/Game.cpp.s
+
+src/game/GameConfig.o: src/game/GameConfig.cpp.o
+.PHONY : src/game/GameConfig.o
+
+# target to build an object file
+src/game/GameConfig.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o
+.PHONY : src/game/GameConfig.cpp.o
+
+src/game/GameConfig.i: src/game/GameConfig.cpp.i
+.PHONY : src/game/GameConfig.i
+
+# target to preprocess a source file
+src/game/GameConfig.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.i
+.PHONY : src/game/GameConfig.cpp.i
+
+src/game/GameConfig.s: src/game/GameConfig.cpp.s
+.PHONY : src/game/GameConfig.s
+
+# target to generate assembly for a file
+src/game/GameConfig.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.s
+.PHONY : src/game/GameConfig.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -512,78 +416,6 @@ src/map/TileMap2DLoader.s: src/map/TileMap2DLoader.cpp.s
 src/map/TileMap2DLoader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/TileMap2DLoader.cpp.s
 .PHONY : src/map/TileMap2DLoader.cpp.s
-
-src/objects/PhysicsObject.o: src/objects/PhysicsObject.cpp.o
-.PHONY : src/objects/PhysicsObject.o
-
-# target to build an object file
-src/objects/PhysicsObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/objects/PhysicsObject.cpp.o
-.PHONY : src/objects/PhysicsObject.cpp.o
-
-src/objects/PhysicsObject.i: src/objects/PhysicsObject.cpp.i
-.PHONY : src/objects/PhysicsObject.i
-
-# target to preprocess a source file
-src/objects/PhysicsObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/objects/PhysicsObject.cpp.i
-.PHONY : src/objects/PhysicsObject.cpp.i
-
-src/objects/PhysicsObject.s: src/objects/PhysicsObject.cpp.s
-.PHONY : src/objects/PhysicsObject.s
-
-# target to generate assembly for a file
-src/objects/PhysicsObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/objects/PhysicsObject.cpp.s
-.PHONY : src/objects/PhysicsObject.cpp.s
-
-src/physics/DrawPhysics.o: src/physics/DrawPhysics.cpp.o
-.PHONY : src/physics/DrawPhysics.o
-
-# target to build an object file
-src/physics/DrawPhysics.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/DrawPhysics.cpp.o
-.PHONY : src/physics/DrawPhysics.cpp.o
-
-src/physics/DrawPhysics.i: src/physics/DrawPhysics.cpp.i
-.PHONY : src/physics/DrawPhysics.i
-
-# target to preprocess a source file
-src/physics/DrawPhysics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/DrawPhysics.cpp.i
-.PHONY : src/physics/DrawPhysics.cpp.i
-
-src/physics/DrawPhysics.s: src/physics/DrawPhysics.cpp.s
-.PHONY : src/physics/DrawPhysics.s
-
-# target to generate assembly for a file
-src/physics/DrawPhysics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/DrawPhysics.cpp.s
-.PHONY : src/physics/DrawPhysics.cpp.s
-
-src/physics/PhysicsContactHandler.o: src/physics/PhysicsContactHandler.cpp.o
-.PHONY : src/physics/PhysicsContactHandler.o
-
-# target to build an object file
-src/physics/PhysicsContactHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/PhysicsContactHandler.cpp.o
-.PHONY : src/physics/PhysicsContactHandler.cpp.o
-
-src/physics/PhysicsContactHandler.i: src/physics/PhysicsContactHandler.cpp.i
-.PHONY : src/physics/PhysicsContactHandler.i
-
-# target to preprocess a source file
-src/physics/PhysicsContactHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/PhysicsContactHandler.cpp.i
-.PHONY : src/physics/PhysicsContactHandler.cpp.i
-
-src/physics/PhysicsContactHandler.s: src/physics/PhysicsContactHandler.cpp.s
-.PHONY : src/physics/PhysicsContactHandler.s
-
-# target to generate assembly for a file
-src/physics/PhysicsContactHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/physics/PhysicsContactHandler.cpp.s
-.PHONY : src/physics/PhysicsContactHandler.cpp.s
 
 src/raylib-tileson.o: src/raylib-tileson.cpp.o
 .PHONY : src/raylib-tileson.o
@@ -762,6 +594,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... super-mario"
+	@echo "... src/Collision/CollisionManager.o"
+	@echo "... src/Collision/CollisionManager.i"
+	@echo "... src/Collision/CollisionManager.s"
 	@echo "... src/CommandListener/CommandListener.o"
 	@echo "... src/CommandListener/CommandListener.i"
 	@echo "... src/CommandListener/CommandListener.s"
@@ -780,27 +615,12 @@ help:
 	@echo "... src/audio/AudioManager.o"
 	@echo "... src/audio/AudioManager.i"
 	@echo "... src/audio/AudioManager.s"
-	@echo "... src/camera/TrackingCamera2D.o"
-	@echo "... src/camera/TrackingCamera2D.i"
-	@echo "... src/camera/TrackingCamera2D.s"
-	@echo "... src/entity/Dynamic/Enemy.o"
-	@echo "... src/entity/Dynamic/Enemy.i"
-	@echo "... src/entity/Dynamic/Enemy.s"
-	@echo "... src/entity/Dynamic/Player.o"
-	@echo "... src/entity/Dynamic/Player.i"
-	@echo "... src/entity/Dynamic/Player.s"
-	@echo "... src/entity/DynamicEntity.o"
-	@echo "... src/entity/DynamicEntity.i"
-	@echo "... src/entity/DynamicEntity.s"
-	@echo "... src/entity/KinematicEntity.o"
-	@echo "... src/entity/KinematicEntity.i"
-	@echo "... src/entity/KinematicEntity.s"
-	@echo "... src/entity/StaticEntity.o"
-	@echo "... src/entity/StaticEntity.i"
-	@echo "... src/entity/StaticEntity.s"
 	@echo "... src/game/Game.o"
 	@echo "... src/game/Game.i"
 	@echo "... src/game/Game.s"
+	@echo "... src/game/GameConfig.o"
+	@echo "... src/game/GameConfig.i"
+	@echo "... src/game/GameConfig.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -810,15 +630,6 @@ help:
 	@echo "... src/map/TileMap2DLoader.o"
 	@echo "... src/map/TileMap2DLoader.i"
 	@echo "... src/map/TileMap2DLoader.s"
-	@echo "... src/objects/PhysicsObject.o"
-	@echo "... src/objects/PhysicsObject.i"
-	@echo "... src/objects/PhysicsObject.s"
-	@echo "... src/physics/DrawPhysics.o"
-	@echo "... src/physics/DrawPhysics.i"
-	@echo "... src/physics/DrawPhysics.s"
-	@echo "... src/physics/PhysicsContactHandler.o"
-	@echo "... src/physics/PhysicsContactHandler.i"
-	@echo "... src/physics/PhysicsContactHandler.s"
 	@echo "... src/raylib-tileson.o"
 	@echo "... src/raylib-tileson.i"
 	@echo "... src/raylib-tileson.s"
