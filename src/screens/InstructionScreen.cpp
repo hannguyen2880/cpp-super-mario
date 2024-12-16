@@ -2,7 +2,7 @@
 #include "../game/Game.h"
 
 InstructionScreen::InstructionScreen()
-    :backButton("../assets/images/Buttons/BackButton.png", 20, 480)
+    :backButton("../assets/imgs/Buttons/BackButton.png", 570, 17)
 {
     panelTargetY = 161;
     panelCurrentY = 600;
@@ -12,8 +12,8 @@ InstructionScreen::InstructionScreen()
 }
 
 void InstructionScreen::Init() {
-    background = LoadTexture("../assets/images/Screen_background.png");
-    instructionPanel = LoadTexture("../assets/images/InstructionPanel.png");
+    background = LoadTexture("../assets/imgs/Screen_background.png");
+    instructionPanel = LoadTexture("../assets/imgs/InstructionPanel.png");
 }
 
 void InstructionScreen::Update() {

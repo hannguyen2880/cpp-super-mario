@@ -2,14 +2,14 @@
 #include "../game/Game.h"
 
 BeforeGameScreen::BeforeGameScreen()
-    : yesButton("../assets/images/Buttons/YesButton.png", 300, 390),
-      noButton("../assets/images/Buttons/NoButton.png", 500, 390),
-      backButton("../assets/images/Buttons/BackButton.png", 20, 480),
-      easyButton("../assets/images/Buttons/EasyButton.png", 380, 200),
-      mediumButton("../assets/images/Buttons/MediumButton.png", 380, 280),
-      hardButton("../assets/images/Buttons/HardButton.png", 380, 360),
-      marioButton("../assets/images/Buttons/mario.png", 500, 238),
-      luigiButton("../assets/images/Buttons/luigi.png", 280, 238)
+    : yesButton("../assets/imgs/Buttons/YesButton.png", 300, 390),
+      noButton("../assets/imgs/Buttons/NoButton.png", 500, 390),
+      backButton("../assets/imgs/Buttons/BackButton.png", 570, 17),
+      easyButton("../assets/imgs/Buttons/EasyButton.png", 380, 200),
+      mediumButton("../assets/imgs/Buttons/MediumButton.png", 380, 280),
+      hardButton("../assets/imgs/Buttons/HardButton.png", 380, 360),
+      marioButton("../assets/imgs/Buttons/mario.png", 500, 238),
+      luigiButton("../assets/imgs/Buttons/luigi.png", 280, 238)
 {
     panelTargetY = 161;
     panelCurrentY = 600;
@@ -19,8 +19,8 @@ BeforeGameScreen::BeforeGameScreen()
 }
 
 void BeforeGameScreen::Init() {
-    background = LoadTexture("../assets/images/Screen_background.png");
-    resumeGamePanel = LoadTexture("../assets/images/ResumeGamePanel.png");
+    background = LoadTexture("../assets/imgs/Screen_background.png");
+    resumeGamePanel = LoadTexture("../assets/imgs/ResumeGamePanel.png");
 }
 
 void BeforeGameScreen::Update() {

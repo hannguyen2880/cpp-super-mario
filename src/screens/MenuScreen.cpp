@@ -5,9 +5,9 @@
 #include <cmath>
 
 MenuScreen::MenuScreen() {
-    playButton = ImageButton("../assets/images/Buttons/StartGameButton.png", 353, 200);
-    instructionButton = ImageButton("../assets/images/Buttons/InstructionButton.png", 353, 293);
-    scoreboardButton = ImageButton("../assets/images/Buttons/ScoreboardButton.png", 353, 389);
+    playButton = ImageButton("../assets/imgs/Buttons/StartGameButton.png", 228, 159);
+    instructionButton = ImageButton("../assets/imgs/Buttons/InstructionButton.png", 228, 239);
+    scoreboardButton = ImageButton("../assets/imgs/Buttons/ScoreboardButton.png", 228, 319);
     originalMarioX = 55;
     originalMarioY = 199;
     cloud1X = 684;
@@ -29,10 +29,10 @@ MenuScreen::~MenuScreen() {
 static bool firstLaunchCompleted = false;
 
 void MenuScreen::Init() {
-    background = LoadTexture("../assets/images/menu-2.png");
-    loadingTexture = LoadTexture("../assets/images/Loading_menu.png");
-    mario = LoadTexture("../assets/images/Mario.png");
-    cloud = LoadTexture("../assets/images/Clouds.png");
+    background = LoadTexture("../assets/imgs/menu-2.png");
+    loadingTexture = LoadTexture("../assets/imgs/Loading_menu.png");
+    mario = LoadTexture("../assets/imgs/Mario.png");
+    cloud = LoadTexture("../assets/imgs/Clouds.png");
 
     isLoading = !firstLaunchCompleted;
     if (isLoading) {
