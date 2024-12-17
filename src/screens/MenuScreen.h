@@ -6,9 +6,7 @@
 
 class MenuScreen : public Screen {
 private:
-    Texture2D background;
-    Texture2D mario;
-    Texture2D cloud;
+    Texture2D background, mario, cloud;
     
     float originalMarioX, originalMarioY;
     float cloud1X, cloud1Y, cloud1Speed;

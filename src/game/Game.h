@@ -3,6 +3,7 @@
 #include "../screens/Screen.h"
 #include <memory>
 #include "../Constants.h"
+#include "GameConfig.h"
 
 class Game {
 private:
@@ -13,6 +14,7 @@ private:
     static Character character;
     
 public:
+    Game(){};
     static void Init();
     static void Update();
     static void Draw();
@@ -26,7 +28,5 @@ public:
     static GameplayMode GetGameplayMode() { return gameplayMode; }
     static Character GetCharacter() { return character; }
 
-    static void SetDifficulty(GameDifficulty diff);
-    static void SetGameplayMode(GameplayMode mode);
-    static void SetCharacter(Character charac);
+    static GameConfig& getConfig() { return GameConfig::getInstance(); }
 };

@@ -28,9 +28,14 @@ constexpr const char* LUIGI_BUTTON = "../assets/imgs/Buttons/luigi.png";
 constexpr const char* MARIO_BUTTON = "../assets/imgs/Buttons/mario.png";
 constexpr const char* YES_BUTTON = "../assets/imgs/Buttons/YesButton.png";
 constexpr const char* NO_BUTTON = "../assets/imgs/Buttons/NoButton.png";
-constexpr const char* SCOREBOARD_BUTTON = "../assets/imgs/Buttons/Scoreboard.png";
-//.....
+constexpr const char* SCOREBOARD_BUTTON = "../assets/imgs/Buttons/ScoreboardButton.png";
+constexpr const char* START_GAME_BUTTON = "../assets/imgs/Buttons/StartGameButton.png";
 
+//map
+constexpr const char* HARD_MAP = "../assets/maps/map_1.tmx";
+constexpr const char* MEDIUM_MAP = "../assets/maps/playground_world.tmx";
+constexpr const char* EASY_MAP = "../assets/maps/playground_world.tmx";
+//......
 constexpr bool SECOND_PLAYER = false;
 
 constexpr int GAME_TILE_SIZE = 32;

@@ -676,30 +676,6 @@ src/map/GameMap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/GameMap.cpp.s
 .PHONY : src/map/GameMap.cpp.s
 
-src/raylib-tileson.o: src/raylib-tileson.cpp.o
-.PHONY : src/raylib-tileson.o
-
-# target to build an object file
-src/raylib-tileson.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o
-.PHONY : src/raylib-tileson.cpp.o
-
-src/raylib-tileson.i: src/raylib-tileson.cpp.i
-.PHONY : src/raylib-tileson.i
-
-# target to preprocess a source file
-src/raylib-tileson.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.i
-.PHONY : src/raylib-tileson.cpp.i
-
-src/raylib-tileson.s: src/raylib-tileson.cpp.s
-.PHONY : src/raylib-tileson.s
-
-# target to generate assembly for a file
-src/raylib-tileson.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.s
-.PHONY : src/raylib-tileson.cpp.s
-
 src/renderers/EnemiesRenderer.o: src/renderers/EnemiesRenderer.cpp.o
 .PHONY : src/renderers/EnemiesRenderer.o
 
@@ -1286,9 +1262,6 @@ help:
 	@echo "... src/map/GameMap.o"
 	@echo "... src/map/GameMap.i"
 	@echo "... src/map/GameMap.s"
-	@echo "... src/raylib-tileson.o"
-	@echo "... src/raylib-tileson.i"
-	@echo "... src/raylib-tileson.s"
 	@echo "... src/renderers/EnemiesRenderer.o"
 	@echo "... src/renderers/EnemiesRenderer.i"
 	@echo "... src/renderers/EnemiesRenderer.s"

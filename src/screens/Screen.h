@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include "../Constants.h"
 
 class Screen {
 public:

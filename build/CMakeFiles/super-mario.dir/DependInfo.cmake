@@ -14,7 +14,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.cpp" "CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/main.cpp" "CMakeFiles/super-mario.dir/src/main.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/main.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/map/GameMap.cpp" "CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o.d"
-  "/Users/hannguyen/Desktop/cpp-super-mario/src/raylib-tileson.cpp" "CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/EnemiesRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/ObjectRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o.d"

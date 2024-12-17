@@ -7,17 +7,11 @@
 
 GameState Game::currentState = GameState::MAIN_MENU;
 std::unique_ptr<Screen> Game::currentScreen = nullptr;
-GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
-GameplayMode Game::gameplayMode = GameplayMode::NEW_GAME;
-Character Game::character = Character::MARIO;
+// GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
+// GameplayMode Game::gameplayMode = GameplayMode::MULTI_PLAYER;
+// Character Game::character = Character::MARIO;
 
 void Game::Init() {
-    InitAudioDevice(); 
-
-    // Load sounds using AudioManager
-    //AudioManager::GetInstance().LoadSounds("jump", "../assets/sounds/jump.wav");
-    //AudioManager::GetInstance().LoadSounds("coin", "../assets/sounds/coin.wav");
-
     currentScreen = std::make_unique<MenuScreen>();
     currentScreen->Init();
 }
@@ -51,11 +45,9 @@ void Game::Unload() {
 void Game::Draw() {
     BeginDrawing();
     ClearBackground(RAYWHITE);
-    
     if (currentScreen) {
         currentScreen->Draw();
     }
-    
     EndDrawing();
 }
 
@@ -84,20 +76,13 @@ void Game::SetState(GameState newState) {
             currentScreen = std::make_unique<BeforeGameScreen>();
             break;
         }
+        case GameState::GAMEPLAY: {
+            currentScreen = std::make_unique<GameplayScreen>();
+            break;
+        }
     }
     
     if (currentScreen) {
         currentScreen->Init();
     }
-}
-
-void Game::SetDifficulty(GameDifficulty diff) {
-    difficulty = diff;
-}
-
-void Game::SetGameplayMode(GameplayMode mode) {
-    gameplayMode = mode;
-}
-void Game::SetCharacter(Character charac) {
-    character = charac;
 }

@@ -16,8 +16,9 @@ enum class GameDifficulty {
 };
 
 enum class GameplayMode {
-    NEW_GAME,
-    RESUME_GAME
+    RESUME_GAME,
+    SINGLE_PLAYER,
+    MULTI_PLAYER
 };
 
 enum class Character {

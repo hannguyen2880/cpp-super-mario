@@ -284,7 +284,7 @@ RAYLIB_TMX_BUILD_EXAMPLE:BOOL=ON
 RAYLIB_TMX_SHARED:BOOL=OFF
 
 //Name of the computer/site where compile is being run
-SITE:STRING=My-Cozy-Nerd-Nest.local
+SITE:STRING=172-0-2-164.lightspeed.brhmal.sbcglobal.net
 
 //The directory containing a CMake configuration file for TMX.
 TMX_DIR:PATH=/opt/homebrew/lib/cmake/tmx

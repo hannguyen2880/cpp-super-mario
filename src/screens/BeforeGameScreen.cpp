@@ -2,25 +2,28 @@
 #include "../game/Game.h"
 
 BeforeGameScreen::BeforeGameScreen()
-    : yesButton("../assets/imgs/Buttons/YesButton.png", 300, 390),
-      noButton("../assets/imgs/Buttons/NoButton.png", 500, 390),
-      backButton("../assets/imgs/Buttons/BackButton.png", 570, 17),
-      easyButton("../assets/imgs/Buttons/EasyButton.png", 380, 200),
-      mediumButton("../assets/imgs/Buttons/MediumButton.png", 380, 280),
-      hardButton("../assets/imgs/Buttons/HardButton.png", 380, 360),
-      marioButton("../assets/imgs/Buttons/mario.png", 500, 238),
-      luigiButton("../assets/imgs/Buttons/luigi.png", 280, 238)
+    : yesButton(YES_BUTTON, 280, 314),
+      noButton(NO_BUTTON, 380, 314),
+      backButton(BACK_BUTTON, 570, 17),
+      easyButton(EASY_BUTTON, 260, 190),
+      mediumButton(MEDIUM_BUTTON, 260, 250),
+      hardButton(HARD_BUTTON, 260, 310),
+      marioButton(MARIO_BUTTON, 380, 240),
+      luigiButton(LUIGI_BUTTON, 240, 240),
+      singlePlayerButton("1 PLAYER", 260, 220, 200, 50, ButtonStyle::BLUE_STYLE, 30),
+      multiPlayerButton("2 PLAYERS", 260, 300, 200, 50, ButtonStyle::GREEN_STYLE, 30)
 {
-    panelTargetY = 161;
+    panelTargetY = 172;
     panelCurrentY = 600;
     panelAlpha = 0.0f;
     animationSpeed = 800.0f;
     isAnimating = true;
+    currentPanel = PanelState::RESUME_PANEL;
 }
 
 void BeforeGameScreen::Init() {
-    background = LoadTexture("../assets/imgs/Screen_background.png");
-    resumeGamePanel = LoadTexture("../assets/imgs/ResumeGamePanel.png");
+    background = LoadTexture(MENU_BACKGROUND);
+    resumeGamePanel = LoadTexture(RESUMEGAME_PANEL);
 }
 
 void BeforeGameScreen::Update() {
@@ -45,41 +48,57 @@ void BeforeGameScreen::Update() {
     if (currentPanel == PanelState::RESUME_PANEL) {
         if (yesButton.Update()) {
             Game::SetState(GameState::GAMEPLAY);
-            Game::SetGameplayMode(GameplayMode::RESUME_GAME);
+            Game::getConfig().setGameplayMode(GameplayMode::RESUME_GAME);
         }
         if (noButton.Update()) {
+            currentPanel = PanelState::PLAYER_COUNT_PANEL;
+            isAnimating = true;
+            panelCurrentY = 600;
+        }
+    }
+    else if (currentPanel == PanelState::PLAYER_COUNT_PANEL) {
+        if (singlePlayerButton.Update()) {
+            Game::getConfig().setGameplayMode(GameplayMode::SINGLE_PLAYER);
             currentPanel = PanelState::CHARACTER_SELECTION_PANEL;
-            isAnimating = true;  // Trigger animation for new panel
-            panelCurrentY = 600; // Reset position for new panel
-            Game::SetGameplayMode(GameplayMode::NEW_GAME);
+            isAnimating = true;
+            panelCurrentY = 600;
+        }
+        if (multiPlayerButton.Update()) {
+            Game::getConfig().setGameplayMode(GameplayMode::MULTI_PLAYER);
+            currentPanel = PanelState::DIFFICULTY_PANEL;
+            isAnimating = true;
+            panelCurrentY = 600;
         }
     }
     else if (currentPanel == PanelState::CHARACTER_SELECTION_PANEL) {
         if (marioButton.Update()) {
-            Game::SetCharacter(Character::MARIO);
+            Game::getConfig().setCharacter(Character::MARIO);
             currentPanel = PanelState::DIFFICULTY_PANEL;
+            isAnimating = true;
+            panelCurrentY = 600;
         }
         if (luigiButton.Update()) {
-            Game::SetCharacter(Character::LUIGI);
+            Game::getConfig().setCharacter(Character::LUIGI);
             currentPanel = PanelState::DIFFICULTY_PANEL;
+            isAnimating = true;
+            panelCurrentY = 600;
         }
-        
     }
     else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
         if (easyButton.Update()) {
-            Game::SetDifficulty(GameDifficulty::EASY);
+            Game::getConfig().setDifficulty(GameDifficulty::EASY);
             Game::SetState(GameState::GAMEPLAY);
         }
         if (mediumButton.Update()) {
-            Game::SetDifficulty(GameDifficulty::MEDIUM);
+            Game::getConfig().setDifficulty(GameDifficulty::MEDIUM);
             Game::SetState(GameState::GAMEPLAY);
         }
         if (hardButton.Update()) {
-            Game::SetDifficulty(GameDifficulty::HARD);
+            Game::getConfig().setDifficulty(GameDifficulty::HARD);
             Game::SetState(GameState::GAMEPLAY);
         }
     }
-    
+
     if (backButton.Update()) {
         Game::SetState(GameState::MAIN_MENU);
     }
@@ -91,25 +110,33 @@ void BeforeGameScreen::Draw() {
     Color panelColor = {255, 255, 255, (unsigned char)(panelAlpha * 255)};
     
     if (currentPanel == PanelState::RESUME_PANEL) {
-        DrawTexture(resumeGamePanel, 228, panelCurrentY, panelColor);
+        DrawTexture(resumeGamePanel, 200, panelCurrentY, panelColor);
         if (!isAnimating) {
             yesButton.Draw();
             noButton.Draw();
         }
     }
+    else if (currentPanel == PanelState::PLAYER_COUNT_PANEL) {
+        DrawRectangle(200, panelCurrentY, 318, 200, 
+                     ColorAlpha(RAYWHITE, panelAlpha * 0.9f));
+        DrawText("Select Players", 250, 180, 30, BLACK);
+        if (!isAnimating) {
+            singlePlayerButton.Draw();
+            multiPlayerButton.Draw();
+        }
+    }
     else if (currentPanel == PanelState::CHARACTER_SELECTION_PANEL) {
-        DrawRectangle(228, panelCurrentY, 504, 300, 
-                     ColorAlpha(PINK, panelAlpha * 0.9f));
-        DrawText("Choose your character", 300, 180, 30, BLACK);
+        DrawRectangle(200, panelCurrentY, 318, 200, 
+                     ColorAlpha(RAYWHITE, panelAlpha * 0.9f));
+        DrawText("Select character", 220, 180, 30, BLACK);
         if (!isAnimating) {
             marioButton.Draw();
             luigiButton.Draw();
         }
     }
     else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
-        DrawRectangle(228, panelCurrentY, 504, 300, 
-                     ColorAlpha(BLACK, panelAlpha * 0.7f));
-        
+        DrawRectangle(200, panelCurrentY, 318, 200, 
+                     ColorAlpha(RAYWHITE, panelAlpha * 0.9f));
         if (!isAnimating) {
             easyButton.Draw();
             mediumButton.Draw();

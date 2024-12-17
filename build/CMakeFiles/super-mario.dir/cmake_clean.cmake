@@ -11,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/super-mario.dir/src/main.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o"
   "CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o.d"
-  "CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o"
-  "CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o"
   "CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o"

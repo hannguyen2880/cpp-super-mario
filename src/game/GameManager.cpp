@@ -3,6 +3,12 @@
 GameManager::GameManager(const char *mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
 :screenWidth_(screenWidth), screenHeight_(screenHeight), secondPlayer(secondPlayer)
 {
+    std::cout << "Initializing GameManager with parameters:" << std::endl;
+    std::cout << "Map Name: " << mapName << std::endl;
+    std::cout << "Screen Width: " << screenWidth << std::endl;
+    std::cout << "Screen Height: " << screenHeight << std::endl;
+    std::cout << "Second Player: " << (secondPlayer ? "true" : "false") << std::endl;
+
     run = true;
     pause = false;
     world_ = ECS::World::createWorld();
@@ -16,15 +22,11 @@ GameManager::GameManager(const char *mapName, const int screenWidth, const int s
 }
 
 void GameManager::mainLoop() {
-
     initWorld();
-
     ECS::ComponentHandle<CameraComponent> camera = world_->getById(cameraId_)->get<CameraComponent>();
-
     SetTargetFPS(FPS);
     double previous = GetTime();
     double lag = 0.0;
-
     while (run && !WindowShouldClose()) {
         double current = GetTime();
         double elapsed = current - previous;
@@ -37,12 +39,8 @@ void GameManager::mainLoop() {
         //Update
         while (lag >= MS_PER_UPDATE) {
             world_->tick(0.0f);
-            // world_->disableSystem(animationSystem_);
             lag -= MS_PER_UPDATE;
         }
-
-        // world_->enableSystem(animationSystem_);
-
         updateMusicStream();
 
         // Drawing
@@ -53,12 +51,6 @@ void GameManager::mainLoop() {
         BeginMode2D(camera.get().camera);
 
         render(static_cast<float>(lag / MS_PER_UPDATE));
-
-        // just for showing the center of the camera
-#ifdef DEBUG
-        DrawLine(camera->camera.target.x, - screenHeight_ * 10, camera->camera.target.x, screenHeight_ * 10, GREEN);
-        DrawLine(- screenWidth_ * 5, camera->camera.target.y, screenWidth_ * 5, camera->camera.target.y, GREEN);
-#endif
 
         EndMode2D();
 
@@ -100,66 +92,83 @@ void GameManager::initWorld() {
     cameraId_ = camera->getEntityId();
 
     initIdsMap();
-
     registerSystems();
-
     initTextEntities();
-
     startMusic();
+}
+
+void GameManager::initMarioPlayer(ECS::Entity *player, Vector2 position) {
+    player->getEntityId();
+    player->assign<PlayerComponent>();
+    player->assign<AABBComponent>(
+            Rectangle {
+                    position.x * 32,
+                    position.y * 32,
+                    32,
+                    32});
+    player->assign<TextureComponent>(MARIO_STAND);
+    player->assign<LeadCameraComponent>();
+    player->assign<CommandComponent>(std::map<Command, int> {
+            {JUMP, KEY_UP},
+            {MOVE_LEFT, KEY_LEFT},
+            {MOVE_RIGHT, KEY_RIGHT},
+            {DUCK, KEY_DOWN},
+            {SPRINT, KEY_LEFT_SHIFT},
+            {SHOOT, KEY_Z}
+    });
+    player->assign<GravityComponent>();
+    player->assign<SolidComponent>();
+    player->assign<KineticComponent>(0.0f, 0.0f);
+    player->assign<MarioComponent>();
+}
+
+void GameManager::initLuigiPlayer(ECS::Entity *player, Vector2 position) {
+    player->getEntityId();
+    player->assign<PlayerComponent>();
+    player->assign<AABBComponent>(
+            Rectangle {
+                    position.x * 32,
+                    position.y * 32,
+                    32,
+                    32});
+    player->assign<TextureComponent>(LUIGI_STAND);
+    player->assign<CommandComponent>(std::map<Command, int> {
+            {JUMP, KEY_W},
+            {MOVE_LEFT, KEY_A},
+            {MOVE_RIGHT, KEY_D},
+            {DUCK, KEY_S},
+            {SHOOT, KEY_F}
+    });
+    player->assign<GravityComponent>();
+    player->assign<SolidComponent>();
+    player->assign<KineticComponent>(0.0f, 0.0f);
+    player->assign<LuigiComponent>();
 }
 
 void GameManager::initPlayers() {
     Vector2 spawnPositionP1 = pMap_->getSpawnPositionP1();
     Vector2 spawnPositionP2 = pMap_->getSpawnPositionP2();
-
-    // First Player
     ECS::Entity* mario = world_->create();
-    mario->getEntityId();
-    mario->assign<PlayerComponent>();
-    mario->assign<AABBComponent>(
-            Rectangle {
-                    spawnPositionP1.x * 32,
-                    spawnPositionP1.y * 32,
-                    32,
-                    32});
-    mario->assign<TextureComponent>(MARIO_STAND);
-    mario->assign<LeadCameraComponent>();
-    mario->assign<CommandComponent>(std::map<Command, int> {
-                                            {JUMP, KEY_UP},
-                                            {MOVE_LEFT, KEY_LEFT},
-                                            {MOVE_RIGHT, KEY_RIGHT},
-                                            {DUCK, KEY_DOWN},
-                                            {SPRINT, KEY_LEFT_SHIFT},
-                                            {SHOOT, KEY_Z}
-                                    });
-    mario->assign<GravityComponent>();
-    mario->assign<SolidComponent>();
-    mario->assign<KineticComponent>(0.0f, 0.0f);
-    mario->assign<MarioComponent>();
-
-    // Second Player
+    initMarioPlayer(mario, spawnPositionP1);
     if (secondPlayer) {
         ECS::Entity* luigi = world_->create();
-        luigi->assign<PlayerComponent>();
-        luigi->assign<AABBComponent>(
-                Rectangle {
-                        spawnPositionP2.x * 32,
-                        spawnPositionP2.y * 32,
-                        32,
-                        32});
-        luigi->assign<TextureComponent>(LUIGI_STAND);
-        luigi->assign<CommandComponent>(std::map<Command, int> {
-                {JUMP, KEY_W},
-                {MOVE_LEFT, KEY_A},
-                {MOVE_RIGHT, KEY_D},
-                {DUCK, KEY_S},
-                {SHOOT, KEY_F}
-        });
-        luigi->assign<GravityComponent>();
-        luigi->assign<SolidComponent>();
-        luigi->assign<KineticComponent>(0.0f, 0.0f);
-        luigi->assign<LuigiComponent>();
+        initLuigiPlayer(luigi, spawnPositionP2);
     }
+    // if (!secondPlayer) {
+    //     ECS::Entity* player = world_->create();
+    //     if (Game::GetCharacter() == Character::MARIO) {
+    //         initMarioPlayer(player, spawnPositionP1);
+    //     } else {
+    //         initLuigiPlayer(player, spawnPositionP1);
+    //     }
+    // }
+    // else {
+    //     ECS::Entity* mario = world_->create();
+    //     initMarioPlayer(mario, spawnPositionP1);
+        
+    //     ECS::Entity* luigi = world_->create();
+    //     initLuigiPlayer(luigi, spawnPositionP2);
+    // }
 }
 
 void GameManager::registerSystems() {
@@ -290,3 +299,18 @@ void GameManager::restartGame() {
         restart = true;
     }
 }
+
+// void GameManager::loadGameState() {
+//     if (GameConfig::getInstance()->hasExistingSave()) {
+//         PlayerState state = GameConfig::getInstance()->loadGameState();
+//         // Load player state into the game
+//         // Example: Set player position, score, lives, etc.
+//     }
+// }
+
+// void GameManager::saveGameState() {
+//     PlayerState state;
+//     // Save player state from the game
+//     // Example: Get player position, score, lives, etc.
+//     GameConfig::getInstance()->saveGameState(state);
+// }

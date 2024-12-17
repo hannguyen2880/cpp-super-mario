@@ -5,9 +5,9 @@
 #include <cmath>
 
 MenuScreen::MenuScreen() {
-    playButton = ImageButton("../assets/imgs/Buttons/StartGameButton.png", 228, 159);
-    instructionButton = ImageButton("../assets/imgs/Buttons/InstructionButton.png", 228, 239);
-    scoreboardButton = ImageButton("../assets/imgs/Buttons/ScoreboardButton.png", 228, 319);
+    playButton = ImageButton(START_GAME_BUTTON, 228, 159);
+    instructionButton = ImageButton(INSTRUCTION_BUTTON, 228, 239);
+    scoreboardButton = ImageButton(SCOREBOARD_BUTTON, 228, 319);
     originalMarioX = 55;
     originalMarioY = 199;
     cloud1X = 684;
@@ -29,10 +29,10 @@ MenuScreen::~MenuScreen() {
 static bool firstLaunchCompleted = false;
 
 void MenuScreen::Init() {
-    background = LoadTexture("../assets/imgs/menu-2.png");
-    loadingTexture = LoadTexture("../assets/imgs/Loading_menu.png");
-    mario = LoadTexture("../assets/imgs/Mario.png");
-    cloud = LoadTexture("../assets/imgs/Clouds.png");
+    background = LoadTexture(MAIN_MENU);
+    loadingTexture = LoadTexture(LOADING_SCREEN);
+    mario = LoadTexture(MARIO_MENU);
+    cloud = LoadTexture(CLOUD);
 
     isLoading = !firstLaunchCompleted;
     if (isLoading) {
@@ -48,8 +48,6 @@ void MenuScreen::Unload() {
     UnloadTexture(background);
     UnloadTexture(mario);
     UnloadTexture(cloud);
-    //playButton.~ImageButton();
-    //instructionButton.~ImageButton();
 }
 
 bool isRepeat = true;
