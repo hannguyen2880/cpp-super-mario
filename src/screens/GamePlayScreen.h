@@ -1,15 +1,18 @@
 #pragma once
 #include "Screen.h"
 #include "../game/GameState.h"
-#include "../game/Game.h"
+#include "../game/GameConfig.h"
+#include "../game/GameManager.h"
 
 class GameplayScreen : public Screen {
 private:
     GameDifficulty currentDifficulty;
     GameplayMode currentMode;
+    Character currentCharacter;
+    bool isPaused;
+
     void InitNewGame();
     void LoadSavedGame();
-    void ConfigureDifficulty();
 
 public:
     GameplayScreen();

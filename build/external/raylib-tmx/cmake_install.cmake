@@ -1,4 +1,4 @@
-# Install script for directory: /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx
+# Install script for directory: /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/include/cmake_install.cmake")
-  include("/Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/src/cmake_install.cmake")
-  include("/Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example/cmake_install.cmake")
-  include("/Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/test/cmake_install.cmake")
+  include("/Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/include/cmake_install.cmake")
+  include("/Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/src/cmake_install.cmake")
+  include("/Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example/cmake_install.cmake")
+  include("/Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/install_local_manifest.txt"
+  file(WRITE "/Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

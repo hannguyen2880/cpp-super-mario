@@ -1,55 +1,47 @@
-#include "GamePlayScreen.h"
+#include "GameplayScreen.h"
 
-GameplayScreen::GameplayScreen() {
-    currentDifficulty = Game::GetDifficulty();
-    currentMode = Game::GetGameplayMode();
-}
+GameplayScreen::GameplayScreen()
+    : currentDifficulty(GameConfig::getInstance().getDifficulty()),
+      currentMode(GameConfig::getInstance().getGameplayMode()),
+      currentCharacter(GameConfig::getInstance().getCharacter()),
+      isPaused(false) {};
 
 void GameplayScreen::Init() {
-    if (currentMode == GameplayMode::NEW_GAME) {
+    if (currentMode == GameplayMode::SINGLE_PLAYER) {
         InitNewGame();
     } else {
         LoadSavedGame();
     }
-    ConfigureDifficulty();
-}
-
-void GameplayScreen::ConfigureDifficulty() {
-    // Use Build Method to build these level
-    // LevelDirector = director
-    // LevelBuilder* builder = nullptr
-
-    switch (currentDifficulty) {
-        case GameDifficulty::EASY:
-            // builder = new EasyLevelBuilder();
-            break;
-        case GameDifficulty::MEDIUM:
-            // Configure medium mode parameters
-            break;
-        case GameDifficulty::HARD:
-
-            // Configure hard mode parameters
-            break;
-    }
 }
 
 void GameplayScreen::InitNewGame() {
-    //score = 0;
-    // Initialize new game state
+    //gameManager->initWorld();
 }
 
 void GameplayScreen::LoadSavedGame() {
-    // Load saved game state from file/memory
+    //gameManager->loadGameState();
 }
 
 void GameplayScreen::Update() {
-    return;
+    bool secondPlayer = (currentMode == GameplayMode::MULTI_PLAYER);
+    std::string mapFilePath;
+    switch (currentDifficulty) {
+        case GameDifficulty::EASY:
+            mapFilePath = EASY_MAP;
+            break;
+        case GameDifficulty::MEDIUM:
+            mapFilePath = MEDIUM_MAP;
+            break;
+        case GameDifficulty::HARD:
+            mapFilePath = HARD_MAP;
+            break;
+    }
+    GameManager gameManager(mapFilePath.c_str(), SCREEN_WIDTH, SCREEN_HEIGHT, secondPlayer);
+    gameManager.mainLoop();
 }
 
-void GameplayScreen::Draw() {
-    return;
-}
+void GameplayScreen::Draw() {}
 
 void GameplayScreen::Unload() {
-    return;
+    //gameManager.reset();
 }

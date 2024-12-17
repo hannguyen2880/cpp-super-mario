@@ -2,7 +2,7 @@
 #include "../game/Game.h"
 
 InstructionScreen::InstructionScreen()
-    :backButton("../assets/images/BackButton.png", 20, 480)
+    :backButton(BACK_BUTTON, 570, 17)
 {
     panelTargetY = 161;
     panelCurrentY = 600;
@@ -12,8 +12,8 @@ InstructionScreen::InstructionScreen()
 }
 
 void InstructionScreen::Init() {
-    background = LoadTexture("../assets/images/Screen_background.png");
-    instructionPanel = LoadTexture("../assets/images/InstructionPanel.png");
+    background = LoadTexture(MENU_BACKGROUND);
+    instructionPanel = LoadTexture(INSTRUCTION_PANEL);
 }
 
 void InstructionScreen::Update() {
@@ -45,7 +45,7 @@ void InstructionScreen::Update() {
 void InstructionScreen::Draw() {
     DrawTexture(background, 0, 0, WHITE);
 
-    int panelX = 228;
+    int panelX = 200;
     
     Color panelColor = {255, 255, 255, (unsigned char)(panelAlpha * 255)};
     DrawTexture(instructionPanel, 
@@ -53,9 +53,7 @@ void InstructionScreen::Draw() {
                 panelCurrentY,
                 panelColor);
 
-    if (!isAnimating) {
-        backButton.Draw();
-    }
+    backButton.Draw();
 }
 
 InstructionScreen::~InstructionScreen() {
@@ -65,5 +63,4 @@ InstructionScreen::~InstructionScreen() {
 void InstructionScreen::Unload() {
     UnloadTexture(background);
     UnloadTexture(instructionPanel);
-    //backButton.~Button();
 }

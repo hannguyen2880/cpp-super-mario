@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario
+CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/cpp-super-mario
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario/build
+CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/cpp-super-mario/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles /Users/hannguyen/Desktop/data/cpp-super-mario/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles /Users/hannguyen/Desktop/cpp-super-mario/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -532,125 +532,29 @@ raylib-tmx-test/fast:
 	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build
 .PHONY : raylib-tmx-test/fast
 
-src/audio/AudioManager.o: src/audio/AudioManager.cpp.o
-.PHONY : src/audio/AudioManager.o
+src/audio/AudioManaer.o: src/audio/AudioManaer.cpp.o
+.PHONY : src/audio/AudioManaer.o
 
 # target to build an object file
-src/audio/AudioManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o
-.PHONY : src/audio/AudioManager.cpp.o
+src/audio/AudioManaer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o
+.PHONY : src/audio/AudioManaer.cpp.o
 
-src/audio/AudioManager.i: src/audio/AudioManager.cpp.i
-.PHONY : src/audio/AudioManager.i
-
-# target to preprocess a source file
-src/audio/AudioManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i
-.PHONY : src/audio/AudioManager.cpp.i
-
-src/audio/AudioManager.s: src/audio/AudioManager.cpp.s
-.PHONY : src/audio/AudioManager.s
-
-# target to generate assembly for a file
-src/audio/AudioManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s
-.PHONY : src/audio/AudioManager.cpp.s
-
-src/entity/DynamicEntity.o: src/entity/DynamicEntity.cpp.o
-.PHONY : src/entity/DynamicEntity.o
-
-# target to build an object file
-src/entity/DynamicEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o
-.PHONY : src/entity/DynamicEntity.cpp.o
-
-src/entity/DynamicEntity.i: src/entity/DynamicEntity.cpp.i
-.PHONY : src/entity/DynamicEntity.i
+src/audio/AudioManaer.i: src/audio/AudioManaer.cpp.i
+.PHONY : src/audio/AudioManaer.i
 
 # target to preprocess a source file
-src/entity/DynamicEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.i
-.PHONY : src/entity/DynamicEntity.cpp.i
+src/audio/AudioManaer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i
+.PHONY : src/audio/AudioManaer.cpp.i
 
-src/entity/DynamicEntity.s: src/entity/DynamicEntity.cpp.s
-.PHONY : src/entity/DynamicEntity.s
-
-# target to generate assembly for a file
-src/entity/DynamicEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.s
-.PHONY : src/entity/DynamicEntity.cpp.s
-
-src/entity/Enemy/Enemy.o: src/entity/Enemy/Enemy.cpp.o
-.PHONY : src/entity/Enemy/Enemy.o
-
-# target to build an object file
-src/entity/Enemy/Enemy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o
-.PHONY : src/entity/Enemy/Enemy.cpp.o
-
-src/entity/Enemy/Enemy.i: src/entity/Enemy/Enemy.cpp.i
-.PHONY : src/entity/Enemy/Enemy.i
-
-# target to preprocess a source file
-src/entity/Enemy/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.i
-.PHONY : src/entity/Enemy/Enemy.cpp.i
-
-src/entity/Enemy/Enemy.s: src/entity/Enemy/Enemy.cpp.s
-.PHONY : src/entity/Enemy/Enemy.s
+src/audio/AudioManaer.s: src/audio/AudioManaer.cpp.s
+.PHONY : src/audio/AudioManaer.s
 
 # target to generate assembly for a file
-src/entity/Enemy/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.s
-.PHONY : src/entity/Enemy/Enemy.cpp.s
-
-src/entity/KinematicEntity.o: src/entity/KinematicEntity.cpp.o
-.PHONY : src/entity/KinematicEntity.o
-
-# target to build an object file
-src/entity/KinematicEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o
-.PHONY : src/entity/KinematicEntity.cpp.o
-
-src/entity/KinematicEntity.i: src/entity/KinematicEntity.cpp.i
-.PHONY : src/entity/KinematicEntity.i
-
-# target to preprocess a source file
-src/entity/KinematicEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.i
-.PHONY : src/entity/KinematicEntity.cpp.i
-
-src/entity/KinematicEntity.s: src/entity/KinematicEntity.cpp.s
-.PHONY : src/entity/KinematicEntity.s
-
-# target to generate assembly for a file
-src/entity/KinematicEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.s
-.PHONY : src/entity/KinematicEntity.cpp.s
-
-src/entity/StaticEntity.o: src/entity/StaticEntity.cpp.o
-.PHONY : src/entity/StaticEntity.o
-
-# target to build an object file
-src/entity/StaticEntity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o
-.PHONY : src/entity/StaticEntity.cpp.o
-
-src/entity/StaticEntity.i: src/entity/StaticEntity.cpp.i
-.PHONY : src/entity/StaticEntity.i
-
-# target to preprocess a source file
-src/entity/StaticEntity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.i
-.PHONY : src/entity/StaticEntity.cpp.i
-
-src/entity/StaticEntity.s: src/entity/StaticEntity.cpp.s
-.PHONY : src/entity/StaticEntity.s
-
-# target to generate assembly for a file
-src/entity/StaticEntity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.s
-.PHONY : src/entity/StaticEntity.cpp.s
+src/audio/AudioManaer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s
+.PHONY : src/audio/AudioManaer.cpp.s
 
 src/game/Game.o: src/game/Game.cpp.o
 .PHONY : src/game/Game.o
@@ -676,6 +580,54 @@ src/game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/Game.cpp.s
 .PHONY : src/game/Game.cpp.s
 
+src/game/GameConfig.o: src/game/GameConfig.cpp.o
+.PHONY : src/game/GameConfig.o
+
+# target to build an object file
+src/game/GameConfig.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o
+.PHONY : src/game/GameConfig.cpp.o
+
+src/game/GameConfig.i: src/game/GameConfig.cpp.i
+.PHONY : src/game/GameConfig.i
+
+# target to preprocess a source file
+src/game/GameConfig.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.i
+.PHONY : src/game/GameConfig.cpp.i
+
+src/game/GameConfig.s: src/game/GameConfig.cpp.s
+.PHONY : src/game/GameConfig.s
+
+# target to generate assembly for a file
+src/game/GameConfig.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.s
+.PHONY : src/game/GameConfig.cpp.s
+
+src/game/GameManager.o: src/game/GameManager.cpp.o
+.PHONY : src/game/GameManager.o
+
+# target to build an object file
+src/game/GameManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o
+.PHONY : src/game/GameManager.cpp.o
+
+src/game/GameManager.i: src/game/GameManager.cpp.i
+.PHONY : src/game/GameManager.i
+
+# target to preprocess a source file
+src/game/GameManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameManager.cpp.i
+.PHONY : src/game/GameManager.cpp.i
+
+src/game/GameManager.s: src/game/GameManager.cpp.s
+.PHONY : src/game/GameManager.s
+
+# target to generate assembly for a file
+src/game/GameManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameManager.cpp.s
+.PHONY : src/game/GameManager.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -700,29 +652,149 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/raylib-tileson.o: src/raylib-tileson.cpp.o
-.PHONY : src/raylib-tileson.o
+src/map/GameMap.o: src/map/GameMap.cpp.o
+.PHONY : src/map/GameMap.o
 
 # target to build an object file
-src/raylib-tileson.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o
-.PHONY : src/raylib-tileson.cpp.o
+src/map/GameMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o
+.PHONY : src/map/GameMap.cpp.o
 
-src/raylib-tileson.i: src/raylib-tileson.cpp.i
-.PHONY : src/raylib-tileson.i
+src/map/GameMap.i: src/map/GameMap.cpp.i
+.PHONY : src/map/GameMap.i
 
 # target to preprocess a source file
-src/raylib-tileson.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.i
-.PHONY : src/raylib-tileson.cpp.i
+src/map/GameMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/GameMap.cpp.i
+.PHONY : src/map/GameMap.cpp.i
 
-src/raylib-tileson.s: src/raylib-tileson.cpp.s
-.PHONY : src/raylib-tileson.s
+src/map/GameMap.s: src/map/GameMap.cpp.s
+.PHONY : src/map/GameMap.s
 
 # target to generate assembly for a file
-src/raylib-tileson.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.s
-.PHONY : src/raylib-tileson.cpp.s
+src/map/GameMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/map/GameMap.cpp.s
+.PHONY : src/map/GameMap.cpp.s
+
+src/renderers/EnemiesRenderer.o: src/renderers/EnemiesRenderer.cpp.o
+.PHONY : src/renderers/EnemiesRenderer.o
+
+# target to build an object file
+src/renderers/EnemiesRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o
+.PHONY : src/renderers/EnemiesRenderer.cpp.o
+
+src/renderers/EnemiesRenderer.i: src/renderers/EnemiesRenderer.cpp.i
+.PHONY : src/renderers/EnemiesRenderer.i
+
+# target to preprocess a source file
+src/renderers/EnemiesRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.i
+.PHONY : src/renderers/EnemiesRenderer.cpp.i
+
+src/renderers/EnemiesRenderer.s: src/renderers/EnemiesRenderer.cpp.s
+.PHONY : src/renderers/EnemiesRenderer.s
+
+# target to generate assembly for a file
+src/renderers/EnemiesRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.s
+.PHONY : src/renderers/EnemiesRenderer.cpp.s
+
+src/renderers/MapRenderer.o: src/renderers/MapRenderer.cpp.o
+.PHONY : src/renderers/MapRenderer.o
+
+# target to build an object file
+src/renderers/MapRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o
+.PHONY : src/renderers/MapRenderer.cpp.o
+
+src/renderers/MapRenderer.i: src/renderers/MapRenderer.cpp.i
+.PHONY : src/renderers/MapRenderer.i
+
+# target to preprocess a source file
+src/renderers/MapRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.i
+.PHONY : src/renderers/MapRenderer.cpp.i
+
+src/renderers/MapRenderer.s: src/renderers/MapRenderer.cpp.s
+.PHONY : src/renderers/MapRenderer.s
+
+# target to generate assembly for a file
+src/renderers/MapRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.s
+.PHONY : src/renderers/MapRenderer.cpp.s
+
+src/renderers/ObjectRenderer.o: src/renderers/ObjectRenderer.cpp.o
+.PHONY : src/renderers/ObjectRenderer.o
+
+# target to build an object file
+src/renderers/ObjectRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o
+.PHONY : src/renderers/ObjectRenderer.cpp.o
+
+src/renderers/ObjectRenderer.i: src/renderers/ObjectRenderer.cpp.i
+.PHONY : src/renderers/ObjectRenderer.i
+
+# target to preprocess a source file
+src/renderers/ObjectRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.i
+.PHONY : src/renderers/ObjectRenderer.cpp.i
+
+src/renderers/ObjectRenderer.s: src/renderers/ObjectRenderer.cpp.s
+.PHONY : src/renderers/ObjectRenderer.s
+
+# target to generate assembly for a file
+src/renderers/ObjectRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.s
+.PHONY : src/renderers/ObjectRenderer.cpp.s
+
+src/renderers/TextRenderer.o: src/renderers/TextRenderer.cpp.o
+.PHONY : src/renderers/TextRenderer.o
+
+# target to build an object file
+src/renderers/TextRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o
+.PHONY : src/renderers/TextRenderer.cpp.o
+
+src/renderers/TextRenderer.i: src/renderers/TextRenderer.cpp.i
+.PHONY : src/renderers/TextRenderer.i
+
+# target to preprocess a source file
+src/renderers/TextRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.i
+.PHONY : src/renderers/TextRenderer.cpp.i
+
+src/renderers/TextRenderer.s: src/renderers/TextRenderer.cpp.s
+.PHONY : src/renderers/TextRenderer.s
+
+# target to generate assembly for a file
+src/renderers/TextRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.s
+.PHONY : src/renderers/TextRenderer.cpp.s
+
+src/renderers/TextureRenderer.o: src/renderers/TextureRenderer.cpp.o
+.PHONY : src/renderers/TextureRenderer.o
+
+# target to build an object file
+src/renderers/TextureRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o
+.PHONY : src/renderers/TextureRenderer.cpp.o
+
+src/renderers/TextureRenderer.i: src/renderers/TextureRenderer.cpp.i
+.PHONY : src/renderers/TextureRenderer.i
+
+# target to preprocess a source file
+src/renderers/TextureRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.i
+.PHONY : src/renderers/TextureRenderer.cpp.i
+
+src/renderers/TextureRenderer.s: src/renderers/TextureRenderer.cpp.s
+.PHONY : src/renderers/TextureRenderer.s
+
+# target to generate assembly for a file
+src/renderers/TextureRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.s
+.PHONY : src/renderers/TextureRenderer.cpp.s
 
 src/screens/BeforeGameScreen.o: src/screens/BeforeGameScreen.cpp.o
 .PHONY : src/screens/BeforeGameScreen.o
@@ -820,6 +892,270 @@ src/screens/MenuScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s
 .PHONY : src/screens/MenuScreen.cpp.s
 
+src/systems/IdsMap/IdsMapSystem.o: src/systems/IdsMap/IdsMapSystem.cpp.o
+.PHONY : src/systems/IdsMap/IdsMapSystem.o
+
+# target to build an object file
+src/systems/IdsMap/IdsMapSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o
+.PHONY : src/systems/IdsMap/IdsMapSystem.cpp.o
+
+src/systems/IdsMap/IdsMapSystem.i: src/systems/IdsMap/IdsMapSystem.cpp.i
+.PHONY : src/systems/IdsMap/IdsMapSystem.i
+
+# target to preprocess a source file
+src/systems/IdsMap/IdsMapSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.i
+.PHONY : src/systems/IdsMap/IdsMapSystem.cpp.i
+
+src/systems/IdsMap/IdsMapSystem.s: src/systems/IdsMap/IdsMapSystem.cpp.s
+.PHONY : src/systems/IdsMap/IdsMapSystem.s
+
+# target to generate assembly for a file
+src/systems/IdsMap/IdsMapSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.s
+.PHONY : src/systems/IdsMap/IdsMapSystem.cpp.s
+
+src/systems/animation/AnimationSystem.o: src/systems/animation/AnimationSystem.cpp.o
+.PHONY : src/systems/animation/AnimationSystem.o
+
+# target to build an object file
+src/systems/animation/AnimationSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o
+.PHONY : src/systems/animation/AnimationSystem.cpp.o
+
+src/systems/animation/AnimationSystem.i: src/systems/animation/AnimationSystem.cpp.i
+.PHONY : src/systems/animation/AnimationSystem.i
+
+# target to preprocess a source file
+src/systems/animation/AnimationSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.i
+.PHONY : src/systems/animation/AnimationSystem.cpp.i
+
+src/systems/animation/AnimationSystem.s: src/systems/animation/AnimationSystem.cpp.s
+.PHONY : src/systems/animation/AnimationSystem.s
+
+# target to generate assembly for a file
+src/systems/animation/AnimationSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.s
+.PHONY : src/systems/animation/AnimationSystem.cpp.s
+
+src/systems/camera/CameraSystem.o: src/systems/camera/CameraSystem.cpp.o
+.PHONY : src/systems/camera/CameraSystem.o
+
+# target to build an object file
+src/systems/camera/CameraSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o
+.PHONY : src/systems/camera/CameraSystem.cpp.o
+
+src/systems/camera/CameraSystem.i: src/systems/camera/CameraSystem.cpp.i
+.PHONY : src/systems/camera/CameraSystem.i
+
+# target to preprocess a source file
+src/systems/camera/CameraSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.i
+.PHONY : src/systems/camera/CameraSystem.cpp.i
+
+src/systems/camera/CameraSystem.s: src/systems/camera/CameraSystem.cpp.s
+.PHONY : src/systems/camera/CameraSystem.s
+
+# target to generate assembly for a file
+src/systems/camera/CameraSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.s
+.PHONY : src/systems/camera/CameraSystem.cpp.s
+
+src/systems/enemy/EnemySystem.o: src/systems/enemy/EnemySystem.cpp.o
+.PHONY : src/systems/enemy/EnemySystem.o
+
+# target to build an object file
+src/systems/enemy/EnemySystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o
+.PHONY : src/systems/enemy/EnemySystem.cpp.o
+
+src/systems/enemy/EnemySystem.i: src/systems/enemy/EnemySystem.cpp.i
+.PHONY : src/systems/enemy/EnemySystem.i
+
+# target to preprocess a source file
+src/systems/enemy/EnemySystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.i
+.PHONY : src/systems/enemy/EnemySystem.cpp.i
+
+src/systems/enemy/EnemySystem.s: src/systems/enemy/EnemySystem.cpp.s
+.PHONY : src/systems/enemy/EnemySystem.s
+
+# target to generate assembly for a file
+src/systems/enemy/EnemySystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.s
+.PHONY : src/systems/enemy/EnemySystem.cpp.s
+
+src/systems/flag/FlagSystem.o: src/systems/flag/FlagSystem.cpp.o
+.PHONY : src/systems/flag/FlagSystem.o
+
+# target to build an object file
+src/systems/flag/FlagSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o
+.PHONY : src/systems/flag/FlagSystem.cpp.o
+
+src/systems/flag/FlagSystem.i: src/systems/flag/FlagSystem.cpp.i
+.PHONY : src/systems/flag/FlagSystem.i
+
+# target to preprocess a source file
+src/systems/flag/FlagSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.i
+.PHONY : src/systems/flag/FlagSystem.cpp.i
+
+src/systems/flag/FlagSystem.s: src/systems/flag/FlagSystem.cpp.s
+.PHONY : src/systems/flag/FlagSystem.s
+
+# target to generate assembly for a file
+src/systems/flag/FlagSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.s
+.PHONY : src/systems/flag/FlagSystem.cpp.s
+
+src/systems/physics/PhysicSystem.o: src/systems/physics/PhysicSystem.cpp.o
+.PHONY : src/systems/physics/PhysicSystem.o
+
+# target to build an object file
+src/systems/physics/PhysicSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o
+.PHONY : src/systems/physics/PhysicSystem.cpp.o
+
+src/systems/physics/PhysicSystem.i: src/systems/physics/PhysicSystem.cpp.i
+.PHONY : src/systems/physics/PhysicSystem.i
+
+# target to preprocess a source file
+src/systems/physics/PhysicSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.i
+.PHONY : src/systems/physics/PhysicSystem.cpp.i
+
+src/systems/physics/PhysicSystem.s: src/systems/physics/PhysicSystem.cpp.s
+.PHONY : src/systems/physics/PhysicSystem.s
+
+# target to generate assembly for a file
+src/systems/physics/PhysicSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.s
+.PHONY : src/systems/physics/PhysicSystem.cpp.s
+
+src/systems/player/PlayerSystem.o: src/systems/player/PlayerSystem.cpp.o
+.PHONY : src/systems/player/PlayerSystem.o
+
+# target to build an object file
+src/systems/player/PlayerSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o
+.PHONY : src/systems/player/PlayerSystem.cpp.o
+
+src/systems/player/PlayerSystem.i: src/systems/player/PlayerSystem.cpp.i
+.PHONY : src/systems/player/PlayerSystem.i
+
+# target to preprocess a source file
+src/systems/player/PlayerSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.i
+.PHONY : src/systems/player/PlayerSystem.cpp.i
+
+src/systems/player/PlayerSystem.s: src/systems/player/PlayerSystem.cpp.s
+.PHONY : src/systems/player/PlayerSystem.s
+
+# target to generate assembly for a file
+src/systems/player/PlayerSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.s
+.PHONY : src/systems/player/PlayerSystem.cpp.s
+
+src/systems/score/ScoreSystem.o: src/systems/score/ScoreSystem.cpp.o
+.PHONY : src/systems/score/ScoreSystem.o
+
+# target to build an object file
+src/systems/score/ScoreSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o
+.PHONY : src/systems/score/ScoreSystem.cpp.o
+
+src/systems/score/ScoreSystem.i: src/systems/score/ScoreSystem.cpp.i
+.PHONY : src/systems/score/ScoreSystem.i
+
+# target to preprocess a source file
+src/systems/score/ScoreSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.i
+.PHONY : src/systems/score/ScoreSystem.cpp.i
+
+src/systems/score/ScoreSystem.s: src/systems/score/ScoreSystem.cpp.s
+.PHONY : src/systems/score/ScoreSystem.s
+
+# target to generate assembly for a file
+src/systems/score/ScoreSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.s
+.PHONY : src/systems/score/ScoreSystem.cpp.s
+
+src/systems/sound/SoundSystem.o: src/systems/sound/SoundSystem.cpp.o
+.PHONY : src/systems/sound/SoundSystem.o
+
+# target to build an object file
+src/systems/sound/SoundSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o
+.PHONY : src/systems/sound/SoundSystem.cpp.o
+
+src/systems/sound/SoundSystem.i: src/systems/sound/SoundSystem.cpp.i
+.PHONY : src/systems/sound/SoundSystem.i
+
+# target to preprocess a source file
+src/systems/sound/SoundSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.i
+.PHONY : src/systems/sound/SoundSystem.cpp.i
+
+src/systems/sound/SoundSystem.s: src/systems/sound/SoundSystem.cpp.s
+.PHONY : src/systems/sound/SoundSystem.s
+
+# target to generate assembly for a file
+src/systems/sound/SoundSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.s
+.PHONY : src/systems/sound/SoundSystem.cpp.s
+
+src/systems/tile/TileSystem.o: src/systems/tile/TileSystem.cpp.o
+.PHONY : src/systems/tile/TileSystem.o
+
+# target to build an object file
+src/systems/tile/TileSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o
+.PHONY : src/systems/tile/TileSystem.cpp.o
+
+src/systems/tile/TileSystem.i: src/systems/tile/TileSystem.cpp.i
+.PHONY : src/systems/tile/TileSystem.i
+
+# target to preprocess a source file
+src/systems/tile/TileSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.i
+.PHONY : src/systems/tile/TileSystem.cpp.i
+
+src/systems/tile/TileSystem.s: src/systems/tile/TileSystem.cpp.s
+.PHONY : src/systems/tile/TileSystem.s
+
+# target to generate assembly for a file
+src/systems/tile/TileSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.s
+.PHONY : src/systems/tile/TileSystem.cpp.s
+
+src/systems/timer/TimerSystem.o: src/systems/timer/TimerSystem.cpp.o
+.PHONY : src/systems/timer/TimerSystem.o
+
+# target to build an object file
+src/systems/timer/TimerSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o
+.PHONY : src/systems/timer/TimerSystem.cpp.o
+
+src/systems/timer/TimerSystem.i: src/systems/timer/TimerSystem.cpp.i
+.PHONY : src/systems/timer/TimerSystem.i
+
+# target to preprocess a source file
+src/systems/timer/TimerSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.i
+.PHONY : src/systems/timer/TimerSystem.cpp.i
+
+src/systems/timer/TimerSystem.s: src/systems/timer/TimerSystem.cpp.s
+.PHONY : src/systems/timer/TimerSystem.s
+
+# target to generate assembly for a file
+src/systems/timer/TimerSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.s
+.PHONY : src/systems/timer/TimerSystem.cpp.s
+
 src/ui/FontButton.o: src/ui/FontButton.cpp.o
 .PHONY : src/ui/FontButton.o
 
@@ -908,30 +1244,39 @@ help:
 	@echo "... raylib-tmx-example"
 	@echo "... raylib-tmx-test"
 	@echo "... super-mario"
-	@echo "... src/audio/AudioManager.o"
-	@echo "... src/audio/AudioManager.i"
-	@echo "... src/audio/AudioManager.s"
-	@echo "... src/entity/DynamicEntity.o"
-	@echo "... src/entity/DynamicEntity.i"
-	@echo "... src/entity/DynamicEntity.s"
-	@echo "... src/entity/Enemy/Enemy.o"
-	@echo "... src/entity/Enemy/Enemy.i"
-	@echo "... src/entity/Enemy/Enemy.s"
-	@echo "... src/entity/KinematicEntity.o"
-	@echo "... src/entity/KinematicEntity.i"
-	@echo "... src/entity/KinematicEntity.s"
-	@echo "... src/entity/StaticEntity.o"
-	@echo "... src/entity/StaticEntity.i"
-	@echo "... src/entity/StaticEntity.s"
+	@echo "... src/audio/AudioManaer.o"
+	@echo "... src/audio/AudioManaer.i"
+	@echo "... src/audio/AudioManaer.s"
 	@echo "... src/game/Game.o"
 	@echo "... src/game/Game.i"
 	@echo "... src/game/Game.s"
+	@echo "... src/game/GameConfig.o"
+	@echo "... src/game/GameConfig.i"
+	@echo "... src/game/GameConfig.s"
+	@echo "... src/game/GameManager.o"
+	@echo "... src/game/GameManager.i"
+	@echo "... src/game/GameManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/raylib-tileson.o"
-	@echo "... src/raylib-tileson.i"
-	@echo "... src/raylib-tileson.s"
+	@echo "... src/map/GameMap.o"
+	@echo "... src/map/GameMap.i"
+	@echo "... src/map/GameMap.s"
+	@echo "... src/renderers/EnemiesRenderer.o"
+	@echo "... src/renderers/EnemiesRenderer.i"
+	@echo "... src/renderers/EnemiesRenderer.s"
+	@echo "... src/renderers/MapRenderer.o"
+	@echo "... src/renderers/MapRenderer.i"
+	@echo "... src/renderers/MapRenderer.s"
+	@echo "... src/renderers/ObjectRenderer.o"
+	@echo "... src/renderers/ObjectRenderer.i"
+	@echo "... src/renderers/ObjectRenderer.s"
+	@echo "... src/renderers/TextRenderer.o"
+	@echo "... src/renderers/TextRenderer.i"
+	@echo "... src/renderers/TextRenderer.s"
+	@echo "... src/renderers/TextureRenderer.o"
+	@echo "... src/renderers/TextureRenderer.i"
+	@echo "... src/renderers/TextureRenderer.s"
 	@echo "... src/screens/BeforeGameScreen.o"
 	@echo "... src/screens/BeforeGameScreen.i"
 	@echo "... src/screens/BeforeGameScreen.s"
@@ -944,6 +1289,39 @@ help:
 	@echo "... src/screens/MenuScreen.o"
 	@echo "... src/screens/MenuScreen.i"
 	@echo "... src/screens/MenuScreen.s"
+	@echo "... src/systems/IdsMap/IdsMapSystem.o"
+	@echo "... src/systems/IdsMap/IdsMapSystem.i"
+	@echo "... src/systems/IdsMap/IdsMapSystem.s"
+	@echo "... src/systems/animation/AnimationSystem.o"
+	@echo "... src/systems/animation/AnimationSystem.i"
+	@echo "... src/systems/animation/AnimationSystem.s"
+	@echo "... src/systems/camera/CameraSystem.o"
+	@echo "... src/systems/camera/CameraSystem.i"
+	@echo "... src/systems/camera/CameraSystem.s"
+	@echo "... src/systems/enemy/EnemySystem.o"
+	@echo "... src/systems/enemy/EnemySystem.i"
+	@echo "... src/systems/enemy/EnemySystem.s"
+	@echo "... src/systems/flag/FlagSystem.o"
+	@echo "... src/systems/flag/FlagSystem.i"
+	@echo "... src/systems/flag/FlagSystem.s"
+	@echo "... src/systems/physics/PhysicSystem.o"
+	@echo "... src/systems/physics/PhysicSystem.i"
+	@echo "... src/systems/physics/PhysicSystem.s"
+	@echo "... src/systems/player/PlayerSystem.o"
+	@echo "... src/systems/player/PlayerSystem.i"
+	@echo "... src/systems/player/PlayerSystem.s"
+	@echo "... src/systems/score/ScoreSystem.o"
+	@echo "... src/systems/score/ScoreSystem.i"
+	@echo "... src/systems/score/ScoreSystem.s"
+	@echo "... src/systems/sound/SoundSystem.o"
+	@echo "... src/systems/sound/SoundSystem.i"
+	@echo "... src/systems/sound/SoundSystem.s"
+	@echo "... src/systems/tile/TileSystem.o"
+	@echo "... src/systems/tile/TileSystem.i"
+	@echo "... src/systems/tile/TileSystem.s"
+	@echo "... src/systems/timer/TimerSystem.o"
+	@echo "... src/systems/timer/TimerSystem.i"
+	@echo "... src/systems/timer/TimerSystem.s"
 	@echo "... src/ui/FontButton.o"
 	@echo "... src/ui/FontButton.i"
 	@echo "... src/ui/FontButton.s"

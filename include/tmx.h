@@ -1,11 +1,11 @@
 /*
-	TMX.H - TMX C LOADER
-	Copyright (c) 2013-2020, Bayle Jonathan <baylej@github>
+    TMX.H - TMX C LOADER
+    Copyright (c) 2013-2020, Bayle Jonathan <baylej@github>
 
-	Data Structures storing the map, and function prototypes
+    Data Structures storing the map, and function prototypes
 
-	See : (I'm using names from this documentation)
-	http://doc.mapeditor.org/reference/tmx-map-format/
+    See : (I'm using names from this documentation)
+    http://doc.mapeditor.org/reference/tmx-map-format/
 */
 
 #pragma once
@@ -30,7 +30,7 @@ extern "C" {
 #define TMX_FLIP_BITS_REMOVAL    0x1FFFFFFF
 
 /*
-	Configuration
+    Configuration
 */
 /* Custom realloc and free function, for memalloc debugging purposes
    Please modify these values once before you use tmx_load */
@@ -43,7 +43,7 @@ TMXEXPORT extern void* (*tmx_img_load_func) (const char *path);
 TMXEXPORT extern void  (*tmx_img_free_func) (void *address);
 
 /*
-	Data Structures
+    Data Structures
 */
 
 enum tmx_map_orient {O_NONE, O_ORT, O_ISO, O_STA, O_HEX};
@@ -77,201 +77,201 @@ typedef struct _tmx_map tmx_map;
 typedef void tmx_properties; /* hashtable, use function tmx_get_property(...) */
 
 typedef union {
-	int integer;
-	float decimal;
-	void *pointer;
+    int integer;
+    float decimal;
+    void *pointer;
 } tmx_user_data;
 
 typedef union {
-	int integer, boolean, object_id; /* type = int or bool or object */
-	float decimal; /* type = float */
-	char *string, *file; /* default and type = string or file */
-	uint32_t color; /* type = color, bytes : ARGB */
-	tmx_properties *properties; /* type = custom */
+    int integer, boolean, object_id; /* type = int or bool or object */
+    float decimal; /* type = float */
+    char *string, *file; /* default and type = string or file */
+    uint32_t color; /* type = color, bytes : ARGB */
+    tmx_properties *properties; /* type = custom */
 } tmx_property_value;
 
 struct _tmx_prop { /* <properties> and <property> */
-	char *name;
-	char *propertytype; /* for custom classes and enums */
-	enum tmx_property_type type;
-	tmx_property_value value;
+    char *name;
+    char *propertytype; /* for custom classes and enums */
+    enum tmx_property_type type;
+    tmx_property_value value;
 };
 
 struct _tmx_img { /* <image> */
-	char *source;
-	unsigned int trans; /* bytes : RGB */
-	int uses_trans;
-	unsigned long width, height;
-	/*char *format; Not currently implemented in QtTiled
-	char *data;*/
-	void *resource_image;
+    char *source;
+    unsigned int trans; /* bytes : RGB */
+    int uses_trans;
+    unsigned long width, height;
+    /*char *format; Not currently implemented in QtTiled
+    char *data;*/
+    void *resource_image;
 };
 
 struct _tmx_frame { /* <frame> */
-	unsigned int tile_id;
-	unsigned int duration;
+    unsigned int tile_id;
+    unsigned int duration;
 };
 
 struct _tmx_tile { /* <tile> */
-	unsigned int id;
-	tmx_tileset *tileset;
+    unsigned int id;
+    tmx_tileset *tileset;
 
-	/* for an image-based tileset, the four values below represent the rectangle inside the tileset image */
-	/* for an collection-of-images-based tileset, the four values below represent the rectangle inside the image for the tile*/
-	unsigned int ul_x, ul_y; /* upper-left coordinate of this tile */
-	unsigned int width, height; /* the width and height of this tile inside the source image */
+    /* for an image-based tileset, the four values below represent the rectangle inside the tileset image */
+    /* for an collection-of-images-based tileset, the four values below represent the rectangle inside the image for the tile*/
+    unsigned int ul_x, ul_y; /* upper-left coordinate of this tile */
+    unsigned int width, height; /* the width and height of this tile inside the source image */
 
-	tmx_image *image;
-	tmx_object *collision;
+    tmx_image *image;
+    tmx_object *collision;
 
-	unsigned int animation_len;
-	tmx_anim_frame *animation;
+    unsigned int animation_len;
+    tmx_anim_frame *animation;
 
-	char *type;
-	tmx_properties *properties;
+    char *type;
+    tmx_properties *properties;
 
-	tmx_user_data user_data;
+    tmx_user_data user_data;
 };
 
 struct _tmx_ts { /* <tileset> and <tileoffset> */
-	char *name;
-	char *class_type;
+    char *name;
+    char *class_type;
 
-	unsigned int tile_width, tile_height;
-	unsigned int spacing, margin;
-	int x_offset, y_offset; /* tileoffset */
-	enum tmx_obj_alignment objectalignment;
+    unsigned int tile_width, tile_height;
+    unsigned int spacing, margin;
+    int x_offset, y_offset; /* tileoffset */
+    enum tmx_obj_alignment objectalignment;
 
-	unsigned int tilecount;
-	tmx_image *image;
+    unsigned int tilecount;
+    tmx_image *image;
 
-	enum tmx_tile_render_size tile_render_size;
-	enum tmx_fill_mode fill_mode;
+    enum tmx_tile_render_size tile_render_size;
+    enum tmx_fill_mode fill_mode;
 
-	tmx_user_data user_data;
-	tmx_properties *properties;
-	tmx_tile *tiles;
+    tmx_user_data user_data;
+    tmx_properties *properties;
+    tmx_tile *tiles;
 };
 
 struct _tmx_ts_list { /* Linked list */
-	int is_embedded; /* used internally to free this node */
-	unsigned int firstgid;
-	char *source;
-	tmx_tileset *tileset;
-	tmx_tileset_list *next;
+    int is_embedded; /* used internally to free this node */
+    unsigned int firstgid;
+    char *source;
+    tmx_tileset *tileset;
+    tmx_tileset_list *next;
 };
 
 struct _tmx_shape { /* <polygon> and <polyline> */
-	double **points; /* point[i][x,y]; x=0 y=1 */
-	int points_len;
+    double **points; /* point[i][x,y]; x=0 y=1 */
+    int points_len;
 };
 
 struct _tmx_text { /* <text> */
-	char *fontfamily;
-	int pixelsize;
-	uint32_t color; /* bytes : ARGB */
+    char *fontfamily;
+    int pixelsize;
+    uint32_t color; /* bytes : ARGB */
 
-	int wrap; /* 0 == false */
-	int bold;
-	int italic;
-	int underline;
-	int strikeout;
-	int kerning;
+    int wrap; /* 0 == false */
+    int bold;
+    int italic;
+    int underline;
+    int strikeout;
+    int kerning;
 
-	enum tmx_horizontal_align halign;
-	enum tmx_vertical_align valign;
+    enum tmx_horizontal_align halign;
+    enum tmx_vertical_align valign;
 
-	char *text;
+    char *text;
 };
 
 struct _tmx_obj { /* <object> */
-	unsigned int id;
-	enum tmx_obj_type obj_type;
+    unsigned int id;
+    enum tmx_obj_type obj_type;
 
-	double x, y;
-	double width, height;
+    double x, y;
+    double width, height;
 
-	union {
-		int gid;
-		tmx_shape *shape;
-		tmx_text *text;
-	} content;
+    union {
+        int gid;
+        tmx_shape *shape;
+        tmx_text *text;
+    } content;
 
-	int visible; /* 0 == false */
-	double rotation;
+    int visible; /* 0 == false */
+    double rotation;
 
-	char *name, *type;
-	tmx_template *template_ref;
-	tmx_properties *properties;
-	tmx_object *next;
+    char *name, *type;
+    tmx_template *template_ref;
+    tmx_properties *properties;
+    tmx_object *next;
 };
 
 struct _tmx_objgr { /* <objectgroup> */
-	uint32_t color; /* bytes : ARGB */
-	enum tmx_objgr_draworder draworder;
-	tmx_object *head;
+    uint32_t color; /* bytes : ARGB */
+    enum tmx_objgr_draworder draworder;
+    tmx_object *head;
 };
 
 struct _tmx_templ { /* <template> */
-	int is_embedded; /* used internally to free this node */
-	tmx_tileset_list *tileset_ref; /* not null if object is a tile, is a singleton list */
-	tmx_object *object; /* never null */
+    int is_embedded; /* used internally to free this node */
+    tmx_tileset_list *tileset_ref; /* not null if object is a tile, is a singleton list */
+    tmx_object *object; /* never null */
 };
 
 struct _tmx_layer { /* <layer> or <imagelayer> or <objectgroup> */
-	int id;
-	char *name;
-	char *class_type;
-	double opacity;
-	int visible; /* 0 == false */
-	int offsetx, offsety;
-	double parallaxx, parallaxy;
-	uint32_t tintcolor; /* bytes : ARGB */
-	int repeatx, repeaty; /* only of image layers */
+    int id;
+    char *name;
+    char *class_type;
+    double opacity;
+    int visible; /* 0 == false */
+    int offsetx, offsety;
+    double parallaxx, parallaxy;
+    uint32_t tintcolor; /* bytes : ARGB */
+    int repeatx, repeaty; /* only of image layers */
 
-	enum tmx_layer_type type;
-	union layer_content {
-		uint32_t *gids;
-		tmx_object_group *objgr;
-		tmx_image *image;
-		tmx_layer *group_head;
-	} content;
+    enum tmx_layer_type type;
+    union layer_content {
+        uint32_t *gids;
+        tmx_object_group *objgr;
+        tmx_image *image;
+        tmx_layer *group_head;
+    } content;
 
-	tmx_user_data user_data;
-	tmx_properties *properties;
-	tmx_layer *next;
+    tmx_user_data user_data;
+    tmx_properties *properties;
+    tmx_layer *next;
 };
 
 struct _tmx_map { /* <map> (Head of the data structure) */
-	char *format_version;
-	char *class_type;
+    char *format_version;
+    char *class_type;
 
-	enum tmx_map_orient orient;
+    enum tmx_map_orient orient;
 
-	unsigned int width, height;
-	unsigned int tile_width, tile_height;
+    unsigned int width, height;
+    unsigned int tile_width, tile_height;
 
-	enum tmx_stagger_index stagger_index;
-	enum tmx_stagger_axis stagger_axis;
-	int hexsidelength;
+    enum tmx_stagger_index stagger_index;
+    enum tmx_stagger_axis stagger_axis;
+    int hexsidelength;
 
-	double parallaxoriginx, parallaxoriginy;
+    double parallaxoriginx, parallaxoriginy;
 
-	uint32_t backgroundcolor; /* bytes : ARGB */
-	enum tmx_map_renderorder renderorder;
+    uint32_t backgroundcolor; /* bytes : ARGB */
+    enum tmx_map_renderorder renderorder;
 
-	tmx_properties *properties;
-	tmx_tileset_list *ts_head;
-	tmx_layer *ly_head;
+    tmx_properties *properties;
+    tmx_tileset_list *ts_head;
+    tmx_layer *ly_head;
 
-	unsigned int tilecount; /* length of map->tiles */
-	tmx_tile **tiles; /* GID indexed tile array (array of pointers to tmx_tile) */
+    unsigned int tilecount; /* length of map->tiles */
+    tmx_tile **tiles; /* GID indexed tile array (array of pointers to tmx_tile) */
 
-	tmx_user_data user_data;
+    tmx_user_data user_data;
 };
 
 /*
-	Functions
+    Functions
 */
 
 /* Loads a map from file at `path` and returns the head of the data structure
@@ -333,7 +333,7 @@ TMXEXPORT tmx_col_bytes tmx_col_to_bytes(uint32_t color);
 TMXEXPORT tmx_col_floats tmx_col_to_floats(uint32_t color);
 
 /*
-	Resource Manager functions
+    Resource Manager functions
 */
 
 /* Resource Manager type (private hashtable) */
@@ -354,7 +354,7 @@ TMXEXPORT tmx_resource_manager* tmx_make_resource_manager();
 TMXEXPORT void tmx_free_resource_manager(tmx_resource_manager *rc_mgr);
 
 /*
-	Pre-load tilesets using a Resource Manager
+    Pre-load tilesets using a Resource Manager
 */
 
 /* Loads a tileset from file at `path` and stores it into given Resource Manager
@@ -376,7 +376,7 @@ TMXEXPORT int tmx_load_tileset_fd(tmx_resource_manager *rc_mgr, int fd, const ch
 TMXEXPORT int tmx_load_tileset_callback(tmx_resource_manager *rc_mgr, tmx_read_functor callback, void *userdata, const char *key);
 
 /*
-	Pre-load object templates using a Resource Manager
+    Pre-load object templates using a Resource Manager
 */
 
 /* Loads a template from file at `path` and stores it into given Resource Manager
@@ -398,7 +398,7 @@ TMXEXPORT int tmx_load_template_fd(tmx_resource_manager *rc_mgr, int fd, const c
 TMXEXPORT int tmx_load_template_callback(tmx_resource_manager *rc_mgr, tmx_read_functor callback, void *userdata, const char *key);
 
 /*
-	Load map using a Resource Manager
+    Load map using a Resource Manager
 */
 
 /* Same as tmx_load (tmx.h) but with a Resource Manager. */
@@ -414,7 +414,7 @@ TMXEXPORT tmx_map* tmx_rcmgr_load_fd(tmx_resource_manager *rc_mgr, int fd);
 TMXEXPORT tmx_map* tmx_rcmgr_load_callback(tmx_resource_manager *rc_mgr, tmx_read_functor callback, void *userdata);
 
 /*
-	Load map with virtual paths
+    Load map with virtual paths
 */
 
 /* Loads a map from buffer, and returns the head of the data structure
@@ -431,29 +431,29 @@ TMXEXPORT tmx_map* tmx_rcmgr_load_fd_vpath(tmx_resource_manager *rc_mgr, int fd,
 TMXEXPORT tmx_map* tmx_rcmgr_load_callback_vpath(tmx_resource_manager *rc_mgr, tmx_read_functor callback, const char* vpath, void *userdata);
 
 /*
-	Error handling
-	each time a function fails, tmx_errno is set
+    Error handling
+    each time a function fails, tmx_errno is set
 */
 
 /* Possible values for `tmx_errno` */
 typedef enum _tmx_error_codes {
-	/* Syst */
-	E_NONE   = 0,     /* No error so far */
-	E_UNKN   = 1,     /* See the message for more details */
-	E_INVAL  = 2,     /* Invalid argument */
-	E_ALLOC  = 8,     /* Mem alloc */
-	/* I/O */
-	E_ACCESS = 10,    /* privileges needed */
-	E_NOENT  = 11,    /* File not found */
-	E_FORMAT = 12,    /* Unsupported/Unknown file format */
-	E_ENCCMP = 13,    /* Unsupported/Unknown data encoding/compression */
-	E_FONCT  = 16,    /* Functionality not enabled */
-	E_BDATA  = 20,    /* B64 bad data */
-	E_ZDATA  = 21,    /* Zlib corrupted data */
-	E_XDATA  = 22,    /* XML corrupted data */
-	E_ZSDATA = 23,    /* Zstd corrupted data */
-	E_CDATA  = 24,    /* CSV corrupted data */
-	E_MISSEL = 30     /* Missing element, incomplete source */
+    /* Syst */
+    E_NONE   = 0,     /* No error so far */
+    E_UNKN   = 1,     /* See the message for more details */
+    E_INVAL  = 2,     /* Invalid argument */
+    E_ALLOC  = 8,     /* Mem alloc */
+    /* I/O */
+    E_ACCESS = 10,    /* privileges needed */
+    E_NOENT  = 11,    /* File not found */
+    E_FORMAT = 12,    /* Unsupported/Unknown file format */
+    E_ENCCMP = 13,    /* Unsupported/Unknown data encoding/compression */
+    E_FONCT  = 16,    /* Functionality not enabled */
+    E_BDATA  = 20,    /* B64 bad data */
+    E_ZDATA  = 21,    /* Zlib corrupted data */
+    E_XDATA  = 22,    /* XML corrupted data */
+    E_ZSDATA = 23,    /* Zstd corrupted data */
+    E_CDATA  = 24,    /* CSV corrupted data */
+    E_MISSEL = 30     /* Missing element, incomplete source */
 } tmx_error_codes;
 
 extern tmx_error_codes tmx_errno;

@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario
+CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/cpp-super-mario
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario/build
+CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/cpp-super-mario/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/super-mario.dir/depend.make
@@ -72,245 +72,469 @@ include CMakeFiles/super-mario.dir/flags.make
 CMakeFiles/super-mario.dir/codegen:
 .PHONY : CMakeFiles/super-mario.dir/codegen
 
-CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/audio/AudioManager.cpp
-CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o -MF CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o.d -o CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/audio/AudioManager.cpp
+CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp
+CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o -MF CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o.d -o CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp
 
-CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/audio/AudioManager.cpp > CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i
+CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp > CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i
 
-CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/audio/AudioManager.cpp -o CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s
-
-CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/DynamicEntity.cpp
-CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o -MF CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o.d -o CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/DynamicEntity.cpp
-
-CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/DynamicEntity.cpp > CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.i
-
-CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/DynamicEntity.cpp -o CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.s
-
-CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/Enemy/Enemy.cpp
-CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o -MF CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o.d -o CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/Enemy/Enemy.cpp
-
-CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/Enemy/Enemy.cpp > CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.i
-
-CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/Enemy/Enemy.cpp -o CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.s
-
-CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/KinematicEntity.cpp
-CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o -MF CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o.d -o CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/KinematicEntity.cpp
-
-CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/KinematicEntity.cpp > CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.i
-
-CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/KinematicEntity.cpp -o CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.s
-
-CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/StaticEntity.cpp
-CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o -MF CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o.d -o CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/StaticEntity.cpp
-
-CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/StaticEntity.cpp > CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.i
-
-CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/entity/StaticEntity.cpp -o CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.s
+CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp -o CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s
 
 CMakeFiles/super-mario.dir/src/game/Game.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/game/Game.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/game/Game.cpp
+CMakeFiles/super-mario.dir/src/game/Game.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/game/Game.cpp
 CMakeFiles/super-mario.dir/src/game/Game.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/super-mario.dir/src/game/Game.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/game/Game.cpp.o -MF CMakeFiles/super-mario.dir/src/game/Game.cpp.o.d -o CMakeFiles/super-mario.dir/src/game/Game.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/game/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/super-mario.dir/src/game/Game.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/game/Game.cpp.o -MF CMakeFiles/super-mario.dir/src/game/Game.cpp.o.d -o CMakeFiles/super-mario.dir/src/game/Game.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/game/Game.cpp
 
 CMakeFiles/super-mario.dir/src/game/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/game/Game.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/game/Game.cpp > CMakeFiles/super-mario.dir/src/game/Game.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/game/Game.cpp > CMakeFiles/super-mario.dir/src/game/Game.cpp.i
 
 CMakeFiles/super-mario.dir/src/game/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/game/Game.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/game/Game.cpp -o CMakeFiles/super-mario.dir/src/game/Game.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/game/Game.cpp -o CMakeFiles/super-mario.dir/src/game/Game.cpp.s
+
+CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameConfig.cpp
+CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o -MF CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o.d -o CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameConfig.cpp
+
+CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameConfig.cpp > CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.i
+
+CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameConfig.cpp -o CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.s
+
+CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.cpp
+CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o -MF CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o.d -o CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.cpp
+
+CMakeFiles/super-mario.dir/src/game/GameManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/game/GameManager.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.cpp > CMakeFiles/super-mario.dir/src/game/GameManager.cpp.i
+
+CMakeFiles/super-mario.dir/src/game/GameManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/game/GameManager.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.cpp -o CMakeFiles/super-mario.dir/src/game/GameManager.cpp.s
 
 CMakeFiles/super-mario.dir/src/main.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/main.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/main.cpp
+CMakeFiles/super-mario.dir/src/main.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/main.cpp
 CMakeFiles/super-mario.dir/src/main.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/super-mario.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/main.cpp.o -MF CMakeFiles/super-mario.dir/src/main.cpp.o.d -o CMakeFiles/super-mario.dir/src/main.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/super-mario.dir/src/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/main.cpp.o -MF CMakeFiles/super-mario.dir/src/main.cpp.o.d -o CMakeFiles/super-mario.dir/src/main.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/main.cpp
 
 CMakeFiles/super-mario.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/main.cpp > CMakeFiles/super-mario.dir/src/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/main.cpp > CMakeFiles/super-mario.dir/src/main.cpp.i
 
 CMakeFiles/super-mario.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/main.cpp -o CMakeFiles/super-mario.dir/src/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/main.cpp -o CMakeFiles/super-mario.dir/src/main.cpp.s
 
-CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/raylib-tileson.cpp
-CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o -MF CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o.d -o CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/raylib-tileson.cpp
+CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/map/GameMap.cpp
+CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o -MF CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o.d -o CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/map/GameMap.cpp
 
-CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/raylib-tileson.cpp > CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.i
+CMakeFiles/super-mario.dir/src/map/GameMap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/map/GameMap.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/map/GameMap.cpp > CMakeFiles/super-mario.dir/src/map/GameMap.cpp.i
 
-CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/raylib-tileson.cpp -o CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.s
+CMakeFiles/super-mario.dir/src/map/GameMap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/map/GameMap.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/map/GameMap.cpp -o CMakeFiles/super-mario.dir/src/map/GameMap.cpp.s
+
+CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/EnemiesRenderer.cpp
+CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o -MF CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o.d -o CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/EnemiesRenderer.cpp
+
+CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/EnemiesRenderer.cpp > CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.i
+
+CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/EnemiesRenderer.cpp -o CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.s
+
+CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.cpp
+CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o -MF CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o.d -o CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.cpp
+
+CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.cpp > CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.i
+
+CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.cpp -o CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.s
+
+CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/ObjectRenderer.cpp
+CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o -MF CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o.d -o CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/ObjectRenderer.cpp
+
+CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/ObjectRenderer.cpp > CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.i
+
+CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/ObjectRenderer.cpp -o CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.s
+
+CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextRenderer.cpp
+CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o -MF CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o.d -o CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextRenderer.cpp
+
+CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextRenderer.cpp > CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.i
+
+CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextRenderer.cpp -o CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.s
+
+CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextureRenderer.cpp
+CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o -MF CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o.d -o CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextureRenderer.cpp
+
+CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextureRenderer.cpp > CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.i
+
+CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextureRenderer.cpp -o CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.s
 
 CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/BeforeGameScreen.cpp
+CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/screens/BeforeGameScreen.cpp
 CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/BeforeGameScreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/screens/BeforeGameScreen.cpp
 
 CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/BeforeGameScreen.cpp > CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/screens/BeforeGameScreen.cpp > CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.i
 
 CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/BeforeGameScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/screens/BeforeGameScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.s
 
 CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp
+CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/screens/GamePlayScreen.cpp
 CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/screens/GamePlayScreen.cpp
 
 CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp > CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/screens/GamePlayScreen.cpp > CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.i
 
 CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/GamePlayScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/screens/GamePlayScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.s
 
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/InstructionScreen.cpp
+CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/screens/InstructionScreen.cpp
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/InstructionScreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/screens/InstructionScreen.cpp
 
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/InstructionScreen.cpp > CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/screens/InstructionScreen.cpp > CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.i
 
 CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/InstructionScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/screens/InstructionScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.s
 
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/MenuScreen.cpp
+CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/screens/MenuScreen.cpp
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/MenuScreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o -MF CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o.d -o CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/screens/MenuScreen.cpp
 
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/MenuScreen.cpp > CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/screens/MenuScreen.cpp > CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.i
 
 CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/screens/MenuScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/screens/MenuScreen.cpp -o CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.cpp > CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/animation/AnimationSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/animation/AnimationSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/animation/AnimationSystem.cpp > CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/animation/AnimationSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/camera/CameraSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/camera/CameraSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/camera/CameraSystem.cpp > CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/camera/CameraSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/enemy/EnemySystem.cpp
+CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/enemy/EnemySystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/enemy/EnemySystem.cpp > CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/enemy/EnemySystem.cpp -o CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/flag/FlagSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/flag/FlagSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/flag/FlagSystem.cpp > CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/flag/FlagSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/physics/PhysicSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/physics/PhysicSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/physics/PhysicSystem.cpp > CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/physics/PhysicSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/player/PlayerSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/player/PlayerSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/player/PlayerSystem.cpp > CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/player/PlayerSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/score/ScoreSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/score/ScoreSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/score/ScoreSystem.cpp > CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/score/ScoreSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/sound/SoundSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/sound/SoundSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/sound/SoundSystem.cpp > CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/sound/SoundSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/tile/TileSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/tile/TileSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/tile/TileSystem.cpp > CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/tile/TileSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.s
+
+CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/systems/timer/TimerSystem.cpp
+CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o -MF CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o.d -o CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/systems/timer/TimerSystem.cpp
+
+CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/systems/timer/TimerSystem.cpp > CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.i
+
+CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/systems/timer/TimerSystem.cpp -o CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.s
 
 CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/FontButton.cpp
+CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/ui/FontButton.cpp
 CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o -MF CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o.d -o CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/FontButton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o -MF CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o.d -o CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/ui/FontButton.cpp
 
 CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/FontButton.cpp > CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/ui/FontButton.cpp > CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.i
 
 CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/FontButton.cpp -o CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/ui/FontButton.cpp -o CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.s
 
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o: /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/ImageButton.cpp
+CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/ui/ImageButton.cpp
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o -MF CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o.d -o CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/ImageButton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o -MF CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o.d -o CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/ui/ImageButton.cpp
 
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/ImageButton.cpp > CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/ui/ImageButton.cpp > CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.i
 
 CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/src/ui/ImageButton.cpp -o CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/ui/ImageButton.cpp -o CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.s
 
 # Object files for target super-mario
 super__mario_OBJECTS = \
-"CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o" \
-"CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o" \
-"CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o" \
-"CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o" \
-"CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o" \
+"CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o" \
 "CMakeFiles/super-mario.dir/src/game/Game.cpp.o" \
+"CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o" \
+"CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o" \
 "CMakeFiles/super-mario.dir/src/main.cpp.o" \
-"CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o" \
+"CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o" \
+"CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o" \
+"CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o" \
+"CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o" \
+"CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o" \
+"CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o" \
 "CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o" \
 "CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o" \
 "CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o" \
 "CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o" \
+"CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o" \
 "CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o" \
 "CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o"
 
 # External object files for target super-mario
 super__mario_EXTERNAL_OBJECTS =
 
-super-mario: CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o
-super-mario: CMakeFiles/super-mario.dir/src/entity/DynamicEntity.cpp.o
-super-mario: CMakeFiles/super-mario.dir/src/entity/Enemy/Enemy.cpp.o
-super-mario: CMakeFiles/super-mario.dir/src/entity/KinematicEntity.cpp.o
-super-mario: CMakeFiles/super-mario.dir/src/entity/StaticEntity.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/game/Game.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/main.cpp.o
-super-mario: CMakeFiles/super-mario.dir/src/raylib-tileson.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/screens/InstructionScreen.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/IdsMap/IdsMapSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/animation/AnimationSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/camera/CameraSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/enemy/EnemySystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/flag/FlagSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/physics/PhysicSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/player/PlayerSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/score/ScoreSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/sound/SoundSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/tile/TileSystem.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/systems/timer/TimerSystem.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/ui/FontButton.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.o
 super-mario: CMakeFiles/super-mario.dir/build.make
 super-mario: external/raylib-tmx/src/libraylib-tmx.a
-super-mario: /opt/homebrew/lib/libglfw.3.4.dylib
+super-mario: /Users/hannguyen/Desktop/cpp-super-mario/external/tmxlite/tmxlite/build/libtmxlite.dylib
 super-mario: /opt/homebrew/lib/libraylib.dylib
 super-mario: /opt/homebrew/lib/libtmx.1.10.0.dylib
 super-mario: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/lib/libz.tbd
 super-mario: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/lib/libxml2.tbd
 super-mario: CMakeFiles/super-mario.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable super-mario"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable super-mario"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/super-mario.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -322,6 +546,6 @@ CMakeFiles/super-mario.dir/clean:
 .PHONY : CMakeFiles/super-mario.dir/clean
 
 CMakeFiles/super-mario.dir/depend:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/data/cpp-super-mario /Users/hannguyen/Desktop/data/cpp-super-mario /Users/hannguyen/Desktop/data/cpp-super-mario/build /Users/hannguyen/Desktop/data/cpp-super-mario/build /Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles/super-mario.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/cpp-super-mario /Users/hannguyen/Desktop/cpp-super-mario /Users/hannguyen/Desktop/cpp-super-mario/build /Users/hannguyen/Desktop/cpp-super-mario/build /Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles/super-mario.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/super-mario.dir/depend
 

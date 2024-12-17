@@ -7,25 +7,17 @@
 
 GameState Game::currentState = GameState::MAIN_MENU;
 std::unique_ptr<Screen> Game::currentScreen = nullptr;
-GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
-GameplayMode Game::gameplayMode = GameplayMode::NEW_GAME;
+// GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
+// GameplayMode Game::gameplayMode = GameplayMode::MULTI_PLAYER;
+// Character Game::character = Character::MARIO;
 
 void Game::Init() {
-    InitAudioDevice(); 
-
-    AudioManager::GetInstance().LoadMusics("background", "../assets/sounds/background_sound.mp3");
-    AudioManager::GetInstance().PlayMusics("background");
-
-    // Load sounds using AudioManager
-    //AudioManager::GetInstance().LoadSounds("jump", "../assets/sounds/jump.wav");
-    //AudioManager::GetInstance().LoadSounds("coin", "../assets/sounds/coin.wav");
-
     currentScreen = std::make_unique<MenuScreen>();
     currentScreen->Init();
 }
 
 void Game::Run() {
-    InitWindow(960, 540, "Super Mario Bros.");
+    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Super Mario Bros.");
     InitAudioDevice();
     SetTargetFPS(60);
     Init();
@@ -41,15 +33,6 @@ void Game::Run() {
 }
 
 void Game::Update() {
-    UpdateMusicStream(AudioManager::GetInstance().GetMusic("background"));
-    float currentTime = GetMusicTimePlayed(AudioManager::GetInstance().GetMusic("background"));
-    float totalTime = GetMusicTimeLength(AudioManager::GetInstance().GetMusic("background"));
-    if (currentTime >= totalTime - 0.1f) {
-        // Reset music if near end
-        AudioManager::GetInstance().StopMusics("background");
-        AudioManager::GetInstance().PlayMusics("background");
-    }
-
     if (currentScreen) {
         currentScreen->Update();
     }
@@ -62,11 +45,9 @@ void Game::Unload() {
 void Game::Draw() {
     BeginDrawing();
     ClearBackground(RAYWHITE);
-    
     if (currentScreen) {
         currentScreen->Draw();
     }
-    
     EndDrawing();
 }
 
@@ -87,8 +68,16 @@ void Game::SetState(GameState newState) {
             currentScreen = std::make_unique<InstructionScreen>();
             break;
         }
+        case GameState::SCOREBOARD: {
+            currentScreen = std::make_unique<InstructionScreen>();
+            break;
+        }
         case GameState::BEFOREGAME: {
             currentScreen = std::make_unique<BeforeGameScreen>();
+            break;
+        }
+        case GameState::GAMEPLAY: {
+            currentScreen = std::make_unique<GameplayScreen>();
             break;
         }
     }
@@ -96,8 +85,4 @@ void Game::SetState(GameState newState) {
     if (currentScreen) {
         currentScreen->Init();
     }
-}
-
-void Game::SetDifficulty(GameDifficulty diff) {
-    difficulty = diff;
 }

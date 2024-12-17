@@ -2,17 +2,19 @@
 #include "GameState.h"
 #include "../screens/Screen.h"
 #include <memory>
-#include "../audio/AudioManager.h"
+#include "../Constants.h"
+#include "GameConfig.h"
+
 class Game {
 private:
     static GameState currentState;
     static std::unique_ptr<Screen> currentScreen;
-    static const int screenWidth = 960;
-    static const int screenHeight = 540;
     static GameDifficulty difficulty;
     static GameplayMode gameplayMode;
+    static Character character;
     
 public:
+    Game(){};
     static void Init();
     static void Update();
     static void Draw();
@@ -20,10 +22,11 @@ public:
     static void Unload();
     static void Run();
 
-    static float GetScreenWidth() { return 1.0 * screenWidth; }
-    static float GetScreenHeight() { return 1.0 * screenHeight; }
-    static void SetDifficulty(GameDifficulty diff);
+    static float GetScreenWidth() { return 1.0 * SCREEN_WIDTH; }
+    static float GetScreenHeight() { return 1.0 * SCREEN_HEIGHT; }
     static GameDifficulty GetDifficulty() { return difficulty; }
     static GameplayMode GetGameplayMode() { return gameplayMode; }
-    static void SetGameplayMode(GameplayMode mode) { gameplayMode = mode; }
+    static Character GetCharacter() { return character; }
+
+    static GameConfig& getConfig() { return GameConfig::getInstance(); }
 };

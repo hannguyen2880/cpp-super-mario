@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario
+CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/cpp-super-mario
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario/build
+CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/cpp-super-mario/build
 
 # Include any dependencies generated for this target.
 include external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/depend.make
@@ -73,18 +73,18 @@ external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/codegen:
 .PHONY : external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/codegen
 
 external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o: external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/flags.make
-external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o: /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c
+external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o: /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c
 external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o: external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o"
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o -MF CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o.d -o CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o -c /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o"
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o -MF CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o.d -o CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.o -c /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c
 
 external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.i"
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c > CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.i
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c > CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.i
 
 external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.s"
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c -o CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.s
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/example/raylib-tmx-example.c -o CMakeFiles/raylib-tmx-example.dir/raylib-tmx-example.c.s
 
 # Object files for target raylib-tmx-example
 raylib__tmx__example_OBJECTS = \
@@ -101,18 +101,18 @@ external/raylib-tmx/example/raylib-tmx-example: /opt/homebrew/lib/libtmx.1.10.0.
 external/raylib-tmx/example/raylib-tmx-example: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/lib/libz.tbd
 external/raylib-tmx/example/raylib-tmx-example: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/lib/libxml2.tbd
 external/raylib-tmx/example/raylib-tmx-example: external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable raylib-tmx-example"
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/raylib-tmx-example.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable raylib-tmx-example"
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/raylib-tmx-example.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/build: external/raylib-tmx/example/raylib-tmx-example
 .PHONY : external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/build
 
 external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/clean:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example && $(CMAKE_COMMAND) -P CMakeFiles/raylib-tmx-example.dir/cmake_clean.cmake
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example && $(CMAKE_COMMAND) -P CMakeFiles/raylib-tmx-example.dir/cmake_clean.cmake
 .PHONY : external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/clean
 
 external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/depend:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/data/cpp-super-mario /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx/example /Users/hannguyen/Desktop/data/cpp-super-mario/build /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/cpp-super-mario /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/example /Users/hannguyen/Desktop/cpp-super-mario/build /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/raylib-tmx/example/CMakeFiles/raylib-tmx-example.dir/depend
 

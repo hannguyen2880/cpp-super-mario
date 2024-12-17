@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx/src/raylib-tmx.c" "external/raylib-tmx/src/CMakeFiles/raylib-tmx.dir/raylib-tmx.c.o" "gcc" "external/raylib-tmx/src/CMakeFiles/raylib-tmx.dir/raylib-tmx.c.o.d"
+  "/Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/src/raylib-tmx.c" "external/raylib-tmx/src/CMakeFiles/raylib-tmx.dir/raylib-tmx.c.o" "gcc" "external/raylib-tmx/src/CMakeFiles/raylib-tmx.dir/raylib-tmx.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

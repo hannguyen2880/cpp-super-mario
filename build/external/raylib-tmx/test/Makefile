@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario
+CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/cpp-super-mario
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario/build
+CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/cpp-super-mario/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/test//CMakeFiles/progress.marks
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/data/cpp-super-mario/build/CMakeFiles 0
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test//CMakeFiles/progress.marks
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/clean
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/preinstall
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/preinstall
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/rule:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/rule
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/rule
 .PHONY : external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ raylib-tmx-test: external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/rule
 
 # fast build rule for target.
 raylib-tmx-test/fast:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build
 .PHONY : raylib-tmx-test/fast
 
 raylib-tmx-test.o: raylib-tmx-test.c.o
@@ -135,7 +135,7 @@ raylib-tmx-test.o: raylib-tmx-test.c.o
 
 # target to build an object file
 raylib-tmx-test.c.o:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o
 .PHONY : raylib-tmx-test.c.o
 
 raylib-tmx-test.i: raylib-tmx-test.c.i
@@ -143,7 +143,7 @@ raylib-tmx-test.i: raylib-tmx-test.c.i
 
 # target to preprocess a source file
 raylib-tmx-test.c.i:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.i
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.i
 .PHONY : raylib-tmx-test.c.i
 
 raylib-tmx-test.s: raylib-tmx-test.c.s
@@ -151,7 +151,7 @@ raylib-tmx-test.s: raylib-tmx-test.c.s
 
 # target to generate assembly for a file
 raylib-tmx-test.c.s:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.s
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.s
 .PHONY : raylib-tmx-test.c.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx
-BuildDirectory: /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx
+SourceDirectory: /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx
+BuildDirectory: /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: My-Cozy-Nerd-Nest.local
+Site: 172-0-2-164.lightspeed.brhmal.sbcglobal.net
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Darwin-c++
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/opt/homebrew/bin/cmake" "/Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx"
+ConfigureCommand: "/opt/homebrew/bin/cmake" "/Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx"
 MakeCommand: /opt/homebrew/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

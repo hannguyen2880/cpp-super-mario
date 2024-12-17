@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario
+CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/cpp-super-mario
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario/build
+CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/cpp-super-mario/build
 
 # Utility rule file for ExperimentalBuild.
 
@@ -67,7 +67,7 @@ include external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/compiler_depend.mak
 include external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/progress.make
 
 external/raylib-tmx/CMakeFiles/ExperimentalBuild:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx && /opt/homebrew/bin/ctest -D ExperimentalBuild
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx && /opt/homebrew/bin/ctest -D ExperimentalBuild
 
 external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/codegen:
 .PHONY : external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/codegen
@@ -81,10 +81,10 @@ external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/build: ExperimentalBuild
 .PHONY : external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/build
 
 external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/clean:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalBuild.dir/cmake_clean.cmake
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalBuild.dir/cmake_clean.cmake
 .PHONY : external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/clean
 
 external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/depend:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/data/cpp-super-mario /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx /Users/hannguyen/Desktop/data/cpp-super-mario/build /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/cpp-super-mario /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx /Users/hannguyen/Desktop/cpp-super-mario/build /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/raylib-tmx/CMakeFiles/ExperimentalBuild.dir/depend
 

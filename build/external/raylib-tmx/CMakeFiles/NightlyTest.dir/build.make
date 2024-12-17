@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario
+CMAKE_SOURCE_DIR = /Users/hannguyen/Desktop/cpp-super-mario
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/data/cpp-super-mario/build
+CMAKE_BINARY_DIR = /Users/hannguyen/Desktop/cpp-super-mario/build
 
 # Utility rule file for NightlyTest.
 
@@ -67,7 +67,7 @@ include external/raylib-tmx/CMakeFiles/NightlyTest.dir/compiler_depend.make
 include external/raylib-tmx/CMakeFiles/NightlyTest.dir/progress.make
 
 external/raylib-tmx/CMakeFiles/NightlyTest:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx && /opt/homebrew/bin/ctest -D NightlyTest
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx && /opt/homebrew/bin/ctest -D NightlyTest
 
 external/raylib-tmx/CMakeFiles/NightlyTest.dir/codegen:
 .PHONY : external/raylib-tmx/CMakeFiles/NightlyTest.dir/codegen
@@ -81,10 +81,10 @@ external/raylib-tmx/CMakeFiles/NightlyTest.dir/build: NightlyTest
 .PHONY : external/raylib-tmx/CMakeFiles/NightlyTest.dir/build
 
 external/raylib-tmx/CMakeFiles/NightlyTest.dir/clean:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx && $(CMAKE_COMMAND) -P CMakeFiles/NightlyTest.dir/cmake_clean.cmake
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx && $(CMAKE_COMMAND) -P CMakeFiles/NightlyTest.dir/cmake_clean.cmake
 .PHONY : external/raylib-tmx/CMakeFiles/NightlyTest.dir/clean
 
 external/raylib-tmx/CMakeFiles/NightlyTest.dir/depend:
-	cd /Users/hannguyen/Desktop/data/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/data/cpp-super-mario /Users/hannguyen/Desktop/data/cpp-super-mario/external/raylib-tmx /Users/hannguyen/Desktop/data/cpp-super-mario/build /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx /Users/hannguyen/Desktop/data/cpp-super-mario/build/external/raylib-tmx/CMakeFiles/NightlyTest.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hannguyen/Desktop/cpp-super-mario /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx /Users/hannguyen/Desktop/cpp-super-mario/build /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/CMakeFiles/NightlyTest.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/raylib-tmx/CMakeFiles/NightlyTest.dir/depend
 

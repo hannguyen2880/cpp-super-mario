@@ -1,35 +1,37 @@
-#pragma once
-#include "raylib.h"
+#ifndef MARIO_MAKER_AUDIOMANAGER_H
+#define MARIO_MAKER_AUDIOMANAGER_H
+#include <raylib.h>
 #include <unordered_map>
-#include <string>
+#include "AudioIds.h"
+#include "ResourceManager.h"
 
 class AudioManager {
 public:
-    static AudioManager& GetInstance() {
-        static AudioManager instance;
-        return instance;
-    }
 
-    void LoadSounds(const std::string& name, const std::string& filePath);
-    void PlaySounds(const std::string& name);
-    void UnloadSounds(const std::string& name);
-    void UnloadAllSounds();
+    AudioManager();
 
-    void LoadMusics(const std::string& name, const std::string& filePath);
-    void PlayMusics(const std::string& name);
-    void StopMusics(const std::string& name);
-    void UnloadMusics(const std::string& name);
-    void UnloadAllMusics();
+    ~AudioManager();
 
-    Music& GetMusic(const std::string& name);
+    void playSound(SoundId soundId);
+
+    void playMusic(MusicId musicId);
+
+    void pauseCurrentMusic();
+
+    void resumeCurrentMusic();
+
+    void stopCurrentMusic();
+
+    Music getCurrentMusic();
+
+    bool isMusicPaused();
 
 private:
-    AudioManager() {}
-    ~AudioManager() {
-        UnloadAllSounds();
-        UnloadAllMusics();
-    }
-
-    std::unordered_map<std::string, Sound> sounds;
-    std::unordered_map<std::string, Music> musicTracks;
+    std::unordered_map<SoundId, Sound> soundMap_;
+    std::unordered_map<MusicId, Music> musicMap_;
+    Music currentMusic_;
+    bool pause = true;
 };
+
+
+#endif //MARIO_MAKER_AUDIOMANAGER_H
