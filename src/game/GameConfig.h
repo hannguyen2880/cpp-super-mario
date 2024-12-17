@@ -1,5 +1,5 @@
 #pragma once
-#include "GameState.h"
+#include "State/GameState.h"
 #include <string>
 
 class GameConfig {

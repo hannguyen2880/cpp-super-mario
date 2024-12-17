@@ -1,4 +1,7 @@
 #include "GameplayScreen.h"
+#include "../game/Game.h"
+#include "../game/GameConfig.h"
+#include "../game/GameManager.h"
 
 GameplayScreen::GameplayScreen()
     : currentDifficulty(GameConfig::getInstance().getDifficulty()),
@@ -36,6 +39,7 @@ void GameplayScreen::Update() {
             mapFilePath = HARD_MAP;
             break;
     }
+
     GameManager gameManager(mapFilePath.c_str(), SCREEN_WIDTH, SCREEN_HEIGHT, secondPlayer);
     gameManager.mainLoop();
 }

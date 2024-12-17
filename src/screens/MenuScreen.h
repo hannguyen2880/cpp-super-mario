@@ -3,6 +3,9 @@
 #include <string>
 #include "../ui/Button.h"
 #include "../ui/ImageButton.h"
+#include "../Constants.h"
+#include <iostream>
+#include "../State.h"
 
 class MenuScreen : public Screen {
 private:
