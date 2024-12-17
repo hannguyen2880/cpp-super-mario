@@ -4,6 +4,8 @@
 #include "../ui/ImageButton.h"
 #include <string>
 
+#include "../State.h"
+
 class InstructionScreen : public Screen {
 private:
     Texture2D background;

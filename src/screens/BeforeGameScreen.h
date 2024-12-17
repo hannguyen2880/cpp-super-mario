@@ -4,7 +4,8 @@
 #include "../ui/FontButton.h"
 #include "../ui/Button.h"
 #include <string>
-#include "../game/GameConfig.h"
+
+#include "../State.h"
 
 class BeforeGameScreen : public Screen {
 private:

@@ -1,5 +1,7 @@
 #include "BeforeGameScreen.h"
 #include "../game/Game.h"
+#include "../game/State/GamePlayState.h"
+#include "../game/State/MainMenuState.h"
 
 BeforeGameScreen::BeforeGameScreen()
     : yesButton(YES_BUTTON, 280, 314),
@@ -47,7 +49,7 @@ void BeforeGameScreen::Update() {
 
     if (currentPanel == PanelState::RESUME_PANEL) {
         if (yesButton.Update()) {
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(std::make_unique<GameplayState>());
             Game::getConfig().setGameplayMode(GameplayMode::RESUME_GAME);
         }
         if (noButton.Update()) {
@@ -87,20 +89,20 @@ void BeforeGameScreen::Update() {
     else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
         if (easyButton.Update()) {
             Game::getConfig().setDifficulty(GameDifficulty::EASY);
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(std::make_unique<GameplayState>());
         }
         if (mediumButton.Update()) {
             Game::getConfig().setDifficulty(GameDifficulty::MEDIUM);
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(std::make_unique<GameplayState>());
         }
         if (hardButton.Update()) {
             Game::getConfig().setDifficulty(GameDifficulty::HARD);
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(std::make_unique<GameplayState>());
         }
     }
 
     if (backButton.Update()) {
-        Game::SetState(GameState::MAIN_MENU);
+        Game::SetState(std::make_unique<MainMenuState>());
     }
 }
 

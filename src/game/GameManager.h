@@ -22,7 +22,7 @@
 #include "systems/IdsMap/IdsMapSystem.h"
 #include "systems/score/ScoreSystem.h"
 #include "systems/sound/SoundSystem.h"
-#include "GameState.h"
+#include "State/GameState.h"
 #include "Game.h"
 #include "GameConfig.h"
 
@@ -42,8 +42,8 @@ private:
     void initTextEntities();
     void startMusic();
     void updateMusicStream();
-    void restartGame();
 
+    void restartGame();
     // void loadGameState();
     // void saveGameState();
 

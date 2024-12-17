@@ -1,8 +1,9 @@
 #pragma once
 #include "Screen.h"
-#include "../game/GameState.h"
-#include "../game/GameConfig.h"
-#include "../game/GameManager.h"
+#include "../game/State/GameState.h"
+#include "../Constants.h"
+
+#include "../State.h"
 
 class GameplayScreen : public Screen {
 private:

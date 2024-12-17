@@ -44,6 +44,9 @@ file(GLOB_RECURSE SOURCES_H
     "include/*.h"
     "include/*/*.h"
     "include/*/*/*.h"
+    "src/*.h"
+    "src/*/*.h"
+    "src"
 )
 
 # Create executable

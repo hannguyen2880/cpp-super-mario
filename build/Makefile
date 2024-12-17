@@ -628,6 +628,126 @@ src/game/GameManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/GameManager.cpp.s
 .PHONY : src/game/GameManager.cpp.s
 
+src/game/State/BeforeGameState.o: src/game/State/BeforeGameState.cpp.o
+.PHONY : src/game/State/BeforeGameState.o
+
+# target to build an object file
+src/game/State/BeforeGameState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/BeforeGameState.cpp.o
+.PHONY : src/game/State/BeforeGameState.cpp.o
+
+src/game/State/BeforeGameState.i: src/game/State/BeforeGameState.cpp.i
+.PHONY : src/game/State/BeforeGameState.i
+
+# target to preprocess a source file
+src/game/State/BeforeGameState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/BeforeGameState.cpp.i
+.PHONY : src/game/State/BeforeGameState.cpp.i
+
+src/game/State/BeforeGameState.s: src/game/State/BeforeGameState.cpp.s
+.PHONY : src/game/State/BeforeGameState.s
+
+# target to generate assembly for a file
+src/game/State/BeforeGameState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/BeforeGameState.cpp.s
+.PHONY : src/game/State/BeforeGameState.cpp.s
+
+src/game/State/GameplayState.o: src/game/State/GameplayState.cpp.o
+.PHONY : src/game/State/GameplayState.o
+
+# target to build an object file
+src/game/State/GameplayState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/GameplayState.cpp.o
+.PHONY : src/game/State/GameplayState.cpp.o
+
+src/game/State/GameplayState.i: src/game/State/GameplayState.cpp.i
+.PHONY : src/game/State/GameplayState.i
+
+# target to preprocess a source file
+src/game/State/GameplayState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/GameplayState.cpp.i
+.PHONY : src/game/State/GameplayState.cpp.i
+
+src/game/State/GameplayState.s: src/game/State/GameplayState.cpp.s
+.PHONY : src/game/State/GameplayState.s
+
+# target to generate assembly for a file
+src/game/State/GameplayState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/GameplayState.cpp.s
+.PHONY : src/game/State/GameplayState.cpp.s
+
+src/game/State/InstructionState.o: src/game/State/InstructionState.cpp.o
+.PHONY : src/game/State/InstructionState.o
+
+# target to build an object file
+src/game/State/InstructionState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/InstructionState.cpp.o
+.PHONY : src/game/State/InstructionState.cpp.o
+
+src/game/State/InstructionState.i: src/game/State/InstructionState.cpp.i
+.PHONY : src/game/State/InstructionState.i
+
+# target to preprocess a source file
+src/game/State/InstructionState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/InstructionState.cpp.i
+.PHONY : src/game/State/InstructionState.cpp.i
+
+src/game/State/InstructionState.s: src/game/State/InstructionState.cpp.s
+.PHONY : src/game/State/InstructionState.s
+
+# target to generate assembly for a file
+src/game/State/InstructionState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/InstructionState.cpp.s
+.PHONY : src/game/State/InstructionState.cpp.s
+
+src/game/State/MainMenuState.o: src/game/State/MainMenuState.cpp.o
+.PHONY : src/game/State/MainMenuState.o
+
+# target to build an object file
+src/game/State/MainMenuState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/MainMenuState.cpp.o
+.PHONY : src/game/State/MainMenuState.cpp.o
+
+src/game/State/MainMenuState.i: src/game/State/MainMenuState.cpp.i
+.PHONY : src/game/State/MainMenuState.i
+
+# target to preprocess a source file
+src/game/State/MainMenuState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/MainMenuState.cpp.i
+.PHONY : src/game/State/MainMenuState.cpp.i
+
+src/game/State/MainMenuState.s: src/game/State/MainMenuState.cpp.s
+.PHONY : src/game/State/MainMenuState.s
+
+# target to generate assembly for a file
+src/game/State/MainMenuState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/MainMenuState.cpp.s
+.PHONY : src/game/State/MainMenuState.cpp.s
+
+src/game/State/ScoreboardState.o: src/game/State/ScoreboardState.cpp.o
+.PHONY : src/game/State/ScoreboardState.o
+
+# target to build an object file
+src/game/State/ScoreboardState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/ScoreboardState.cpp.o
+.PHONY : src/game/State/ScoreboardState.cpp.o
+
+src/game/State/ScoreboardState.i: src/game/State/ScoreboardState.cpp.i
+.PHONY : src/game/State/ScoreboardState.i
+
+# target to preprocess a source file
+src/game/State/ScoreboardState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/ScoreboardState.cpp.i
+.PHONY : src/game/State/ScoreboardState.cpp.i
+
+src/game/State/ScoreboardState.s: src/game/State/ScoreboardState.cpp.s
+.PHONY : src/game/State/ScoreboardState.s
+
+# target to generate assembly for a file
+src/game/State/ScoreboardState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/ScoreboardState.cpp.s
+.PHONY : src/game/State/ScoreboardState.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -891,6 +1011,30 @@ src/screens/MenuScreen.s: src/screens/MenuScreen.cpp.s
 src/screens/MenuScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s
 .PHONY : src/screens/MenuScreen.cpp.s
+
+src/screens/ScoreboardScreen.o: src/screens/ScoreboardScreen.cpp.o
+.PHONY : src/screens/ScoreboardScreen.o
+
+# target to build an object file
+src/screens/ScoreboardScreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/ScoreboardScreen.cpp.o
+.PHONY : src/screens/ScoreboardScreen.cpp.o
+
+src/screens/ScoreboardScreen.i: src/screens/ScoreboardScreen.cpp.i
+.PHONY : src/screens/ScoreboardScreen.i
+
+# target to preprocess a source file
+src/screens/ScoreboardScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/ScoreboardScreen.cpp.i
+.PHONY : src/screens/ScoreboardScreen.cpp.i
+
+src/screens/ScoreboardScreen.s: src/screens/ScoreboardScreen.cpp.s
+.PHONY : src/screens/ScoreboardScreen.s
+
+# target to generate assembly for a file
+src/screens/ScoreboardScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/ScoreboardScreen.cpp.s
+.PHONY : src/screens/ScoreboardScreen.cpp.s
 
 src/systems/IdsMap/IdsMapSystem.o: src/systems/IdsMap/IdsMapSystem.cpp.o
 .PHONY : src/systems/IdsMap/IdsMapSystem.o
@@ -1256,6 +1400,21 @@ help:
 	@echo "... src/game/GameManager.o"
 	@echo "... src/game/GameManager.i"
 	@echo "... src/game/GameManager.s"
+	@echo "... src/game/State/BeforeGameState.o"
+	@echo "... src/game/State/BeforeGameState.i"
+	@echo "... src/game/State/BeforeGameState.s"
+	@echo "... src/game/State/GameplayState.o"
+	@echo "... src/game/State/GameplayState.i"
+	@echo "... src/game/State/GameplayState.s"
+	@echo "... src/game/State/InstructionState.o"
+	@echo "... src/game/State/InstructionState.i"
+	@echo "... src/game/State/InstructionState.s"
+	@echo "... src/game/State/MainMenuState.o"
+	@echo "... src/game/State/MainMenuState.i"
+	@echo "... src/game/State/MainMenuState.s"
+	@echo "... src/game/State/ScoreboardState.o"
+	@echo "... src/game/State/ScoreboardState.i"
+	@echo "... src/game/State/ScoreboardState.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -1289,6 +1448,9 @@ help:
 	@echo "... src/screens/MenuScreen.o"
 	@echo "... src/screens/MenuScreen.i"
 	@echo "... src/screens/MenuScreen.s"
+	@echo "... src/screens/ScoreboardScreen.o"
+	@echo "... src/screens/ScoreboardScreen.i"
+	@echo "... src/screens/ScoreboardScreen.s"
 	@echo "... src/systems/IdsMap/IdsMapSystem.o"
 	@echo "... src/systems/IdsMap/IdsMapSystem.i"
 	@echo "... src/systems/IdsMap/IdsMapSystem.s"
