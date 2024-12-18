@@ -7,6 +7,9 @@
 #include <iostream>
 
 std::unique_ptr<GameState> Game::currentState = nullptr;
+GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
+GameplayMode Game::gameplayMode = GameplayMode::SINGLE_PLAYER;
+Character Game::character = Character::LUIGI;
 
 void Game::Init() {
     currentState = std::make_unique<MainMenuState>();

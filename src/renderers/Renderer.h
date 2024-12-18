@@ -15,6 +15,13 @@ public:
     char* getFilePath() {
         return const_cast<char *>(filepath_);
     }
+    virtual void cleanup() {
+        for (auto& texture : textures_) {
+            UnloadTexture(texture.second);
+        }
+        textures_.clear();
+        texturePositions_.clear();
+    }
 
 protected:
 

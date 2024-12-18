@@ -1,80 +1,131 @@
 #include "GameManager.h"
 
-GameManager::GameManager(const char *mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
-:screenWidth_(screenWidth), screenHeight_(screenHeight), secondPlayer(secondPlayer)
+GameManager::GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
+    : mapName(mapName)
+    , screenWidth_(screenWidth)
+    , screenHeight_(screenHeight)
+    , secondPlayer(secondPlayer)
+    , previous(GetTime())
+    , lag(0.0)
+    , world_(nullptr)
+    , pMap_(nullptr)
+    , mapRenderer(nullptr)
+    , textureRenderer(nullptr)
+    , enemiesRenderer(nullptr)
+    , objectRenderer(nullptr)
+    , textRenderer_(nullptr)
 {
-    std::cout << "Initializing GameManager with parameters:" << std::endl;
-    std::cout << "Map Name: " << mapName << std::endl;
-    std::cout << "Screen Width: " << screenWidth << std::endl;
-    std::cout << "Screen Height: " << screenHeight << std::endl;
-    std::cout << "Second Player: " << (secondPlayer ? "true" : "false") << std::endl;
+    Init();
+}
 
+GameManager::~GameManager() {
+    cleanup();
+}
+
+void GameManager::Init() {
     run = true;
     pause = false;
+    restart = false;
+
     world_ = ECS::World::createWorld();
     pMap_ = new GameMap(mapName);
     pMap_->loadMap(world_);
+    
     mapRenderer = new MapRenderer(pMap_, SMB1_TILESET_PATH);
     textureRenderer = new TextureRenderer(SBM1_PLAYER_TILESET_PATH);
     enemiesRenderer = new EnemiesRenderer(SMB1_ENEMIES_TILESET_PATH);
     objectRenderer = new ObjectRenderer(SMB1_OBJECT_TILESET_PATH);
     textRenderer_ = new TextRenderer();
+
+    initWorld();
+    SetTargetFPS(60);
 }
 
-void GameManager::mainLoop() {
-    initWorld();
-    ECS::ComponentHandle<CameraComponent> camera = world_->getById(cameraId_)->get<CameraComponent>();
-    SetTargetFPS(FPS);
-    double previous = GetTime();
-    double lag = 0.0;
-    while (run && !WindowShouldClose()) {
-        double current = GetTime();
-        double elapsed = current - previous;
-        previous = current;
-        lag += elapsed;
+void GameManager::Update() {
+    if (!run || WindowShouldClose()) return;
 
-        // Handle Inputs
-        handleInput();
+    double current = GetTime();
+    double elapsed = current - previous;
+    previous = current;
+    lag += elapsed;
 
-        //Update
-        while (lag >= MS_PER_UPDATE) {
-            world_->tick(0.0f);
-            lag -= MS_PER_UPDATE;
-        }
-        updateMusicStream();
+    handleInput();
 
-        // Drawing
-        BeginDrawing();
-
-        ClearBackground({0, 0, 0});
-
-        BeginMode2D(camera.get().camera);
-
-        render(static_cast<float>(lag / MS_PER_UPDATE));
-
-        EndMode2D();
-
-        // Draw scores
-        textRenderer_->render(world_);
-
-        EndDrawing();
+    while (lag >= MS_PER_UPDATE) {
+        world_->tick(0.0f);
+        lag -= MS_PER_UPDATE;
     }
 
-    if (restart) {
-        restart = !restart;
-        run = true;
+    updateMusicStream();
+}
+
+void GameManager::Draw() {
+    if (!run) return;
+    ClearBackground(RAYWHITE);
+
+    auto camera = world_->getById(cameraId_)->get<CameraComponent>();
+    BeginMode2D(camera.get().camera);
+    
+    render(static_cast<float>(lag / MS_PER_UPDATE));
+    
+    EndMode2D();
+    
+    textRenderer_->render(world_);
+    
+}
+
+void GameManager::cleanup() {
+    if (world_) {
         world_->reset();
         world_->destroyWorld();
-        world_ = ECS::World::createWorld();
-        mainLoop();
+        world_ = nullptr;
     }
 
+    if (mapRenderer) {
+        mapRenderer->cleanup();
+        delete mapRenderer;
+        mapRenderer = nullptr;
+    }
+
+    if (textureRenderer) {
+        textureRenderer->cleanup();
+        delete textureRenderer;
+        textureRenderer = nullptr;
+    }
+
+    if (enemiesRenderer) {
+        enemiesRenderer->cleanup();
+        delete enemiesRenderer;
+        enemiesRenderer = nullptr;
+    }
+
+    if (objectRenderer) {
+        objectRenderer->cleanup();
+        delete objectRenderer;
+        objectRenderer = nullptr;
+    }
+
+    if (textRenderer_) {
+        delete textRenderer_;
+        textRenderer_ = nullptr;
+    }
+
+    if (pMap_) {
+        delete pMap_;
+        pMap_ = nullptr;
+    }
 }
 
-GameManager::~GameManager() {
-    delete world_;
-    delete mapRenderer;
-    delete textureRenderer;
+bool GameManager::NeedsRestart() const {
+    return restart;
+}
+
+void GameManager::restartGame() {
+    auto player = world_->findFirst<PlayerComponent>();
+    if (!player) {
+        run = false;
+        restart = true;
+    }
 }
 
 void GameManager::initWorld() {
@@ -148,27 +199,29 @@ void GameManager::initLuigiPlayer(ECS::Entity *player, Vector2 position) {
 void GameManager::initPlayers() {
     Vector2 spawnPositionP1 = pMap_->getSpawnPositionP1();
     Vector2 spawnPositionP2 = pMap_->getSpawnPositionP2();
-    ECS::Entity* mario = world_->create();
-    initMarioPlayer(mario, spawnPositionP1);
-    if (secondPlayer) {
-        ECS::Entity* luigi = world_->create();
-        initLuigiPlayer(luigi, spawnPositionP2);
-    }
-    // if (!secondPlayer) {
-    //     ECS::Entity* player = world_->create();
-    //     if (Game::GetCharacter() == Character::MARIO) {
-    //         initMarioPlayer(player, spawnPositionP1);
-    //     } else {
-    //         initLuigiPlayer(player, spawnPositionP1);
-    //     }
-    // }
-    // else {
-    //     ECS::Entity* mario = world_->create();
-    //     initMarioPlayer(mario, spawnPositionP1);
-        
+    // ECS::Entity* mario = world_->create();
+    // initMarioPlayer(mario, spawnPositionP1);
+    // if (secondPlayer) {
     //     ECS::Entity* luigi = world_->create();
     //     initLuigiPlayer(luigi, spawnPositionP2);
     // }
+    if (!secondPlayer) {
+        ECS::Entity* player = world_->create();
+        if (Game::GetCharacter() == Character::MARIO) {
+            std::cout << "DEBUG: Creating Mario" << std::endl;
+            initMarioPlayer(player, spawnPositionP1);
+        } else {
+            std::cout << "DEBUG: Creating Luigi" << std::endl;
+            initLuigiPlayer(player, spawnPositionP1);
+        }
+    }
+    else {
+        ECS::Entity* mario = world_->create();
+        initMarioPlayer(mario, spawnPositionP1);
+        
+        ECS::Entity* luigi = world_->create();
+        initLuigiPlayer(luigi, spawnPositionP2);
+    }
 }
 
 void GameManager::registerSystems() {
@@ -291,26 +344,3 @@ void GameManager::startMusic() {
 void GameManager::updateMusicStream() {
     UpdateMusicStream(soundSystem_->getCurrentMusic());
 }
-
-void GameManager::restartGame() {
-    auto player = world_->findFirst<PlayerComponent>();
-    if (!player) {
-        run = false;
-        restart = true;
-    }
-}
-
-// void GameManager::loadGameState() {
-//     if (GameConfig::getInstance()->hasExistingSave()) {
-//         PlayerState state = GameConfig::getInstance()->loadGameState();
-//         // Load player state into the game
-//         // Example: Set player position, score, lives, etc.
-//     }
-// }
-
-// void GameManager::saveGameState() {
-//     PlayerState state;
-//     // Save player state from the game
-//     // Example: Get player position, score, lives, etc.
-//     GameConfig::getInstance()->saveGameState(state);
-// }

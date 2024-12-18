@@ -1,19 +1,18 @@
 #pragma once
-#include "Screen.h"
-#include "../game/State/GameState.h"
+#include "../screens/Screen.h"
+#include "../game/GameManager.h"
+#include "../game/GameConfig.h"
 #include "../Constants.h"
-
-#include "../State.h"
+#include <memory>
 
 class GameplayScreen : public Screen {
 private:
+    std::unique_ptr<GameManager> gameManager;
     GameDifficulty currentDifficulty;
     GameplayMode currentMode;
     Character currentCharacter;
     bool isPaused;
-
-    void InitNewGame();
-    void LoadSavedGame();
+    void CreateGameManager();
 
 public:
     GameplayScreen();
