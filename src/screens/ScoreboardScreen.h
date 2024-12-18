@@ -19,8 +19,9 @@ private:
     float text_positionY_1st;
     float frameWidth;
     float frameHeight;
+    float textLeftMargin;
+    float textRightMargin;
     float textVerticalSpacing;
-    float textHorizontalSpacing;
     vector<pair<string, int>> players; // vector of pairs of player names and scores
 
 public:
