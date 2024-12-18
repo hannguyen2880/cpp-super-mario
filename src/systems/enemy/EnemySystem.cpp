@@ -1,4 +1,6 @@
 #include "EnemySystem.h"
+#include <cfloat>
+#include <cmath>
 
 EnemySystem::EnemySystem() {
 

@@ -1,4 +1,4 @@
-#include "GameplayScreen.h"
+#include "GamePlayScreen.h"
 
 GameplayScreen::GameplayScreen()
     : currentDifficulty(GameConfig::getInstance().getDifficulty()),

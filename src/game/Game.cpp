@@ -3,6 +3,7 @@
 #include "../screens/InstructionScreen.h"
 #include "../screens/BeforeGameScreen.h"
 #include "../screens/GamePlayScreen.h"
+#include "../screens/ScoreboardScreen.h"
 #include <iostream>
 
 GameState Game::currentState = GameState::MAIN_MENU;
@@ -69,7 +70,7 @@ void Game::SetState(GameState newState) {
             break;
         }
         case GameState::SCOREBOARD: {
-            currentScreen = std::make_unique<InstructionScreen>();
+            currentScreen = std::make_unique<ScoreboardScreen>();
             break;
         }
         case GameState::BEFOREGAME: {

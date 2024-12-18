@@ -17,6 +17,11 @@ constexpr const char* INSTRUCTION_PANEL = "../assets/imgs/InstructionPanel.png";
 constexpr const char* MARIO_MENU = "../assets/imgs/Mario.png";
 constexpr const char* RESUMEGAME_PANEL = "../assets/imgs/ResumeGamePanel.png";
 constexpr const char* MENU_BACKGROUND = "../assets/imgs/Screen_background.png";
+constexpr const char* FRIST_PLACE = "../assets/imgs/1st.png";
+constexpr const char* SECOND_PLACE = "../assets/imgs/2nd.png";
+constexpr const char* THIRD_PLACE = "../assets/imgs/3rd.png";
+constexpr const char* FOURTH_PLACE = "../assets/imgs/4th.png";
+constexpr const char* FIFTH_PLACE = "../assets/imgs/5th.png";
 
 //button
 constexpr const char* BACK_BUTTON = "../assets/imgs/Buttons/BackButton.png";

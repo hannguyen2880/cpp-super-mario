@@ -1,76 +1,129 @@
-cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
-project(super-mario)
+# cmake_minimum_required(VERSION 3.16)
+# project(mario_maker)
 
-# Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_CXX_STANDARD 14)
 
-# Add definition for raygui implementation
-add_definitions(-DRAYGUI_IMPLEMENTATION)
+# SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
 
-# Find raylib
-find_package(raylib REQUIRED)
-find_package(box2d REQUIRED)
-find_package(TMX REQUIRED)
-find_package(nlohmann_json 3.11.2 REQUIRED)
+# # Setting OpenGL
+# find_package(OpenGL REQUIRED)
+# if (OPENGL_FOUND)
+#     include_directories(${OPENGL_INCLUDE_DIR})
+# else()
+#     message(FATAL_ERROR "OpenGL not found!")
+# endif()
 
-link_directories(/opt/homebrew/Cellar/box2d/2.4.2/lib)
-link_directories(/opt/homebrew/Cellar/tmx/1.10.0/lib)
-link_directories(${CMAKE_SOURCE_DIR}/external/tmxlite/tmxlite/build)
+# # Setting Raylib
+# find_package(raylib 3.5.0 QUIET) # Let CMake search for a raylib-config.cmake
 
-# Include directories
-include_directories(${raylib_INCLUDE_DIRS})
-include_directories(include)
+# if (NOT raylib_FOUND) # If Raylib is not found, fetch and build it
+#     include(FetchContent)
+
+#     FetchContent_Declare(
+#             raylib
+#             URL https://github.com/raysan5/raylib/archive/master.tar.gz
+#     )
+
+#     FetchContent_GetProperties(raylib)
+#     if (NOT raylib_POPULATED) # If not already downloaded, populate
+#         set(FETCHCONTENT_QUIET NO)
+#         FetchContent_Populate(raylib)
+
+#         set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # Disable building Raylib examples
+#         add_subdirectory(${raylib_SOURCE_DIR} ${raylib_BINARY_DIR})
+#     endif()
+# endif()
+
+# # Setting TMXLITE
+# find_package(TMXLITE REQUIRED)
+# if (NOT TMXLITE_FOUND)
+#     message(FATAL_ERROR "tmxlite not found! Ensure it's installed and properly set.")
+# endif()
+
+# # Add source files
+# file(GLOB src
+#         "src/*.cpp"
+#         "src/systems/*.cpp"
+#         "src/renderers/*.cpp")
+
+# add_executable(mario_maker ${src})
+
+# # Include directories for tmxlite and project-specific headers
+# include_directories(
+#         include
+#         include/systems
+#         include/renderers
+#         /home/thinh/Source/Mario/mario-maker/include/tmxlite
+#         ${OPENGL_INCLUDE_DIR}
+# )
+
+# # Link libraries
+# target_link_libraries(mario_maker raylib ${OPENGL_gl_LIBRARY} /usr/local/lib/libtmxlite.so)
+
+cmake_minimum_required(VERSION 3.16)
+project(mario_maker)
+
+set(CMAKE_CXX_STANDARD 14)
+
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
+
+# Setting OpenGL
+find_package(OpenGL REQUIRED)
+if (OPENGL_FOUND)
+    include_directories(${OPENGL_INCLUDE_DIR})
+else()
+    message(FATAL_ERROR "OpenGL not found!")
+endif()
+
+# Setting Raylib
+find_package(raylib 3.5.0 QUIET) # Let CMake search for a raylib-config.cmake
+
+if (NOT raylib_FOUND) # If Raylib is not found, fetch and build it
+    include(FetchContent)
+
+    FetchContent_Declare(
+            raylib
+            URL https://github.com/raysan5/raylib/archive/master.tar.gz
+    )
+
+    FetchContent_GetProperties(raylib)
+    if (NOT raylib_POPULATED) # If not already downloaded, populate
+        set(FETCHCONTENT_QUIET NO)
+        FetchContent_Populate(raylib)
+
+        set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # Disable building Raylib examples
+        add_subdirectory(${raylib_SOURCE_DIR} ${raylib_BINARY_DIR})
+    endif()
+endif()
+
+# Setting TMXLITE
+find_package(TMXLITE REQUIRED)
+if (NOT TMXLITE_FOUND)
+    message(FATAL_ERROR "tmxlite not found! Ensure it's installed and properly set.")
+endif()
+
+# Add source files
+file(GLOB src
+        "src/*.cpp"
+        "src/systems/*.cpp"
+        "src/renderers/*.cpp"
+        "src/*/*.cpp"
+        "src/*/*/*.cpp"
+        )
+
+add_executable(mario_maker ${src})
+
+# Include directories for tmxlite and project-specific headers
+include_directories(
+        include
+        include/systems
+        include/renderers
+        include/tmxlite
+        ${OPENGL_INCLUDE_DIR}
+        
+)
 include_directories(src)
-include_directories(/opt/homebrew/Cellar/box2d/2.4.2/include)
-include_directories(external/raylib-cpp/include)
-include_directories(/opt/homebrew/Cellar/tmx/1.10.0/include)
-include_directories(external/pocketlzma/src)
-include_directories(external/pocketlzma)
-include_directories(external/tmxlite/tmxlite/include)
-include_directories(external/tmxlite/tmxlite/include/tmxlite)
-include_directories(external/ECS)
-include_directories(external/raylib-tmx/include)
-add_subdirectory(external/raylib-tmx)
-
-# Source files
-file(GLOB_RECURSE SOURCES_CPP 
-    "src/*.cpp"
-    "src/*/*.cpp"
-    "src/*/*/*.cpp"
-)
-
-file(GLOB_RECURSE SOURCES_H
-    "include/*.h"
-    "include/*/*.h"
-    "include/*/*/*.h"
-)
-
-# Create executable
-add_executable(${PROJECT_NAME} ${SOURCES_CPP} ${SOURCES_H})
+include_directories(src/systems/*)
 
 # Link libraries
-target_link_libraries(${PROJECT_NAME} 
-    raylib
-    raylib-tmx
-    box2d
-    nlohmann_json::nlohmann_json
-    TMX
-    ${CMAKE_SOURCE_DIR}/external/tmxlite/tmxlite/build/libtmxlite.dylib
-)
-
-set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
-if (MSVC)
-    file(GLOB_RECURSE DLLS "${raylib_DIR}/../../bin/*.dll")
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${DLLS}
-        $<TARGET_FILE_DIR:${PROJECT_NAME}>
-    )
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${CMAKE_SOURCE_DIR}/assets
-        ${CMAKE_BINARY_DIR}/assets
-    )
-
-endif()
+target_link_libraries(mario_maker raylib ${OPENGL_gl_LIBRARY} /usr/local/lib/libtmxlite.so)
