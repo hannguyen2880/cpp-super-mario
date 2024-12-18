@@ -8,9 +8,7 @@
 class Renderer {
 public:
 
-    Renderer(const char* filepath)
-    : filepath_(filepath)
-    {};
+    Renderer(const char* filepath) : filepath_(filepath){};
 
     char* getFilePath() {
         return const_cast<char *>(filepath_);

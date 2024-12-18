@@ -11,7 +11,7 @@ BuildDirectory: /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-t
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: 192.168.1.182.non-exists.ptr.local
+Site: My-Cozy-Nerd-Nest.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Darwin-c++

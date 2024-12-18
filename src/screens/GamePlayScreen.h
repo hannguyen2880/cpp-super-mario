@@ -4,6 +4,7 @@
 #include "../game/GameConfig.h"
 #include "../Constants.h"
 #include <memory>
+#include "../ui/ImageButton.h"
 
 class GameplayScreen : public Screen {
 private:
@@ -12,6 +13,7 @@ private:
     GameplayMode currentMode;
     Character currentCharacter;
     bool isPaused;
+    ImageButton homeButton;
     void CreateGameManager();
 
 public:

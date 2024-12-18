@@ -1,4 +1,5 @@
 #include "GameManager.h"
+#include "GameConfig.h"
 
 GameManager::GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
     : mapName(mapName)
@@ -76,44 +77,22 @@ void GameManager::Draw() {
 
 void GameManager::cleanup() {
     if (world_) {
-        world_->reset();
         world_->destroyWorld();
+        delete world_;
         world_ = nullptr;
     }
-
-    if (mapRenderer) {
-        mapRenderer->cleanup();
-        delete mapRenderer;
-        mapRenderer = nullptr;
-    }
-
-    if (textureRenderer) {
-        textureRenderer->cleanup();
-        delete textureRenderer;
-        textureRenderer = nullptr;
-    }
-
-    if (enemiesRenderer) {
-        enemiesRenderer->cleanup();
-        delete enemiesRenderer;
-        enemiesRenderer = nullptr;
-    }
-
-    if (objectRenderer) {
-        objectRenderer->cleanup();
-        delete objectRenderer;
-        objectRenderer = nullptr;
-    }
-
-    if (textRenderer_) {
-        delete textRenderer_;
-        textRenderer_ = nullptr;
-    }
-
-    if (pMap_) {
-        delete pMap_;
-        pMap_ = nullptr;
-    }
+    delete pMap_;
+    delete mapRenderer;
+    delete textureRenderer;
+    delete enemiesRenderer;
+    delete objectRenderer;
+    delete textRenderer_;
+    pMap_ = nullptr;
+    mapRenderer = nullptr;
+    textureRenderer = nullptr;
+    enemiesRenderer = nullptr;
+    objectRenderer = nullptr;
+    textRenderer_ = nullptr;
 }
 
 bool GameManager::NeedsRestart() const {
@@ -207,7 +186,7 @@ void GameManager::initPlayers() {
     // }
     if (!secondPlayer) {
         ECS::Entity* player = world_->create();
-        if (Game::GetCharacter() == Character::MARIO) {
+        if (GameConfig::getInstance().getCharacter() == Character::MARIO) {
             std::cout << "DEBUG: Creating Mario" << std::endl;
             initMarioPlayer(player, spawnPositionP1);
         } else {

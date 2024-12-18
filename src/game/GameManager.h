@@ -36,6 +36,7 @@ public:
     void Draw();
     void cleanup();
     bool NeedsRestart() const;
+    GameMap *getMap() const{ return pMap_; }
 
 private:
     void initWorld();
