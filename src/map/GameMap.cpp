@@ -1,11 +1,7 @@
-#include <cmath>
-#include <iostream>
-#include "../Constants.h"
+
 #include "GameMap.h"
 
-GameMap::GameMap(std::string filename)
-:name(filename)
-{
+GameMap::GameMap(std::string filename) :name(filename) {
     loaded_ = false;
     width_ = 0;
     height_ = 0;
@@ -19,28 +15,37 @@ GameMap::~GameMap() {
     }
 }
 
+//using 2D array to store the tile id of each tile
 void GameMap::loadMap(ECS::World* world) {
     tmx::Map map;
-    if(map.load(name))
-    {
-        // Get Map sizes
-        loadMapBasicInfo(map.getTileCount());
+    try {
+        if (map.load(name)) {
+            // Get Map sizes
+            loadMapBasicInfo(map.getTileCount());
 
-        // Load properties
-        loadProperties(map.getProperties());
+            // Load properties
+            loadProperties(map.getProperties());
 
-        // Load layers
-        std::set<unsigned int> usedTiles = loadLayers(map.getLayers(), world);
+            // Load layers
+            std::set<unsigned int> usedTiles = loadLayers(map.getLayers(), world);
 
-        // Load tileset
-        loadMapTiles(const_cast<std::vector<tmx::Tileset> &>(map.getTilesets()), usedTiles);
-    } else {
-        throw "Cannot load map from " + name;
+            // Load tileset
+            loadMapTiles(const_cast<std::vector<tmx::Tileset> &>(map.getTilesets()), usedTiles);
+        } else {
+            throw std::runtime_error("Cannot load map from " + name);
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 
     this->loaded_ = true;
 }
 
+bool GameMap::isMapLoaded() {
+        return loaded_;
+}
+
+//Get Map Sizes
 void GameMap::loadMapBasicInfo(const tmx::Vector2u &orientation) {
     width_ = orientation.x;
     height_ = orientation.y;
@@ -54,6 +59,7 @@ void GameMap::loadMapBasicInfo(const tmx::Vector2u &orientation) {
     }
 }
 
+//Load properties (extract: spawn position of mario)
 void GameMap::loadProperties(const std::vector<tmx::Property> properties) {
     Vector2 marioSpawn;
     for (const tmx::Property& property : properties)
@@ -67,9 +73,10 @@ void GameMap::loadProperties(const std::vector<tmx::Property> properties) {
     }
 
     spawnPositionP1_ = marioSpawn;
-    spawnPostionP2_ = Vector2{marioSpawn.x - 2, marioSpawn.y};
+    spawnPositionP2_ = Vector2{marioSpawn.x - 2, marioSpawn.y};
 }
 
+//Load layers (extract: tile id of each tile)
 std::set<unsigned int> GameMap::loadLayers(const std::vector<tmx::Layer::Ptr>& layers, ECS::World* world) {
     std::set<unsigned int> usedTilesSet;
 
@@ -179,7 +186,7 @@ const Vector2 &GameMap::getSpawnPositionP1() const {
 }
 
 const Vector2 &GameMap::getSpawnPositionP2() const {
-    return spawnPostionP2_;
+    return spawnPositionP2_;
 }
 
 unsigned int **GameMap::getGraphicsLayer() const {
@@ -202,11 +209,7 @@ int GameMap::getPixelWidth() const {
     return width_ * 32;
 }
 
-void GameMap::loadTileEntity(
-        ECS::Entity* ent,
-        tmx::FloatRect AABB,
-        std::vector<tmx::Property> properties,
-        std::string layerName) {
+void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<tmx::Property> properties, std::string layerName) {
     // Adjust coordinates
     float x = std::round((AABB.left * 2) / 32) * 32;
     float y = std::round((AABB.top * 2) / 32) * 32;
@@ -218,7 +221,7 @@ void GameMap::loadTileEntity(
         width = GAME_TILE_SIZE * n;
     }
 
-    if (std::round(AABB.width) <= TILE_SIZE + 2) {
+    if (std::round(AABB.height) <= TILE_SIZE + 2) {
         height = GAME_TILE_SIZE;
     } else {
         int n = (int) std::round(AABB.height / 16);
