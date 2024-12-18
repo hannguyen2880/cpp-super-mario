@@ -1,4 +1,4 @@
-# Install script for directory: /home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src/src/external/glfw/src
+# Install script for directory: /home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src/src/external/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

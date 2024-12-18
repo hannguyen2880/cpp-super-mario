@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
 
-CXX_INCLUDES = -I/home/thinh/Source/Mario/mario-maker/include -I/home/thinh/Source/Mario/mario-maker/include/systems -I/home/thinh/Source/Mario/mario-maker/include/renderers -I/home/thinh/Source/Mario/mario-maker/include/tmxlite -I/home/thinh/Source/Mario/mario-maker/src -I"/home/thinh/Source/Mario/mario-maker/src/systems/*" -I/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src/src -I/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src/src/external/glfw/include
+CXX_INCLUDES = -I/home/thinh/Source/repos/cpp-super-mario/include -I/home/thinh/Source/repos/cpp-super-mario/include/systems -I/home/thinh/Source/repos/cpp-super-mario/include/renderers -I/home/thinh/Source/repos/cpp-super-mario/include/tmxlite -I/home/thinh/Source/repos/cpp-super-mario/src -I"/home/thinh/Source/repos/cpp-super-mario/src/systems/*" -I/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src/src -I/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src/src/external/glfw/include
 
 CXX_FLAGS = -std=gnu++14
 

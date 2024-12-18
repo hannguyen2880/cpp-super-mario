@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=url
-command=/usr/bin/cmake;-P;/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/download-raylib-populate.cmake;COMMAND;/usr/bin/cmake;-P;/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/verify-raylib-populate.cmake;COMMAND;/usr/bin/cmake;-P;/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/extract-raylib-populate.cmake
-source_dir=/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src
-work_dir=/home/thinh/Source/Mario/mario-maker/build/_deps
+command=/usr/bin/cmake;-P;/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/download-raylib-populate.cmake;COMMAND;/usr/bin/cmake;-P;/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/verify-raylib-populate.cmake;COMMAND;/usr/bin/cmake;-P;/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/extract-raylib-populate.cmake
+source_dir=/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src
+work_dir=/home/thinh/Source/repos/cpp-super-mario/build/_deps
 url(s)=https://github.com/raysan5/raylib/archive/master.tar.gz
 hash=
 no_extract=

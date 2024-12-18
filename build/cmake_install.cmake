@@ -1,4 +1,4 @@
-# Install script for directory: /home/thinh/Source/Mario/mario-maker
+# Install script for directory: /home/thinh/Source/repos/cpp-super-mario
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-build/cmake_install.cmake")
+  include("/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/thinh/Source/Mario/mario-maker/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/thinh/Source/repos/cpp-super-mario/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

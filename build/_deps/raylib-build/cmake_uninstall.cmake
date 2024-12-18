@@ -1,8 +1,8 @@
-if(NOT EXISTS "/home/thinh/Source/Mario/mario-maker/build/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: /home/thinh/Source/Mario/mario-maker/build/install_manifest.txt")
+if(NOT EXISTS "/home/thinh/Source/repos/cpp-super-mario/build/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: /home/thinh/Source/repos/cpp-super-mario/build/install_manifest.txt")
 endif()
 
-file(READ "/home/thinh/Source/Mario/mario-maker/build/install_manifest.txt" files)
+file(READ "/home/thinh/Source/repos/cpp-super-mario/build/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

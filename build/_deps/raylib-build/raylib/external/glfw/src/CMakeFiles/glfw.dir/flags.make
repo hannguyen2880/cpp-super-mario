@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_DEFAULT_SOURCE -D_GLFW_X11
 
-C_INCLUDES = -I/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src/src/external/glfw/include -I/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src/src/external/glfw/src -I/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-build/raylib/external/glfw/src
+C_INCLUDES = -I/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src/src/external/glfw/include -I/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src/src/external/glfw/src -I/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-build/raylib/external/glfw/src
 
 C_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=c99 -fPIC -Wall
 

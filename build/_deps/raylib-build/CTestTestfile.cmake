@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src
-# Build directory: /home/thinh/Source/Mario/mario-maker/build/_deps/raylib-build
+# Source directory: /home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src
+# Build directory: /home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

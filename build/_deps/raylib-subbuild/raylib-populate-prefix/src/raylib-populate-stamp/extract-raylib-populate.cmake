@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION 3.5)
 
 # Make file names absolute:
 #
-get_filename_component(filename "/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-subbuild/raylib-populate-prefix/src/master.tar.gz" ABSOLUTE)
-get_filename_component(directory "/home/thinh/Source/Mario/mario-maker/build/_deps/raylib-src" ABSOLUTE)
+get_filename_component(filename "/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-subbuild/raylib-populate-prefix/src/master.tar.gz" ABSOLUTE)
+get_filename_component(directory "/home/thinh/Source/repos/cpp-super-mario/build/_deps/raylib-src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'
