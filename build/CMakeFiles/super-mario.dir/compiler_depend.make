@@ -5444,7 +5444,6 @@ CMakeFiles/super-mario.dir/src/game/State/GameplayState.cpp.o: /Users/hannguyen/
   /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameConfig.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/game/State/GameState.h \
-  /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/Constants.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/screens/Screen.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/ui/Button.h \
@@ -17579,7 +17578,6 @@ CMakeFiles/super-mario.dir/src/screens/GamePlayScreen.cpp.o: /Users/hannguyen/De
   /Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/game/State/GameState.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/game/State/MainMenuState.h \
-  /Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/Constants.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/screens/Screen.h \
   /Users/hannguyen/Desktop/cpp-super-mario/src/ui/Button.h \
