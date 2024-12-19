@@ -76,15 +76,15 @@ external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o: ext
 external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o: /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/test/raylib-tmx-test.c
 external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o: external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o"
-	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o -MF CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o.d -o CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o -c /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/test/raylib-tmx-test.c
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o -MF CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o.d -o CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.o -c /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/test/raylib-tmx-test.c
 
 external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.i"
-	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/test/raylib-tmx-test.c > CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.i
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/test/raylib-tmx-test.c > CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.i
 
 external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.s"
-	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/test/raylib-tmx-test.c -o CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.s
+	cd /Users/hannguyen/Desktop/cpp-super-mario/build/external/raylib-tmx/test && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/external/raylib-tmx/test/raylib-tmx-test.c -o CMakeFiles/raylib-tmx-test.dir/raylib-tmx-test.c.s
 
 # Object files for target raylib-tmx-test
 raylib__tmx__test_OBJECTS = \
