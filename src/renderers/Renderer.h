@@ -1,5 +1,4 @@
-#ifndef MARIO_MAKER_RENDERER_H
-#define MARIO_MAKER_RENDERER_H
+#pragma once
 #include <raylib.h>
 #include "TextureId.h"
 #include "../Constants.h"
@@ -8,9 +7,7 @@
 class Renderer {
 public:
 
-    Renderer(const char* filepath)
-    : filepath_(filepath)
-    {};
+    Renderer(const char* filepath) : filepath_(filepath) {};
 
     char* getFilePath() {
         return const_cast<char *>(filepath_);
@@ -53,10 +50,6 @@ protected:
             if (dstRect.width == 0) dstRect.width = it1->second->width;
             if (dstRect.height == 0) dstRect.height = it1->second->height;
             Texture2D texture2D = it->second;
-
-#ifdef DEBUG
-            DrawRectangleLinesEx(dstRect, 2, RED);
-#endif
             DrawTextureRec(texture2D,
                            Rectangle{0, 0, (flipH ? -1 : 1) * dstRect.width, (flipV ? -1 : 1) * dstRect.height } ,
                            Vector2{dstRect.x, dstRect.y},
@@ -80,10 +73,6 @@ protected:
             Rectangle destRect = { dstRect.x, dstRect.y, dstRect.width, dstRect.height };
             Vector2 origin = { 0.0f, 0.0f };
 
-#ifdef DEBUG
-            DrawRectangleLinesEx(destRect, 2, RED);
-#endif
-
             DrawTexturePro(
                     texture2D,
                     sourceRect,
@@ -94,6 +83,7 @@ protected:
         }
     }
 
+    //need to be fixed
     void renderRotationEntity(TextureId textureId, Rectangle dstRect, int rotation) {
         auto it = textures_.find(textureId);
         if (it != textures_.end())
@@ -152,4 +142,4 @@ protected:
 private:
     const char* filepath_;
 };
-#endif //MARIO_MAKER_RENDERER_H
+

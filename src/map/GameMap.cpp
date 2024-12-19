@@ -239,17 +239,20 @@ void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<
                 createPiranhaPlant(world, aabb->getCenterX(), aabb->top());
             }
         }
-    } else if (layerName == "bricks") ent->assign<BrickComponent>();
+    } 
+    else if (layerName == "bricks") ent->assign<BrickComponent>();
     else if (layerName == "ground") ent->assign<GroundComponent>();
     else if (layerName == "square_brick") ent->assign<SquareBrick>();
     else if (layerName == "question_block") {
         ent->assign<QuestionBlockComponent>();
         ent->remove<AABBComponent>();
         ent->assign<AABBComponent>(Rectangle{x, y + 0.5f, width, height});
-    } else if (layerName == "enemies") {
+    } 
+    else if (layerName == "enemies") {
         ent->remove<TileComponent>();
         createEnemy(ent, properties);
-    } else if (layerName == "objects") {
+    } 
+    else if (layerName == "objects") {
         ent->remove<TileComponent>();
         createObject(ent, properties);
     }
@@ -546,11 +549,12 @@ ECS::Entity * GameMap::createParachute(ECS::Entity *entity) {
     ECS::World* world = entity->getWorld();
     ECS::Entity* parachute = world->create();
     auto aabb = entity->get<AABBComponent>();
+    //std::cout << aabb->collisionBox_.x << ", " << aabb->getCenterX() << "," << aabb->collisionBox_.y << ", " << aabb->getCenterY() << "," << aabb->collisionBox_.width << ", " << aabb->collisionBox_.height << "\n\n\n";
     parachute->assign<ObjectComponent>(Object::Type::PARACHUTE);
     parachute->assign<ParachuteComponent>(entity);
     parachute->assign<AABBComponent>(Rectangle{
-            aabb->getCenterX() - static_cast<float>(GAME_TILE_SIZE / 2),
-            aabb->top() + GAME_TILE_SIZE,
+            aabb->collisionBox_.x,
+            aabb->bottom(),
             GAME_TILE_SIZE,
             GAME_TILE_SIZE
     });

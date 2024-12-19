@@ -15,10 +15,12 @@ GameManager::GameManager(const char *mapName, const int screenWidth, const int s
     pMap_ = new GameMap(mapName);
     pMap_->loadMap(world_);
     mapRenderer = new MapRenderer(pMap_, SMB1_TILESET_PATH);
+    objectRenderer = new ObjectRenderer(SMB1_OBJECT_TILESET_PATH);
+    
     textureRenderer = new TextureRenderer(SBM1_PLAYER_TILESET_PATH);
     enemiesRenderer = new EnemiesRenderer(SMB1_ENEMIES_TILESET_PATH);
-    objectRenderer = new ObjectRenderer(SMB1_OBJECT_TILESET_PATH);
     textRenderer_ = new TextRenderer();
+    //using tileset type to load the correct tileset
 }
 
 void GameManager::mainLoop() {
