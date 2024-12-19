@@ -14,7 +14,7 @@ CostDataFile:
 Site: My-Cozy-Nerd-Nest.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Darwin-clang++
+BuildName: Darwin-c++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -63,7 +63,7 @@ UpdateOptions:
 UpdateType: git
 
 # Compiler info
-Compiler: /usr/bin/clang++
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++
 CompilerVersion: 16.0.0.16000026
 
 # Dynamic analysis (MemCheck)

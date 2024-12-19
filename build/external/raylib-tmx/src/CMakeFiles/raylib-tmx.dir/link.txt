@@ -1,2 +1,2 @@
-/usr/bin/ar qc libraylib-tmx.a "CMakeFiles/raylib-tmx.dir/raylib-tmx.c.o"
-/usr/bin/ranlib libraylib-tmx.a
+/Library/Developer/CommandLineTools/usr/bin/ar qc libraylib-tmx.a "CMakeFiles/raylib-tmx.dir/raylib-tmx.c.o"
+/Library/Developer/CommandLineTools/usr/bin/ranlib libraylib-tmx.a
