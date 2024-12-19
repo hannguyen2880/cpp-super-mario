@@ -4,9 +4,7 @@
 
 ScoreboardScreen::ScoreboardScreen() : backButton(ImageButton(BACK_BUTTON, 570, 17))
 {
-    frame_positionX_1st = 2;
-    frame_positionY_1st = 50;
-    
+   
 }
 
 void ScoreboardScreen::Init() {
@@ -40,6 +38,9 @@ void ScoreboardScreen::Init() {
     // get frame width and height from 2nd place texture
     frameWidth = placeTextures[1].width;
     frameHeight = placeTextures[1].height;
+    // make the first frame at the center of the screen
+    frame_positionX_1st = (SCREEN_WIDTH - frameWidth) / 2;
+    frame_positionY_1st = (SCREEN_HEIGHT - frameHeight * 5) / 2 + 55;
     textVerticalSpacing = frameHeight;
     textLeftMargin = frame_positionX_1st + 50;
     textRightMargin= frame_positionX_1st + frameWidth - 100;
@@ -65,12 +66,12 @@ void ScoreboardScreen::Draw() {
     // each frame is upon another, with 0 distance between them
     // the first frame is at position (frame_positionX_1st, frame_positionY_1st)
     // the next frames are at position (frame_positionX_1st, frame_positionY_1st + i * textVerticalSpacing)
-    //DrawTexture(background, 0, 0, WHITE);
+    DrawTexture(background, 0, 0, WHITE);
     for (int i = 0; i < 5; i++) {
         DrawTexture(placeTextures[i], frame_positionX_1st, frame_positionY_1st + i * textVerticalSpacing, WHITE);
         // draw player name and score
-        DrawText(players[i].first.c_str(), textLeftMargin, frame_positionY_1st + i * textVerticalSpacing, 20, BLACK);
-        DrawText(to_string(players[i].second).c_str(), textRightMargin, frame_positionY_1st + i * textVerticalSpacing, 20, BLACK);
+        DrawText(players[i].first.c_str(), textLeftMargin,20 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
+        DrawText(to_string(players[i].second).c_str(), textRightMargin,20 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
     }
     backButton.Draw();
 }
