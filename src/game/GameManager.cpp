@@ -255,6 +255,7 @@ void GameManager::initIdsMap() {
 
 void GameManager::render(float d) {
     mapRenderer->renderBackground(world_);
+    //mapRenderer->renderDecoration(world_);
     textureRenderer->renderTextureEntities(world_, d);
     textureRenderer->renderTileCollisionRect(world_);
     enemiesRenderer->renderUnderTileEnemies(world_, d);

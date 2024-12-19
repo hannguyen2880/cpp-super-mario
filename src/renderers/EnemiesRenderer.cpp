@@ -1,7 +1,6 @@
 #include "EnemiesRenderer.h"
 
-EnemiesRenderer::EnemiesRenderer(const char *filepath)
-:Renderer(filepath)
+EnemiesRenderer::EnemiesRenderer(const char *filepath) :Renderer(filepath)
 {
     // Goomba
     texturePositions_.insert({GOOMBA_1, new Rectangle{1, 2, TILE_SIZE, TILE_SIZE}});

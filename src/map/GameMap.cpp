@@ -12,7 +12,11 @@ GameMap::~GameMap() {
     {
         delete[] graphicsLayer_[i];
         delete[] backgroundLayer_[i];
+        delete[] decorationLayer_[i];
     }
+    delete[] graphicsLayer_;
+    delete[] backgroundLayer_;
+    delete[] decorationLayer_;
 }
 
 //using 2D array to store the tile id of each tile
@@ -26,11 +30,21 @@ void GameMap::loadMap(ECS::World* world) {
             // Load properties
             loadProperties(map.getProperties());
 
+            std::cout << "Map loaded 1 : " << name << std::endl << "\n\n\n";
+
             // Load layers
             std::set<unsigned int> usedTiles = loadLayers(map.getLayers(), world);
 
+            std::cout << "Map loaded 2 : " << name << std::endl << "\n\n\n";
+
+            std::vector<tmx::Tileset> tileset = map.getTilesets();
+            for (const auto& tile : tileset) {
+                std::cout << "Tileset name: " << tile.getName() << std::endl;
+            }
             // Load tileset
             loadMapTiles(const_cast<std::vector<tmx::Tileset> &>(map.getTilesets()), usedTiles);
+
+            std::cout << "Map loaded 3 : " << name << std::endl << "\n\n\n";
         } else {
             throw std::runtime_error("Cannot load map from " + name);
         }
@@ -46,16 +60,17 @@ bool GameMap::isMapLoaded() {
 }
 
 //Get Map Sizes
-void GameMap::loadMapBasicInfo(const tmx::Vector2u &orientation) {
+void GameMap::loadMapBasicInfo(const tmx::Vector2u& orientation) {
     width_ = orientation.x;
     height_ = orientation.y;
 
     graphicsLayer_ = new unsigned int*[width_];
     backgroundLayer_ = new unsigned int*[width_];
-    for (int i = 0; i < width_; i++)
-    {
+    decorationLayer_ = new unsigned int*[width_];
+    for (int i = 0; i < width_; i++) {
         graphicsLayer_[i] = new unsigned int[height_];
         backgroundLayer_[i] = new unsigned int[height_];
+        decorationLayer_[i] = new unsigned int[height_];
     }
 }
 
@@ -106,7 +121,10 @@ std::set<unsigned int> GameMap::loadLayers(const std::vector<tmx::Layer::Ptr>& l
             } else if (layer->getName() == "graphics")
             {
                 mapToLoad = graphicsLayer_;
-            }
+            } else if (layer->getName() == "decoration")
+            {
+                mapToLoad = decorationLayer_;
+            } 
 
             const auto& tileLayer = layer->getLayerAs<tmx::TileLayer>();
             const auto & tiles = tileLayer.getTiles();
@@ -140,17 +158,19 @@ Texture2D GameMap::getTexture(const std::string& path, tmx::Vector2u tilePositio
     return texture2D;
 }
 
-void GameMap::loadMapTiles(std::vector<tmx::Tileset> &tileset, const std::set<unsigned int>& usedTiles) {
-    const auto& tiles = tileset.at(0).getTiles();
-    for(const auto& tile : tiles)
-    {
-        if (usedTiles.count(tile.ID))
-        {
-            Texture2D texture2D = getTexture(tile.imagePath, tile.imagePosition, tile.imageSize);
-            TileTexture pTileTexture = static_cast<TileTexture>(malloc(sizeof(TileTexture)));
-            pTileTexture->texture = texture2D;
-            pTileTexture->id = tile.ID;
-            mapTextureTable_.insert(std::make_pair(tile.ID, pTileTexture));
+void GameMap::loadMapTiles(const std::vector<tmx::Tileset>& tilesets, const std::set<unsigned int>& usedTiles) {
+    for (const auto& tileset : tilesets) {
+        const auto& tiles = tileset.getTiles();
+        for (const auto& tile : tiles) {
+            if (usedTiles.count(tile.ID)) {
+                std::cout << "Tile ID: " << tile.ID << std::endl;
+                std::cout << "Tile Image Path: " << tile.imagePath << std::endl << std::endl;
+                Texture2D texture2D = getTexture(tile.imagePath, tile.imagePosition, tile.imageSize);
+                TileTexture pTileTexture = static_cast<TileTexture>(malloc(sizeof(TileTexture)));
+                pTileTexture->texture = texture2D;
+                pTileTexture->id = tile.ID;
+                mapTextureTable_.insert(std::make_pair(tile.ID, pTileTexture));
+            }
         }
     }
 }
@@ -161,6 +181,7 @@ Texture2D GameMap::getTexture(unsigned int id)
     if (it != mapTextureTable_.end()){
         return it->second->texture;
     } else {
+        std::cout << "Texture not found" << std::endl << "\n\n\n\n";
         throw "Texture not found";
     }
 }
@@ -195,6 +216,10 @@ unsigned int **GameMap::getGraphicsLayer() const {
 
 unsigned int **GameMap::getBackgroundLayer() const {
     return backgroundLayer_;
+}
+
+unsigned int **GameMap::getDecorationLayer() const {
+    return decorationLayer_;
 }
 
 const std::map<unsigned int, TileTexture> &GameMap::getTextureTable() const {

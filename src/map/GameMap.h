@@ -22,7 +22,7 @@ private:
 
     void loadProperties(std::vector<tmx::Property> properties);
 
-    void loadMapTiles(std::vector<tmx::Tileset>& tileset, const std::set<unsigned int>& usedTiles);
+    void loadMapTiles(const std::vector<tmx::Tileset>& tilesets, const std::set<unsigned int>& usedTiles);
 
     std::set<unsigned int> loadLayers(const std::vector<tmx::Layer::Ptr>& layers, ECS::World* world);
 
@@ -46,6 +46,7 @@ private:
     bool loaded_;
     unsigned int** graphicsLayer_;
     unsigned int** backgroundLayer_;
+    unsigned int** decorationLayer_;
     Vector2 spawnPositionP1_;
     Vector2 spawnPositionP2_;
     std::map<unsigned int, TileTexture> mapTextureTable_;
@@ -76,6 +77,8 @@ public:
     unsigned int **getGraphicsLayer() const;
 
     unsigned int **getBackgroundLayer() const;
+
+    unsigned int **getDecorationLayer() const;
 
     const std::map<unsigned int, TileTexture> &getTextureTable() const;
 

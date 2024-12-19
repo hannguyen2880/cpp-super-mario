@@ -3,13 +3,17 @@
 #define SCREEN_WIDTH 704
 #define SCREEN_HEIGHT 416
 
+// Tileset paths
 constexpr const char* SBM1_PLAYER_TILESET_PATH = "../assets/tilesets/players-tileset.png";
 constexpr const char* SMB1_TILESET_PATH = "../assets/tilesets/tiles-2.png";
 constexpr const char* SMB1_ENEMIES_TILESET_PATH = "../assets/tilesets/enemies-tileset.png";
 constexpr const char* SMB1_OBJECT_TILESET_PATH = "../assets/tilesets/objects-tileset.png";
+constexpr const char* LANDSCAPE = "../assets/tilesets/landscape.png";
 
+// Font path
 constexpr const char* FONT_FILE_NAME = "../assets/fonts/SuperMario256.ttf";
 
+// Screen path
 constexpr const char* LOADING_SCREEN = "../assets/imgs/Loading_menu.png";
 constexpr const char* MAIN_MENU = "../assets/imgs/menu-2.png";
 constexpr const char* CLOUD = "../assets/imgs/Clouds.png";
@@ -40,6 +44,9 @@ constexpr const char* START_GAME_BUTTON = "../assets/imgs/Buttons/StartGameButto
 constexpr const char* HARD_MAP = "../assets/maps/map_1.tmx";
 constexpr const char* MEDIUM_MAP = "../assets/maps/playground_world.tmx";
 constexpr const char* EASY_MAP = "../assets/maps/playground_world.tmx";
+//constexpr const char* EASY_MAP = "../assets/maps/map_2.tmx";
+
+
 //......
 constexpr bool SECOND_PLAYER = false;
 

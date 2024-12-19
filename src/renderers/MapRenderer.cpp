@@ -5,8 +5,8 @@ MapRenderer::~MapRenderer() {
     map_.unloadTextures();
 }
 
-MapRenderer::MapRenderer(GameMap *map, const char* filepath)
-:map_(*map), Renderer(filepath)
+MapRenderer::MapRenderer(GameMap *map, const char* filepath1)
+:map_(*map), Renderer(filepath1)
 {
     texturePositions_.insert({QUESTION_BLOCK_1, new Rectangle{368, 0, TILE_SIZE, TILE_SIZE}});
     texturePositions_.insert({QUESTION_BLOCK_2, new Rectangle{384, 0, TILE_SIZE, TILE_SIZE}});
@@ -44,6 +44,10 @@ void MapRenderer::render(ECS::World* world, float delta) {
 
 void MapRenderer::renderBackground(ECS::World* world) {
     drawGraphicsLayer(map_.getBackgroundLayer(), world, false);
+}
+
+void MapRenderer::renderDecoration(ECS::World* world) {
+    drawGraphicsLayer(map_.getDecorationLayer(), world, false);
 }
 
 void MapRenderer::drawGraphicsLayer(unsigned int **mapToRender, ECS::World* world, bool graphics) {

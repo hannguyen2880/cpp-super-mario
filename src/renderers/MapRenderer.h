@@ -8,20 +8,19 @@
 class MapRenderer : public Renderer {
 public:
 
-    MapRenderer(GameMap *map, const char* filepath);
+    MapRenderer(GameMap *map, const char* filepath1);
 
     void render(ECS::World* world, float delta);
 
     virtual ~MapRenderer();
 
     void renderBackground(ECS::World *world);
+    void renderDecoration(ECS::World* world);
 
 private:
 
     void drawGraphicsLayer(unsigned int** mapToRender, ECS::World* world, bool graphics);
-
     void renderTexture(TextureId textureId, int x, int y);
-
     void renderOtherEntities(ECS::World *pWorld, float d);
 
 private:
