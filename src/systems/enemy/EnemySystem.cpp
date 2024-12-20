@@ -145,7 +145,8 @@ void EnemySystem::killEnemyWithJump(Entity *enemy) {
             enemy->assign<TurtleShellComponent>(false);
             enemy->assign<SolidComponent>();
             enemy->assign<GravityComponent>();
-            enemy->assign<TextureComponent>(TextureId::G_TURLE_SHELL_STAND_1);
+            enemy->assign<TextureComponent>(type == Enemy::KOOPA_TROOPA ?
+                                           TextureId::G_TURLE_SHELL_STAND_1 : TextureId::R_TURLE_SHELL_STAND_1);
             enemy->assign<KineticComponent>(kinetic->speedX_, kinetic->speedY_);
             enemy->assign<AABBComponent>(Rectangle{
                     collisionRec.x,
@@ -162,15 +163,24 @@ void EnemySystem::killEnemyWithJump(Entity *enemy) {
                 if (isMoving) {
                     enemy->remove<AnimationComponent>();
                     enemy->remove<WalkComponent>();
-                    enemy->assign<TextureComponent>(TextureId::G_TURLE_SHELL_STAND_1);
+                    enemy->assign<TextureComponent>(type == Enemy::GREEN_TURTLE_SHELL ? TextureId::G_TURLE_SHELL_STAND_1 : TextureId::R_TURLE_SHELL_STAND_1);
                 } else {
                     enemy->assign<WalkComponent>(-2.0f);
-                    enemy->assign<AnimationComponent>(std::vector<TextureId>{
-                            TextureId::G_TURLE_SHELL_MOVE_1,
-                            TextureId::G_TURLE_SHELL_MOVE_2,
-                            TextureId::G_TURLE_SHELL_MOVE_3,
-                            TextureId::G_TURLE_SHELL_MOVE_4,
-                    }, 8);
+                    if (type == Enemy::GREEN_TURTLE_SHELL) {
+                        enemy->assign<AnimationComponent>(std::vector<TextureId>{
+                                TextureId::G_TURLE_SHELL_MOVE_1,
+                                TextureId::G_TURLE_SHELL_MOVE_2,
+                                TextureId::G_TURLE_SHELL_MOVE_3,
+                                TextureId::G_TURLE_SHELL_MOVE_4,
+                        }, 8);
+                    } else {
+                        enemy->assign<AnimationComponent>(std::vector<TextureId>{
+                                TextureId::R_TURLE_SHELL_MOVE_1,
+                                TextureId::R_TURLE_SHELL_MOVE_2,
+                                TextureId::R_TURLE_SHELL_MOVE_3,
+                                TextureId::R_TURLE_SHELL_MOVE_4,
+                        }, 8);
+                    }
                 }
                 enemy->get<TurtleShellComponent>()->isMoving_ = !isMoving;
             }

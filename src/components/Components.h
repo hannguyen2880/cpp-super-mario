@@ -238,7 +238,7 @@ struct VerticalGrowComponent {
         n_ = frames_;
     };
 
-    [[nodiscard]] bool finished() {
+    bool finished() {
         frames_--;
         return frames_ <= 0;
     }

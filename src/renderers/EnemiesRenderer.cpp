@@ -23,6 +23,16 @@ EnemiesRenderer::EnemiesRenderer(const char *filepath) :Renderer(filepath)
     texturePositions_.insert({G_TURLE_SHELL_MOVE_3, new Rectangle{111, 50, TILE_SIZE, TILE_SIZE}});
     texturePositions_.insert({G_TURLE_SHELL_MOVE_4, new Rectangle{128, 50, TILE_SIZE, TILE_SIZE}});
 
+    // Red Turtle
+    texturePositions_.insert({RED_TURTLE_1, new Rectangle{149, 42, TILE_SIZE, 24}});
+    texturePositions_.insert({RED_TURTLE_2, new Rectangle{166, 42, TILE_SIZE, 24}});
+    texturePositions_.insert({R_TURLE_SHELL_STAND_1, new Rectangle{186, 50, TILE_SIZE, TILE_SIZE}});
+    texturePositions_.insert({R_TURLE_SHELL_STAND_2, new Rectangle{203, 50, TILE_SIZE, TILE_SIZE}});
+    texturePositions_.insert({R_TURLE_SHELL_MOVE_1, new Rectangle{220, 50, TILE_SIZE, TILE_SIZE}});
+    texturePositions_.insert({R_TURLE_SHELL_MOVE_2, new Rectangle{237, 50, TILE_SIZE, TILE_SIZE}});
+    texturePositions_.insert({R_TURLE_SHELL_MOVE_3, new Rectangle{254, 50, TILE_SIZE, TILE_SIZE}});
+    texturePositions_.insert({R_TURLE_SHELL_MOVE_4, new Rectangle{271, 50, TILE_SIZE, TILE_SIZE}});
+
     // Piranha plant
     texturePositions_.insert({PIRANHA_PLANT_1, new Rectangle{1, 88, TILE_SIZE, TILE_SIZE + TILE_SIZE / 2}});
     texturePositions_.insert({PIRANHA_PLANT_2, new Rectangle{18, 88, TILE_SIZE, TILE_SIZE + TILE_SIZE / 2}});

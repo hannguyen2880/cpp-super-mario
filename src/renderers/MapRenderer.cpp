@@ -3,6 +3,9 @@
 
 MapRenderer::~MapRenderer() {
     map_.unloadTextures();
+    for (auto& texture : backgroundtextures_) {
+        UnloadTexture(texture.second);
+    }
 }
 
 MapRenderer::MapRenderer(GameMap *map, const char* filepath1)
@@ -42,8 +45,21 @@ void MapRenderer::render(ECS::World* world, float delta) {
     renderOtherEntities(world, delta);
 }
 
+void MapRenderer::loadBackgroundTextures() {
+    backgroundtextures_[AUTUMN] = LoadTexture(AUTUMN);
+    // backgroundtextures_[LANDSCAPE2] = LoadTexture(LANDSCAPE2.c_str());
+    // backgroundtextures_[LANDSCAPE3] = LoadTexture(LANDSCAPE3.c_str());
+}
+
 void MapRenderer::renderBackground(ECS::World* world) {
-    drawGraphicsLayer(map_.getBackgroundLayer(), world, false);
+    // Ensure textures are loaded
+    if (backgroundtextures_.empty()) {
+        loadBackgroundTextures();
+    }
+
+    // Draw the textures (example: drawing the first texture)
+    DrawTexture(backgroundtextures_[AUTUMN], 0, 0, WHITE);
+    // You can add logic to draw other textures as needed
 }
 
 void MapRenderer::renderDecoration(ECS::World* world) {

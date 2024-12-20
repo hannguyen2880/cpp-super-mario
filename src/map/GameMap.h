@@ -45,7 +45,7 @@ private:
     int width_;
     bool loaded_;
     unsigned int** graphicsLayer_;
-    unsigned int** backgroundLayer_;
+    //unsigned int** backgroundLayer_;
     unsigned int** decorationLayer_;
     Vector2 spawnPositionP1_;
     Vector2 spawnPositionP2_;
@@ -76,7 +76,7 @@ public:
 
     unsigned int **getGraphicsLayer() const;
 
-    unsigned int **getBackgroundLayer() const;
+    //unsigned int **getBackgroundLayer() const;
 
     unsigned int **getDecorationLayer() const;
 

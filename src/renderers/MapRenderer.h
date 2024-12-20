@@ -17,6 +17,7 @@ public:
     void renderBackground(ECS::World *world);
     void renderDecoration(ECS::World* world);
 
+    void loadBackgroundTextures();
 private:
 
     void drawGraphicsLayer(unsigned int** mapToRender, ECS::World* world, bool graphics);
@@ -25,6 +26,7 @@ private:
 
 private:
     GameMap map_;
+    std::unordered_map<std::string, Texture2D> backgroundtextures_;
 };
 
 

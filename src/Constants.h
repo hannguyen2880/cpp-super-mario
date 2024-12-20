@@ -3,17 +3,14 @@
 #define SCREEN_WIDTH 704
 #define SCREEN_HEIGHT 416
 
-// Tileset paths
 constexpr const char* SBM1_PLAYER_TILESET_PATH = "../assets/tilesets/players-tileset.png";
 constexpr const char* SMB1_TILESET_PATH = "../assets/tilesets/tiles-2.png";
 constexpr const char* SMB1_ENEMIES_TILESET_PATH = "../assets/tilesets/enemies-tileset.png";
 constexpr const char* SMB1_OBJECT_TILESET_PATH = "../assets/tilesets/objects-tileset.png";
-constexpr const char* LANDSCAPE = "../assets/tilesets/landscape.png";
+constexpr const char* LANDSCAPE = "../assets/tilesets/landscape.jpg";
 
-// Font path
 constexpr const char* FONT_FILE_NAME = "../assets/fonts/SuperMario256.ttf";
 
-// Screen path
 constexpr const char* LOADING_SCREEN = "../assets/imgs/Loading_menu.png";
 constexpr const char* MAIN_MENU = "../assets/imgs/menu-2.png";
 constexpr const char* CLOUD = "../assets/imgs/Clouds.png";
@@ -21,11 +18,14 @@ constexpr const char* INSTRUCTION_PANEL = "../assets/imgs/InstructionPanel.png";
 constexpr const char* MARIO_MENU = "../assets/imgs/Mario.png";
 constexpr const char* RESUMEGAME_PANEL = "../assets/imgs/ResumeGamePanel.png";
 constexpr const char* MENU_BACKGROUND = "../assets/imgs/Screen_background.png";
-constexpr const char* FRIST_PLACE = "../assets/imgs/1st.png";
-constexpr const char* SECOND_PLACE = "../assets/imgs/2nd.png";
-constexpr const char* THIRD_PLACE = "../assets/imgs/3rd.png";
-constexpr const char* FOURTH_PLACE = "../assets/imgs/4th.png";
-constexpr const char* FIFTH_PLACE = "../assets/imgs/5th.png";
+constexpr const char* FRIST_PLACE = "../assets/imgs/1st.jpg";
+constexpr const char* SECOND_PLACE = "../assets/imgs/2nd.jpg";
+constexpr const char* THIRD_PLACE = "../assets/imgs/3rd.jpg";
+constexpr const char* FOURTH_PLACE = "../assets/imgs/4th.jpg";
+constexpr const char* FIFTH_PLACE = "../assets/imgs/5th.jpg";
+
+//background
+constexpr const char* AUTUMN = "../assets/tilesets/autumn.png";
 
 //button
 constexpr const char* BACK_BUTTON = "../assets/imgs/Buttons/BackButton.png";
@@ -43,9 +43,8 @@ constexpr const char* START_GAME_BUTTON = "../assets/imgs/Buttons/StartGameButto
 //map
 constexpr const char* HARD_MAP = "../assets/maps/map_1.tmx";
 constexpr const char* MEDIUM_MAP = "../assets/maps/playground_world.tmx";
-constexpr const char* EASY_MAP = "../assets/maps/playground_world.tmx";
-//constexpr const char* EASY_MAP = "../assets/maps/map_2.tmx";
-
+//constexpr const char* EASY_MAP = "../assets/maps/playground_world.tmx";
+constexpr const char* EASY_MAP = "../assets/maps/map_2.tmx";
 
 //......
 constexpr bool SECOND_PLAYER = false;
