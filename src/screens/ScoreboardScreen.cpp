@@ -1,22 +1,89 @@
 #include "ScoreboardScreen.h"
-#include "../game/State/MainMenuState.h"
 #include "../game/Game.h"
+#include <iostream>
+#include "../game/State/MainMenuState.h"
 
-ScoreboardScreen::ScoreboardScreen()
-    :backButton(BACK_BUTTON, 570, 17) {}
+ScoreboardScreen::ScoreboardScreen() : backButton(ImageButton(BACK_BUTTON, 570, 17))
+{
+   
+}
 
-ScoreboardScreen::~ScoreboardScreen() {}
+void ScoreboardScreen::Init() {
+    background = LoadTexture(MENU_BACKGROUND);
+    for (int i = 0; i < 5; i++) {
+        const char* texturePath;
+        switch (i) {
+            case 0:
+                texturePath = FRIST_PLACE;
+                //std::cout << "Texture path: " << texturePath << "\n";
+                break;
+            case 1:
+                texturePath = SECOND_PLACE;
+                //std::cout << "Texture path: " << texturePath << "\n";
+                break;
+            case 2:
+                texturePath = THIRD_PLACE;
+                //std::cout << "Texture path: " << texturePath << endl;
+                break;
+            case 3:
+                texturePath = FOURTH_PLACE;
+                //std::cout << "Texture path: " << texturePath << endl;
+                break;
+            case 4:
+                texturePath = FIFTH_PLACE;
+                //std::cout << "Texture path: " << texturePath << endl;
+                break;
+        }
+        placeTextures.push_back(LoadTexture(texturePath));
+    }
+    // get frame width and height from 2nd place texture
+    frameWidth = placeTextures[1].width;
+    frameHeight = placeTextures[1].height;
+    // make the first frame at the center of the screen
+    frame_positionX_1st = (SCREEN_WIDTH - frameWidth) / 2;
+    frame_positionY_1st = (SCREEN_HEIGHT - frameHeight * 5) / 2 + 55;
+    textVerticalSpacing = frameHeight;
+    textLeftMargin = frame_positionX_1st + 50;
+    textRightMargin= frame_positionX_1st + frameWidth - 100;
+    std::string defaultName = "NULL";
+    int defaultScore = 0;
+    for(int i = 0; i < 5; i++){
+        players.push_back(make_pair(defaultName, defaultScore));
+    }
 
-void ScoreboardScreen::Init() {}
+}
 
 void ScoreboardScreen::Update() {
     if (backButton.Update()) {
         Game::SetState(std::make_unique<MainMenuState>());
     }
+
 }
 
 void ScoreboardScreen::Draw() {
+    // draw the scoreboard, 1st place to 5th place, with player names and scores
+    //player name and score are separated by distance of textHorizontalSpacing
+    // each player is separated by distance of textVerticalSpacing
+    // each frame is upon another, with 0 distance between them
+    // the first frame is at position (frame_positionX_1st, frame_positionY_1st)
+    // the next frames are at position (frame_positionX_1st, frame_positionY_1st + i * textVerticalSpacing)
+    DrawTexture(background, 0, 0, WHITE);
+    for (int i = 0; i < 5; i++) {
+        DrawTexture(placeTextures[i], frame_positionX_1st, frame_positionY_1st + i * textVerticalSpacing, WHITE);
+        // draw player name and score
+        DrawText(players[i].first.c_str(), textLeftMargin,20 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
+        DrawText(std::to_string(players[i].second).c_str(), textRightMargin,20 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
+    }
     backButton.Draw();
 }
 
-void ScoreboardScreen::Unload() {}
+void ScoreboardScreen::Unload() {
+    UnloadTexture(background);
+    for (int i = 0; i < 5; i++) {
+        UnloadTexture(placeTextures[i]);
+    }
+}
+
+ScoreboardScreen::~ScoreboardScreen() {
+    Unload();
+}

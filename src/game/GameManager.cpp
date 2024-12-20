@@ -178,29 +178,29 @@ void GameManager::initLuigiPlayer(ECS::Entity *player, Vector2 position) {
 void GameManager::initPlayers() {
     Vector2 spawnPositionP1 = pMap_->getSpawnPositionP1();
     Vector2 spawnPositionP2 = pMap_->getSpawnPositionP2();
-    // ECS::Entity* mario = world_->create();
-    // initMarioPlayer(mario, spawnPositionP1);
-    // if (secondPlayer) {
-    //     ECS::Entity* luigi = world_->create();
-    //     initLuigiPlayer(luigi, spawnPositionP2);
-    // }
-    if (!secondPlayer) {
-        ECS::Entity* player = world_->create();
-        if (GameConfig::getInstance().getCharacter() == Character::MARIO) {
-            std::cout << "DEBUG: Creating Mario" << std::endl;
-            initMarioPlayer(player, spawnPositionP1);
-        } else {
-            std::cout << "DEBUG: Creating Luigi" << std::endl;
-            initLuigiPlayer(player, spawnPositionP1);
-        }
-    }
-    else {
-        ECS::Entity* mario = world_->create();
-        initMarioPlayer(mario, spawnPositionP1);
-        
+    ECS::Entity* mario = world_->create();
+    initMarioPlayer(mario, spawnPositionP1);
+    if (secondPlayer) {
         ECS::Entity* luigi = world_->create();
         initLuigiPlayer(luigi, spawnPositionP2);
     }
+    // if (!secondPlayer) {
+    //     ECS::Entity* player = world_->create();
+    //     if (GameConfig::getInstance().getCharacter() == Character::MARIO) {
+    //         std::cout << "DEBUG: Creating Mario" << std::endl;
+    //         initMarioPlayer(player, spawnPositionP1);
+    //     } else {
+    //         std::cout << "DEBUG: Creating Luigi" << std::endl;
+    //         initLuigiPlayer(player, spawnPositionP1);
+    //     }
+    // }
+    // else {
+    //     ECS::Entity* mario = world_->create();
+    //     initMarioPlayer(mario, spawnPositionP1);
+        
+    //     ECS::Entity* luigi = world_->create();
+    //     initLuigiPlayer(luigi, spawnPositionP2);
+    // }
 }
 
 void GameManager::registerSystems() {
