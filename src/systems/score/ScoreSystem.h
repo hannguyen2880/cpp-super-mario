@@ -29,6 +29,7 @@ private:
     ECS::Entity* textCoinCounter_;
     ECS::Entity* textScoreCounter_;
 
+    // iterates over all entities that have a GameTextComponent
     void destroyScoreTextComponents(World *world);
 };
 

@@ -8,12 +8,17 @@
 class Renderer {
 public:
 
-    Renderer(const char* filepath)
-    : filepath_(filepath)
-    {};
+    Renderer(const char* filepath) : filepath_(filepath){};
 
     char* getFilePath() {
         return const_cast<char *>(filepath_);
+    }
+    virtual void cleanup() {
+        for (auto& texture : textures_) {
+            UnloadTexture(texture.second);
+        }
+        textures_.clear();
+        texturePositions_.clear();
     }
 
 protected:

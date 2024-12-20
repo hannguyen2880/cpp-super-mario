@@ -1,5 +1,6 @@
 #include "InstructionScreen.h"
 #include "../game/Game.h"
+#include "../game/State/MainMenuState.h"
 
 InstructionScreen::InstructionScreen()
     :backButton(BACK_BUTTON, 570, 17)
@@ -38,7 +39,7 @@ void InstructionScreen::Update() {
     }
 
     if (!isAnimating && backButton.Update()) {
-        Game::SetState(GameState::MAIN_MENU);
+        Game::SetState(std::make_unique<MainMenuState>());
     }
 }
 

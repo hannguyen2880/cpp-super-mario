@@ -1,6 +1,15 @@
 #pragma once
 
-enum class GameState {
+class GameState {
+public:
+    virtual void Init() = 0;
+    virtual void Update() = 0;
+    virtual void Draw() = 0;
+    virtual void Unload() = 0;
+    virtual ~GameState() = default;
+};
+
+enum class GameStateType {
     LOGO,
     MAIN_MENU,
     BEFOREGAME,

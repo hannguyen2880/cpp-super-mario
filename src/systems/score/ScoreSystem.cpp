@@ -72,6 +72,9 @@ void ScoreSystem::receive(World *world, const AddScoreEvent &event) {
 }
 
 void ScoreSystem::destroyScoreTextComponents(World *world) {
+    // iterates over all entities that have a GameTextComponent
+    // For each entity, it checks if the GameTextComponent should be destroyed by calling its destroy method. 
+    // If the destroy method returns true, the entity is destroyed.
     world->each<GameTextComponent>([&](
             Entity* entity,
             ComponentHandle<GameTextComponent> scoreTextComponent) {

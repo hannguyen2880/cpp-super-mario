@@ -1,5 +1,7 @@
 #include "BeforeGameScreen.h"
 #include "../game/Game.h"
+#include "../game/State/GameplayState.h"
+#include "../game/State/MainMenuState.h"
 
 BeforeGameScreen::BeforeGameScreen()
     : yesButton(YES_BUTTON, 280, 314),
@@ -47,8 +49,8 @@ void BeforeGameScreen::Update() {
 
     if (currentPanel == PanelState::RESUME_PANEL) {
         if (yesButton.Update()) {
-            Game::SetState(GameState::GAMEPLAY);
-            Game::getConfig().setGameplayMode(GameplayMode::RESUME_GAME);
+            Game::SetState(std::make_unique<GameplayState>());
+            GameConfig::getInstance().setGameplayMode(GameplayMode::RESUME_GAME);
         }
         if (noButton.Update()) {
             currentPanel = PanelState::PLAYER_COUNT_PANEL;
@@ -58,13 +60,13 @@ void BeforeGameScreen::Update() {
     }
     else if (currentPanel == PanelState::PLAYER_COUNT_PANEL) {
         if (singlePlayerButton.Update()) {
-            Game::getConfig().setGameplayMode(GameplayMode::SINGLE_PLAYER);
+            GameConfig::getInstance().setGameplayMode(GameplayMode::SINGLE_PLAYER);
             currentPanel = PanelState::CHARACTER_SELECTION_PANEL;
             isAnimating = true;
             panelCurrentY = 600;
         }
         if (multiPlayerButton.Update()) {
-            Game::getConfig().setGameplayMode(GameplayMode::MULTI_PLAYER);
+            GameConfig::getInstance().setGameplayMode(GameplayMode::MULTI_PLAYER);
             currentPanel = PanelState::DIFFICULTY_PANEL;
             isAnimating = true;
             panelCurrentY = 600;
@@ -72,13 +74,13 @@ void BeforeGameScreen::Update() {
     }
     else if (currentPanel == PanelState::CHARACTER_SELECTION_PANEL) {
         if (marioButton.Update()) {
-            Game::getConfig().setCharacter(Character::MARIO);
+            GameConfig::getInstance().setCharacter(Character::MARIO);
             currentPanel = PanelState::DIFFICULTY_PANEL;
             isAnimating = true;
             panelCurrentY = 600;
         }
         if (luigiButton.Update()) {
-            Game::getConfig().setCharacter(Character::LUIGI);
+            GameConfig::getInstance().setCharacter(Character::LUIGI);
             currentPanel = PanelState::DIFFICULTY_PANEL;
             isAnimating = true;
             panelCurrentY = 600;
@@ -87,20 +89,20 @@ void BeforeGameScreen::Update() {
     else if (currentPanel == PanelState::DIFFICULTY_PANEL) {
         if (easyButton.Update()) {
             Game::getConfig().setDifficulty(GameDifficulty::EASY);
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(std::make_unique<GameplayState>());
         }
         if (mediumButton.Update()) {
             Game::getConfig().setDifficulty(GameDifficulty::MEDIUM);
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(std::make_unique<GameplayState>());
         }
         if (hardButton.Update()) {
             Game::getConfig().setDifficulty(GameDifficulty::HARD);
-            Game::SetState(GameState::GAMEPLAY);
+            Game::SetState(std::make_unique<GameplayState>());
         }
     }
 
     if (backButton.Update()) {
-        Game::SetState(GameState::MAIN_MENU);
+        Game::SetState(std::make_unique<MainMenuState>());
     }
 }
 

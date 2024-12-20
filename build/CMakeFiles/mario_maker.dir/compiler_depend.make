@@ -65,70 +65,24 @@ CMakeFiles/mario_maker.dir/src/audio/AudioManaer.cpp.o: /home/thinh/Source/repos
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h
 
 CMakeFiles/mario_maker.dir/src/game/Game.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/Game.cpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/ECS.h \
   /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Config.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Layer.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Map.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Object.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/ObjectGroup.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Property.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/TileLayer.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Tileset.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.hpp \
-  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.inl \
-  /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/events/Events.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
   /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioIds.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureId.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/components/Components.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/map/GameMap.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/ui/FontButton.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.h \
   /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/map/GameMap.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/EnemiesRenderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/MapRenderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/ObjectRenderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/animation/AnimationSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/camera/CameraSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/enemy/EnemySystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/flag/FlagSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/score/ScoreSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/BeforeGameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameplayState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/InstructionState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/ScoreboardState.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
-  /usr/include/assert.h \
-  /usr/include/c++/13/algorithm \
-  /usr/include/c++/13/array \
   /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
-  /usr/include/c++/13/bits/algorithmfwd.h \
   /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocated_ptr.h \
@@ -145,16 +99,12 @@ CMakeFiles/mario_maker.dir/src/game/Game.cpp.o: /home/thinh/Source/repos/cpp-sup
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
-  /usr/include/c++/13/bits/enable_special_members.h \
-  /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
-  /usr/include/c++/13/bits/hashtable.h \
-  /usr/include/c++/13/bits/hashtable_policy.h \
   /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/ios_base.h \
   /usr/include/c++/13/bits/istream.tcc \
@@ -179,44 +129,25 @@ CMakeFiles/mario_maker.dir/src/game/Game.cpp.o: /home/thinh/Source/repos/cpp-sup
   /usr/include/c++/13/bits/shared_ptr_atomic.h \
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
-  /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
   /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
-  /usr/include/c++/13/bits/stl_map.h \
-  /usr/include/c++/13/bits/stl_multimap.h \
-  /usr/include/c++/13/bits/stl_multiset.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/13/bits/stl_relops.h \
-  /usr/include/c++/13/bits/stl_set.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
-  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
-  /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/stringfwd.h \
-  /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unique_ptr.h \
-  /usr/include/c++/13/bits/unordered_map.h \
-  /usr/include/c++/13/bits/unordered_set.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/utility.h \
-  /usr/include/c++/13/bits/vector.tcc \
-  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/clocale \
-  /usr/include/c++/13/cmath \
-  /usr/include/c++/13/compare \
-  /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cwchar \
@@ -231,30 +162,21 @@ CMakeFiles/mario_maker.dir/src/game/Game.cpp.o: /home/thinh/Source/repos/cpp-sup
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
-  /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
-  /usr/include/c++/13/map \
-  /usr/include/c++/13/math.h \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
-  /usr/include/c++/13/set \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/system_error \
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
-  /usr/include/c++/13/typeindex \
   /usr/include/c++/13/typeinfo \
-  /usr/include/c++/13/unordered_map \
-  /usr/include/c++/13/unordered_set \
-  /usr/include/c++/13/utility \
-  /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -262,7 +184,6 @@ CMakeFiles/mario_maker.dir/src/game/Game.cpp.o: /home/thinh/Source/repos/cpp-sup
   /usr/include/features.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
-  /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -281,18 +202,9 @@ CMakeFiles/mario_maker.dir/src/game/Game.cpp.o: /home/thinh/Source/repos/cpp-sup
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
-  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
-  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
-  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
@@ -366,7 +278,7 @@ CMakeFiles/mario_maker.dir/src/game/Game.cpp.o: /home/thinh/Source/repos/cpp-sup
 
 CMakeFiles/mario_maker.dir/src/game/GameConfig.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.cpp \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -514,6 +426,7 @@ CMakeFiles/mario_maker.dir/src/game/GameManager.cpp.o: /home/thinh/Source/repos/
   /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h \
   /home/thinh/Source/repos/cpp-super-mario/src/events/Events.h \
   /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
   /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h \
   /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioIds.h \
   /home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h \
@@ -525,7 +438,7 @@ CMakeFiles/mario_maker.dir/src/game/GameManager.cpp.o: /home/thinh/Source/repos/
   /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
   /home/thinh/Source/repos/cpp-super-mario/src/map/GameMap.h \
   /home/thinh/Source/repos/cpp-super-mario/src/renderers/EnemiesRenderer.h \
   /home/thinh/Source/repos/cpp-super-mario/src/renderers/MapRenderer.h \
@@ -789,13 +702,1124 @@ CMakeFiles/mario_maker.dir/src/game/GameManager.cpp.o: /home/thinh/Source/repos/
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
+CMakeFiles/mario_maker.dir/src/game/State/BeforeGameState.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/State/BeforeGameState.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/FontButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/BeforeGameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/type_traits \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/wchar.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+
+CMakeFiles/mario_maker.dir/src/game/State/GameplayState.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameplayState.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/ECS.h \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Config.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Layer.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Map.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Object.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/ObjectGroup.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Property.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/TileLayer.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Tileset.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.hpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.inl \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/events/Events.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioIds.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureId.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/components/Components.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/map/GameMap.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameplayState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/map/GameMap.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/EnemiesRenderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/MapRenderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/ObjectRenderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/animation/AnimationSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/camera/CameraSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/enemy/EnemySystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/flag/FlagSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/score/ScoreSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/assert.h \
+  /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/array \
+  /usr/include/c++/13/backward/auto_ptr.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/align.h \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/13/bits/basic_ios.h \
+  /usr/include/c++/13/bits/basic_ios.tcc \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
+  /usr/include/c++/13/bits/erase_if.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/hashtable.h \
+  /usr/include/c++/13/bits/hashtable_policy.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/ios_base.h \
+  /usr/include/c++/13/bits/istream.tcc \
+  /usr/include/c++/13/bits/locale_classes.h \
+  /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_facets.h \
+  /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/nested_exception.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream.tcc \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_bvector.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_map.h \
+  /usr/include/c++/13/bits/stl_multimap.h \
+  /usr/include/c++/13/bits/stl_multiset.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_relops.h \
+  /usr/include/c++/13/bits/stl_set.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_uninitialized.h \
+  /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/streambuf.tcc \
+  /usr/include/c++/13/bits/streambuf_iterator.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/bits/unordered_map.h \
+  /usr/include/c++/13/bits/unordered_set.h \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cmath \
+  /usr/include/c++/13/compare \
+  /usr/include/c++/13/cstdint \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/cwctype \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/functional \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/ios \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/istream \
+  /usr/include/c++/13/map \
+  /usr/include/c++/13/math.h \
+  /usr/include/c++/13/memory \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/ostream \
+  /usr/include/c++/13/set \
+  /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/streambuf \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/system_error \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeindex \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/unordered_map \
+  /usr/include/c++/13/unordered_set \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/vector \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/math.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/time.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+
+CMakeFiles/mario_maker.dir/src/game/State/InstructionState.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/State/InstructionState.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/InstructionState.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/type_traits \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/wchar.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+
+CMakeFiles/mario_maker.dir/src/game/State/MainMenuState.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/basic_ios.h \
+  /usr/include/c++/13/bits/basic_ios.tcc \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/ios_base.h \
+  /usr/include/c++/13/bits/istream.tcc \
+  /usr/include/c++/13/bits/locale_classes.h \
+  /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_facets.h \
+  /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/nested_exception.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream.tcc \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/streambuf.tcc \
+  /usr/include/c++/13/bits/streambuf_iterator.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/cwctype \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/ios \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/istream \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/ostream \
+  /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/streambuf \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/system_error \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/time.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+
+CMakeFiles/mario_maker.dir/src/game/State/PauseState.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/State/PauseState.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/PauseScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/PauseState.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/basic_ios.h \
+  /usr/include/c++/13/bits/basic_ios.tcc \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/ios_base.h \
+  /usr/include/c++/13/bits/istream.tcc \
+  /usr/include/c++/13/bits/locale_classes.h \
+  /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_facets.h \
+  /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/nested_exception.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream.tcc \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/streambuf.tcc \
+  /usr/include/c++/13/bits/streambuf_iterator.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/cwctype \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/ios \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/istream \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/ostream \
+  /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/streambuf \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/system_error \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/time.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+
+CMakeFiles/mario_maker.dir/src/game/State/ScoreboardState.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/game/State/ScoreboardState.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/ScoreboardState.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_bvector.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_relops.h \
+  /usr/include/c++/13/bits/stl_uninitialized.h \
+  /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/vector \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/wchar.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+
 CMakeFiles/mario_maker.dir/src/main.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/main.cpp \
   /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
   /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
   /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -2387,9 +3411,12 @@ CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o: /home/thinh/Sour
 CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.cpp \
   /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
   /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameplayState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/FontButton.h \
@@ -2593,7 +3620,7 @@ CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o: /home/thinh/Source/
   /home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h \
   /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.h \
   /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
   /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h \
   /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioIds.h \
   /home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h \
@@ -2604,9 +3631,14 @@ CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o: /home/thinh/Source/
   /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
   /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.h \
   /home/thinh/Source/repos/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.h \
   /home/thinh/Source/repos/cpp-super-mario/src/systems/animation/AnimationSystem.h \
   /home/thinh/Source/repos/cpp-super-mario/src/systems/camera/CameraSystem.h \
@@ -2866,9 +3898,11 @@ CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o: /home/thinh/Source/
 CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.cpp \
   /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
   /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
@@ -3052,9 +4086,13 @@ CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o: /home/thinh/Sour
 CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.cpp \
   /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
   /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
   /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
-  /home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/BeforeGameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/InstructionState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/ScoreboardState.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
   /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
@@ -3199,6 +4237,437 @@ CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o: /home/thinh/Source/repo
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+
+CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/PauseScreen.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameplayState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/PauseScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/backward/auto_ptr.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/13/bits/basic_ios.h \
+  /usr/include/c++/13/bits/basic_ios.tcc \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/ios_base.h \
+  /usr/include/c++/13/bits/istream.tcc \
+  /usr/include/c++/13/bits/locale_classes.h \
+  /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_facets.h \
+  /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/nested_exception.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream.tcc \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_uninitialized.h \
+  /usr/include/c++/13/bits/streambuf.tcc \
+  /usr/include/c++/13/bits/streambuf_iterator.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/cwctype \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/ios \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/istream \
+  /usr/include/c++/13/memory \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/ostream \
+  /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/streambuf \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/system_error \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/time.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+
+CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.cpp \
+  /home/thinh/Source/repos/cpp-super-mario/include/raylib.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/State.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/Constants.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.h \
+  /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/backward/auto_ptr.h \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/align.h \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/13/bits/basic_ios.h \
+  /usr/include/c++/13/bits/basic_ios.tcc \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/ios_base.h \
+  /usr/include/c++/13/bits/istream.tcc \
+  /usr/include/c++/13/bits/locale_classes.h \
+  /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_facets.h \
+  /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/nested_exception.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/ostream.tcc \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_bvector.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/13/bits/stl_relops.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_uninitialized.h \
+  /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/streambuf.tcc \
+  /usr/include/c++/13/bits/streambuf_iterator.h \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/cwctype \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/ios \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/istream \
+  /usr/include/c++/13/memory \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/ostream \
+  /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/streambuf \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/system_error \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/vector \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/locale.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/time.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
@@ -6060,6 +7529,8 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /home/thinh/Source/repos/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.cpp:
 
+/home/thinh/Source/repos/cpp-super-mario/src/screens/PauseScreen.cpp:
+
 /home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.cpp:
 
 /home/thinh/Source/repos/cpp-super-mario/src/systems/score/ScoreSystem.cpp:
@@ -6080,85 +7551,209 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /home/thinh/Source/repos/cpp-super-mario/src/main.cpp:
 
-/home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.cpp:
+/home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.cpp:
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/ScoreboardState.cpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/PauseState.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+/home/thinh/Source/repos/cpp-super-mario/src/screens/PauseScreen.h:
 
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+/home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.cpp:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
+/home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
+/home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.cpp:
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/GameplayState.cpp:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+/home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+/home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h:
 
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+/home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h:
 
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
+/home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/BeforeGameState.cpp:
 
-/home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.cpp:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/c++/13/bits/hashtable_policy.h:
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
-/usr/include/c++/13/backward/auto_ptr.h:
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/assert.h:
+/usr/include/c++/13/vector:
+
+/home/thinh/Source/repos/cpp-super-mario/src/ui/FontButton.h:
+
+/usr/include/c++/13/typeindex:
+
+/usr/include/c++/13/math.h:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/include/c++/13/map:
+
+/usr/include/c++/13/functional:
+
+/usr/include/c++/13/cstdint:
+
+/usr/include/c++/13/cmath:
+
+/usr/include/c++/13/bits/vector.tcc:
+
+/usr/include/c++/13/bits/unordered_set.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
+/usr/include/c++/13/bits/stl_map.h:
+
+/usr/include/c++/13/utility:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/c++/13/bits/stl_algo.h:
+
+/usr/include/c++/13/ext/concurrence.h:
+
+/usr/include/c++/13/cctype:
+
+/usr/include/c++/13/cstdlib:
+
+/usr/include/c++/13/clocale:
+
+/usr/include/c++/13/cerrno:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/include/c++/13/bits/unique_ptr.h:
+
+/usr/include/c++/13/bits/align.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/c++/13/bits/streambuf.tcc:
+
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/c++/13/bits/postypes.h:
+
+/usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/13/bits/stl_set.h:
+
+/usr/include/c++/13/bits/ostream_insert.h:
+
+/usr/include/c++/13/bits/locale_facets.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/events/Events.h:
+
+/usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/c++/13/bits/exception_ptr.h:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/c++/13/bits/cxxabi_forced.h:
+
+/usr/include/c++/13/bits/hashtable_policy.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
+
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/c++/13/backward/auto_ptr.h:
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
+/usr/include/c++/13/bits/allocated_ptr.h:
+
+/usr/include/c++/13/bit:
+
 /usr/include/alloca.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.cpp:
+/usr/include/c++/13/set:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.h:
+/usr/include/c++/13/bits/erase_if.h:
 
-/usr/include/c++/13/cwchar:
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/ScoreboardState.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.cpp:
+/usr/include/c++/13/ext/string_conversions.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.h:
+/home/thinh/Source/repos/cpp-super-mario/src/systems/flag/FlagSystem.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/BeforeGameState.h:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/audio/AudioIds.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/c++/13/bits/basic_ios.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/map/GameMap.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/c++/13/bits/stl_algobase.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/backward/binders.h:
+
+/usr/include/c++/13/iosfwd:
+
+/usr/include/c++/13/exception:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
@@ -6166,175 +7761,35 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-/usr/include/c++/13/bits/range_access.h:
+/home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.cpp:
 
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.cpp:
-
-/home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/ui/ButtonStyle.h:
-
-/usr/include/c++/13/bits/functional_hash.h:
-
-/usr/include/errno.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.h:
-
-/usr/include/c++/13/new:
-
-/home/thinh/Source/repos/cpp-super-mario/src/ui/Button.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/map/GameMap.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/renderers/MapRenderer.h:
-
-/usr/include/c++/13/bits/stl_bvector.h:
-
-/usr/include/c++/13/bits/algorithmfwd.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/c++/13/bits/atomic_base.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/renderers/ObjectRenderer.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/events/Events.h:
-
-/usr/include/c++/13/bits/memoryfwd.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.inl:
-
-/usr/include/c++/13/bits/locale_classes.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/TileLayer.hpp:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/ObjectGroup.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/asm-generic/errno.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Object.hpp:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/c++/13/bits/atomic_lockfree_defines.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Map.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/usr/include/c++/13/ext/alloc_traits.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Layer.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/c++/13/bits/basic_ios.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/animation/AnimationSystem.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/c++/13/bits/stl_algobase.h:
-
-/usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/bits/align.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
-/usr/include/c++/13/bits/unique_ptr.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/score/ScoreSystem.h:
+/usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/cwctype:
 
-/home/thinh/Source/repos/cpp-super-mario/src/systems/camera/CameraSystem.h:
+/home/thinh/Source/repos/cpp-super-mario/src/systems/score/ScoreSystem.h:
 
-/usr/include/c++/13/bits/predefined_ops.h:
-
-/usr/include/c++/13/iosfwd:
-
-/usr/include/c++/13/bits/uses_allocator.h:
-
-/usr/include/c++/13/bits/postypes.h:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.h:
-
-/usr/include/c++/13/bits/stl_multiset.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
-/usr/include/c++/13/bits/stl_function.h:
+/home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.cpp:
 
 /usr/include/c++/13/bits/ptr_traits.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
 /usr/include/c++/13/bits/invoke.h:
 
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
+/usr/include/c++/13/ios:
 
-/home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/flag/FlagSystem.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
-
-/usr/include/c++/13/bits/char_traits.h:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/c++/13/cstdint:
-
-/usr/include/c++/13/cstdlib:
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/GameplayState.h:
 
 /usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.hpp:
-
-/usr/include/c++/13/array:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Config.hpp:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
@@ -6342,69 +7797,103 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /usr/include/c++/13/bits/hash_bytes.h:
 
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+/usr/include/c++/13/bits/uniform_int_dist.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+/usr/include/c++/13/bits/locale_classes.tcc:
 
-/usr/include/c++/13/bits/exception_defines.h:
+/usr/include/c++/13/unordered_map:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+/usr/include/c++/13/bits/allocator.h:
 
-/usr/include/c++/13/bits/ios_base.h:
+/usr/include/c++/13/bits/algorithmfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/renderers/Renderer.h:
+
+/usr/include/c++/13/bits/localefwd.h:
+
+/usr/include/c++/13/bits/new_allocator.h:
+
+/usr/include/c++/13/bits/stl_uninitialized.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/Game.cpp:
 
 /usr/include/c++/13/bits/unordered_map.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.h:
-
-/usr/include/c++/13/algorithm:
-
-/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureId.h:
+/usr/include/c++/13/bits/stl_raw_storage_iter.h:
 
 /home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManaer.cpp:
 
 /home/thinh/Source/repos/cpp-super-mario/src/screens/Screen.h:
 
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/home/thinh/Source/repos/cpp-super-mario/src/components/Components.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/c++/13/bits/hashtable.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+/usr/include/c++/13/cstdio:
 
-/home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h:
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
-/home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/c++/13/bits/streambuf_iterator.h:
+
+/usr/include/c++/13/ostream:
+
+/usr/include/c++/13/cassert:
+
+/home/thinh/Source/repos/cpp-super-mario/src/Constants.h:
+
+/usr/include/c++/13/bits/cpp_type_traits.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/InstructionState.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/GameState.h:
+
 /usr/include/c++/13/bits/enable_special_members.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/audio/AudioIds.h:
-
-/usr/include/c++/13/bits/shared_ptr.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/game/GameState.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/13/bits/move.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
-/usr/include/c++/13/bits/alloc_traits.h:
+/usr/include/c++/13/bits/range_access.h:
 
-/usr/include/c++/13/bits/concept_check.h:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/13/bits/stl_pair.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/InstructionState.cpp:
+
+/usr/include/c++/13/new:
 
 /home/thinh/Source/repos/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.h:
 
-/usr/include/c++/13/bits/erase_if.h:
+/usr/include/c++/13/bits/ostream.tcc:
+
+/usr/include/c++/13/bits/locale_classes.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/13/bits/memoryfwd.h:
+
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.inl:
+
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/MainMenuState.cpp:
+
+/usr/include/c++/13/typeinfo:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/GameConfig.cpp:
 
 /usr/include/c++/13/bits/exception.h:
 
@@ -6412,27 +7901,17 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+/home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.cpp:
 
-/usr/include/c++/13/bits/charconv.h:
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
-/usr/include/c++/13/cstdio:
+/usr/include/c++/13/bits/functional_hash.h:
+
+/usr/include/errno.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Property.hpp:
-
 /usr/include/c++/13/initializer_list:
-
-/usr/include/c++/13/bit:
-
-/usr/include/c++/13/bits/allocated_ptr.h:
-
-/usr/include/c++/13/clocale:
 
 /usr/include/c++/13/ext/aligned_buffer.h:
 
@@ -6448,163 +7927,47 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /usr/include/c++/13/ext/numeric_traits.h:
 
+/home/thinh/Source/repos/cpp-super-mario/src/audio/AudioManager.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
 /usr/include/c++/13/ext/type_traits.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/renderers/EnemiesRenderer.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/enemy/EnemySystem.h:
-
-/home/thinh/Source/repos/cpp-super-mario/src/game/Game.cpp:
-
-/usr/include/c++/13/bits/stl_map.h:
-
-/usr/include/c++/13/bits/new_allocator.h:
-
-/usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/c++/13/debug/assertions.h:
 
-/usr/include/c++/13/type_traits:
-
-/usr/include/c++/13/bits/allocator.h:
-
-/usr/include/c++/13/unordered_map:
-
-/usr/include/features-time64.h:
-
-/usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/features.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/cxxabi_forced.h:
-
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
-
-/usr/include/c++/13/typeinfo:
-
-/usr/include/c++/13/bits/exception_ptr.h:
-
-/usr/include/c++/13/bits/istream.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/c++/13/bits/stl_multimap.h:
-
-/usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/bits/localefwd.h:
-
 /usr/include/c++/13/cfloat:
-
-/usr/include/c++/13/tuple:
 
 /usr/include/c++/13/bits/nested_exception.h:
 
-/usr/include/c++/13/bits/ostream.tcc:
+/usr/include/c++/13/tuple:
 
-/usr/include/c++/13/math.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
-/usr/include/c++/13/bits/refwrap.h:
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/ObjectGroup.hpp:
 
-/usr/include/c++/13/bits/stl_algo.h:
+/usr/include/c++/13/type_traits:
 
-/usr/include/c++/13/utility:
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/usr/include/c++/13/bits/stl_heap.h:
+/usr/include/features-time64.h:
 
-/usr/include/c++/13/bits/stl_raw_storage_iter.h:
+/usr/include/features.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+/usr/include/c++/13/bits/basic_string.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/TileLayer.hpp:
 
-/usr/include/c++/13/bits/stl_relops.h:
+/usr/include/stdc-predef.h:
 
-/usr/include/c++/13/bits/ostream_insert.h:
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Object.hpp:
 
-/usr/include/c++/13/bits/stl_set.h:
+/home/thinh/Source/repos/cpp-super-mario/src/State.h:
 
-/usr/include/c++/13/bits/stl_tempbuf.h:
-
-/usr/include/c++/13/bits/stl_tree.h:
-
-/usr/include/c++/13/bits/stl_vector.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/c++/13/unordered_set:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/c++/13/ostream:
-
-/usr/include/c++/13/bits/stringfwd.h:
-
-/usr/include/c++/13/bits/locale_classes.tcc:
-
-/usr/include/c++/13/bits/uniform_int_dist.h:
-
-/usr/include/c++/13/bits/unordered_set.h:
-
-/usr/include/c++/13/bits/vector.tcc:
-
-/home/thinh/Source/repos/cpp-super-mario/src/Constants.h:
-
-/usr/include/c++/13/bits/cpp_type_traits.h:
-
-/usr/include/c++/13/cassert:
-
-/usr/include/c++/13/cctype:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/c++/13/ext/atomicity.h:
-
-/usr/include/c++/13/cerrno:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
-
-/usr/include/c++/13/cmath:
-
-/usr/include/c++/13/system_error:
-
-/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Tileset.hpp:
-
-/usr/include/c++/13/compare:
-
-/usr/include/c++/13/exception:
-
-/home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.h:
-
-/usr/include/c++/13/bits/stl_pair.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/c++/13/ext/concurrence.h:
-
-/usr/include/c++/13/ext/string_conversions.h:
-
-/usr/include/c++/13/functional:
-
-/usr/include/c++/13/ios:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/c++/13/iostream:
 
 /usr/include/c++/13/istream:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
-
-/usr/include/c++/13/set:
 
 /usr/include/c++/13/stdexcept:
 
@@ -6613,12 +7976,6 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 /home/thinh/Source/repos/cpp-super-mario/include/raylib.h:
 
 /usr/include/c++/13/string:
-
-/home/thinh/Source/repos/cpp-super-mario/src/ui/FontButton.h:
-
-/usr/include/c++/13/typeindex:
-
-/usr/include/c++/13/vector:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h:
 
@@ -6648,9 +8005,9 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /usr/include/stdlib.h:
 
-/home/thinh/Source/repos/cpp-super-mario/include/ECS.h:
-
 /usr/include/c++/13/bits/shared_ptr_base.h:
+
+/home/thinh/Source/repos/cpp-super-mario/include/ECS.h:
 
 /usr/include/wchar.h:
 
@@ -6664,13 +8021,15 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/c++/13/map:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /home/thinh/Source/repos/cpp-super-mario/src/game/Game.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
@@ -6680,11 +8039,25 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
+/home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.cpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/c++/13/cwchar:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+/home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/c++/13/bits/stl_multiset.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -6693,3 +8066,131 @@ CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cp
 /usr/include/math.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/c++/13/bits/stl_multimap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/c++/13/bits/charconv.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/renderers/ObjectRenderer.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/include/c++/13/ext/atomicity.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/State/PauseState.cpp:
+
+/usr/include/c++/13/bits/exception_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.cpp:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/c++/13/bits/std_function.h:
+
+/usr/include/c++/13/bits/char_traits.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
+
+/usr/include/c++/13/unordered_set:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.cpp:
+
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Config.hpp:
+
+/usr/include/c++/13/ext/alloc_traits.h:
+
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Layer.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Map.hpp:
+
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Property.hpp:
+
+/usr/include/c++/13/compare:
+
+/usr/include/c++/13/system_error:
+
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Tileset.hpp:
+
+/usr/include/c++/13/array:
+
+/home/thinh/Source/repos/cpp-super-mario/include/tmxlite/Types.hpp:
+
+/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureId.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.h:
+
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/home/thinh/Source/repos/cpp-super-mario/src/components/Components.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/game/GameManager.h:
+
+/usr/include/c++/13/bits/stl_bvector.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/renderers/MapRenderer.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/animation/AnimationSystem.h:
+
+/usr/include/c++/13/bits/predefined_ops.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/camera/CameraSystem.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/renderers/EnemiesRenderer.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/enemy/EnemySystem.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.h:
+
+/usr/include/assert.h:
+
+/usr/include/c++/13/algorithm:

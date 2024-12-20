@@ -15,7 +15,6 @@ public:
     virtual ~MapRenderer();
 
     void renderBackground(ECS::World *world);
-
 private:
 
     void drawGraphicsLayer(unsigned int** mapToRender, ECS::World* world, bool graphics);

@@ -22,15 +22,21 @@
 #include "systems/IdsMap/IdsMapSystem.h"
 #include "systems/score/ScoreSystem.h"
 #include "systems/sound/SoundSystem.h"
-#include "GameState.h"
+#include "State/GameState.h"
 #include "Game.h"
 #include "GameConfig.h"
 
 class GameManager {
 public:
     GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer);
-    void mainLoop();
-    virtual ~GameManager();
+    ~GameManager();
+
+    void Init();
+    void Update();
+    void Draw();
+    void cleanup();
+    bool NeedsRestart() const;
+    GameMap *getMap() const{ return pMap_; }
 
 private:
     void initWorld();
@@ -44,26 +50,28 @@ private:
     void updateMusicStream();
     void restartGame();
 
-    // void loadGameState();
-    // void saveGameState();
-
-private:
     bool run;
     bool pause;
+    bool restart;
     bool secondPlayer;
+    const char* mapName;
     ECS::World* world_;
     GameMap* pMap_;
     size_t cameraId_;
     const int screenWidth_;
     const int screenHeight_;
+    
+    double previous;
+    double lag;
+
     ECS::EntitySystem* animationSystem_;
     SoundSystem* soundSystem_;
     MapRenderer* mapRenderer;
     TextureRenderer* textureRenderer;
-    EnemiesRenderer *enemiesRenderer;
+    EnemiesRenderer* enemiesRenderer;
     ObjectRenderer* objectRenderer;
     TextRenderer* textRenderer_;
-    bool restart = false;
+
     void initMarioPlayer(ECS::Entity* player, Vector2 position);
     void initLuigiPlayer(ECS::Entity* player, Vector2 position);
 };

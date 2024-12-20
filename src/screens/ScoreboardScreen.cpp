@@ -2,13 +2,16 @@
 #include "../game/Game.h"
 #include <iostream>
 
+
 ScoreboardScreen::ScoreboardScreen() : backButton(ImageButton(BACK_BUTTON, 570, 17))
 {
-   
+    frame_positionX_1st = 204;
+    frame_positionY_1st = 145;
+    
 }
 
 void ScoreboardScreen::Init() {
-    background = LoadTexture(MENU_BACKGROUND);
+    background = LoadTexture(SCOREBOARD_BACKGROUND);
     for (int i = 0; i < 5; i++) {
         const char* texturePath;
         switch (i) {
@@ -35,12 +38,9 @@ void ScoreboardScreen::Init() {
         }
         placeTextures.push_back(LoadTexture(texturePath));
     }
-    // get frame width and height from 2nd place texture
-    frameWidth = placeTextures[1].width;
-    frameHeight = placeTextures[1].height;
-    // make the first frame at the center of the screen
-    frame_positionX_1st = (SCREEN_WIDTH - frameWidth) / 2;
-    frame_positionY_1st = (SCREEN_HEIGHT - frameHeight * 5) / 2 + 55;
+    // get frame width and height from 1st place texture
+    frameWidth = placeTextures[0].width;
+    frameHeight = placeTextures[0].height;
     textVerticalSpacing = frameHeight;
     textLeftMargin = frame_positionX_1st + 50;
     textRightMargin= frame_positionX_1st + frameWidth - 100;
@@ -54,7 +54,7 @@ void ScoreboardScreen::Init() {
 
 void ScoreboardScreen::Update() {
     if (backButton.Update()) {
-        Game::SetState(GameState::MAIN_MENU);
+        Game::SetState(std::make_unique<MainMenuState>());
     }
 
 }
@@ -70,8 +70,8 @@ void ScoreboardScreen::Draw() {
     for (int i = 0; i < 5; i++) {
         DrawTexture(placeTextures[i], frame_positionX_1st, frame_positionY_1st + i * textVerticalSpacing, WHITE);
         // draw player name and score
-        DrawText(players[i].first.c_str(), textLeftMargin,20 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
-        DrawText(to_string(players[i].second).c_str(), textRightMargin,20 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
+        DrawText(players[i].first.c_str(), textLeftMargin,15 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
+        DrawText(to_string(players[i].second).c_str(), textRightMargin,15 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
     }
     backButton.Draw();
 }
@@ -86,4 +86,3 @@ void ScoreboardScreen::Unload() {
 ScoreboardScreen::~ScoreboardScreen() {
     Unload();
 }
-
