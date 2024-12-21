@@ -1,3 +1,19 @@
+/**
+ * @startuml
+ * class MapRenderer {
+ *     +MapRenderer(GameMap *map, const char* filepath)
+ *     +void render(ECS::World* world, float delta)
+ *     +virtual ~MapRenderer()
+ *     +void renderBackground(ECS::World *world)
+ *     -void drawGraphicsLayer(unsigned int** mapToRender, ECS::World* world, bool graphics)
+ *     -void renderTexture(TextureId textureId, int x, int y)
+ *     -void renderOtherEntities(ECS::World *pWorld, float d)
+ *     -GameMap map_
+ * }
+ * @enduml
+ */
+
+
 #ifndef MARIO_MAKER_MAPRENDERER_H
 #define MARIO_MAKER_MAPRENDERER_H
 #include <raylib.h>

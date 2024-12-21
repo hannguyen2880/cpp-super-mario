@@ -1,3 +1,30 @@
+/**
+ * @startuml
+ * class Screen {
+ * }
+ * 
+ * class Texture2D {
+ * }
+ * 
+ * class ImageButton {
+ * }
+ * 
+ * class PauseScreen extends Screen {
+ *     + PauseScreen()
+ *     + ~PauseScreen()
+ *     + void Init() <<override>>
+ *     + void Update() <<override>>
+ *     + void Draw() <<override>>
+ *     + void Unload() <<override>>
+ *     - Texture2D background
+ *     - ImageButton resumeButton
+ *     - ImageButton mainMenuButton
+ * }
+ * 
+ * PauseScreen "1" *-- "1" Texture2D
+ * PauseScreen "1" *-- "1" ImageButton
+ * @enduml
+ */
 #pragma once
 #include "Screen.h"
 #include <string>

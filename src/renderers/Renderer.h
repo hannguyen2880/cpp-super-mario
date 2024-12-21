@@ -1,3 +1,16 @@
+/**
+ * @startuml
+ * class Renderer {
+ *     +Renderer(const char* filepath)
+ *     +char* getFilePath()
+ *     +virtual void cleanup()
+ *     #void loadTextures()
+ *     -const char* filepath_
+ *     -std::unordered_map<TextureId, Texture2D> textures_
+ *     -std::unordered_map<TextureId, Vector2> texturePositions_
+ * }
+ * @enduml
+ */
 #ifndef MARIO_MAKER_RENDERER_H
 #define MARIO_MAKER_RENDERER_H
 #include <raylib.h>

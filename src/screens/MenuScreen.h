@@ -1,3 +1,46 @@
+/**
+ * @startuml
+ * class Screen {
+ * }
+ * 
+ * class Texture2D {
+ * }
+ * 
+ * class Rectangle {
+ * }
+ * 
+ * class ImageButton {
+ * }
+ * 
+ * class MenuScreen extends Screen {
+ *     + MenuScreen()
+ *     + ~MenuScreen()
+ *     + void Init() <<override>>
+ *     + void Update() <<override>>
+ *     + void Draw() <<override>>
+ *     + void Unload() <<override>>
+ *     - float cloud1Speed
+ *     - float cloud2Speed
+ *     - bool cloud1MovingRight
+ *     - bool cloud2MovingRight
+ *     - Rectangle playBtnBounds
+ *     - Rectangle instructBtnBounds
+ *     - Texture2D loadingTexture
+ *     - bool isLoading
+ *     - float loadingTime
+ *     - float animationTime
+ *     - int framesCounter
+ *     - ImageButton playButton
+ *     - ImageButton instructionButton
+ *     - ImageButton scoreboardButton
+ * }
+ * 
+ * MenuScreen "1" *-- "1" Texture2D
+ * MenuScreen "1" *-- "1" Rectangle
+ * MenuScreen "1" *-- "1" ImageButton
+ * @enduml
+ */
+
 #pragma once
 #include "Screen.h"
 #include <string>

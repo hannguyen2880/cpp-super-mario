@@ -1,3 +1,39 @@
+/**
+ * @startuml
+ * class Screen {
+ * }
+ * 
+ * class Texture2D {
+ * }
+ * 
+ * class ImageButton {
+ * }
+ * 
+ * class ScoreboardScreen extends Screen {
+ *     + ScoreboardScreen()
+ *     + ~ScoreboardScreen()
+ *     + void Init() <<override>>
+ *     + void Update() <<override>>
+ *     + void Draw() <<override>>
+ *     + void Unload() <<override>>
+ *     - Texture2D background
+ *     - vector<Texture2D> placeTextures
+ *     - ImageButton backButton
+ *     - float frame_positionX_1st
+ *     - float frame_positionY_1st
+ *     - float text_positionX_1st
+ *     - float text_positionY_1st
+ *     - float frameWidth
+ *     - float frameHeight
+ *     - float textLeftMargin
+ *     - float textRightMargin
+ * }
+ * 
+ * ScoreboardScreen "1" *-- "1" Texture2D
+ * ScoreboardScreen "1" *-- "1" ImageButton
+ * @enduml
+ */
+
 #pragma once
 #include "Screen.h"
 #include "../ui/Button.h"

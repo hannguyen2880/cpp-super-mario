@@ -1,3 +1,41 @@
+/**
+ * @startuml
+ * class GameState {
+ *     +void Init()
+ *     +void Update()
+ *     +void Draw()
+ *     +void Unload()
+ *     +~GameState()
+ * }
+ * 
+ * enum GameStateType {
+ *     LOGO
+ *     MAIN_MENU
+ *     BEFOREGAME
+ *     INSTRUCTIONS
+ *     SCOREBOARD
+ *     GAMEPLAY
+ * }
+ * 
+ * enum GameDifficulty {
+ *     EASY
+ *     MEDIUM
+ *     HARD
+ * }
+ * 
+ * enum GameplayMode {
+ *     RESUME_GAME
+ *     SINGLE_PLAYER
+ *     MULTI_PLAYER
+ * }
+ * 
+ * enum Character {
+ *     MARIO
+ *     LUIGI
+ * }
+ * @enduml
+ */
+
 #pragma once
 
 class GameState {

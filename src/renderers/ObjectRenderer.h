@@ -1,3 +1,13 @@
+/**
+ * @startuml
+ * class ObjectRenderer {
+ *     +explicit ObjectRenderer(const char* filepath)
+ *     +~ObjectRenderer()
+ *     +void render(ECS::World* world)
+ * }
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_OBJECTRENDERER_H
 #define MARIO_MAKER_OBJECTRENDERER_H
 #include "Renderer.h"

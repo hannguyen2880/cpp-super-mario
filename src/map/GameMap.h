@@ -1,3 +1,25 @@
+/**
+ * @startuml
+ * class GameMap {
+ *     +GameMap(std::string filename)
+ *     +virtual ~GameMap()
+ *     +int getHeight() const
+ *     +int getWidth() const
+ *     +int getPixelHeight() const
+ *     +int getPixelWidth() const
+ *     +void loadMap(ECS::World* world)
+ *     +bool isMapLoaded()
+ *     -std::string filename_
+ *     -tmx::Map map_
+ *     -int width_
+ *     -int height_
+ *     -int tileWidth_
+ *     -int tileHeight_
+ *     -std::set<std::string> solidTiles_
+ * }
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_GAMEMAP_H
 #define MARIO_MAKER_GAMEMAP_H
 #include <string>

@@ -1,3 +1,52 @@
+/**
+ * @startuml
+ * class GameManager {
+ *     +GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
+ *     +~GameManager()
+ *     +void Init()
+ *     +void Update()
+ *     +void Draw()
+ *     +void cleanup()
+ *     +bool NeedsRestart() const
+ *     +GameMap* getMap() const
+ *     -void initWorld()
+ *     -void initPlayers()
+ *     -void registerSystems()
+ *     -void handleInput()
+ *     -void initIdsMap()
+ *     -void render(float d)
+ *     -void initTextEntities()
+ *     -void startMusic()
+ *     -void updateMusicStream()
+ *     -void restartGame()
+ *     -void saveScore()
+ *     -void printScore()
+ *     -bool run
+ *     -bool pause
+ *     -bool restart
+ *     -bool secondPlayer
+ *     -const char* mapName
+ *     -ECS::World* world_
+ *     -GameMap* pMap_
+ *     -size_t cameraId_
+ *     -const int screenWidth_
+ *     -const int screenHeight_
+ *     -double previous
+ *     -double lag
+ *     -ECS::EntitySystem* animationSystem_
+ *     -SoundSystem* soundSystem_
+ *     -MapRenderer* mapRenderer
+ *     -TextureRenderer* textureRenderer
+ *     -EnemiesRenderer* enemiesRenderer
+ *     -ObjectRenderer* objectRenderer
+ *     -TextRenderer* textRenderer_
+ *     -void initMarioPlayer(ECS::Entity* player, Vector2 position)
+ *     -void initLuigiPlayer(ECS::Entity* player, Vector2 position)
+ * }
+ * @enduml
+ */
+
+
 #ifndef MARIO_MAKER_GAME_H
 #define MARIO_MAKER_GAME_H
 #include <raylib.h>

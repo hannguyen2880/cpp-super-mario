@@ -1,3 +1,15 @@
+/**
+ * @startuml
+ * class EnemiesRenderer {
+ *     +explicit EnemiesRenderer(const char* filepath)
+ *     +~EnemiesRenderer()
+ *     +void renderUnderTileEnemies(ECS::World* world, float delta)
+ *     +void renderOverTileEnemies(ECS::World* world, float delta)
+ *     -void renderEnemy(ECS::Entity* enemy, float delta)
+ * }
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_ENEMIESRENDERER_H
 #define MARIO_MAKER_ENEMIESRENDERER_H
 
