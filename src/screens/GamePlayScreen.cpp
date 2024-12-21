@@ -18,9 +18,11 @@ void GameplayScreen::Init() {
 }
 
 void GameplayScreen::CreateGameManager() {
+}
+
+void GameplayScreen::Update() {
     bool secondPlayer = (currentMode == GameplayMode::MULTI_PLAYER);
     std::string mapFilePath;
-    
     switch (currentDifficulty) {
         case GameDifficulty::EASY:
             mapFilePath = EASY_MAP;
@@ -32,20 +34,9 @@ void GameplayScreen::CreateGameManager() {
             mapFilePath = HARD_MAP;
             break;
     }
-    
-    gameManager.emplace(
-        mapFilePath.c_str(), 
-        SCREEN_WIDTH, 
-        SCREEN_HEIGHT, 
-        secondPlayer
-    );
-    gameManager->Init();
-}
+    GameManager gameManager(mapFilePath.c_str(), SCREEN_WIDTH, SCREEN_HEIGHT, secondPlayer);
+    gameManager.mainLoop();
 
-void GameplayScreen::Update() {
-    if (gameManager) {
-        gameManager->Update();
-    }
     if (homeButton.Update()) {
         Game::SetState(std::make_unique<MainMenuState>());
         return;
@@ -57,20 +48,12 @@ void GameplayScreen::Update() {
 }
 
 void GameplayScreen::Draw() {
-    if (gameManager) {
-        gameManager->Draw();
-    }
     homeButton.Draw();
     pauseButton.Draw();
 }
 
 void GameplayScreen::Unload() {
-    if (gameManager) {
-        gameManager->cleanup();
-        gameManager.reset();
-    }
 }
 
 GameplayScreen::~GameplayScreen() {
-    Unload();
 }

@@ -8,7 +8,7 @@
 
 class GameplayScreen : public Screen {
 private:
-    std::optional<GameManager> gameManager;
+    //GameManager gameManager;
     GameDifficulty currentDifficulty;
     GameplayMode currentMode;
     Character currentCharacter;
