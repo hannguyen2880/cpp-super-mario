@@ -21,6 +21,7 @@ public:
     void SetCustomColors(Color normal, Color hover, Color active, Color text);
     bool Update() override;
     void Draw() override;
+    ~FontButton() {};
 
 private:
     void ApplyStyle(ButtonStyle style);

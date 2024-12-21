@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp" "CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o.d"
+  "/Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManager.cpp" "CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/Game.cpp" "CMakeFiles/super-mario.dir/src/game/Game.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/Game.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/GameConfig.cpp" "CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.cpp" "CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o.d"

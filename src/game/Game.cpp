@@ -13,7 +13,9 @@ Character Game::character = Character::MARIO;
 
 void Game::Init() {
     currentState = std::make_unique<MainMenuState>();
-    
+    Game::difficulty = GameDifficulty::MEDIUM;
+    Game::gameplayMode = GameplayMode::SINGLE_PLAYER;
+    Game::character = Character::MARIO;
     currentState->Init();
 }
 
@@ -26,9 +28,13 @@ void Game::Run() {
     while (!WindowShouldClose()) {
         Update();
         Draw();
+        if (IsKeyPressed(KEY_F1)) {
+            //TakeScreenshot("screenshot.png");
+            break;
+        }
     }
     
-    Unload();
+    //Unload();
     CloseAudioDevice();
     CloseWindow();
 }
@@ -38,11 +44,11 @@ void Game::Update() {
         currentState->Update();
     }
 }
-void Game::Unload() {
-    if (currentState) {
-        currentState->Unload();
-    }
-}
+// void Game::Unload() {
+//     if (currentState) {
+//         currentState->Unload();
+//     }
+// }
 
 void Game::Draw() {
     BeginDrawing();
@@ -54,11 +60,17 @@ void Game::Draw() {
 }
 
 void Game::SetState(std::unique_ptr<GameState> newState) {
-    if (currentState) {
-        currentState->Unload();
-    }
+    // if (currentState) {
+    //     currentState->Unload();
+    // }
     currentState = std::move(newState);
     if (currentState) {
         currentState->Init();
     }
+}
+
+Game::~Game() {
+    // if (currentState) {
+    //     currentState->Unload();
+    // }
 }

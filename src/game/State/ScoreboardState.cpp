@@ -15,11 +15,13 @@ void ScoreboardState::Draw() {
 }
 
 void ScoreboardState::Unload() {
-    scoreboardScreen->Unload();
-    delete scoreboardScreen;
-    scoreboardScreen = nullptr;
+    if (scoreboardScreen) {
+        scoreboardScreen->Unload();
+        delete scoreboardScreen;
+        scoreboardScreen = nullptr;
+    }
 }
 
 ScoreboardState::~ScoreboardState() {
-    delete scoreboardScreen;
+    Unload();
 }

@@ -15,11 +15,13 @@ void InstructionState::Draw() {
 }
 
 void InstructionState::Unload() {
-    instructionScreen->Unload();
-    delete instructionScreen;
-    instructionScreen = nullptr;
+    if (instructionScreen) {
+        instructionScreen->Unload();
+        delete instructionScreen;
+        instructionScreen = nullptr;
+    }
 }
 
 InstructionState::~InstructionState() {
-    delete instructionScreen;
+    Unload();
 }

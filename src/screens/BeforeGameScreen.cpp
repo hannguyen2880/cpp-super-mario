@@ -103,6 +103,7 @@ void BeforeGameScreen::Update() {
 
     if (backButton.Update()) {
         Game::SetState(std::make_unique<MainMenuState>());
+        return;
     }
 }
 

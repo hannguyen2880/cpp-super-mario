@@ -29,7 +29,7 @@ public:
     Music getCurrentMusic();
 
 private:
-    AudioManager* audioManager_;
+    std::unique_ptr<AudioManager> audioManager_;
 };
 
 

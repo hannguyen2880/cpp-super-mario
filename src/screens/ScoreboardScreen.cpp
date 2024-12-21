@@ -55,6 +55,7 @@ void ScoreboardScreen::Init() {
 void ScoreboardScreen::Update() {
     if (backButton.Update()) {
         Game::SetState(std::make_unique<MainMenuState>());
+        return;
     }
 
 }

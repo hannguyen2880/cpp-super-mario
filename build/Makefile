@@ -532,29 +532,29 @@ raylib-tmx-test/fast:
 	$(MAKE) $(MAKESILENT) -f external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build.make external/raylib-tmx/test/CMakeFiles/raylib-tmx-test.dir/build
 .PHONY : raylib-tmx-test/fast
 
-src/audio/AudioManaer.o: src/audio/AudioManaer.cpp.o
-.PHONY : src/audio/AudioManaer.o
+src/audio/AudioManager.o: src/audio/AudioManager.cpp.o
+.PHONY : src/audio/AudioManager.o
 
 # target to build an object file
-src/audio/AudioManaer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o
-.PHONY : src/audio/AudioManaer.cpp.o
+src/audio/AudioManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o
+.PHONY : src/audio/AudioManager.cpp.o
 
-src/audio/AudioManaer.i: src/audio/AudioManaer.cpp.i
-.PHONY : src/audio/AudioManaer.i
+src/audio/AudioManager.i: src/audio/AudioManager.cpp.i
+.PHONY : src/audio/AudioManager.i
 
 # target to preprocess a source file
-src/audio/AudioManaer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i
-.PHONY : src/audio/AudioManaer.cpp.i
+src/audio/AudioManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i
+.PHONY : src/audio/AudioManager.cpp.i
 
-src/audio/AudioManaer.s: src/audio/AudioManaer.cpp.s
-.PHONY : src/audio/AudioManaer.s
+src/audio/AudioManager.s: src/audio/AudioManager.cpp.s
+.PHONY : src/audio/AudioManager.s
 
 # target to generate assembly for a file
-src/audio/AudioManaer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s
-.PHONY : src/audio/AudioManaer.cpp.s
+src/audio/AudioManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s
+.PHONY : src/audio/AudioManager.cpp.s
 
 src/game/Game.o: src/game/Game.cpp.o
 .PHONY : src/game/Game.o
@@ -1436,9 +1436,9 @@ help:
 	@echo "... raylib-tmx-example"
 	@echo "... raylib-tmx-test"
 	@echo "... super-mario"
-	@echo "... src/audio/AudioManaer.o"
-	@echo "... src/audio/AudioManaer.i"
-	@echo "... src/audio/AudioManaer.s"
+	@echo "... src/audio/AudioManager.o"
+	@echo "... src/audio/AudioManager.i"
+	@echo "... src/audio/AudioManager.s"
 	@echo "... src/game/Game.o"
 	@echo "... src/game/Game.i"
 	@echo "... src/game/Game.s"

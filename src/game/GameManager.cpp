@@ -16,7 +16,7 @@ GameManager::GameManager(const char* mapName, const int screenWidth, const int s
     , objectRenderer(nullptr)
     , textRenderer_(nullptr)
 {
-    Init();
+    //Init();
 }
 
 GameManager::~GameManager() {
@@ -39,7 +39,7 @@ void GameManager::Init() {
     textRenderer_ = new TextRenderer();
 
     initWorld();
-    SetTargetFPS(60);
+    //SetTargetFPS(60);
 }
 
 void GameManager::Update() {
@@ -81,18 +81,30 @@ void GameManager::cleanup() {
         delete world_;
         world_ = nullptr;
     }
-    delete pMap_;
-    delete mapRenderer;
-    delete textureRenderer;
-    delete enemiesRenderer;
-    delete objectRenderer;
-    delete textRenderer_;
-    pMap_ = nullptr;
-    mapRenderer = nullptr;
-    textureRenderer = nullptr;
-    enemiesRenderer = nullptr;
-    objectRenderer = nullptr;
-    textRenderer_ = nullptr;
+    if (pMap_) {
+        delete pMap_;
+        pMap_ = nullptr;
+    }
+    if (mapRenderer) {
+        delete mapRenderer;
+        mapRenderer = nullptr;
+    }
+    if (textureRenderer) {
+        delete textureRenderer;
+        textureRenderer = nullptr;
+    }
+    if (enemiesRenderer) {
+        delete enemiesRenderer;
+        enemiesRenderer = nullptr;
+    }
+    if (objectRenderer) {
+        delete objectRenderer;
+        objectRenderer = nullptr;
+    }
+    if (textRenderer_) {
+        delete textRenderer_;
+        textRenderer_ = nullptr;
+    }
 }
 
 bool GameManager::NeedsRestart() const {

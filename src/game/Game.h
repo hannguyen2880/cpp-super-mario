@@ -14,11 +14,12 @@ private:
     
 public:
     Game(){};
+    ~Game();
     static void Init();
     static void Update();
     static void Draw();
     static void SetState(std::unique_ptr<GameState> newState);
-    static void Unload();
+    //static void Unload();
     static void Run();
 
     static float GetScreenWidth() { return 1.0 * SCREEN_WIDTH; }

@@ -9,7 +9,8 @@ GameplayScreen::GameplayScreen()
       currentMode(GameConfig::getInstance().getGameplayMode()),
       currentCharacter(GameConfig::getInstance().getCharacter()),
       isPaused(false),
-      homeButton(HOME_BUTTON, 0, 45) {}
+      homeButton(HOME_BUTTON, 0, 45),
+      pauseButton(PAUSE_BUTTON, 50, 45) {}
 
 void GameplayScreen::Init() {
     CreateGameManager();
@@ -17,12 +18,6 @@ void GameplayScreen::Init() {
 }
 
 void GameplayScreen::CreateGameManager() {
-    if (gameManager) {
-        std::cout << "WARNING: Creating new GameManager while old one exists" << std::endl;
-        gameManager->cleanup();
-        gameManager.reset();
-    }
-
     bool secondPlayer = (currentMode == GameplayMode::MULTI_PLAYER);
     std::string mapFilePath;
     
@@ -38,7 +33,7 @@ void GameplayScreen::CreateGameManager() {
             break;
     }
     
-    gameManager = std::make_unique<GameManager>(
+    gameManager.emplace(
         mapFilePath.c_str(), 
         SCREEN_WIDTH, 
         SCREEN_HEIGHT, 
@@ -49,20 +44,15 @@ void GameplayScreen::CreateGameManager() {
 
 void GameplayScreen::Update() {
     if (gameManager) {
-        if (gameManager->NeedsRestart()) {
-            // Cleanup old game manager
-            gameManager->cleanup();
-            gameManager.reset();
-            
-            // Create new game manager
-            CreateGameManager();
-            gameManager->Init();
-        } else {
-            gameManager->Update();
-        }
+        gameManager->Update();
     }
     if (homeButton.Update()) {
         Game::SetState(std::make_unique<MainMenuState>());
+        return;
+    }
+    if (pauseButton.Update()) {
+        //isPaused = !isPaused;
+        return;
     }
 }
 
@@ -71,6 +61,7 @@ void GameplayScreen::Draw() {
         gameManager->Draw();
     }
     homeButton.Draw();
+    pauseButton.Draw();
 }
 
 void GameplayScreen::Unload() {
@@ -78,4 +69,8 @@ void GameplayScreen::Unload() {
         gameManager->cleanup();
         gameManager.reset();
     }
+}
+
+GameplayScreen::~GameplayScreen() {
+    Unload();
 }

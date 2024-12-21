@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o"
-  "CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o.d"
+  "CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o"
+  "CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/game/Game.cpp.o"
   "CMakeFiles/super-mario.dir/src/game/Game.cpp.o.d"
   "CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o"

@@ -1,0 +1,40 @@
+@startuml
+
+class Game {
+    - static std::unique_ptr<GameState> currentState
+    - static GameDifficulty difficulty
+    - static GameplayMode gameplayMode
+    - static Character character
+    + Game()
+    + ~Game()
+    + static void Init()
+    + static void Update()
+    + static void Draw()
+    + static void SetState(std::unique_ptr<GameState> newState)
+    + static void Run()
+    + static float GetScreenWidth()
+    + static float GetScreenHeight()
+    + static GameDifficulty GetDifficulty()
+    + static GameplayMode GetGameplayMode()
+    + static Character GetCharacter()
+    + static GameConfig& getConfig()
+}
+
+class GameState {
+    {abstract}
+}
+
+class GameConfig {
+    + static GameConfig& getInstance()
+    + void setDifficulty(GameDifficulty difficulty)
+    + GameDifficulty getDifficulty() const
+    + void setGameplayMode(GameplayMode mode)
+    + GameplayMode getGameplayMode() const
+    + void setCharacter(Character character)
+    + Character getCharacter() const
+}
+
+Game --> GameState : currentState
+Game --> GameConfig : getConfig()
+
+@enduml

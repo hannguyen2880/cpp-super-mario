@@ -72,19 +72,19 @@ include CMakeFiles/super-mario.dir/flags.make
 CMakeFiles/super-mario.dir/codegen:
 .PHONY : CMakeFiles/super-mario.dir/codegen
 
-CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o: CMakeFiles/super-mario.dir/flags.make
-CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp
-CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o -MF CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o.d -o CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp
+CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o: CMakeFiles/super-mario.dir/flags.make
+CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManager.cpp
+CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o: CMakeFiles/super-mario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hannguyen/Desktop/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o -MF CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o.d -o CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o -c /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManager.cpp
 
-CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp > CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.i
+CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManager.cpp > CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.i
 
-CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp -o CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.s
+CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManager.cpp -o CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.s
 
 CMakeFiles/super-mario.dir/src/game/Game.cpp.o: CMakeFiles/super-mario.dir/flags.make
 CMakeFiles/super-mario.dir/src/game/Game.cpp.o: /Users/hannguyen/Desktop/cpp-super-mario/src/game/Game.cpp
@@ -578,7 +578,7 @@ CMakeFiles/super-mario.dir/src/ui/ImageButton.cpp.s: cmake_force
 
 # Object files for target super-mario
 super__mario_OBJECTS = \
-"CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o" \
+"CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o" \
 "CMakeFiles/super-mario.dir/src/game/Game.cpp.o" \
 "CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o" \
 "CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o" \
@@ -618,7 +618,7 @@ super__mario_OBJECTS = \
 # External object files for target super-mario
 super__mario_EXTERNAL_OBJECTS =
 
-super-mario: CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o
+super-mario: CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/game/Game.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o
 super-mario: CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o
