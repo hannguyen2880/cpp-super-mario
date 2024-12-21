@@ -79,3 +79,8 @@ void GameplayScreen::Unload() {
         gameManager.reset();
     }
 }
+
+GameplayScreen::~GameplayScreen() {
+    Unload();
+
+}

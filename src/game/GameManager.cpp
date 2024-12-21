@@ -1,6 +1,8 @@
 #include "GameManager.h"
 #include "GameConfig.h"
-
+#include <iostream>
+#include <fstream>
+#include <string>
 GameManager::GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
     : mapName(mapName)
     , screenWidth_(screenWidth)
@@ -20,6 +22,8 @@ GameManager::GameManager(const char* mapName, const int screenWidth, const int s
 }
 
 GameManager::~GameManager() {
+    printScore();
+    saveScore();
     cleanup();
 }
 
@@ -284,6 +288,7 @@ void GameManager::initIdsMap() {
 }
 
 void GameManager::render(float d) {
+    printScore();
     mapRenderer->renderBackground(world_);
     textureRenderer->renderTextureEntities(world_, d);
     textureRenderer->renderTileCollisionRect(world_);
@@ -322,4 +327,41 @@ void GameManager::startMusic() {
 
 void GameManager::updateMusicStream() {
     UpdateMusicStream(soundSystem_->getCurrentMusic());
+}
+
+void GameManager::saveScore() {
+
+    std::ofstream fileOut;
+    const char* filePath = "score.txt";
+    //append score to file, then the endline character
+    fileOut.open(filePath);
+    if (!fileOut.is_open()) {
+         throw std::runtime_error("Could not open file for writing");
+    }
+        for (auto ent : this->world_->each<TextComponent>()) {
+        auto textComponent = ent->get<TextComponent>();
+
+        switch (textComponent->type) {
+            case Text::Type::SCORE_COUNTER:
+                fileOut << textComponent->getValue() << std::endl;
+                break;
+            default:
+                break;
+        }
+        fileOut.close();
+}
+}
+
+void GameManager::printScore() {
+    for (auto ent : this->world_->each<TextComponent>()) {
+        auto textComponent = ent->get<TextComponent>();
+
+        switch (textComponent->type) {
+            case Text::Type::SCORE_COUNTER:
+                std::cout << "Score: " << textComponent->getValue() << std::endl;
+                break;
+            default:
+                break;
+        }
+    }
 }

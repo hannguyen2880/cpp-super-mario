@@ -18,6 +18,7 @@ private:
 
 public:
     GameplayScreen();
+    virtual ~GameplayScreen();
     void Init() override;
     void Update() override;
     void Draw() override;

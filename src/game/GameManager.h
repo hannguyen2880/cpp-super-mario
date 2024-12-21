@@ -49,6 +49,8 @@ private:
     void startMusic();
     void updateMusicStream();
     void restartGame();
+    void saveScore();
+    void printScore();
 
     bool run;
     bool pause;
