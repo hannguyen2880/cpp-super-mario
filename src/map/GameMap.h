@@ -16,6 +16,7 @@
 #include "../Constants.h"
 #include "../components/Components.h"
 
+
 class GameMap {
 private:
     void loadMapBasicInfo(const tmx::Vector2u& orientation);
@@ -40,6 +41,9 @@ private:
 
     void createObject(ECS::Entity *entity, std::vector<tmx::Property> properties);
     
+    //ECS::Entity * createEscalator(ECS::World* world, ECS::Entity *entity);
+    
+
     std::string name;
     int height_;
     int width_;

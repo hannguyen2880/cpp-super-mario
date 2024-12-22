@@ -134,7 +134,7 @@ private:
 
         return dims;
     }
-
+    
 protected:
     std::unordered_map<TextureId, Rectangle*> texturePositions_{};
     std::unordered_map<TextureId, Texture2D> textures_{};

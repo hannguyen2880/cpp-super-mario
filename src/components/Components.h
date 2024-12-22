@@ -345,12 +345,18 @@ namespace Object {
         COIN_10,
         COIN_30,
         COIN_50,
-        COIN
+        COIN,
+        ESCALATOR
     };
 
     enum PoleDir {
         LEFT,
         RIGHT
+    };
+
+    enum EscalatorDir {
+        UP,
+        DOWN
     };
 }
 
@@ -592,6 +598,22 @@ struct TimerComponent {
 
 };
 
+struct EscalatorComponent {
+
+    EscalatorComponent() = default;
+
+    EscalatorComponent(int speed, bool up) : speed(speed), up(up) {}
+
+    void setInitialPos(float value) {
+        initialPos = value;
+    }
+
+    int speed = 1;
+    bool up = true;
+    float initialPos = 0.0f;
+     
+};
+
 namespace Enemy {
     enum Type {
         NONE,
@@ -671,7 +693,7 @@ struct TartossoComponent {
 
     TartossoComponent(Enemy::TartossoState tartossoState) : tartossoState(tartossoState) {}
 
-    [[nodiscard]] bool dead() {
+    bool dead() {
         counter++;
         if (counter > n) {
             counter = 0;
@@ -681,7 +703,7 @@ struct TartossoComponent {
         return true;
     }
 
-    [[nodiscard]] bool isTransforming() {
+    bool isTransforming() {
         counter++;
         if (counter > n / 9) {
             counter = 0;
@@ -727,7 +749,7 @@ struct CannonComponent {
         type_ = type;
     }
 
-    [[nodiscard]] bool canShoot() {
+    bool canShoot() {
         shootTimer_++;
         if (shootTimer_ > n_) {
             shootTimer_ = 0;

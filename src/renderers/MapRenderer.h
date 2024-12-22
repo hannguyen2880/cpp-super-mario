@@ -9,7 +9,7 @@ class MapRenderer : public Renderer {
 public:
 
     MapRenderer(GameMap *map, const char* filepath1);
-
+    Texture2D createCombinedEscalatorTexture();
     void render(ECS::World* world, float delta);
 
     virtual ~MapRenderer();

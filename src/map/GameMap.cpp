@@ -289,7 +289,24 @@ void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<
     else if (layerName == "objects") {
         ent->remove<TileComponent>();
         createObject(ent, properties);
-    }
+    } 
+    // else if (layerName == "escalator") {
+    //     ent->assign<EscalatorComponent>();
+    //     ent->remove<TileComponent>();
+    //     ECS::World* world = ent->getWorld();
+        
+    //     for (const auto& property : properties) {
+    //         if (property.getName() == "isDown") {
+    //             if (property.getBoolValue()) {
+    //                 ent->get<EscalatorComponent>()->up = false;
+    //             } else {
+    //                 ent->get<EscalatorComponent>()->up = true;
+    //             }
+    //         }
+    //     }
+    //     std::cout << "Creating escalator" << std::endl << std::endl;
+    //     createEscalator(world, ent);
+    // }
 
     if (layerName == "bricks" || layerName == "question_block") {
         if (ent->has<BrickComponent>()) {
@@ -582,6 +599,16 @@ void GameMap::createObject(ECS::Entity *entity, std::vector<tmx::Property> prope
                             TextureId::COIN_50_7,
                             TextureId::COIN_50_8,
                     }, 12);
+                } else if (property.getStringValue() == "ESCALATOR") {
+                    entity->assign<ObjectComponent>(Object::Type::ESCALATOR);
+                    entity->assign<TextureComponent>(TextureId::RED_TURTLE_1);
+                    entity->assign<VerticalGrowComponent>(256);
+                    entity->assign<SolidComponent>();
+                    entity->assign<KineticComponent>();
+                    entity->assign<GravityComponent>();
+                    entity->assign<EscalatorComponent>(1, false);
+                    entity->get<EscalatorComponent>()->setInitialPos(entity->get<AABBComponent>()->top());
+                    //entity->assign<UnderTileComponent>();
                 }
             } else if (property.getName() == "left") {
                 if (property.getBoolValue()) entity->assign<PoleComponent>(Object::PoleDir::LEFT);
@@ -607,3 +634,4 @@ ECS::Entity * GameMap::createParachute(ECS::Entity *entity) {
     parachute->assign<TextureComponent>(TextureId::PARACHUTE);
     return parachute;
 }
+
