@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mario_maker.dir/src/game/State/PauseState.cpp.o.d"
   "CMakeFiles/mario_maker.dir/src/game/State/ScoreboardState.cpp.o"
   "CMakeFiles/mario_maker.dir/src/game/State/ScoreboardState.cpp.o.d"
+  "CMakeFiles/mario_maker.dir/src/game/WorldBuilder.cpp.o"
+  "CMakeFiles/mario_maker.dir/src/game/WorldBuilder.cpp.o.d"
   "CMakeFiles/mario_maker.dir/src/main.cpp.o"
   "CMakeFiles/mario_maker.dir/src/main.cpp.o.d"
   "CMakeFiles/mario_maker.dir/src/map/GameMap.cpp.o"

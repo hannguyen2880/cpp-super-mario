@@ -486,6 +486,30 @@ src/game/State/ScoreboardState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/game/State/ScoreboardState.cpp.s
 .PHONY : src/game/State/ScoreboardState.cpp.s
 
+src/game/WorldBuilder.o: src/game/WorldBuilder.cpp.o
+.PHONY : src/game/WorldBuilder.o
+
+# target to build an object file
+src/game/WorldBuilder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/game/WorldBuilder.cpp.o
+.PHONY : src/game/WorldBuilder.cpp.o
+
+src/game/WorldBuilder.i: src/game/WorldBuilder.cpp.i
+.PHONY : src/game/WorldBuilder.i
+
+# target to preprocess a source file
+src/game/WorldBuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/game/WorldBuilder.cpp.i
+.PHONY : src/game/WorldBuilder.cpp.i
+
+src/game/WorldBuilder.s: src/game/WorldBuilder.cpp.s
+.PHONY : src/game/WorldBuilder.s
+
+# target to generate assembly for a file
+src/game/WorldBuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/game/WorldBuilder.cpp.s
+.PHONY : src/game/WorldBuilder.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -1159,6 +1183,9 @@ help:
 	@echo "... src/game/State/ScoreboardState.o"
 	@echo "... src/game/State/ScoreboardState.i"
 	@echo "... src/game/State/ScoreboardState.s"
+	@echo "... src/game/WorldBuilder.o"
+	@echo "... src/game/WorldBuilder.i"
+	@echo "... src/game/WorldBuilder.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
