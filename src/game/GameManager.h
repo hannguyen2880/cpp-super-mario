@@ -89,13 +89,8 @@ public:
 
 private:
     void initWorld();
-    void initPlayers();
-    void registerSystems();
     void handleInput();
-    void initIdsMap();
-    void render(float d);
-    void initTextEntities();
-    void startMusic();
+    void render(float d);;
     void updateMusicStream();
     void restartGame();
     void saveScore();
@@ -122,9 +117,6 @@ private:
     EnemiesRenderer* enemiesRenderer;
     ObjectRenderer* objectRenderer;
     TextRenderer* textRenderer_;
-
-    void initMarioPlayer(ECS::Entity* player, Vector2 position);
-    void initLuigiPlayer(ECS::Entity* player, Vector2 position);
 };
 
 
