@@ -238,11 +238,16 @@ struct VerticalGrowComponent {
         n_ = frames_;
     };
 
-    bool finished() {
-        frames_--;
+    bool finished() const {
         return frames_ <= 0;
     }
 
+    void decrementFrames() {
+        frames_--;
+    }
+
+    int getFrames() { return frames_; }
+    
     void wait() {
         waitCounter_++;
         if (waitCounter_ >= n_) {

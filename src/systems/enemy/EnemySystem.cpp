@@ -234,6 +234,7 @@ void EnemySystem::managePiranhaPlants(World* world) {
                 entity->get<AABBComponent>()->collisionBox_.y +=
                         growComponent->isGoingUp() ?
                         -MUSHROOM_GROW_SPEED : MUSHROOM_GROW_SPEED;
+                growComponent->decrementFrames();
             } else {
                 growComponent->wait();
             }

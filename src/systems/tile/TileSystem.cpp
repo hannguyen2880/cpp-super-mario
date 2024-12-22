@@ -12,6 +12,8 @@ void TileSystem::tick(World *world, float delta) {
         ent->get<BounceComponent>()->hit = true;
     }
 
+    manageEscalators(world);
+
     manageCannons(world);
 
     manageGrowComponents(world);
@@ -362,4 +364,24 @@ void TileSystem::spawnEntityFromCannon(World *world, Enemy::BulletType type, Rec
         default:
             break;
     }
+}
+
+void TileSystem::manageEscalators(World* world) {
+    world->each<ObjectComponent, VerticalGrowComponent>([&](
+            Entity* entity,
+            ComponentHandle<ObjectComponent> object,
+            ComponentHandle<VerticalGrowComponent> growComponent) {
+        if (object->type == Object::Type::ESCALATOR) {
+            if (!growComponent->finished()) {
+                entity->get<AABBComponent>()->collisionBox_.y +=
+                        growComponent->isGoingUp() ?
+                        -ESCALATOR_MOVE_SPEED : ESCALATOR_MOVE_SPEED;
+                growComponent->decrementFrames();
+                std::cout << "Escalator moving, frames left: " << growComponent->getFrames() << "\n";
+            } else {
+                std::cout << "Escalator finished\n";
+                growComponent->wait();
+            }
+        }
+    });
 }

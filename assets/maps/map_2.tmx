@@ -355,12 +355,6 @@
     <property name="type" value="THWOMP_H"/>
    </properties>
   </object>
-  <object id="120" x="1071.33" y="128.667" width="16" height="16">
-   <properties>
-    <property name="hasParachute" type="bool" value="true"/>
-    <property name="type" value="GOOMBRAT"/>
-   </properties>
-  </object>
   <object id="112" x="496" y="240" width="16" height="16">
    <properties>
     <property name="type" value="KOOPA_TROOPA"/>

@@ -167,7 +167,13 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="11" name="escalator"/>
+ <objectgroup id="11" name="escalator">
+  <object id="127" x="80.3334" y="176.667" width="16" height="16">
+   <properties>
+    <property name="type" value="ESCALATOR"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup id="9" name="square_brick">
   <object id="84" x="1376.33" y="128" width="63" height="63"/>
   <object id="85" x="1376" y="112.125" width="64" height="15.375"/>
@@ -245,11 +251,6 @@
   <object id="124" x="496" y="144" width="16" height="16">
    <properties>
     <property name="type" value="COIN"/>
-   </properties>
-  </object>
-  <object id="127" x="79.6667" y="111.667" width="16.6667" height="15.3333">
-   <properties>
-    <property name="type" value="ESCALATOR"/>
    </properties>
   </object>
  </objectgroup>
