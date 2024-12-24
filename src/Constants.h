@@ -68,4 +68,4 @@ constexpr float MARIO_BOUNCE = 10.0f;
 constexpr float MUSHROOM_GROW_SPEED = .25f;
 constexpr float MUSHROOM_MOVE_SPEED = 0.8f;
 
-constexpr float ESCALATOR_MOVE_SPEED = 0.5f;
+constexpr float ESCALATOR_GROW_SPEED = 0.5f;

@@ -12,7 +12,7 @@ void TileSystem::tick(World *world, float delta) {
         ent->get<BounceComponent>()->hit = true;
     }
 
-    manageEscalators(world);
+    //manageEscalators(world);
 
     manageCannons(world);
 
@@ -146,8 +146,16 @@ void TileSystem::configure(World *world) {
 }
 
 void TileSystem::manageGrowComponents(World *world) {
+     // Process entities with VerticalGrowComponent, excluding escalators
     for (auto ent : world->each<VerticalGrowComponent, AABBComponent, TileComponent>()) {
         auto grow = ent->get<VerticalGrowComponent>();
+        auto object = ent->get<ObjectComponent>();
+
+        // Skip escalators
+        if (object && object->type == Object::Type::ESCALATOR) {
+            continue;
+        }
+
         if (!grow->finished()) {
             ent->get<AABBComponent>()->collisionBox_.y -= MUSHROOM_GROW_SPEED;
         } else {
@@ -163,6 +171,10 @@ void TileSystem::manageGrowComponents(World *world) {
         }
     }
 
+    // Handle escalators separately
+    manageEscalators(world);
+
+    // Process entities with HorizontalGrowComponent
     world->each<HorizontalGrowComponent, AABBComponent>([=](
             Entity* entity,
             ComponentHandle<HorizontalGrowComponent> growComponent,
@@ -366,21 +378,19 @@ void TileSystem::spawnEntityFromCannon(World *world, Enemy::BulletType type, Rec
     }
 }
 
-void TileSystem::manageEscalators(World* world) {
-    world->each<ObjectComponent, VerticalGrowComponent>([&](
+void TileSystem::manageEscalators(World* world) { 
+    world->each<ObjectComponent, VerticalGrowComponent, AABBComponent>([&](
             Entity* entity,
             ComponentHandle<ObjectComponent> object,
-            ComponentHandle<VerticalGrowComponent> growComponent) {
+            ComponentHandle<VerticalGrowComponent> growComponent,
+            ComponentHandle<AABBComponent> aabb) {
         if (object->type == Object::Type::ESCALATOR) {
             if (!growComponent->finished()) {
-                entity->get<AABBComponent>()->collisionBox_.y +=
+                aabb->collisionBox_.y +=
                         growComponent->isGoingUp() ?
-                        -ESCALATOR_MOVE_SPEED : ESCALATOR_MOVE_SPEED;
-                growComponent->decrementFrames();
-                std::cout << "Escalator moving, frames left: " << growComponent->getFrames() << "\n";
+                        -ESCALATOR_GROW_SPEED : ESCALATOR_GROW_SPEED;
             } else {
-                std::cout << "Escalator finished\n";
-                growComponent->wait();
+                growComponent->escalatorWait();
             }
         }
     });

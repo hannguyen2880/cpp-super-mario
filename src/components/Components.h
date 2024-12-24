@@ -154,6 +154,7 @@ struct PlayerComponent {
     };
 
     PlayerState current_state_;
+    bool onEscalator = false;
     bool sprint = false;
     bool canShoot = true;
     bool sit = false;
@@ -238,16 +239,11 @@ struct VerticalGrowComponent {
         n_ = frames_;
     };
 
-    bool finished() const {
+    bool finished() {
+        frames_--;
         return frames_ <= 0;
     }
 
-    void decrementFrames() {
-        frames_--;
-    }
-
-    int getFrames() { return frames_; }
-    
     void wait() {
         waitCounter_++;
         if (waitCounter_ >= n_) {
@@ -257,8 +253,16 @@ struct VerticalGrowComponent {
         }
     }
 
-    bool isGoingUp() { return up_; }
+    void escalatorWait() {
+        waitCounter_++;
+        if (waitCounter_ >= 20) {
+            waitCounter_ = 0;
+            frames_ = n_;
+            up_ = !up_;
+        }
+    }
 
+    bool isGoingUp() { return up_; }
 private:
     bool up_ = true;
     int frames_ = 64;
@@ -589,6 +593,11 @@ public:
     std::map<int, std::unordered_set<int>> spacialHashmap_;
 };
 
+struct EscalatorComponent {
+    float speed;
+    EscalatorComponent(float speed) : speed(speed) {}
+};
+
 struct StaticEntitiesMapComponent {};
 
 struct KineticEntitiesMapComponent {};
@@ -601,22 +610,6 @@ struct TimerComponent {
     int time;
     std::function<void(void)> callback;
 
-};
-
-struct EscalatorComponent {
-
-    EscalatorComponent() = default;
-
-    EscalatorComponent(int speed, bool up) : speed(speed), up(up) {}
-
-    void setInitialPos(float value) {
-        initialPos = value;
-    }
-
-    int speed = 1;
-    bool up = true;
-    float initialPos = 0.0f;
-     
 };
 
 namespace Enemy {

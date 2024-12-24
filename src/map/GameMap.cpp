@@ -292,17 +292,9 @@ void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<
     } 
     else if (layerName == "escalator") {
         ECS::World* world = ent->getWorld();
-        // for (const auto& property : properties) {
-        //     if (property.getName() == "isDown") {
-        //         if (property.getBoolValue()) {
-        //             ent->get<EscalatorComponent>()->up = false;
-        //         } else {
-        //             ent->get<EscalatorComponent>()->up = true;
-        //         }
-        //     }
-        // }
-        //std::cout << "Creating escalator" << std::endl << std::endl;
         createEscalator(world, ent);
+        ent->remove<TileComponent>();
+        //ent->remove<AABBComponent>();
     }
 
     if (layerName == "bricks" || layerName == "question_block") {
@@ -623,20 +615,28 @@ ECS::Entity * GameMap::createParachute(ECS::Entity *entity) {
 }
 
 void GameMap::createEscalator(ECS::World* world, ECS::Entity* entity) {
-    auto escalator = world->create();
     auto aabb = entity->get<AABBComponent>();
+    if (!aabb) {
+        std::cerr << "Error: AABBComponent not found for entity\n";
+        return;
+    }
+
+    auto escalator = world->create();
     escalator->assign<ObjectComponent>(Object::Type::ESCALATOR);
     escalator->assign<TileComponent>();
     escalator->assign<AABBComponent>(Rectangle{
         aabb->collisionBox_.x,
         aabb->collisionBox_.y,
-        GAME_TILE_SIZE,
+        GAME_TILE_SIZE * 3,
         GAME_TILE_SIZE / 2
     });
     escalator->assign<TextureComponent>(TextureId::ESCALATOR_1);
     escalator->assign<SolidComponent>();
     escalator->assign<KineticComponent>();
-    escalator->assign<VerticalGrowComponent>(12);
+    escalator->assign<VerticalGrowComponent>(640); // Ensure correct initialization
     escalator->assign<UnderTileComponent>();
+    escalator->assign<EscalatorComponent>(ESCALATOR_GROW_SPEED); // Assign EscalatorComponent
+
+    std::cout << "Escalator created at position (" << aabb->collisionBox_.x << ", " << aabb->collisionBox_.y << ")\n";
 }
 

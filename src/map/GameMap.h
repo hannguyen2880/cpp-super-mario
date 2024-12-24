@@ -41,7 +41,7 @@ private:
 
     void createObject(ECS::Entity *entity, std::vector<tmx::Property> properties);
     
-    void createEscalator(ECS::World* world, ECS::Entity *entity);
+    void createEscalator(ECS::World* world, ECS::Entity* ent);
     
 
     std::string name;

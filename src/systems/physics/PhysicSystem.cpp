@@ -543,6 +543,28 @@ void PhysicSystem::checkCollisionWithSolidObject(Entity *ent1, Entity *ent2) {
                && ent1->get<ObjectComponent>()->type == Object::Type::FINAL_FLAG_POLE) {
         auto poleAABB = ent1->get<AABBComponent>()->bottom();
         world->emit<CollisionWithFinalPoleEvent>(CollisionWithFinalPoleEvent(ent2, ent1));
+    } else if (ent1->has<PlayerComponent>() && ent2->has<ObjectComponent, SolidComponent>()) {
+        if (ent1->has<TopCollisionComponent>() && ent2->has<BottomCollisionComponent>()) {
+            ent1->get<KineticComponent>()->speedY_ = 0;
+            ent1->get<KineticComponent>()->accY_ = 0;
+            ent1->get<AABBComponent>()->setBottom(ent2->get<AABBComponent>()->top() - 0.3f);
+            ent1->get<PlayerComponent>()->current_state_ = PlayerState::STANDING;
+        } else if (ent1->has<BottomCollisionComponent>() && ent2->has<TopCollisionComponent>()) {
+            ent1->get<KineticComponent>()->speedY_ = 0;
+            ent1->get<KineticComponent>()->accY_ = 0;
+            ent1->get<AABBComponent>()->setTop(ent2->get<AABBComponent>()->bottom());
+        }
+    } else if (ent2->has<PlayerComponent>() && ent1->has<ObjectComponent, SolidComponent>()) {
+        if (ent2->has<TopCollisionComponent>() && ent1->has<BottomCollisionComponent>()) {
+            ent2->get<KineticComponent>()->speedY_ = 0;
+            ent2->get<KineticComponent>()->accY_ = 0;
+            ent2->get<AABBComponent>()->setBottom(ent1->get<AABBComponent>()->top() - 0.3f);
+            ent2->get<PlayerComponent>()->current_state_ = PlayerState::STANDING;
+        } else if (ent2->has<BottomCollisionComponent>() && ent1->has<TopCollisionComponent>()) {
+            ent2->get<KineticComponent>()->speedY_ = 0;
+            ent2->get<KineticComponent>()->accY_ = 0;
+            ent2->get<AABBComponent>()->setTop(ent1->get<AABBComponent>()->bottom());
+        }
     }
 }
 
@@ -575,6 +597,8 @@ bool PhysicSystem::checkCollisionWithObject(Entity *ent1, Entity *ent2) {
                 world->emit<CollisionWithCoinEvent>(CollisionWithCoinEvent(player, object));
                 world->emit<SoundEvent>(SoundId::COIN);
                 break;
+            case Object::ESCALATOR:
+                return false;
             default:
                 break;
         }
