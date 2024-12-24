@@ -547,7 +547,7 @@ void PhysicSystem::checkCollisionWithSolidObject(Entity *ent1, Entity *ent2) {
         if (ent1->has<TopCollisionComponent>() && ent2->has<BottomCollisionComponent>()) {
             ent1->get<KineticComponent>()->speedY_ = 0;
             ent1->get<KineticComponent>()->accY_ = 0;
-            ent1->get<AABBComponent>()->setBottom(ent2->get<AABBComponent>()->top() - 0.3f);
+            ent1->get<AABBComponent>()->setBottom(ent2->get<AABBComponent>()->top());
             ent1->get<PlayerComponent>()->current_state_ = PlayerState::STANDING;
         } else if (ent1->has<BottomCollisionComponent>() && ent2->has<TopCollisionComponent>()) {
             ent1->get<KineticComponent>()->speedY_ = 0;
@@ -558,7 +558,7 @@ void PhysicSystem::checkCollisionWithSolidObject(Entity *ent1, Entity *ent2) {
         if (ent2->has<TopCollisionComponent>() && ent1->has<BottomCollisionComponent>()) {
             ent2->get<KineticComponent>()->speedY_ = 0;
             ent2->get<KineticComponent>()->accY_ = 0;
-            ent2->get<AABBComponent>()->setBottom(ent1->get<AABBComponent>()->top() - 0.3f);
+            ent2->get<AABBComponent>()->setBottom(ent1->get<AABBComponent>()->top());
             ent2->get<PlayerComponent>()->current_state_ = PlayerState::STANDING;
         } else if (ent2->has<BottomCollisionComponent>() && ent1->has<TopCollisionComponent>()) {
             ent2->get<KineticComponent>()->speedY_ = 0;

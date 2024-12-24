@@ -386,9 +386,20 @@ void TileSystem::manageEscalators(World* world) {
             ComponentHandle<AABBComponent> aabb) {
         if (object->type == Object::Type::ESCALATOR) {
             if (!growComponent->finished()) {
-                aabb->collisionBox_.y +=
-                        growComponent->isGoingUp() ?
-                        -ESCALATOR_GROW_SPEED : ESCALATOR_GROW_SPEED;
+                float deltaY = growComponent->isGoingUp() ? -ESCALATOR_GROW_SPEED : ESCALATOR_GROW_SPEED;
+                aabb->collisionBox_.y += deltaY;
+
+                // Adjust player position if on escalator
+                for (auto player : world->each<PlayerComponent, AABBComponent>()) {
+                    auto playerAABB = player->get<AABBComponent>();
+                    if (playerAABB->collisionBox_.x < aabb->collisionBox_.x + aabb->collisionBox_.width &&
+                        playerAABB->collisionBox_.x + playerAABB->collisionBox_.width > aabb->collisionBox_.x &&
+                        playerAABB->collisionBox_.y < aabb->collisionBox_.y + aabb->collisionBox_.height &&
+                        playerAABB->collisionBox_.y + playerAABB->collisionBox_.height + 5.0> aabb->collisionBox_.y) {
+                            std::cout << "Player on escalator" << std::endl;
+                            playerAABB->collisionBox_.y += deltaY;
+                    }
+                }
             } else {
                 growComponent->escalatorWait();
             }
