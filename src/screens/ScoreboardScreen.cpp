@@ -98,7 +98,7 @@ void ScoreboardScreen::loadScores()
         throw std::runtime_error("Could not open file for reading");
     }
     string line;
-    string defaultName = "NULL";
+    string defaultName = "MARIO";
     // push player names and scores to players vector
     int i = 0;
     while (getline(fileIn, line)) {
