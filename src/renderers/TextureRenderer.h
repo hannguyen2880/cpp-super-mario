@@ -25,8 +25,7 @@ public:
 private:
 
     void renderEntity(ECS::Entity *entity, float d);
-
-    void renderRotationEntity(TextureId textureId, Rectangle destRect, int rotation);
+    
 };
 
 

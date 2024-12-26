@@ -143,13 +143,8 @@ void TextureRenderer::renderEntity(ECS::Entity *entity, float d) {
                 texture->h > 0 ? texture->h : aabb->collisionBox_.height
         };
 
-        if (entity->has<RotationComponent>()) {
-            auto rotationComponent = entity->get<RotationComponent>();
-            rotationComponent->increment();
-            Renderer::renderRotationEntity(texture->textureId_, rect, rotationComponent->getRotation());
-        } else {
-            Renderer::renderEntityTexture(texture->textureId_, rect, texture->flipH, texture->flipV);
-        }
+        Renderer::renderEntityTexture(texture->textureId_, rect, texture->flipH, texture->flipV);
+
     } else {
         Rectangle rect{
                 aabb->left() + texture->offSetX,

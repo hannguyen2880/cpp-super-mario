@@ -48,8 +48,7 @@ private:
     void spawnEntityFromCannon(World *world, Enemy::BulletType type, Rectangle rectangle, bool b);
 
     void manageEscalators(World *world);
-
-    void handlePlayerOnEscalator(World* world);
+ 
 };
 
 

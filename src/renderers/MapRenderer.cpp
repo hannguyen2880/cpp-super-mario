@@ -44,9 +44,6 @@ MapRenderer::MapRenderer(GameMap *map, const char* filepath1)
     texturePositions_.insert({ESCALATOR_3, new Rectangle{48, 16, TILE_SIZE, TILE_SIZE / 2}});
     
     loadTextures();
-
-    std::cout << "MapRenderer created" << std::endl << std::endl;
-    //createCombinedEscalatorTexture();
 }
 
 void MapRenderer::render(ECS::World* world, float delta) {
@@ -56,7 +53,7 @@ void MapRenderer::render(ECS::World* world, float delta) {
 
 void MapRenderer::loadBackgroundTextures() {
     backgroundtextures_[AUTUMN] = LoadTexture(AUTUMN);
-    // backgroundtextures_[LANDSCAPE2] = LoadTexture(LANDSCAPE2.c_str());
+    backgroundtextures_[AUTUMNMIDNIGHT] = LoadTexture(AUTUMNMIDNIGHT);
     // backgroundtextures_[LANDSCAPE3] = LoadTexture(LANDSCAPE3.c_str());
 }
 
@@ -144,40 +141,4 @@ void MapRenderer::renderOtherEntities(ECS::World *pWorld, float d) {
             renderTexture(textureComponent->textureId_, (int) aabb->left(), (int) aabb->top());
         }
     }
-}
-
-Texture2D MapRenderer::createCombinedEscalatorTexture() {
-
-     // Assuming the textures are already loaded and stored in texturePositions_
-    Rectangle* escalator1 = texturePositions_[ESCALATOR_1];
-    Rectangle* escalator2 = texturePositions_[ESCALATOR_2];
-    Rectangle* escalator3 = texturePositions_[ESCALATOR_3];
-
-    // Calculate the width and height of the combined texture
-    int combinedWidth = escalator1->width + escalator2->width + escalator3->width;
-    int combinedHeight = escalator1->height; 
-
-    // Create a render texture to draw the combined texture
-    RenderTexture2D combinedTexture = LoadRenderTexture(combinedWidth, combinedHeight);
-
-    // Start drawing to the render texture
-    BeginTextureMode(combinedTexture);
-    ClearBackground(BLANK);
-
-    // Draw each escalator texture side by side
-    DrawTextureRec(map_.getTexture(ESCALATOR_1), *escalator1, {0, 0}, WHITE);
-    DrawTextureRec(map_.getTexture(ESCALATOR_2), *escalator2, {escalator1->width, 0}, WHITE);
-    DrawTextureRec(map_.getTexture(ESCALATOR_3), *escalator3, {escalator1->width + escalator2->width, 0}, WHITE);
-
-    // End drawing to the render texture
-    EndTextureMode();
-
-    // Create a new Rectangle for the combined texture
-    Rectangle* combinedEscalator = new Rectangle{0, 0, combinedWidth, combinedHeight};
-
-    // Insert the combined texture into the texturePositions_ map
-    texturePositions_.insert({ESCALATOR, combinedEscalator});
-
-    // Return the combined texture
-    return combinedTexture.texture;
 }

@@ -26,6 +26,7 @@ constexpr const char* FIFTH_PLACE = "../assets/imgs/5th.jpg";
 
 //background
 constexpr const char* AUTUMN = "../assets/tilesets/autumn.png";
+constexpr const char* AUTUMNMIDNIGHT = "../assets/tilesets/autumn_midnight.png";
 
 //button
 constexpr const char* BACK_BUTTON = "../assets/imgs/Buttons/BackButton.png";

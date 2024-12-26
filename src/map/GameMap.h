@@ -35,7 +35,7 @@ private:
 
     void setEnemyType(ECS::Entity *ent, std::string type);
 
-    void createPiranhaPlant(ECS::World* world, float spawnX, float spawnY);
+    void createPiranhaPlant(ECS::World* world, float spawnX, float spawnY, bool isHorizontal);
 
     ECS::Entity * createParachute(ECS::Entity* entity);
 
@@ -49,7 +49,6 @@ private:
     int width_;
     bool loaded_;
     unsigned int** graphicsLayer_;
-    //unsigned int** backgroundLayer_;
     unsigned int** decorationLayer_;
     Vector2 spawnPositionP1_;
     Vector2 spawnPositionP2_;
@@ -79,8 +78,6 @@ public:
     void unloadTextures();
 
     unsigned int **getGraphicsLayer() const;
-
-    //unsigned int **getBackgroundLayer() const;
 
     unsigned int **getDecorationLayer() const;
 

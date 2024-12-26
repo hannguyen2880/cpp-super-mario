@@ -11,11 +11,9 @@ GameMap::~GameMap() {
     for (int i = 0; i < width_; i++)
     {
         delete[] graphicsLayer_[i];
-        //delete[] backgroundLayer_[i];
         delete[] decorationLayer_[i];
     }
     delete[] graphicsLayer_;
-    //delete[] backgroundLayer_;
     delete[] decorationLayer_;
 }
 
@@ -30,21 +28,12 @@ void GameMap::loadMap(ECS::World* world) {
             // Load properties
             loadProperties(map.getProperties());
 
-            std::cout << "Map loaded 1 : " << name << std::endl << "\n\n\n";
-
             // Load layers
             std::set<unsigned int> usedTiles = loadLayers(map.getLayers(), world);
 
-            std::cout << "Map loaded 2 : " << name << std::endl << "\n\n\n";
-
-            std::vector<tmx::Tileset> tileset = map.getTilesets();
-            for (const auto& tile : tileset) {
-                std::cout << "Tileset name: " << tile.getName() << std::endl;
-            }
             // Load tileset
             loadMapTiles(const_cast<std::vector<tmx::Tileset> &>(map.getTilesets()), usedTiles);
 
-            std::cout << "Map loaded 3 : " << name << std::endl << "\n\n\n";
         } else {
             throw std::runtime_error("Cannot load map from " + name);
         }
@@ -65,11 +54,9 @@ void GameMap::loadMapBasicInfo(const tmx::Vector2u& orientation) {
     height_ = orientation.y;
 
     graphicsLayer_ = new unsigned int*[width_];
-    //backgroundLayer_ = new unsigned int*[width_];
     decorationLayer_ = new unsigned int*[width_];
     for (int i = 0; i < width_; i++) {
         graphicsLayer_[i] = new unsigned int[height_];
-        //backgroundLayer_[i] = new unsigned int[height_];
         decorationLayer_[i] = new unsigned int[height_];
     }
 }
@@ -115,10 +102,7 @@ std::set<unsigned int> GameMap::loadLayers(const std::vector<tmx::Layer::Ptr>& l
         else if(layer->getType() == tmx::Layer::Type::Tile)
         {
             unsigned int** mapToLoad;
-            /*if (layer->getName() == "background")
-            {
-                mapToLoad = backgroundLayer_;
-            } else*/ if (layer->getName() == "graphics")
+            if (layer->getName() == "graphics")
             {
                 mapToLoad = graphicsLayer_;
             } else if (layer->getName() == "decoration")
@@ -214,10 +198,6 @@ unsigned int **GameMap::getGraphicsLayer() const {
     return graphicsLayer_;
 }
 
-// unsigned int **GameMap::getBackgroundLayer() const {
-//     return backgroundLayer_;
-// }
-
 unsigned int **GameMap::getDecorationLayer() const {
     return decorationLayer_;
 }
@@ -261,6 +241,7 @@ void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<
         float spawn_y_piranha = aabb->top();
         ECS::World* world = ent->getWorld();
         bool hasPiranhaPlant = false;
+        bool horizontal = false;
         for (auto prop : properties) {
             if (prop.getName() == "has_piranha_plant" && prop.getBoolValue()) {
                hasPiranhaPlant = true;
@@ -268,11 +249,14 @@ void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<
                 if (prop.getBoolValue()) {
                     spawn_y_piranha -= GAME_TILE_SIZE;
                 }
-            }
+            } 
         }
         if (hasPiranhaPlant) {
-            createPiranhaPlant(world, aabb->getCenterX(), spawn_y_piranha);
-        }
+            if (horizontal) {
+                createPiranhaPlant(world, aabb->collisionBox_.x, aabb->getCenterY(), true);
+            } else
+            createPiranhaPlant(world, aabb->getCenterX() - GAME_TILE_SIZE / 2, spawn_y_piranha + GAME_TILE_SIZE / 2, false);
+        } 
     } 
     else if (layerName == "bricks") ent->assign<BrickComponent>();
     else if (layerName == "ground") ent->assign<GroundComponent>();
@@ -294,7 +278,6 @@ void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<
         ECS::World* world = ent->getWorld();
         createEscalator(world, ent);
         ent->remove<TileComponent>();
-        //ent->remove<AABBComponent>();
     }
 
     if (layerName == "bricks" || layerName == "question_block") {
@@ -494,20 +477,30 @@ void GameMap::setEnemyType(ECS::Entity *ent, std::string type) {
     }
 }
 
-void GameMap::createPiranhaPlant(ECS::World* world, float spawnX, float spawnY) {
+void GameMap::createPiranhaPlant(ECS::World* world, float spawnX, float spawnY, bool isHorizontal) {
     auto piranhaPlant = world->create();
-    float  height = GAME_TILE_SIZE + GAME_TILE_SIZE / 2;
+    float height = GAME_TILE_SIZE + GAME_TILE_SIZE / 2;
     piranhaPlant->assign<FrozenComponent>();
     piranhaPlant->assign<EnemyComponent>(Enemy::PIRANHA_PLANT);
-    piranhaPlant->assign<AABBComponent>(Rectangle{spawnX - GAME_TILE_SIZE / 2, spawnY + height , GAME_TILE_SIZE, height});
     piranhaPlant->assign<SolidComponent>();
     piranhaPlant->assign<KineticComponent>();
-    piranhaPlant->assign<TextureComponent>(TextureId::PIRANHA_PLANT_1);
-    piranhaPlant->assign<VerticalGrowComponent>(256);
-    piranhaPlant->assign<AnimationComponent>(std::vector<TextureId>{
+    if (isHorizontal) {
+        piranhaPlant->assign<AABBComponent>(Rectangle{spawnX, spawnY, height, GAME_TILE_SIZE});
+        piranhaPlant->assign<HorizontalGrowComponent>(640);
+        piranhaPlant->assign<TextureComponent>(TextureId::PIRANHA_PLANT_1); 
+        piranhaPlant->assign<AnimationComponent>(std::vector<TextureId>{
+            TextureId::PIRANHA_PLANT_1,
+            TextureId::PIRANHA_PLANT_2
+            }, 10); 
+    } else {
+        piranhaPlant->assign<AABBComponent>(Rectangle{spawnX - GAME_TILE_SIZE / 2, spawnY + height, GAME_TILE_SIZE, height});
+        piranhaPlant->assign<VerticalGrowComponent>(256);
+        piranhaPlant->assign<TextureComponent>(TextureId::PIRANHA_PLANT_1);
+        piranhaPlant->assign<AnimationComponent>(std::vector<TextureId>{
         TextureId::PIRANHA_PLANT_1,
         TextureId::PIRANHA_PLANT_2
     }, 10);
+    }
     piranhaPlant->assign<UnderTileComponent>();
 }
 
@@ -601,7 +594,6 @@ ECS::Entity * GameMap::createParachute(ECS::Entity *entity) {
     ECS::World* world = entity->getWorld();
     ECS::Entity* parachute = world->create();
     auto aabb = entity->get<AABBComponent>();
-    //std::cout << aabb->collisionBox_.x << ", " << aabb->getCenterX() << "," << aabb->collisionBox_.y << ", " << aabb->getCenterY() << "," << aabb->collisionBox_.width << ", " << aabb->collisionBox_.height << "\n\n\n";
     parachute->assign<ObjectComponent>(Object::Type::PARACHUTE);
     parachute->assign<ParachuteComponent>(entity);
     parachute->assign<AABBComponent>(Rectangle{
@@ -633,10 +625,9 @@ void GameMap::createEscalator(ECS::World* world, ECS::Entity* entity) {
     escalator->assign<TextureComponent>(TextureId::ESCALATOR_1);
     escalator->assign<SolidComponent>();
     escalator->assign<KineticComponent>();
-    escalator->assign<VerticalGrowComponent>(640); // Ensure correct initialization
+    escalator->assign<VerticalGrowComponent>(640); 
     escalator->assign<UnderTileComponent>();
-    escalator->assign<EscalatorComponent>(ESCALATOR_GROW_SPEED); // Assign EscalatorComponent
+    escalator->assign<EscalatorComponent>(ESCALATOR_GROW_SPEED); 
 
-    std::cout << "Escalator created at position (" << aabb->collisionBox_.x << ", " << aabb->collisionBox_.y << ")\n";
 }
 

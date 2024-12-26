@@ -66,14 +66,6 @@ struct CollisionWithCoinEvent {
     Entity* coin;
 };
 
-struct CollisionWithEscalatorEvent {
-
-    CollisionWithEscalatorEvent(Entity *player, Entity *escalator) : player(player), escalator(escalator) {}
-
-    Entity* player;
-    Entity* escalator;
-};
-
 struct AddScoreEvent {
 
     AddScoreEvent(u_int16_t scoreToAdd, Vector2 position) : scoreToAdd(scoreToAdd), position(position) {}

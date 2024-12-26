@@ -34,7 +34,7 @@ struct AABBComponent {
         });
     }
 
-    [[ nodiscard ]] float right() const { return collisionBox_.x + collisionBox_.width; }
+    float right() const { return collisionBox_.x + collisionBox_.width; }
 
     float left() const { return collisionBox_.x; }
 
@@ -81,6 +81,10 @@ struct AABBComponent {
     float getHeight() { return collisionBox_.height; }
 
     float getWidth() { return collisionBox_.width; }
+
+    Vector2 getCenter() {
+        return Vector2{getCenterX(), getCenterY() - GAME_TILE_SIZE};
+    }
 
     Rectangle collisionBox_;
 };
@@ -272,17 +276,26 @@ private:
 
 struct HorizontalGrowComponent {
 
-    HorizontalGrowComponent() = default;
+    HorizontalGrowComponent(int frames, bool left) : frames_(frames), left_(left), n_(frames) {}
 
-    HorizontalGrowComponent(int frames) : frames_(frames) {}
+    explicit HorizontalGrowComponent(int frames) : frames_(frames), n_(frames) {}
 
-    HorizontalGrowComponent(bool left) : left_(left) {}
+    HorizontalGrowComponent() {
+        n_ = frames_;
+    };
 
-    HorizontalGrowComponent(bool left, int frames) : left_(left), frames_(frames) {}
-
-    [[nodiscard]] bool finished() {
+    bool finished() {
         frames_--;
         return frames_ <= 0;
+    }
+
+    void wait() {
+        waitCounter_++;
+        if (waitCounter_ >= n_) {
+            waitCounter_ = 0;
+            frames_ = n_;
+            left_ = !left_;
+        }
     }
 
     bool isGoingLeft() { return left_; }
@@ -294,6 +307,8 @@ struct HorizontalGrowComponent {
 private:
     bool left_ = true;
     int frames_ = 64;
+    int waitCounter_ = 0;
+    int n_;
 };
 
 namespace Collectible {

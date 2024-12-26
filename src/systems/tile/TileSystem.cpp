@@ -265,7 +265,10 @@ void TileSystem::manageBounceComponents(World *world) {
             bounceComponent->hit = false;
             if (ent->has<QuestionBlockComponent>()) {
                 auto questionComponent = ent->get<QuestionBlockComponent>();
-                if (questionComponent->coin) createCoin(world, ent);
+                if (questionComponent->coin) {
+                    createCoin(world, ent);
+                    world->emit<AddScoreEvent>(AddScoreEvent(100, ent->get<AABBComponent>()->getCenter()));
+                }
                 if (questionComponent->superMarioMushroom) spawnSuperMarioMushroom(world, ent);
                 if (questionComponent->megaMushroom) spawnMegaMushroom(world, ent);
                 if (questionComponent->flameMushroom) spawnFlameMushroom(world, ent);
@@ -396,7 +399,7 @@ void TileSystem::manageEscalators(World* world) {
                         playerAABB->collisionBox_.x + playerAABB->collisionBox_.width > aabb->collisionBox_.x &&
                         playerAABB->collisionBox_.y < aabb->collisionBox_.y + aabb->collisionBox_.height &&
                         playerAABB->collisionBox_.y + playerAABB->collisionBox_.height + 5.0> aabb->collisionBox_.y) {
-                            std::cout << "Player on escalator" << std::endl;
+                            //std::cout << "Player on escalator" << std::endl;
                             playerAABB->collisionBox_.y += deltaY;
                     }
                 }

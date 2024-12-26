@@ -239,6 +239,21 @@ void EnemySystem::managePiranhaPlants(World* world) {
             }
         }
     });
+
+    world->each<EnemyComponent, HorizontalGrowComponent>([&](
+            Entity* entity,
+            ComponentHandle<EnemyComponent> enemy,
+            ComponentHandle<HorizontalGrowComponent> growComponent) {
+        if (enemy->type_ == Enemy::PIRANHA_PLANT) {
+            if (!growComponent->finished()) {
+                entity->get<AABBComponent>()->collisionBox_.x +=
+                        growComponent->isGoingLeft() ?
+                        -MUSHROOM_GROW_SPEED : MUSHROOM_GROW_SPEED;
+            } else {
+                growComponent->wait();
+            }
+        }
+    });
 }
 
 void EnemySystem::manageTartossos(World *world) {
