@@ -528,7 +528,9 @@ void PlayerSystem::movePlayer(Entity *player) {
                 kinetic->accY_ = 0;
                 if (player->has<BottomCollisionComponent>()) {
                     playerState = PlayerState::STANDING;
+                    //std::cout << "STANDING" << std::endl;
                 } else {
+                    //std::cout << "JUMPING" << std::endl;
                     playerState = PlayerState::JUMPING;
                 }
                 break;

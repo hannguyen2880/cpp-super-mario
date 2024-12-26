@@ -8,17 +8,18 @@
 
 class GameplayScreen : public Screen {
 private:
-    //GameManager gameManager;
+    std::unique_ptr<GameManager> gameManager;
     GameDifficulty currentDifficulty;
     GameplayMode currentMode;
     Character currentCharacter;
     bool isPaused;
-    ImageButton homeButton, pauseButton;
+    int background;
+    ImageButton homeButton;
     void CreateGameManager();
 
 public:
     GameplayScreen();
-    ~GameplayScreen();
+    virtual ~GameplayScreen();
     void Init() override;
     void Update() override;
     void Draw() override;

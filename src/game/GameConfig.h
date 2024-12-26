@@ -17,8 +17,7 @@ public:
 
     void setCharacter(Character character) { this->character = character; }
     Character getCharacter() const { return character; }
-    ~GameConfig() = default;
-    
+
 private:
     GameConfig() = default;
     GameDifficulty difficulty;

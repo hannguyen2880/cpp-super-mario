@@ -1,11 +1,11 @@
 #include "SoundSystem.h"
 
 SoundSystem::SoundSystem() {
-    audioManager_ = std::make_unique<AudioManager>();
+    audioManager_ = new AudioManager();
 }
 
 SoundSystem::~SoundSystem() {
-    //delete audioManager_;
+    delete audioManager_;
 }
 
 void SoundSystem::configure(World *world) {

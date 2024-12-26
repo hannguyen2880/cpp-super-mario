@@ -1,3 +1,37 @@
+/**
+ * @startuml
+ * class EntitySystem {
+ *     + void configure(World *world) <<abstract>>
+ *     + void unconfigure(World *world) <<abstract>>
+ *     + void tick(World *world, ECS::DefaultTickData data) <<abstract>>
+ * }
+ * 
+ * class EventSubscriber {
+ *     + void receive(World *world, const Event &event) <<abstract>>
+ * }
+ * 
+ * class SoundEvent {
+ * }
+ * 
+ * class SetMusicEvent {
+ * }
+ * 
+ * class SoundSystem extends EntitySystem {
+ *     + SoundSystem()
+ *     + ~SoundSystem()
+ *     + void configure(World *world) <<override>>
+ *     + void unconfigure(World *world) <<override>>
+ *     + void tick(World *world, ECS::DefaultTickData data) <<override>>
+ *     + void receive(World *world, const SoundEvent &event) <<override>>
+ *     + void receive(World *world, const SetMusicEvent &event) <<override>>
+ * }
+ * 
+ * SoundSystem "1" *-- "1" ECS::Entity
+ * SoundSystem <|.. EventSubscriber : implements
+ * EventSubscriber <|.. SoundEvent
+ * EventSubscriber <|.. SetMusicEvent
+ * @enduml
+ */
 #ifndef MARIO_MAKER_SOUNDSYSTEM_H
 #define MARIO_MAKER_SOUNDSYSTEM_H
 #include "ECS.h"
@@ -29,7 +63,7 @@ public:
     Music getCurrentMusic();
 
 private:
-    std::unique_ptr<AudioManager> audioManager_;
+    AudioManager* audioManager_;
 };
 
 

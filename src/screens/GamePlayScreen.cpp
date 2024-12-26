@@ -1,4 +1,4 @@
-#include "GameplayScreen.h"
+#include "GamePlayScreen.h"
 #include "../game/Game.h"
 #include "../game/GameConfig.h"
 #include "../game/GameManager.h"
@@ -9,8 +9,7 @@ GameplayScreen::GameplayScreen()
       currentMode(GameConfig::getInstance().getGameplayMode()),
       currentCharacter(GameConfig::getInstance().getCharacter()),
       isPaused(false),
-      homeButton(HOME_BUTTON, 0, 45),
-      pauseButton(PAUSE_BUTTON, 50, 45) {}
+      homeButton(HOME_BUTTON, 0, 45) {}
 
 void GameplayScreen::Init() {
     CreateGameManager();
@@ -18,42 +17,73 @@ void GameplayScreen::Init() {
 }
 
 void GameplayScreen::CreateGameManager() {
-}
+    if (gameManager) {
+        std::cout << "WARNING: Creating new GameManager while old one exists" << std::endl;
+        gameManager->cleanup();
+        gameManager.reset();
+    }
 
-void GameplayScreen::Update() {
     bool secondPlayer = (currentMode == GameplayMode::MULTI_PLAYER);
     std::string mapFilePath;
+    
     switch (currentDifficulty) {
         case GameDifficulty::EASY:
             mapFilePath = EASY_MAP;
+            background = 1;
             break;
         case GameDifficulty::MEDIUM:
             mapFilePath = MEDIUM_MAP;
+            background = 2;
             break;
         case GameDifficulty::HARD:
             mapFilePath = HARD_MAP;
+            background = 3;
             break;
     }
-    GameManager gameManager(mapFilePath.c_str(), SCREEN_WIDTH, SCREEN_HEIGHT, secondPlayer);
-    gameManager.mainLoop();
+    
+    gameManager = std::make_unique<GameManager>(
+        mapFilePath.c_str(), 
+        SCREEN_WIDTH, 
+        SCREEN_HEIGHT, 
+        secondPlayer,
+        background
+    );
+    gameManager->Init();
+}
 
+void GameplayScreen::Update() {
+    if (gameManager) {
+        if (gameManager->NeedsRestart()) {
+            // Cleanup old game manager
+            gameManager->cleanup();
+            gameManager.reset();
+            
+            // Create new game manager
+            CreateGameManager();
+            gameManager->Init();
+        } else {
+            gameManager->Update();
+        }
+    }
     if (homeButton.Update()) {
         Game::SetState(std::make_unique<MainMenuState>());
-        return;
-    }
-    if (pauseButton.Update()) {
-        //isPaused = !isPaused;
-        return;
     }
 }
 
 void GameplayScreen::Draw() {
+    if (gameManager) {
+        gameManager->Draw();
+    }
     homeButton.Draw();
-    pauseButton.Draw();
 }
 
 void GameplayScreen::Unload() {
+    if (gameManager) {
+        gameManager->cleanup();
+        gameManager.reset();
+    }
 }
 
 GameplayScreen::~GameplayScreen() {
+    Unload();
 }

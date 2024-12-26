@@ -2,7 +2,7 @@
 #include "../../screens/MenuScreen.h"
 
 MainMenuState::~MainMenuState() {
-    Unload();
+    delete mainMenuScreen;
 }
 
 void MainMenuState::Init() {
@@ -19,9 +19,7 @@ void MainMenuState::Draw() {
 }
 
 void MainMenuState::Unload() {
-    if (mainMenuScreen) {
-        mainMenuScreen->Unload();
-        delete mainMenuScreen;
-        mainMenuScreen = nullptr;
-    }
+    mainMenuScreen->Unload();
+    delete mainMenuScreen;
+    mainMenuScreen = nullptr;
 }

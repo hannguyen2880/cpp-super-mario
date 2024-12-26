@@ -1,3 +1,38 @@
+/**
+ * @startuml
+ * enum TextureId {
+ *     EMPTY
+ *     MARIO_STAND
+ *     MARIO_RUN_1
+ *     MARIO_RUN_2
+ *     MARIO_RUN_3
+ *     MARIO_JUMP
+ *     MARIO_DRIFT
+ *     MARIO_DEAD
+ *     MARIO_SIT_1
+ *     MARIO_SIT_2
+ *     MARIO_DUCK
+ *     MARIO_GREET
+ *     MARIO_GROWING
+ *     SUPER_MARIO_STAND
+ *     SUPER_MARIO_RUN_1
+ *     SUPER_MARIO_RUN_2
+ *     SUPER_MARIO_RUN_3
+ *     SUPER_MARIO_JUMP
+ *     SUPER_MARIO_DRIFT
+ *     SUPER_MARIO_DUCK
+ *     SUPER_MARIO_SIT_2
+ *     MARIO_FLAME_STAND
+ *     MARIO_FLAME_RUN_1
+ *     MARIO_FLAME_RUN_2
+ *     MARIO_FLAME_RUN_3
+ *     MARIO_FLAME_JUMP
+ *     MARIO_FLAME_DRIFT
+ *     MARIO_FLAME_DUCK
+ * }
+ * @enduml
+ */
+
 #pragma once
 
 enum TextureId {
@@ -112,9 +147,18 @@ enum TextureId {
     G_TURLE_SHELL_MOVE_2,
     G_TURLE_SHELL_MOVE_3,
     G_TURLE_SHELL_MOVE_4,
+    RED_TURTLE_1,
+    RED_TURTLE_2,
     R_TURLE_SHELL_STAND_1,
+    R_TURLE_SHELL_STAND_2,
+    R_TURLE_SHELL_MOVE_1,
+    R_TURLE_SHELL_MOVE_2,
+    R_TURLE_SHELL_MOVE_3,
+    R_TURLE_SHELL_MOVE_4,
     PIRANHA_PLANT_1,
     PIRANHA_PLANT_2,
+    PIRANHA_PLANT_3,
+    PIRANHA_PLANT_4,
     TARTOSSO_1,
     TARTOSSO_2,
     TARTOSSO_D_1,
@@ -136,6 +180,10 @@ enum TextureId {
     PARACHUTE,
     WINGS_UP,
     WINGS_DOWN,
+    ESCALATOR_1,
+    ESCALATOR_2,
+    ESCALATOR_3,
+    ESCALATOR,
     COIN_10_1,
     COIN_10_2,
     COIN_10_3,

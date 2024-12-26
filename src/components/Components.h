@@ -1,3 +1,419 @@
+/**
+ * @startuml
+ * class AABBComponent {
+ *     +AABBComponent(Rectangle box)
+ *     +AABBComponent operator+(const Vector2 &offset)
+ *     +float right() const
+ *     +float left() const
+ *     +float top() const
+ *     +float bottom() const
+ *     +float getCenterX() const
+ *     +float getCenterY() const
+ *     +void setBottom(float value)
+ *     +void setTop(float value)
+ *     +void setLeft(float value)
+ *     +void setRight(float value)
+ *     +void setCenterX(float value)
+ *     +void setWidth(float value)
+ *     +void setHeight(float value)
+ *     +float getHeight()
+ *     +float getWidth()
+ *     +Rectangle collisionBox_
+ * }
+ * 
+ * class KineticComponent {
+ *     +KineticComponent()
+ *     +KineticComponent(float speedX, float speedY, float accX = 0.0, float accY = 0.0)
+ *     +float speedX_
+ *     +float speedY_
+ *     +float accX_
+ *     +float accY_
+ * }
+ * 
+ * class WalkComponent {
+ *     +WalkComponent()
+ *     +WalkComponent(float speed)
+ *     +void invertSpeed()
+ *     +float speed
+ * }
+ * 
+ * class BrickComponent {}
+ * class SquareBrick {}
+ * class PipeComponent {}
+ * 
+ * class QuestionBlockComponent {
+ *     +QuestionBlockComponent()
+ *     +bool coin
+ *     +bool superMarioMushroom
+ *     +bool megaMushroom
+ *     +bool flameMushroom
+ *     +bool oneUpMushroom
+ * }
+ * 
+ * class GroundComponent {}
+ * 
+ * enum PlayerState {
+ *     STANDING
+ *     JUMPING
+ *     RUNNING
+ *     DRIFTING
+ *     DUCKING
+ *     INVINCIBLE
+ *     SHOOTING
+ *     SIT
+ *     GREET
+ * }
+ * 
+ * class PlayerComponent {
+ *     +PlayerComponent()
+ *     +PlayerState current_state_
+ *     +bool sprint
+ *     +bool canShoot
+ *     +bool sit
+ *     +bool greet
+ *     +int left
+ *     +int right
+ * }
+ * 
+ * class DeadComponent {}
+ * class MarioComponent {}
+ * class LuigiComponent {}
+ * class SuperComponent {}
+ * class MegaComponent {}
+ * class SuperFlameComponent {}
+ * 
+ * class FireBulletComponent {
+ *     +FireBulletComponent(float upperBound)
+ *     +void setUpperBound(float newUpperBound)
+ *     +float upperBound_
+ * }
+ * 
+ * class GravityComponent {}
+ * class SolidComponent {}
+ * class FrozenComponent {}
+ * class BottomCollisionComponent {}
+ * class TopCollisionComponent {}
+ * class RightCollisionComponent {}
+ * class LeftCollisionComponent {}
+ * 
+ * class BounceComponent {
+ *     +int getHeight()
+ *     +bool finished() const
+ *     +void reset()
+ *     +bool hit
+ *     +int frames
+ *     +int height[13]
+ * }
+ * 
+ * class BreakableComponent {}
+ * class BouncingComponent {}
+ * 
+ * class VerticalGrowComponent {
+ *     +VerticalGrowComponent(int frames, bool up)
+ *     +explicit VerticalGrowComponent(int frames)
+ *     +VerticalGrowComponent()
+ *     +bool finished()
+ *     +void wait()
+ *     +bool isGoingUp()
+ *     +bool up_
+ *     +int frames_
+ *     +int n_
+ *     +int waitCounter_
+ * }
+ * 
+ * class HorizontalGrowComponent {
+ *     +HorizontalGrowComponent()
+ *     +HorizontalGrowComponent(int frames)
+ *     +HorizontalGrowComponent(bool left)
+ *     +HorizontalGrowComponent(bool left, int frames)
+ *     +bool finished()
+ *     +bool isGoingLeft()
+ *     +void goRight()
+ *     +void goLeft()
+ *     +bool left_
+ *     +int frames_
+ * }
+ * 
+ * namespace Collectible {
+ *     enum Type {
+ *         NONE
+ *         SUPER_MARIO_MUSHROOM
+ *         MEGA_MUSHROOM
+ *         FLAME_MUSHROOM
+ *         ONE_UP_MUSHROOM
+ *     }
+ * }
+ * 
+ * class CollectibleComponent {
+ *     +CollectibleComponent(Collectible::Type type)
+ *     +Collectible::Type type
+ * }
+ * 
+ * class AnimationComponent {
+ *     +explicit AnimationComponent(std::vector<TextureId> textures, int duration, bool flipH = false, bool flipV = false, bool loop = true)
+ *     +int duration
+ *     +int counter
+ *     +bool flipH
+ *     +bool flipV
+ *     +bool loop
+ *     +int8_t currentTexture
+ *     +std::vector<TextureId> textures
+ * }
+ * 
+ * class TileTexture_ {
+ *     +Texture2D texture
+ *     +int8_t id
+ * }
+ * 
+ * class TileComponent {}
+ * 
+ * namespace Object {
+ *     enum Type {
+ *         FINAL_FLAG_POLE
+ *         FINAL_FLAG
+ *         PARACHUTE
+ *         COIN_10
+ *         COIN_30
+ *         COIN_50
+ *         COIN
+ *     }
+ * 
+ *     enum PoleDir {
+ *         LEFT
+ *         RIGHT
+ *     }
+ * }
+ * 
+ * class ObjectComponent {
+ *     +ObjectComponent(Object::Type type)
+ *     +Object::Type type
+ * }
+ * 
+ * class PoleComponent {
+ *     +PoleComponent(Object::PoleDir poleDir)
+ *     +Object::PoleDir poleDir
+ * }
+ * 
+ * class WinnerFlagComponent {}
+ * 
+ * class ParachuteComponent {
+ *     +ParachuteComponent(ECS::Entity *associatedEntity)
+ *     +ECS::Entity* associatedEntity
+ * }
+ * 
+ * class TextureComponent {
+ *     +explicit TextureComponent(TextureId textureId)
+ *     +TextureComponent(TextureId textureId, bool flipH)
+ *     +~TextureComponent()
+ *     +void setDimensions(int newW, int newH)
+ *     +TextureId textureId_
+ *     +bool flipH
+ *     +bool flipV
+ *     +float offSetX
+ *     +float offSetY
+ *     +int w
+ *     +int h
+ * }
+ * 
+ * class RotationComponent {
+ *     +RotationComponent()
+ *     +RotationComponent(int duration)
+ *     +void increment()
+ *     +void increment(int times)
+ *     +int getRotation()
+ *     +int duration
+ *     +int rotation_
+ * }
+ * 
+ * class LeadCameraComponent {}
+ * 
+ * enum Command {
+ *     NONE_COMMAND
+ *     JUMP
+ *     MOVE_LEFT
+ *     MOVE_RIGHT
+ *     DUCK
+ *     SPRINT
+ *     SPECIAL
+ *     SHOOT
+ * }
+ * 
+ * class CommandComponent {
+ *     +CommandComponent(std::map<Command, int> commandsTable)
+ *     +void setNullCommand()
+ *     +void setCurrentCommand(int key)
+ *     +void createKeyCommandTable()
+ *     +void unsetCurrentCommand(int key)
+ *     +void setNewKey(Command command, int newKey)
+ *     +std::map<Command, int> commandsKeyTable_
+ *     +std::map<int, Command> keyCommandTable_
+ *     +Command currentCommand_
+ *     +bool enable
+ * }
+ * 
+ * class CameraComponent {
+ *     +CameraComponent(Vector2 target, Vector2 offset, float rotation, float zoom)
+ *     +Camera2D camera
+ * }
+ * 
+ * class IdsMapComponent {
+ *     +explicit IdsMapComponent(int width, int height)
+ *     +int get(int x, int y)
+ *     +void set(size_t entId, int x, int y)
+ *     +void clear()
+ *     +unsigned int width_
+ *     +unsigned int height_
+ *     +std::vector<int> idsMatrix_
+ * }
+ * 
+ * class SpacialHashMapComponent {
+ *     +explicit SpacialHashMapComponent(unsigned int width, unsigned int height)
+ *     +std::unordered_set<int> get(int x, int y)
+ *     +void set(unsigned int x, unsigned int y, int entId)
+ *     +void clear()
+ *     +unsigned int width_
+ *     +unsigned int height_
+ *     +std::map<int, std::unordered_set<int>> spacialHashmap_
+ * }
+ * 
+ * class StaticEntitiesMapComponent {}
+ * class KineticEntitiesMapComponent {}
+ * 
+ * class TimerComponent {
+ *     +TimerComponent(std::function<void(void)> callback, int time)
+ *     +int time
+ *     +std::function<void(void)> callback
+ * }
+ * 
+ * namespace Enemy {
+ *     enum Type {
+ *         NONE
+ *         GOOMBA
+ *         GOOMBRAT
+ *         KOOPA_TROOPA
+ *         RED_KOOPA_TROOPA
+ *         GREEN_TURTLE_SHELL
+ *         RED_TURTLE_SHELL
+ *         PIRANHA_PLANT
+ *         TARTOSSO
+ *         THWOMP_V
+ *         THWOMP_H
+ *         BULLET_BILL
+ *         CANNON
+ *     }
+ * 
+ *     enum TartossoState {
+ *         LIVE
+ *         DEAD
+ *         TRANSFORMING
+ *     }
+ * 
+ *     enum ThwompState {
+ *         RESTING
+ *         MOVING_TOWARDS
+ *         GOING_BACK
+ *         WAITING
+ *     }
+ * 
+ *     enum BulletType {
+ *         NO_BULLET
+ *         B_BULLET_BILL
+ *         R_BULLET_BILL
+ *         BLUE_BULLET_BILL
+ *         SUPER_MUSHROOM
+ *         ONE_UP_MUSHROOM
+ *         B_GOOMBA
+ *     }
+ * }
+ * 
+ * class EnemyComponent {
+ *     +EnemyComponent(Enemy::Type type)
+ *     +Enemy::Type type_
+ *     +bool hasParachute
+ *     +bool isBig
+ *     +bool hasWings
+ * }
+ * 
+ * class ThwompComponent {
+ *     +ThwompComponent()
+ *     +void setInitialPos(float value)
+ *     +void setHorizontal()
+ *     +void setRight()
+ *     +Enemy::ThwompState state
+ *     +float initialPos
+ *     +bool isVertical
+ *     +bool left
+ * }
+ * 
+ * class TartossoComponent {
+ *     +TartossoComponent()
+ *     +TartossoComponent(Enemy::TartossoState tartossoState)
+ *     +bool dead()
+ *     +bool isTransforming()
+ *     +float prevVelocity
+ *     +Enemy::TartossoState tartossoState
+ *     +int counter
+ *     +int n
+ * }
+ * 
+ * class TurtleShellComponent {
+ *     +TurtleShellComponent()
+ *     +TurtleShellComponent(bool isMoving)
+ *     +bool isMoving_
+ * }
+ * 
+ * class UnderTileComponent {}
+ * class OverTileComponent {}
+ * 
+ * class CannonComponent {
+ *     +CannonComponent()
+ *     +CannonComponent(Enemy::BulletType type)
+ *     +CannonComponent(Enemy::BulletType type, int n)
+ *     +Enemy::BulletType getType() const
+ *     +void setType(Enemy::BulletType type)
+ *     +bool canShoot()
+ *     +Enemy::BulletType type_
+ *     +int shootTimer_
+ *     +int n_
+ * }
+ * 
+ * class DestroyDelayedComponent {
+ *     +DestroyDelayedComponent(int timer)
+ *     +bool shouldDestroy()
+ *     +int timer_
+ * }
+ * 
+ * namespace Text {
+ *     enum Type {
+ *         COIN_COUNTER
+ *         SCORE_COUNTER
+ *         TIMER
+ *     }
+ * }
+ * 
+ * class TextComponent {
+ *     +TextComponent(Text::Type type, Vector2 position, u_int16_t initValue)
+ *     +void setValue(u_int16_t value)
+ *     +void incrementValueBy(u_int16_t incr)
+ *     +void decreseValueBy(u_int16_t decr)
+ *     +u_int16_t getValue() const
+ *     +Text::Type type
+ *     +Vector2 position
+ *     +u_int16_t value_
+ * }
+ * 
+ * class GameTextComponent {
+ *     +GameTextComponent(const Vector2 &position, std::string text)
+ *     +bool destroy()
+ *     +void setTimeToLive(int timeToLive)
+ *     +int timeToLive
+ *     +Vector2 position
+ *     +std::string text
+ * }
+ * @enduml
+ */
+
+
 #pragma once
 
 #include <cstdio>
@@ -34,7 +450,7 @@ struct AABBComponent {
         });
     }
 
-    [[ nodiscard ]] float right() const { return collisionBox_.x + collisionBox_.width; }
+    float right() const { return collisionBox_.x + collisionBox_.width; }
 
     float left() const { return collisionBox_.x; }
 
@@ -81,6 +497,10 @@ struct AABBComponent {
     float getHeight() { return collisionBox_.height; }
 
     float getWidth() { return collisionBox_.width; }
+
+    Vector2 getCenter() {
+        return Vector2{getCenterX(), getCenterY() - GAME_TILE_SIZE};
+    }
 
     Rectangle collisionBox_;
 };
@@ -154,6 +574,7 @@ struct PlayerComponent {
     };
 
     PlayerState current_state_;
+    bool onEscalator = false;
     bool sprint = false;
     bool canShoot = true;
     bool sit = false;
@@ -238,7 +659,7 @@ struct VerticalGrowComponent {
         n_ = frames_;
     };
 
-    [[nodiscard]] bool finished() {
+    bool finished() {
         frames_--;
         return frames_ <= 0;
     }
@@ -252,8 +673,16 @@ struct VerticalGrowComponent {
         }
     }
 
-    bool isGoingUp() { return up_; }
+    void escalatorWait() {
+        waitCounter_++;
+        if (waitCounter_ >= 20) {
+            waitCounter_ = 0;
+            frames_ = n_;
+            up_ = !up_;
+        }
+    }
 
+    bool isGoingUp() { return up_; }
 private:
     bool up_ = true;
     int frames_ = 64;
@@ -263,17 +692,26 @@ private:
 
 struct HorizontalGrowComponent {
 
-    HorizontalGrowComponent() = default;
+    HorizontalGrowComponent(int frames, bool left) : frames_(frames), left_(left), n_(frames) {}
 
-    HorizontalGrowComponent(int frames) : frames_(frames) {}
+    explicit HorizontalGrowComponent(int frames) : frames_(frames), n_(frames) {}
 
-    HorizontalGrowComponent(bool left) : left_(left) {}
+    HorizontalGrowComponent() {
+        n_ = frames_;
+    };
 
-    HorizontalGrowComponent(bool left, int frames) : left_(left), frames_(frames) {}
-
-    [[nodiscard]] bool finished() {
+    bool finished() {
         frames_--;
         return frames_ <= 0;
+    }
+
+    void wait() {
+        waitCounter_++;
+        if (waitCounter_ >= n_) {
+            waitCounter_ = 0;
+            frames_ = n_;
+            left_ = !left_;
+        }
     }
 
     bool isGoingLeft() { return left_; }
@@ -285,6 +723,8 @@ struct HorizontalGrowComponent {
 private:
     bool left_ = true;
     int frames_ = 64;
+    int waitCounter_ = 0;
+    int n_;
 };
 
 namespace Collectible {
@@ -345,12 +785,18 @@ namespace Object {
         COIN_10,
         COIN_30,
         COIN_50,
-        COIN
+        COIN,
+        ESCALATOR
     };
 
     enum PoleDir {
         LEFT,
         RIGHT
+    };
+
+    enum EscalatorDir {
+        UP,
+        DOWN
     };
 }
 
@@ -578,6 +1024,11 @@ public:
     std::map<int, std::unordered_set<int>> spacialHashmap_;
 };
 
+struct EscalatorComponent {
+    float speed;
+    EscalatorComponent(float speed) : speed(speed) {}
+};
+
 struct StaticEntitiesMapComponent {};
 
 struct KineticEntitiesMapComponent {};
@@ -671,7 +1122,7 @@ struct TartossoComponent {
 
     TartossoComponent(Enemy::TartossoState tartossoState) : tartossoState(tartossoState) {}
 
-    [[nodiscard]] bool dead() {
+    bool dead() {
         counter++;
         if (counter > n) {
             counter = 0;
@@ -681,7 +1132,7 @@ struct TartossoComponent {
         return true;
     }
 
-    [[nodiscard]] bool isTransforming() {
+    bool isTransforming() {
         counter++;
         if (counter > n / 9) {
             counter = 0;
@@ -727,7 +1178,7 @@ struct CannonComponent {
         type_ = type;
     }
 
-    [[nodiscard]] bool canShoot() {
+    bool canShoot() {
         shootTimer_++;
         if (shootTimer_ > n_) {
             shootTimer_ = 0;

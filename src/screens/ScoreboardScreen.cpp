@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../game/State/MainMenuState.h"
 
+
 ScoreboardScreen::ScoreboardScreen() : backButton(ImageButton(BACK_BUTTON, 570, 17))
 {
     frame_positionX_1st = 204;
@@ -49,13 +50,11 @@ void ScoreboardScreen::Init() {
     for(int i = 0; i < 5; i++){
         players.push_back(make_pair(defaultName, defaultScore));
     }
-
 }
 
 void ScoreboardScreen::Update() {
     if (backButton.Update()) {
         Game::SetState(std::make_unique<MainMenuState>());
-        return;
     }
 
 }

@@ -1,6 +1,5 @@
 #include "BeforeGameState.h"
 #include "../../screens/BeforeGameScreen.h"
-#include <iostream>
 
 void BeforeGameState::Init() {
     beforeGameScreen = new BeforeGameScreen();
@@ -16,13 +15,11 @@ void BeforeGameState::Draw() {
 }
 
 void BeforeGameState::Unload() {
-    if (beforeGameScreen) {
-        beforeGameScreen->Unload();
-        delete beforeGameScreen;
-        beforeGameScreen = nullptr;
-    }
+    beforeGameScreen->Unload();
+    delete beforeGameScreen;
+    beforeGameScreen = nullptr;
 }
 
 BeforeGameState::~BeforeGameState() {
-    Unload();
+    delete beforeGameScreen;
 }

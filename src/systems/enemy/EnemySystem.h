@@ -1,3 +1,18 @@
+/**
+ * @startuml
+ * class EnemySystem {
+ *     +EnemySystem()
+ *     +void tick(World* world, float delta) <<override>>
+ *     +void configure(World* world) <<override>>
+ *     +void unconfigure(World* world) <<override>>
+ *     +void receive(World* world, const KillEnemyEvent& killEnemyEvent) <<override>>
+ *     +void receive(World* world, const EnemyCollectableCollisionEvent& event) <<override>>
+ *     +virtual ~EnemySystem()
+ *     -void manageEnemyEntities(World* world)
+ * }
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_ENEMYSYSTEM_H
 #define MARIO_MAKER_ENEMYSYSTEM_H
 #include "ECS.h"

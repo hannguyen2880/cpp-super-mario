@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Screen.h"
 #include <string>
 #include "../ui/Button.h"
@@ -11,6 +12,7 @@
 
 class ScoreboardScreen : public Screen {
 private:
+
     Texture2D background;
     std::vector<Texture2D> placeTextures;
     ImageButton backButton;

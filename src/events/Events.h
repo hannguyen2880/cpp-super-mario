@@ -1,3 +1,66 @@
+/**
+ * @startuml
+ * class EnemyCollisionEvent {
+ *     +EnemyCollisionEvent(Entity* player, Entity* enemy)
+ *     +Entity* player
+ *     +Entity* enemy
+ * }
+ * 
+ * class PlayerCollectableCollisionEvent {
+ *     +PlayerCollectableCollisionEvent(Entity *collectable, Entity *player)
+ *     +Entity* collectable
+ *     +Entity* player
+ * }
+ * 
+ * class EnemyCollectableCollisionEvent {
+ *     +EnemyCollectableCollisionEvent(Entity *collectable, Entity *enemy)
+ *     +Entity* collectable
+ *     +Entity* enemy
+ * }
+ * 
+ * class BreakEvent {
+ *     +float x
+ *     +float y
+ * }
+ * 
+ * class KillEnemyEvent {
+ *     +explicit KillEnemyEvent(Entity* enemy)
+ *     +KillEnemyEvent(Entity *enemy, bool killedByFireball)
+ *     +Entity* enemy
+ *     +bool killedByFireball
+ * }
+ * 
+ * class CollisionWithFinalPoleEvent {
+ *     +CollisionWithFinalPoleEvent(Entity *player, Entity* pole)
+ *     +Entity* player
+ *     +Entity* pole
+ * }
+ * 
+ * class CollisionWithCoinEvent {
+ *     +CollisionWithCoinEvent(Entity *player, Entity *coin)
+ *     +Entity* player
+ *     +Entity* coin
+ * }
+ * 
+ * class AddScoreEvent {
+ *     +AddScoreEvent(u_int16_t scoreToAdd, Vector2 position)
+ *     +AddScoreEvent(u_int16_t scoreToAdd, const Vector2 &position, bool oneUpEvent)
+ *     +u_int16_t scoreToAdd
+ *     +Vector2 position
+ *     +bool oneUpEvent
+ * }
+ * 
+ * class SoundEvent {
+ *     +SoundEvent(SoundId soundId)
+ *     +SoundId soundId
+ * }
+ * 
+ * class SetMusicEvent {
+ *     +SetMusicEvent(MusicId musicId)
+ *     +MusicId musicId
+ * }
+ * @enduml
+ */
 #pragma once
 
 #include <raylib.h>

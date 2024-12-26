@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManager.cpp" "CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/audio/AudioManager.cpp.o.d"
+  "/Users/hannguyen/Desktop/cpp-super-mario/src/audio/AudioManaer.cpp" "CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/audio/AudioManaer.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/Game.cpp" "CMakeFiles/super-mario.dir/src/game/Game.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/Game.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/GameConfig.cpp" "CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/GameConfig.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/GameManager.cpp" "CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/GameManager.cpp.o.d"
@@ -18,11 +18,14 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/State/MainMenuState.cpp" "CMakeFiles/super-mario.dir/src/game/State/MainMenuState.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/State/MainMenuState.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/State/PauseState.cpp" "CMakeFiles/super-mario.dir/src/game/State/PauseState.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/State/PauseState.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/game/State/ScoreboardState.cpp" "CMakeFiles/super-mario.dir/src/game/State/ScoreboardState.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/State/ScoreboardState.cpp.o.d"
+  "/Users/hannguyen/Desktop/cpp-super-mario/src/game/WorldBuilder.cpp" "CMakeFiles/super-mario.dir/src/game/WorldBuilder.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/game/WorldBuilder.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/main.cpp" "CMakeFiles/super-mario.dir/src/main.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/main.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/map/GameMap.cpp" "CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/map/GameMap.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/EnemiesRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/EnemiesRenderer.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/MapRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/MapRenderer.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/ObjectRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.o.d"
+  "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/Renderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/Renderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/Renderer.cpp.o.d"
+  "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/RendererFactory.cpp" "CMakeFiles/super-mario.dir/src/renderers/RendererFactory.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/RendererFactory.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/TextRenderer.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/renderers/TextureRenderer.cpp" "CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/renderers/TextureRenderer.cpp.o.d"
   "/Users/hannguyen/Desktop/cpp-super-mario/src/screens/BeforeGameScreen.cpp" "CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o" "gcc" "CMakeFiles/super-mario.dir/src/screens/BeforeGameScreen.cpp.o.d"
