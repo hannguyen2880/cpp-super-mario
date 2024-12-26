@@ -524,13 +524,16 @@ void PlayerSystem::movePlayer(Entity *player) {
 
     if (commandComponent->enable) {
         switch (command) {
-            case NONE_COMMAND:
-                kinetic->accX_ = 0;
-                kinetic->accY_ = 0;
-                if (player->has<BottomCollisionComponent>()) {
-                    playerState = PlayerState::STANDING;
-                } else {
-                    playerState = PlayerState::JUMPING;
+                case SHOOT:
+                if (player->has<SuperFlameComponent>() && playerComponent->canShoot) {
+                    auto world = player->getWorld();
+                    createFireBullet(world, player);
+                    playerComponent->canShoot = false;
+                    playerState = PlayerState::SHOOTING;
+                    world->emit<SoundEvent>(SoundEvent(SoundId::FIREBALL));
+                    player->assign<TimerComponent>([player]() {
+                        player->get<PlayerComponent>()->canShoot = true;
+                    }, 40);
                 }
                 break;
             case JUMP:
@@ -559,6 +562,15 @@ void PlayerSystem::movePlayer(Entity *player) {
                     playerState = PlayerState::JUMPING;
                 }
                 break;
+                            case NONE_COMMAND:
+                kinetic->accX_ = 0;
+                kinetic->accY_ = 0;
+                if (player->has<BottomCollisionComponent>()) {
+                    playerState = PlayerState::STANDING;
+                } else {
+                    playerState = PlayerState::JUMPING;
+                }
+                break;
             case MOVE_LEFT:
                 kinetic->accX_ = (float) -1 * (MARIO_ACCELERATION_X) * 1.7f;
                 if (playerComponent->sprint) kinetic->accX_ *= 1.5;
@@ -578,18 +590,6 @@ void PlayerSystem::movePlayer(Entity *player) {
             case DUCK:
                 kinetic->accX_ = 0.0f;
                 playerState = PlayerState::DUCKING;
-                break;
-            case SHOOT:
-                if (player->has<SuperFlameComponent>() && playerComponent->canShoot) {
-                    auto world = player->getWorld();
-                    createFireBullet(world, player);
-                    playerComponent->canShoot = false;
-                    playerState = PlayerState::SHOOTING;
-                    world->emit<SoundEvent>(SoundEvent(SoundId::FIREBALL));
-                    player->assign<TimerComponent>([player]() {
-                        player->get<PlayerComponent>()->canShoot = true;
-                    }, 40);
-                }
                 break;
             case SPRINT:
                 break;
