@@ -1,8 +1,43 @@
+/**
+ * @startuml
+ * !include Screen.h
+ * 
+ * class Texture2D {
+ * }
+ * 
+ * class ImageButton {
+ * }
+ * 
+ * class InstructionScreen extends Screen {
+ *     + InstructionScreen()
+ *     + ~InstructionScreen()
+ *     + void Init() <<override>>
+ *     + void Update() <<override>>
+ *     + void Draw() <<override>>
+ *     + void Unload() <<override>>
+ *     - Texture2D background
+ *     - Texture2D instructionPanel
+ *     - ImageButton backButton
+ *     - float panelTargetY
+ *     - float panelCurrentY
+ *     - float panelAlpha
+ *     - float animationSpeed
+ *     - bool isAnimating
+ * }
+ * 
+ * InstructionScreen "1" *-- "1" Texture2D
+ * InstructionScreen "1" *-- "1" ImageButton
+ * @enduml
+ */
+
+
 #pragma once
 #include "Screen.h"
 #include "../ui/Button.h"
 #include "../ui/ImageButton.h"
 #include <string>
+
+#include "../State.h"
 
 class InstructionScreen : public Screen {
 private:

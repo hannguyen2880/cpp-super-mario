@@ -1,3 +1,15 @@
+/**
+ * @startuml
+ * class AnimationSystem {
+ *     +AnimationSystem()
+ *     +void tick(World* world, float delta) <<override>>
+ *     +void configure(World* world) <<override>>
+ *     +void unconfigure(World* world) <<override>>
+ *     +~AnimationSystem()
+ * }
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_ANIMATIONSYSTEM_H
 #define MARIO_MAKER_ANIMATIONSYSTEM_H
 #include "ECS.h"

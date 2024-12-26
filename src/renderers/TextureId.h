@@ -1,3 +1,38 @@
+/**
+ * @startuml
+ * enum TextureId {
+ *     EMPTY
+ *     MARIO_STAND
+ *     MARIO_RUN_1
+ *     MARIO_RUN_2
+ *     MARIO_RUN_3
+ *     MARIO_JUMP
+ *     MARIO_DRIFT
+ *     MARIO_DEAD
+ *     MARIO_SIT_1
+ *     MARIO_SIT_2
+ *     MARIO_DUCK
+ *     MARIO_GREET
+ *     MARIO_GROWING
+ *     SUPER_MARIO_STAND
+ *     SUPER_MARIO_RUN_1
+ *     SUPER_MARIO_RUN_2
+ *     SUPER_MARIO_RUN_3
+ *     SUPER_MARIO_JUMP
+ *     SUPER_MARIO_DRIFT
+ *     SUPER_MARIO_DUCK
+ *     SUPER_MARIO_SIT_2
+ *     MARIO_FLAME_STAND
+ *     MARIO_FLAME_RUN_1
+ *     MARIO_FLAME_RUN_2
+ *     MARIO_FLAME_RUN_3
+ *     MARIO_FLAME_JUMP
+ *     MARIO_FLAME_DRIFT
+ *     MARIO_FLAME_DUCK
+ * }
+ * @enduml
+ */
+
 #pragma once
 
 enum TextureId {

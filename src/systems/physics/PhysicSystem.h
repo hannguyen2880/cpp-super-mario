@@ -1,3 +1,25 @@
+/**
+ * @startuml
+ * class PhysicSystem {
+ *     +PhysicSystem()
+ *     +void tick(World* world, float delta) <<override>>
+ *     +void configure(World* world) <<override>>
+ *     +void unconfigure(World* world) <<override>>
+ *     +virtual ~PhysicSystem()
+ *     -void checkXEnemyCollision(Entity *ent1, Entity *ent2)
+ *     -void handlingBouncingComponents(World *world)
+ *     -bool validXCollision(Entity *ent1, Entity *ent2)
+ *     -bool validYCollision(Entity *ent1, Entity *ent2)
+ *     -bool checkCollisionWithObject(Entity *ent1, Entity *ent2)
+ *     -void checkCollisionWithCollectible(Entity *ent1, Entity *ent2)
+ *     -void checkYEnemyCollision(Entity *ent1, Entity *ent2)
+ *     -void checkCollisionWithSolidObject(Entity *ent1, Entity *ent2)
+ * }
+ * 
+ * PhysicSystem <|-- EntitySystem
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_PHYSICSYSTEM_H
 #define MARIO_MAKER_PHYSICSYSTEM_H
 #include <raylib.h>

@@ -1,3 +1,22 @@
+/**
+ * @startuml
+ * class CameraSystem {
+ *     +CameraSystem(int screenW, int screenH, int mapW, int mapH)
+ *     +void configure(World* world) <<override>>
+ *     +void unconfigure(World* world) <<override>>
+ *     +void tick(World* world, float delta) <<override>>
+ *     +~CameraSystem()
+ *     -void followLeadPlayer(World* world)
+ *     -bool checkIfDefreezeEntity(Vector2 playerPos, Vector2 entityPos)
+ *     -CameraComponent* pCamera_
+ *     -const int screenWidth_
+ *     -const int screenHeight_
+ *     -const int mapWidth_
+ *     -const int mapHeight_
+ * }
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_CAMERASYSTEM_H
 #define MARIO_MAKER_CAMERASYSTEM_H
 

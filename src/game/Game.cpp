@@ -1,20 +1,20 @@
 #include "Game.h"
-#include "../screens/MenuScreen.h"
-#include "../screens/InstructionScreen.h"
-#include "../screens/BeforeGameScreen.h"
-#include "../screens/GamePlayScreen.h"
-#include "../screens/ScoreboardScreen.h"
+#include "State/MainMenuState.h"
+#include "State/BeforeGameState.h"
+#include "State/InstructionState.h"
+#include "State/GameplayState.h"
+#include "State/ScoreboardState.h"
 #include <iostream>
 
-GameState Game::currentState = GameState::MAIN_MENU;
-std::unique_ptr<Screen> Game::currentScreen = nullptr;
-// GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
-// GameplayMode Game::gameplayMode = GameplayMode::MULTI_PLAYER;
-// Character Game::character = Character::MARIO;
+std::unique_ptr<GameState> Game::currentState = nullptr;
+GameDifficulty Game::difficulty = GameDifficulty::MEDIUM;
+GameplayMode Game::gameplayMode = GameplayMode::SINGLE_PLAYER;
+Character Game::character = Character::MARIO;
 
 void Game::Init() {
-    currentScreen = std::make_unique<MenuScreen>();
-    currentScreen->Init();
+    currentState = std::make_unique<MainMenuState>();
+    
+    currentState->Init();
 }
 
 void Game::Run() {
@@ -34,56 +34,31 @@ void Game::Run() {
 }
 
 void Game::Update() {
-    if (currentScreen) {
-        currentScreen->Update();
+    if (currentState) {
+        currentState->Update();
     }
 }
 void Game::Unload() {
-    //AudioManager::GetInstance().UnloadAllSounds();
-   // AudioManager::GetInstance().UnloadAllMusics();
+    if (currentState) {
+        currentState->Unload();
+    }
 }
 
 void Game::Draw() {
     BeginDrawing();
     ClearBackground(RAYWHITE);
-    if (currentScreen) {
-        currentScreen->Draw();
+    if (currentState) {
+        currentState->Draw();
     }
     EndDrawing();
 }
 
-void Game::SetState(GameState newState) {
-    currentState = newState;
-    
-    if (currentScreen) {
-        currentScreen->Unload();
-        currentScreen = nullptr;
+void Game::SetState(std::unique_ptr<GameState> newState) {
+    if (currentState) {
+        currentState->Unload();
     }
-    
-    switch (newState) {
-        case GameState::MAIN_MENU: {
-            currentScreen = std::make_unique<MenuScreen>();
-            break;
-        }
-        case GameState::INSTRUCTIONS: {
-            currentScreen = std::make_unique<InstructionScreen>();
-            break;
-        }
-        case GameState::SCOREBOARD: {
-            currentScreen = std::make_unique<ScoreboardScreen>();
-            break;
-        }
-        case GameState::BEFOREGAME: {
-            currentScreen = std::make_unique<BeforeGameScreen>();
-            break;
-        }
-        case GameState::GAMEPLAY: {
-            currentScreen = std::make_unique<GameplayScreen>();
-            break;
-        }
-    }
-    
-    if (currentScreen) {
-        currentScreen->Init();
+    currentState = std::move(newState);
+    if (currentState) {
+        currentState->Init();
     }
 }

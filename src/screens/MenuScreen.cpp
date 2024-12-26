@@ -1,6 +1,8 @@
-// src/screens/MenuScreen.cpp
 #include "MenuScreen.h"
 #include "../game/Game.h"
+#include "../game/State/BeforeGameState.h"
+#include "../game/State/InstructionState.h"
+#include "../game/State/ScoreboardState.h"
 #include <iostream>
 #include <cmath>
 
@@ -93,15 +95,15 @@ void MenuScreen::Update() {
 
     if (!isLoading) {
         if (playButton.Update()) {
-            Game::SetState(GameState::BEFOREGAME);
+            Game::SetState(std::make_unique<BeforeGameState>());
             return;
         }
         if (instructionButton.Update()) {
-            Game::SetState(GameState::INSTRUCTIONS);
+            Game::SetState(std::make_unique<InstructionState>());
             return;
         }
         if (scoreboardButton.Update()) {
-            Game::SetState(GameState::SCOREBOARD);
+            Game::SetState(std::make_unique<ScoreboardState>());
             return;
         }
     }

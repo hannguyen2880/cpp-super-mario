@@ -1,3 +1,33 @@
+/**
+ * @startuml
+ * class EntitySystem {
+ *     + void configure(World *world) <<abstract>>
+ *     + void unconfigure(World *world) <<abstract>>
+ *     + void tick(World *world, ECS::DefaultTickData data) <<abstract>>
+ * }
+ * 
+ * class EventSubscriber {
+ *     + void receive(World *world, const Event &event) <<abstract>>
+ * }
+ * 
+ * class CollisionWithFinalPoleEvent {
+ * }
+ * 
+ * class FlagSystem extends EntitySystem {
+ *     + FlagSystem()
+ *     + ~FlagSystem()
+ *     + void configure(World *world) <<override>>
+ *     + void unconfigure(World *world) <<override>>
+ *     + void tick(World *world, ECS::DefaultTickData data) <<override>>
+ *     + void receive(World *world, const CollisionWithFinalPoleEvent &event) <<override>>
+ * }
+ * 
+ * FlagSystem "1" *-- "1" ECS::Entity
+ * FlagSystem <|.. EventSubscriber : implements
+ * EventSubscriber <|.. CollisionWithFinalPoleEvent
+ * @enduml
+ */
+
 #ifndef MARIO_MAKER_FLAGSYSTEM_H
 #define MARIO_MAKER_FLAGSYSTEM_H
 #include "ECS.h"
