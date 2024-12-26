@@ -24,7 +24,7 @@ void PlayerSystem::unconfigure(World *world) {
 void PlayerSystem::tick(World *world, float delta) {
     EntitySystem::tick(world, delta);
 
-
+    // get the entity that has all 3 components: PlayerComponent, CommandComponent, KineticComponent
     for (auto player : world->each<PlayerComponent, CommandComponent, KineticComponent>()) {
         Command currentCommand = player->get<CommandComponent>()->currentCommand_;
         ComponentHandle<PlayerComponent> playerComponent = player->get<PlayerComponent>();
@@ -271,36 +271,12 @@ void PlayerSystem::eatMushroom(Entity *entity, Collectible::Type type) {
     World* world = entity->getWorld();
     bool isMario = entity->has<MarioComponent>();
     auto aabb = entity->get<AABBComponent>();
+
     TextureId currentTexture = entity->get<TextureComponent>()->textureId_;
     TextureId transformTexture = getRightTransitionAnimation(entity, type, isMario);
     Vector2 scorePosition = {aabb->left() + GAME_TILE_SIZE / 2, aabb->top() - GAME_TILE_SIZE / 2};
 
     switch (type) {
-        case Collectible::SUPER_MARIO_MUSHROOM:
-            if (!(entity->has<SuperComponent>() || entity->has<SuperFlameComponent>()
-                    || entity->has<MegaComponent>())) {
-                float oldHeight = entity->get<AABBComponent>()->top();
-                entity->assign<SuperComponent>();
-                entity->assign<AnimationComponent>(std::vector<TextureId>{
-                        currentTexture,
-                        transformTexture,
-                        currentTexture,
-                        currentTexture,
-                        transformTexture,
-                        transformTexture,
-                }, 10, false, false, false);
-                entity->assign<FrozenComponent>();
-                world->emit<AddScoreEvent>(AddScoreEvent(1000, scorePosition));
-                entity->assign<TimerComponent>([entity, oldHeight]() {
-                    auto aabb = entity->get<AABBComponent>();
-                    entity->remove<FrozenComponent>();
-                    entity->remove<AnimationComponent>();
-                    aabb->setTop(oldHeight - GAME_TILE_SIZE);
-                    aabb->collisionBox_.height = GAME_TILE_SIZE * 2;
-                    }, 60);
-            }
-            world->emit<SoundEvent>(SoundId::POWER_UP);
-            break;
         case Collectible::MEGA_MUSHROOM:
             if (!entity->has<MegaComponent>()) {
                 entity->assign<MegaComponent>();
@@ -350,6 +326,31 @@ void PlayerSystem::eatMushroom(Entity *entity, Collectible::Type type) {
                     if (entity->has<SuperComponent>()) entity->remove<SuperComponent>();
                     aabb->collisionBox_.height = GAME_TILE_SIZE * 2;
                 }, 60);
+            }
+            world->emit<SoundEvent>(SoundId::POWER_UP);
+            break;
+                        case Collectible::SUPER_MARIO_MUSHROOM:
+            if (!(entity->has<SuperComponent>() || entity->has<SuperFlameComponent>()
+                    || entity->has<MegaComponent>())) {
+                float oldHeight = entity->get<AABBComponent>()->top();
+                entity->assign<SuperComponent>();
+                entity->assign<AnimationComponent>(std::vector<TextureId>{
+                        currentTexture,
+                        transformTexture,
+                        currentTexture,
+                        currentTexture,
+                        transformTexture,
+                        transformTexture,
+                }, 10, false, false, false);
+                entity->assign<FrozenComponent>();
+                world->emit<AddScoreEvent>(AddScoreEvent(1000, scorePosition));
+                entity->assign<TimerComponent>([entity, oldHeight]() {
+                    auto aabb = entity->get<AABBComponent>();
+                    entity->remove<FrozenComponent>();
+                    entity->remove<AnimationComponent>();
+                    aabb->setTop(oldHeight - GAME_TILE_SIZE);
+                    aabb->collisionBox_.height = GAME_TILE_SIZE * 2;
+                    }, 60);
             }
             world->emit<SoundEvent>(SoundId::POWER_UP);
             break;
