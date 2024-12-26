@@ -1,6 +1,6 @@
 #include "BeforeGameScreen.h"
 #include "../game/Game.h"
-#include "../game/State/GameplayState.h"
+#include "../game/State/GamePlayState.h"
 #include "../game/State/MainMenuState.h"
 
 BeforeGameScreen::BeforeGameScreen()

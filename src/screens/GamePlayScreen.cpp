@@ -82,5 +82,4 @@ void GameplayScreen::Unload() {
 
 GameplayScreen::~GameplayScreen() {
     Unload();
-
 }

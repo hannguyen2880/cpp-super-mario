@@ -1,56 +1,6 @@
-/**
- * @startuml
- * class GameManager {
- *     +GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
- *     +~GameManager()
- *     +void Init()
- *     +void Update()
- *     +void Draw()
- *     +void cleanup()
- *     +bool NeedsRestart() const
- *     +GameMap* getMap() const
- *     -void initWorld()
- *     -void initPlayers()
- *     -void registerSystems()
- *     -void handleInput()
- *     -void initIdsMap()
- *     -void render(float d)
- *     -void initTextEntities()
- *     -void startMusic()
- *     -void updateMusicStream()
- *     -void restartGame()
- *     -void saveScore()
- *     -void printScore()
- *     -bool run
- *     -bool pause
- *     -bool restart
- *     -bool secondPlayer
- *     -const char* mapName
- *     -ECS::World* world_
- *     -GameMap* pMap_
- *     -size_t cameraId_
- *     -const int screenWidth_
- *     -const int screenHeight_
- *     -double previous
- *     -double lag
- *     -ECS::EntitySystem* animationSystem_
- *     -SoundSystem* soundSystem_
- *     -MapRenderer* mapRenderer
- *     -TextureRenderer* textureRenderer
- *     -EnemiesRenderer* enemiesRenderer
- *     -ObjectRenderer* objectRenderer
- *     -TextRenderer* textRenderer_
- *     -void initMarioPlayer(ECS::Entity* player, Vector2 position)
- *     -void initLuigiPlayer(ECS::Entity* player, Vector2 position)
- * }
- * @enduml
- */
+#pragma once
 
-
-#ifndef MARIO_MAKER_GAME_H
-#define MARIO_MAKER_GAME_H
 #include <raylib.h>
-#include <iostream>
 #include "ECS.h"
 #include "../Constants.h"
 #include "../map/GameMap.h"
@@ -74,23 +24,34 @@
 #include "State/GameState.h"
 #include "Game.h"
 #include "GameConfig.h"
+#include "GameConfig.h"
+#include "WorldBuilder.h"
+#include <iostream>
+#include <fstream>
+#include <string>
 
 class GameManager {
 public:
     GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer);
+
     ~GameManager();
 
     void Init();
+
     void Update();
+
     void Draw();
+
     void cleanup();
+
     bool NeedsRestart() const;
+
     GameMap *getMap() const{ return pMap_; }
 
 private:
     void initWorld();
-    void handleInput();
-    void render(float d);;
+    void handleInput(); //need to be fixed
+    void render(float d);
     void updateMusicStream();
     void restartGame();
     void saveScore();
@@ -119,5 +80,3 @@ private:
     TextRenderer* textRenderer_;
 };
 
-
-#endif

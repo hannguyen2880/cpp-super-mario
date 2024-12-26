@@ -1,9 +1,5 @@
 #include "GameManager.h"
-#include "GameConfig.h"
-#include "WorldBuilder.h"
-#include <iostream>
-#include <fstream>
-#include <string>
+
 GameManager::GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
     : mapName(mapName)
     , screenWidth_(screenWidth)
@@ -44,7 +40,6 @@ void GameManager::Init() {
     enemiesRenderer = new EnemiesRenderer(SMB1_ENEMIES_TILESET_PATH);
     textRenderer_ = new TextRenderer();
     //using tileset type to load the correct tileset
-}
 
     initWorld();
     SetTargetFPS(60);
@@ -115,6 +110,7 @@ void GameManager::restartGame() {
     }
 }
 
+GameMap* GameManager::getMap() const{ return pMap_; }
 
 void GameManager::initWorld() {
   WorldBuilder worldBuilder;
@@ -125,7 +121,6 @@ void GameManager::initWorld() {
                 .initTextEntities(world_, screenWidth_)
                 .startMusic(world_);
 }
-
 
 void GameManager::handleInput() {
     for (auto ent : world_->each<CommandComponent>())
@@ -197,7 +192,8 @@ void GameManager::saveScore() {
                 break;
         }
         fileOut.close();
-}
+    }
+    
 }
 
 void GameManager::printScore() {

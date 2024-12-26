@@ -1,7 +1,7 @@
 #include "ScoreboardScreen.h"
 #include "../game/Game.h"
 #include <iostream>
-
+#include "../game/State/MainMenuState.h"
 
 ScoreboardScreen::ScoreboardScreen() : backButton(ImageButton(BACK_BUTTON, 570, 17))
 {
@@ -17,23 +17,23 @@ void ScoreboardScreen::Init() {
         switch (i) {
             case 0:
                 texturePath = FRIST_PLACE;
-                std::cout << "Texture path: " << texturePath << endl;
+                //std::cout << "Texture path: " << texturePath << endl;
                 break;
             case 1:
                 texturePath = SECOND_PLACE;
-                std::cout << "Texture path: " << texturePath << endl;
+                //std::cout << "Texture path: " << texturePath << endl;
                 break;
             case 2:
                 texturePath = THIRD_PLACE;
-                std::cout << "Texture path: " << texturePath << endl;
+                //std::cout << "Texture path: " << texturePath << endl;
                 break;
             case 3:
                 texturePath = FOURTH_PLACE;
-                std::cout << "Texture path: " << texturePath << endl;
+                //std::cout << "Texture path: " << texturePath << endl;
                 break;
             case 4:
                 texturePath = FIFTH_PLACE;
-                std::cout << "Texture path: " << texturePath << endl;
+                //std::cout << "Texture path: " << texturePath << endl;
                 break;
         }
         placeTextures.push_back(LoadTexture(texturePath));
@@ -44,12 +44,11 @@ void ScoreboardScreen::Init() {
     textVerticalSpacing = frameHeight;
     textLeftMargin = frame_positionX_1st + 50;
     textRightMargin= frame_positionX_1st + frameWidth - 100;
-    string defaultName = "NULL";
+    std::string defaultName = "NULL";
     int defaultScore = 0;
     for(int i = 0; i < 5; i++){
         players.push_back(make_pair(defaultName, defaultScore));
     }
-
 }
 
 void ScoreboardScreen::Update() {
@@ -71,7 +70,7 @@ void ScoreboardScreen::Draw() {
         DrawTexture(placeTextures[i], frame_positionX_1st, frame_positionY_1st + i * textVerticalSpacing, WHITE);
         // draw player name and score
         DrawText(players[i].first.c_str(), textLeftMargin,15 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
-        DrawText(to_string(players[i].second).c_str(), textRightMargin,15 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
+        DrawText(std::to_string(players[i].second).c_str(), textRightMargin,15 + frame_positionY_1st + i * textVerticalSpacing, 20, WHITE);
     }
     backButton.Draw();
 }

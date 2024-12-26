@@ -22,11 +22,10 @@ public:
     static void Unload();
     static void Run();
 
-    static float GetScreenWidth() { return 1.0 * SCREEN_WIDTH; }
-    static float GetScreenHeight() { return 1.0 * SCREEN_HEIGHT; }
-    static GameDifficulty GetDifficulty() { return difficulty; }
-    static GameplayMode GetGameplayMode() { return gameplayMode; }
-    static Character GetCharacter() { return character; }
-
-    static GameConfig& getConfig() { return GameConfig::getInstance(); }
+    static float GetScreenWidth();
+    static float GetScreenHeight();
+    static GameDifficulty GetDifficulty();
+    static GameplayMode GetGameplayMode();
+    static Character GetCharacter();
+    static GameConfig& getConfig();
 };
