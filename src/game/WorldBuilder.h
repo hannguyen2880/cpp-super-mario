@@ -1,3 +1,5 @@
+#pragma once
+
 #include <raylib.h>
 #include <iostream>
 #include "ECS.h"
@@ -22,7 +24,8 @@
 #include "systems/sound/SoundSystem.h"
 #include "State/GameState.h"
 #include "Game.h"
-#include "GameConfig.h"
+
+
 class WorldBuilder {
 public:
     WorldBuilder& initPlayers(ECS::World*& world, GameMap*& pMap, bool secondPlayer);

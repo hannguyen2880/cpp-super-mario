@@ -1,10 +1,11 @@
 #include "GameManager.h"
 
-GameManager::GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer)
+GameManager::GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer, int background)
     : mapName(mapName)
     , screenWidth_(screenWidth)
     , screenHeight_(screenHeight)
     , secondPlayer(secondPlayer)
+    , background(background)
     , previous(GetTime())
     , lag(0.0)
     , world_(nullptr)
@@ -33,12 +34,11 @@ void GameManager::Init() {
     pMap_ = new GameMap(mapName);
     pMap_->loadMap(world_);
     
-    mapRenderer = new MapRenderer(pMap_, SMB1_TILESET_PATH);
-    objectRenderer = new ObjectRenderer(SMB1_OBJECT_TILESET_PATH);
-    
-    textureRenderer = new TextureRenderer(SBM1_PLAYER_TILESET_PATH);
-    enemiesRenderer = new EnemiesRenderer(SMB1_ENEMIES_TILESET_PATH);
-    textRenderer_ = new TextRenderer();
+    mapRenderer = RendererFactory::createMapRenderer(pMap_, SMB1_TILESET_PATH, background);
+    objectRenderer = RendererFactory::createObjectRenderer(SMB1_OBJECT_TILESET_PATH);
+    textureRenderer = RendererFactory::createTextureRenderer(SBM1_PLAYER_TILESET_PATH);
+    enemiesRenderer = RendererFactory::createEnemiesRenderer(SMB1_ENEMIES_TILESET_PATH);
+    textRenderer_ = RendererFactory::createTextRenderer();
     //using tileset type to load the correct tileset
 
     initWorld();
@@ -154,9 +154,10 @@ void GameManager::handleInput() {
     // fixme: doesn't work properly
     // if (IsKeyReleased(KEY_ENTER)) restartGame();
 }
+
 void GameManager::render(float d) {
     printScore();
-    mapRenderer->renderBackground(world_);
+    mapRenderer->renderBackground(world_, background);
     mapRenderer->renderDecoration(world_);
     textureRenderer->renderTextureEntities(world_, d);
     textureRenderer->renderTileCollisionRect(world_);

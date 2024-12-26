@@ -35,7 +35,7 @@ private:
 
     void setEnemyType(ECS::Entity *ent, std::string type);
 
-    void createPiranhaPlant(ECS::World* world, float spawnX, float spawnY, bool isHorizontal);
+    void createPiranhaPlant(ECS::World* world, float spawnX, float spawnY);
 
     ECS::Entity * createParachute(ECS::Entity* entity);
 

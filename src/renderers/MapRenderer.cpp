@@ -8,8 +8,8 @@ MapRenderer::~MapRenderer() {
     }
 }
 
-MapRenderer::MapRenderer(GameMap *map, const char* filepath1)
-:map_(*map), Renderer(filepath1)
+MapRenderer::MapRenderer(GameMap *map, const char* filepath1, int background)
+:map_(*map), Renderer(filepath1), background(background)
 {
     texturePositions_.insert({QUESTION_BLOCK_1, new Rectangle{368, 0, TILE_SIZE, TILE_SIZE}});
     texturePositions_.insert({QUESTION_BLOCK_2, new Rectangle{384, 0, TILE_SIZE, TILE_SIZE}});
@@ -51,20 +51,41 @@ void MapRenderer::render(ECS::World* world, float delta) {
 }
 
 void MapRenderer::loadBackgroundTextures() {
-    backgroundtextures_[AUTUMN] = LoadTexture(AUTUMN);
-    backgroundtextures_[AUTUMNMIDNIGHT] = LoadTexture(AUTUMNMIDNIGHT);
-    // backgroundtextures_[LANDSCAPE3] = LoadTexture(LANDSCAPE3.c_str());
+    switch (background)
+    {
+        case 1:
+            backgroundtextures_[AUTUMN] = LoadTexture(AUTUMN);
+            break;
+        case 2:
+            backgroundtextures_[AUTUMNMIDNIGHT] = LoadTexture(AUTUMNMIDNIGHT);
+            break;
+        //case 3:
+            // DrawTexture(backgroundtextures_[LANDSCAPE3], 0, 0, WHITE);
+            // break;
+        default:
+            break;
+    }
 }
 
-void MapRenderer::renderBackground(ECS::World* world) {
+void MapRenderer::renderBackground(ECS::World* world, int background) {
     // Ensure textures are loaded
     if (backgroundtextures_.empty()) {
         loadBackgroundTextures();
     }
 
-    // Draw the textures (example: drawing the first texture)
-    DrawTexture(backgroundtextures_[AUTUMN], 0, 0, WHITE);
-    // You can add logic to draw other textures as needed
+    switch (background) {
+        case 1:
+            DrawTexture(backgroundtextures_[AUTUMN], 0, 0, WHITE);
+            break;
+        case 2:
+            DrawTexture(backgroundtextures_[AUTUMNMIDNIGHT], 0, 0, WHITE);
+            break;
+        //case 3:
+            // DrawTexture(backgroundtextures_[LANDSCAPE3], 0, 0, WHITE);
+           // break;
+        default:
+            break;
+    }
 }
 
 void MapRenderer::renderDecoration(ECS::World* world) {

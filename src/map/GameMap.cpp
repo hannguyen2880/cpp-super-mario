@@ -252,10 +252,7 @@ void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<
             } 
         }
         if (hasPiranhaPlant) {
-            if (horizontal) {
-                createPiranhaPlant(world, aabb->collisionBox_.x, aabb->getCenterY(), true);
-            } else
-            createPiranhaPlant(world, aabb->getCenterX() - GAME_TILE_SIZE / 2, spawn_y_piranha + GAME_TILE_SIZE / 2, false);
+            createPiranhaPlant(world, aabb->getCenterX(), spawn_y_piranha);
         } 
     } 
     else if (layerName == "bricks") ent->assign<BrickComponent>();
@@ -477,30 +474,20 @@ void GameMap::setEnemyType(ECS::Entity *ent, std::string type) {
     }
 }
 
-void GameMap::createPiranhaPlant(ECS::World* world, float spawnX, float spawnY, bool isHorizontal) {
+void GameMap::createPiranhaPlant(ECS::World* world, float spawnX, float spawnY) {
     auto piranhaPlant = world->create();
     float height = GAME_TILE_SIZE + GAME_TILE_SIZE / 2;
     piranhaPlant->assign<FrozenComponent>();
     piranhaPlant->assign<EnemyComponent>(Enemy::PIRANHA_PLANT);
     piranhaPlant->assign<SolidComponent>();
     piranhaPlant->assign<KineticComponent>();
-    if (isHorizontal) {
-        piranhaPlant->assign<AABBComponent>(Rectangle{spawnX, spawnY, height, GAME_TILE_SIZE});
-        piranhaPlant->assign<HorizontalGrowComponent>(640);
-        piranhaPlant->assign<TextureComponent>(TextureId::PIRANHA_PLANT_1); 
-        piranhaPlant->assign<AnimationComponent>(std::vector<TextureId>{
-            TextureId::PIRANHA_PLANT_1,
-            TextureId::PIRANHA_PLANT_2
-            }, 10); 
-    } else {
-        piranhaPlant->assign<AABBComponent>(Rectangle{spawnX - GAME_TILE_SIZE / 2, spawnY + height, GAME_TILE_SIZE, height});
-        piranhaPlant->assign<VerticalGrowComponent>(256);
-        piranhaPlant->assign<TextureComponent>(TextureId::PIRANHA_PLANT_1);
+    piranhaPlant->assign<AABBComponent>(Rectangle{spawnX - GAME_TILE_SIZE / 2, spawnY + height, GAME_TILE_SIZE, height});
+    piranhaPlant->assign<VerticalGrowComponent>(256);
+    piranhaPlant->assign<TextureComponent>(TextureId::PIRANHA_PLANT_1);
         piranhaPlant->assign<AnimationComponent>(std::vector<TextureId>{
         TextureId::PIRANHA_PLANT_1,
         TextureId::PIRANHA_PLANT_2
     }, 10);
-    }
     piranhaPlant->assign<UnderTileComponent>();
 }
 

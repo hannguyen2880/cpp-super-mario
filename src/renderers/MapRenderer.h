@@ -8,13 +8,13 @@
 class MapRenderer : public Renderer {
 public:
 
-    MapRenderer(GameMap *map, const char* filepath1);
+    MapRenderer(GameMap *map, const char* filepath1, int background);
 
     void render(ECS::World* world, float delta);
 
     virtual ~MapRenderer();
 
-    void renderBackground(ECS::World *world);
+    void renderBackground(ECS::World *world, int background);
 
     void renderDecoration(ECS::World* world);
 
@@ -31,6 +31,7 @@ private:
 private:
     GameMap map_;
     std::unordered_map<std::string, Texture2D> backgroundtextures_;
+    int background;
 };
 
 

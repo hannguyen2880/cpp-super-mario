@@ -63,14 +63,14 @@ void Game::SetState(std::unique_ptr<GameState> newState) {
     }
 }
 
-static float Game::GetScreenWidth() { return 1.0 * SCREEN_WIDTH; }
+float Game::GetScreenWidth() { return 1.0 * SCREEN_WIDTH; }
 
-static float Game::GetScreenHeight() { return 1.0 * SCREEN_HEIGHT; }
+float Game::GetScreenHeight() { return 1.0 * SCREEN_HEIGHT; }
 
-static GameDifficulty Game::GetDifficulty() { return difficulty; }
+GameDifficulty Game::GetDifficulty() { return difficulty; }
 
-static GameplayMode Game::GetGameplayMode() { return gameplayMode; }
+GameplayMode Game::GetGameplayMode() { return gameplayMode; }
 
-static Character Game::GetCharacter() { return character; }
+Character Game::GetCharacter() { return character; }
 
-static GameConfig& Game::getConfig() { return GameConfig::getInstance(); }
+GameConfig& Game::getConfig() { return GameConfig::getInstance(); }

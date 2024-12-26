@@ -29,12 +29,15 @@ void GameplayScreen::CreateGameManager() {
     switch (currentDifficulty) {
         case GameDifficulty::EASY:
             mapFilePath = EASY_MAP;
+            background = 1;
             break;
         case GameDifficulty::MEDIUM:
             mapFilePath = MEDIUM_MAP;
+            background = 2;
             break;
         case GameDifficulty::HARD:
             mapFilePath = HARD_MAP;
+            background = 3;
             break;
     }
     
@@ -42,7 +45,8 @@ void GameplayScreen::CreateGameManager() {
         mapFilePath.c_str(), 
         SCREEN_WIDTH, 
         SCREEN_HEIGHT, 
-        secondPlayer
+        secondPlayer,
+        background
     );
     gameManager->Init();
 }

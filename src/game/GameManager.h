@@ -24,15 +24,15 @@
 #include "State/GameState.h"
 #include "Game.h"
 #include "GameConfig.h"
-#include "GameConfig.h"
 #include "WorldBuilder.h"
+#include "../renderers/RendererFactory.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 
 class GameManager {
 public:
-    GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer);
+    GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer, int background);
 
     ~GameManager();
 
@@ -46,7 +46,7 @@ public:
 
     bool NeedsRestart() const;
 
-    GameMap *getMap() const{ return pMap_; }
+    GameMap *getMap() const;
 
 private:
     void initWorld();
@@ -67,6 +67,7 @@ private:
     size_t cameraId_;
     const int screenWidth_;
     const int screenHeight_;
+    int background;
     
     double previous;
     double lag;
