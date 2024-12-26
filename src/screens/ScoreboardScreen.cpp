@@ -1,6 +1,8 @@
 #include "ScoreboardScreen.h"
 #include "../game/Game.h"
 #include <iostream>
+#include <fstream>
+#include <algorithm>
 
 
 ScoreboardScreen::ScoreboardScreen() : backButton(ImageButton(BACK_BUTTON, 570, 17))
@@ -44,12 +46,7 @@ void ScoreboardScreen::Init() {
     textVerticalSpacing = frameHeight;
     textLeftMargin = frame_positionX_1st + 50;
     textRightMargin= frame_positionX_1st + frameWidth - 100;
-    string defaultName = "NULL";
-    int defaultScore = 0;
-    for(int i = 0; i < 5; i++){
-        players.push_back(make_pair(defaultName, defaultScore));
-    }
-
+    loadScores();
 }
 
 void ScoreboardScreen::Update() {
@@ -85,4 +82,45 @@ void ScoreboardScreen::Unload() {
 
 ScoreboardScreen::~ScoreboardScreen() {
     Unload();
+}
+
+void ScoreboardScreen::loadScores()
+{
+    // load scores from file, player name are "NULL"
+    // each line ís score
+    // load all scores and player name is "NULL" to players vector
+    // if there are less than 5 scores, fill the rest with default score 0
+    // sort the players vector by score
+    // only top 5 scores are allowed to be in vector, the rest are removed
+    std::ifstream fileIn;
+    fileIn.open("../assets/file/score.txt");
+    if (!fileIn.is_open()) {
+        throw std::runtime_error("Could not open file for reading");
+    }
+    string line;
+    string defaultName = "NULL";
+    // push player names and scores to players vector
+    int i = 0;
+    while (getline(fileIn, line)) {
+        players.push_back(make_pair(defaultName, stoi(line)));
+        i++;
+    }
+    fileIn.close();
+
+    if (i < 5) {
+        for (int j = i; j < 5; j++) {
+            players.push_back(make_pair(defaultName, 0));
+        }
+    }
+
+    // sort the players vector by score
+    sort(players.begin(), players.end(), [](pair<string, int> a, pair<string, int> b) {
+        return a.second > b.second;
+    });
+     // remove the rest of the scores
+    if (players.size() > 5) {
+        players.erase(players.begin() + 5, players.end());
+
+    }
+
 }

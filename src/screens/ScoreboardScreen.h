@@ -59,10 +59,12 @@ private:
     vector<pair<string, int>> players; // vector of pairs of player names and scores
 
 public:
+    void loadScores();
     ScoreboardScreen();
     ~ScoreboardScreen();
     void Init() override;
     void Update() override;
     void Draw() override;
     void Unload() override;
+
 };

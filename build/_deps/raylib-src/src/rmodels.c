@@ -2277,7 +2277,6 @@ void UpdateModelAnimationBones(Model model, ModelAnimation anim, int frame)
         {
             if (model.meshes[i].boneMatrices)
             {
-                assert(model.meshes[i].boneCount == anim.boneCount);
                 if (firstMeshWithBones == -1)
                 {
                     firstMeshWithBones = i;
@@ -2297,13 +2296,12 @@ void UpdateModelAnimationBones(Model model, ModelAnimation anim, int frame)
             Quaternion outRotation = anim.framePoses[frame][boneId].rotation;
             Vector3 outScale = anim.framePoses[frame][boneId].scale;
 
-            Vector3 invTranslation = Vector3RotateByQuaternion(Vector3Negate(inTranslation), QuaternionInvert(inRotation));
             Quaternion invRotation = QuaternionInvert(inRotation);
+            Vector3 invTranslation = Vector3RotateByQuaternion(Vector3Negate(inTranslation), invRotation);
             Vector3 invScale = Vector3Divide((Vector3){ 1.0f, 1.0f, 1.0f }, inScale);
 
-            Vector3 boneTranslation = Vector3Add(
-                Vector3RotateByQuaternion(Vector3Multiply(outScale, invTranslation),
-                outRotation), outTranslation);
+            Vector3 boneTranslation = Vector3Add(Vector3RotateByQuaternion(
+                Vector3Multiply(outScale, invTranslation), outRotation), outTranslation);
             Quaternion boneRotation = QuaternionMultiply(outRotation, invRotation);
             Vector3 boneScale = Vector3Multiply(outScale, invScale);
 
@@ -2325,7 +2323,7 @@ void UpdateModelAnimationBones(Model model, ModelAnimation anim, int frame)
                 {
                     memcpy(model.meshes[i].boneMatrices,
                         model.meshes[firstMeshWithBones].boneMatrices,
-                        model.meshes[i].boneCount * sizeof(model.meshes[i].boneMatrices[0]));
+                        model.meshes[i].boneCount*sizeof(model.meshes[i].boneMatrices[0]));
                 }
             }
         }
@@ -2338,7 +2336,7 @@ void UpdateModelAnimationBones(Model model, ModelAnimation anim, int frame)
 void UpdateModelAnimation(Model model, ModelAnimation anim, int frame)
 {
     UpdateModelAnimationBones(model,anim,frame);
-    
+
     for (int m = 0; m < model.meshCount; m++)
     {
         Mesh mesh = model.meshes[m];
@@ -2349,7 +2347,10 @@ void UpdateModelAnimation(Model model, ModelAnimation anim, int frame)
         float boneWeight = 0.0;
         bool updated = false; // Flag to check when anim vertex information is updated
         const int vValues = mesh.vertexCount*3;
-        
+
+        // Skip if missing bone data, causes segfault without on some models
+        if ((mesh.boneWeights == NULL) || (mesh.boneIds == NULL)) continue;
+
         for (int vCounter = 0; vCounter < vValues; vCounter += 3)
         {
             mesh.animVertices[vCounter] = 0;
@@ -2361,7 +2362,8 @@ void UpdateModelAnimation(Model model, ModelAnimation anim, int frame)
                 mesh.animNormals[vCounter + 1] = 0;
                 mesh.animNormals[vCounter + 2] = 0;
             }
-                // Iterates over 4 bones per vertex
+
+            // Iterates over 4 bones per vertex
             for (int j = 0; j < 4; j++, boneCounter++)
             {
                 boneWeight = mesh.boneWeights[boneCounter];
@@ -2378,10 +2380,10 @@ void UpdateModelAnimation(Model model, ModelAnimation anim, int frame)
 
                 // Normals processing
                 // NOTE: We use meshes.baseNormals (default normal) to calculate meshes.normals (animated normals)
-                if (mesh.normals != NULL)
+                if ((mesh.normals != NULL) && (mesh.animNormals != NULL ))
                 {
                     animNormal = (Vector3){ mesh.normals[vCounter], mesh.normals[vCounter + 1], mesh.normals[vCounter + 2] };
-                    animNormal = Vector3Transform(animNormal,model.meshes[m].boneMatrices[boneId]);
+                    animNormal = Vector3Transform(animNormal, MatrixTranspose(MatrixInvert(model.meshes[m].boneMatrices[boneId])));
                     mesh.animNormals[vCounter] += animNormal.x*boneWeight;
                     mesh.animNormals[vCounter + 1] += animNormal.y*boneWeight;
                     mesh.animNormals[vCounter + 2] += animNormal.z*boneWeight;
@@ -2392,7 +2394,7 @@ void UpdateModelAnimation(Model model, ModelAnimation anim, int frame)
         if (updated)
         {
             rlUpdateVertexBuffer(mesh.vboId[0], mesh.animVertices, mesh.vertexCount*3*sizeof(float), 0); // Update vertex position
-            rlUpdateVertexBuffer(mesh.vboId[2], mesh.animNormals, mesh.vertexCount*3*sizeof(float), 0);  // Update vertex normals
+            if (mesh.normals != NULL) rlUpdateVertexBuffer(mesh.vboId[2], mesh.animNormals, mesh.vertexCount*3*sizeof(float), 0); // Update vertex normals
         }
     }
 }
