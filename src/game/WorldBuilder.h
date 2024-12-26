@@ -26,16 +26,19 @@
 class WorldBuilder {
 public:
     WorldBuilder& initPlayers(ECS::World*& world, GameMap*& pMap, bool secondPlayer);
+
     WorldBuilder& initCamera(World*& world,const int& screenWidth_, const int& screenHeight_, size_t& cameraID_);
 
     WorldBuilder& initIdsMap(ECS::World*& world, GameMap*& pMap);
 
-
     WorldBuilder& registerSystems(ECS::World*& world,const int& screenWidth_, const int& screenHeight_,GameMap*& pMap_, ECS::EntitySystem*& animationSystem_, SoundSystem*& soundSystem_);
+    
     WorldBuilder& initTextEntities(ECS::World*& world, const int& screenWidth_);
 
     WorldBuilder& startMusic(ECS::World*& world);
+
     void initMarioPlayer(ECS::Entity*& player, Vector2 position);
+
     void initLuigiPlayer(ECS::Entity*& player, Vector2 position);
 
 };
