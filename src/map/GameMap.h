@@ -1,0 +1,109 @@
+/**
+ * @startuml
+ * class GameMap {
+ *     +GameMap(std::string filename)
+ *     +virtual ~GameMap()
+ *     +int getHeight() const
+ *     +int getWidth() const
+ *     +int getPixelHeight() const
+ *     +int getPixelWidth() const
+ *     +void loadMap(ECS::World* world)
+ *     +bool isMapLoaded()
+ *     -std::string filename_
+ *     -tmx::Map map_
+ *     -int width_
+ *     -int height_
+ *     -int tileWidth_
+ *     -int tileHeight_
+ *     -std::set<std::string> solidTiles_
+ * }
+ * @enduml
+ */
+
+#ifndef MARIO_MAKER_GAMEMAP_H
+#define MARIO_MAKER_GAMEMAP_H
+#include <string>
+#include <set>
+#include <raylib.h>
+#include <tmxlite/Map.hpp>
+#include <tmxlite/Layer.hpp>
+#include <tmxlite/TileLayer.hpp>
+#include <tmxlite/ObjectGroup.hpp>
+#include "../components/Components.h"
+#include "ECS.h"
+
+class GameMap {
+public:
+    GameMap(std::string filename);
+
+    virtual ~GameMap();
+
+    int getHeight() const;
+
+    int getWidth() const;
+
+    int getPixelHeight() const;
+
+    int getPixelWidth() const;
+
+    void loadMap(ECS::World* world);
+
+    [[nodiscard]] bool isMapLoaded() {
+        return loaded_;
+    }
+
+    const Vector2 &getSpawnPositionP1() const;
+
+    const Vector2 &getSpawnPositionP2() const;
+
+    void unloadTextures();
+
+    unsigned int **getGraphicsLayer() const;
+
+    unsigned int **getBackgroundLayer() const;
+
+    const std::map<unsigned int, TileTexture> &getTextureTable() const;
+
+    Texture2D getTexture(unsigned int id);
+
+private:
+    void loadMapBasicInfo(const tmx::Vector2u& orientation);
+
+    void loadProperties(std::vector<tmx::Property> properties);
+
+    void loadMapTiles(std::vector<tmx::Tileset>& tileset, const std::set<unsigned int>& usedTiles);
+
+    std::set<unsigned int> loadLayers(const std::vector<tmx::Layer::Ptr>& layers, ECS::World* world);
+
+    Texture2D getTexture(const std::string& path, tmx::Vector2u tilePosition, tmx::Vector2u tileSize);
+
+    void loadTileEntity(
+            ECS::Entity* ent,
+            tmx::FloatRect AABB,
+            std::vector<tmx::Property> properties,
+            std::string layerName);
+
+    void createEnemy(ECS::Entity *ent, std::vector<tmx::Property> properties);
+
+    void setEnemyType(ECS::Entity *ent, std::string type);
+
+    void createPiranhaPlant(ECS::World* world, float spawnX, float spawnY);
+
+    ECS::Entity * createParachute(ECS::Entity* entity);
+
+    void createObject(ECS::Entity *entity, std::vector<tmx::Property> properties);
+
+private:
+    std::string name;
+    int height_;
+    int width_;
+    bool loaded_;
+    unsigned int** graphicsLayer_;
+    unsigned int** backgroundLayer_;
+    Vector2 spawnPositionP1_;
+    Vector2 spawnPostionP2_;
+    std::map<unsigned int, TileTexture> mapTextureTable_;
+};
+
+
+#endif //MARIO_MAKER_GAMEMAP_H
