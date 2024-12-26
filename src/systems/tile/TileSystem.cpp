@@ -298,21 +298,37 @@ void TileSystem::createDebris(World *world, float xf, float yf) {
     ent4->assign<KineticComponent>(-0.0f, -0.0f, +2.0f, -1.5f);
 }
 
+// void TileSystem::manageCannons(World *world) {
+//     world->each<CannonComponent, AABBComponent>([&](
+//             Entity* entity,
+//             ComponentHandle<CannonComponent> cannonComponent,
+//             ComponentHandle<AABBComponent> aabb) {
+//         if (entity->has<FrozenComponent>()) return;
+
+//         if (cannonComponent->canShoot()) {
+//             Entity* player = world->findFirst<LeadCameraComponent>();
+//             auto playerAABB = player->get<AABBComponent>();
+//             bool shootLeft = true;
+
+//             if (playerAABB->getCenterX() >= aabb->getCenterX()) shootLeft = false;
+
+//             spawnEntityFromCannon(world, cannonComponent->getType(), aabb->collisionBox_, shootLeft);
+//         }
+//     });
+// }
+
 void TileSystem::manageCannons(World *world) {
     world->each<CannonComponent, AABBComponent>([&](
             Entity* entity,
             ComponentHandle<CannonComponent> cannonComponent,
             ComponentHandle<AABBComponent> aabb) {
-        if (entity->has<FrozenComponent>()) return;
-
-        if (cannonComponent->canShoot()) {
+        if (!entity->has<FrozenComponent>() && cannonComponent->canShoot()) {
             Entity* player = world->findFirst<LeadCameraComponent>();
-            auto playerAABB = player->get<AABBComponent>();
-            bool shootLeft = true;
-
-            if (playerAABB->getCenterX() >= aabb->getCenterX()) shootLeft = false;
-
-            spawnEntityFromCannon(world, cannonComponent->getType(), aabb->collisionBox_, shootLeft);
+            if (player) {
+                auto playerAABB = player->get<AABBComponent>();
+                bool shootLeft = playerAABB->getCenterX() < aabb->getCenterX();
+                spawnEntityFromCannon(world, cannonComponent->getType(), aabb->collisionBox_, shootLeft);
+            }
         }
     });
 }
