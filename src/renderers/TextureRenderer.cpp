@@ -160,10 +160,5 @@ void TextureRenderer::renderEntity(ECS::Entity *entity, float d) {
 void TextureRenderer::renderTileCollisionRect(ECS::World* world) {
     for (auto ent : world->each<AABBComponent, TileComponent, SolidComponent>()) {
         auto aabb = ent->get<AABBComponent>();
-
-#ifdef DEBUG
-        DrawRectangleLinesEx(aabb->collisionBox_, 2, RED);
-#endif
-
     }
 }

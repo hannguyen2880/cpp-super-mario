@@ -1,16 +1,3 @@
-/**
- * @startuml
- * enum ButtonStyle {
- *     DEFAULT
- *     GOLD_STYLE
- *     BLUE_STYLE
- *     GREEN_STYLE
- *     CUSTOM
- * }
- * @enduml
- */
-
-
 #pragma once
 
 enum class ButtonStyle {

@@ -1,16 +1,5 @@
-/**
- * @startuml
- * abstract class Screen {
- *     +void Init()
- *     +void Update()
- *     +void Draw()
- *     +void Unload()
- *     +~Screen()
- * }
- * @enduml
- */
-
 #pragma once
+
 #include "raylib.h"
 #include "../Constants.h"
 

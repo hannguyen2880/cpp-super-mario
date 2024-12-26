@@ -6,10 +6,9 @@
 #include <iostream>
 #include <cmath>
 
-MenuScreen::MenuScreen() {
-    playButton = ImageButton(START_GAME_BUTTON, 228, 159);
-    instructionButton = ImageButton(INSTRUCTION_BUTTON, 228, 239);
-    scoreboardButton = ImageButton(SCOREBOARD_BUTTON, 228, 319);
+MenuScreen::MenuScreen() : playButton(START_GAME_BUTTON, 228, 159),
+                           instructionButton(INSTRUCTION_BUTTON, 228, 239),
+                           scoreboardButton(SCOREBOARD_BUTTON, 228, 319) {
     originalMarioX = 55;
     originalMarioY = 199;
     cloud1X = 684;
@@ -25,6 +24,7 @@ MenuScreen::MenuScreen() {
 }
 
 MenuScreen::~MenuScreen() {
+    std::cout << "MenuScreen destroyed" << std::endl;
     Unload();
 }
 
@@ -35,7 +35,7 @@ void MenuScreen::Init() {
     loadingTexture = LoadTexture(LOADING_SCREEN);
     mario = LoadTexture(MARIO_MENU);
     cloud = LoadTexture(CLOUD);
-
+    
     isLoading = !firstLaunchCompleted;
     if (isLoading) {
         firstLaunchCompleted = true;

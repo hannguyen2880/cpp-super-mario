@@ -14,7 +14,10 @@ ImageButton::~ImageButton() {
 }
 
 void ImageButton::Unload() {
-    UnloadTexture(texture);
+    if (texture.id != 0) {  // Ensure the texture is valid before unloading
+        UnloadTexture(texture);
+        texture.id = 0;
+    }
 }
 
 bool ImageButton::Update() {
@@ -41,7 +44,7 @@ bool ImageButton::Update() {
 }
 
 void ImageButton::Draw() {
-    texture = LoadTexture(pathTexture);
+    //texture = LoadTexture(pathTexture);
     float width = texture.width * scale;
     float height = texture.height * scale;
     float x = bounds.x + (texture.width - width) / 2;

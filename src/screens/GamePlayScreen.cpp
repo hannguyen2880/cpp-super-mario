@@ -62,12 +62,14 @@ void GameplayScreen::Update() {
             CreateGameManager();
             gameManager->Init();
         } else {
+            if (homeButton.Update()) {
+                //std::cout << "Home button pressed\n\n\n\n";
+                Game::SetState(std::make_unique<MainMenuState>());
+            }
             gameManager->Update();
         }
     }
-    if (homeButton.Update()) {
-        Game::SetState(std::make_unique<MainMenuState>());
-    }
+    
 }
 
 void GameplayScreen::Draw() {
@@ -78,12 +80,9 @@ void GameplayScreen::Draw() {
 }
 
 void GameplayScreen::Unload() {
-    if (gameManager) {
-        gameManager->cleanup();
-        gameManager.reset();
-    }
+    std::cout << "DEBUG: GameplayScreen Unload\n";
 }
 
 GameplayScreen::~GameplayScreen() {
-    Unload();
+    std::cout << "DEBUG: GameplayScreen Destructor\n";
 }
