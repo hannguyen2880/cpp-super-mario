@@ -55,6 +55,10 @@
         "valarray": "cpp",
         "variant": "cpp",
         "vector": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "ranges": "cpp"
     }
 }
