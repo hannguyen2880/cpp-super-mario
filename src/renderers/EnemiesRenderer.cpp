@@ -36,7 +36,7 @@ EnemiesRenderer::EnemiesRenderer(const char *filepath) :Renderer(filepath)
     // Piranha plant
     texturePositions_.insert({PIRANHA_PLANT_1, new Rectangle{1, 88, TILE_SIZE, TILE_SIZE + TILE_SIZE / 2}});
     texturePositions_.insert({PIRANHA_PLANT_2, new Rectangle{18, 88, TILE_SIZE, TILE_SIZE + TILE_SIZE / 2}});
-
+    
     // Tartosso
     texturePositions_.insert({TARTOSSO_1, new Rectangle{301, 42, TILE_SIZE, TILE_SIZE + TILE_SIZE / 2}});
     texturePositions_.insert({TARTOSSO_2, new Rectangle{326, 42, TILE_SIZE, TILE_SIZE + TILE_SIZE / 2}});

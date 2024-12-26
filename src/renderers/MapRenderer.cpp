@@ -39,7 +39,6 @@ MapRenderer::MapRenderer(GameMap *map, const char* filepath1)
 
     //Render escalator
     texturePositions_.insert({ESCALATOR_1, new Rectangle{48, 16, TILE_SIZE, TILE_SIZE / 2}});
-    //std::cout << "Escalator 1" << escalator_origin->x << " " << escalator_origin->y << " " << escalator_origin->width << " " << escalator_origin->height << std::endl <<std::endl;
     texturePositions_.insert({ESCALATOR_2, new Rectangle{48, 16, TILE_SIZE, TILE_SIZE / 2}});
     texturePositions_.insert({ESCALATOR_3, new Rectangle{48, 16, TILE_SIZE, TILE_SIZE / 2}});
     
