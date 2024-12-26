@@ -8,15 +8,6 @@
  *     +~GameState()
  * }
  * 
- * enum GameStateType {
- *     LOGO
- *     MAIN_MENU
- *     BEFOREGAME
- *     INSTRUCTIONS
- *     SCOREBOARD
- *     GAMEPLAY
- * }
- * 
  * enum GameDifficulty {
  *     EASY
  *     MEDIUM
@@ -47,14 +38,6 @@ public:
     virtual ~GameState() = default;
 };
 
-enum class GameStateType {
-    LOGO,
-    MAIN_MENU,
-    BEFOREGAME,
-    INSTRUCTIONS,
-    SCOREBOARD,
-    GAMEPLAY
-};
 
 enum class GameDifficulty {
     EASY,

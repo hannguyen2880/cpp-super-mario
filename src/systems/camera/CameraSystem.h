@@ -1,6 +1,15 @@
 /**
  * @startuml
- * class CameraSystem {
+ * class ECS::EntitySystem {
+ *     +void configure(ECS::World* world)
+ *     +void unconfigure(ECS::World* world)
+ *     +void tick(ECS::World* world, float delta)
+ * }
+ * 
+ * class CameraComponent {
+ * }
+ * 
+ * class CameraSystem extends ECS::EntitySystem {
  *     +CameraSystem(int screenW, int screenH, int mapW, int mapH)
  *     +void configure(World* world) <<override>>
  *     +void unconfigure(World* world) <<override>>
@@ -8,12 +17,15 @@
  *     +~CameraSystem()
  *     -void followLeadPlayer(World* world)
  *     -bool checkIfDefreezeEntity(Vector2 playerPos, Vector2 entityPos)
+ *     -void defreezeCloseEnemies(World *world)
  *     -CameraComponent* pCamera_
  *     -const int screenWidth_
  *     -const int screenHeight_
  *     -const int mapWidth_
  *     -const int mapHeight_
  * }
+ * 
+ * CameraSystem *-- CameraComponent : composes
  * @enduml
  */
 

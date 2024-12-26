@@ -10,13 +10,8 @@
  *     +bool NeedsRestart() const
  *     +GameMap* getMap() const
  *     -void initWorld()
- *     -void initPlayers()
- *     -void registerSystems()
  *     -void handleInput()
- *     -void initIdsMap()
  *     -void render(float d)
- *     -void initTextEntities()
- *     -void startMusic()
  *     -void updateMusicStream()
  *     -void restartGame()
  *     -void saveScore()
@@ -40,9 +35,119 @@
  *     -EnemiesRenderer* enemiesRenderer
  *     -ObjectRenderer* objectRenderer
  *     -TextRenderer* textRenderer_
- *     -void initMarioPlayer(ECS::Entity* player, Vector2 position)
- *     -void initLuigiPlayer(ECS::Entity* player, Vector2 position)
  * }
+ * 
+ * class ECS::World {
+ *     +static ECS::World* createWorld()
+ *     +void destroyWorld()
+ *     +void tick(float delta)
+ *     +ECS::Entity* create()
+ *     +void registerSystem(ECS::EntitySystem* system)
+ *     +void disableSystem(ECS::EntitySystem* system)
+ *     +ECS::Entity* getById(size_t id)
+ *     +void emit(const Event& event)
+ * }
+ * 
+ * class ECS::Entity {
+ *     +size_t getEntityId()
+ *     +void assign<Component>(Args&&... args)
+ *     +bool has<Component>()
+ *     +Component* get<Component>()
+ * }
+ * 
+ * class ECS::EntitySystem {
+ * }
+ * 
+ * class GameMap {
+ * }
+ * 
+ * class SoundSystem extends ECS::EntitySystem {
+ *     +SoundSystem()
+ *     +~SoundSystem()
+ *     +void configure(ECS::World* world)
+ *     +void unconfigure(ECS::World* world)
+ *     +void tick(ECS::World* world, float delta)
+ * }
+ * 
+ * class MapRenderer {
+ *     +MapRenderer(GameMap* map, const char* filepath)
+ *     +~MapRenderer()
+ *     +void render(ECS::World* world, float delta)
+ *     +void renderBackground(ECS::World* world)
+ * }
+ * 
+ * class TextureRenderer {
+ *     +explicit TextureRenderer(const char* filepath)
+ *     +~TextureRenderer()
+ *     +void renderTexture(TextureId textureId, Rectangle dstRect, bool flipH = false, bool flipV = false)
+ *     +void renderTextureEntities(ECS::World* world, float delta)
+ *     +void renderTileCollisionRect(ECS::World* world)
+ * }
+ * 
+ * class EnemiesRenderer {
+ *     +explicit EnemiesRenderer(const char* filepath)
+ *     +~EnemiesRenderer()
+ *     +void renderUnderTileEnemies(ECS::World* world, float delta)
+ *     +void renderOverTileEnemies(ECS::World* world, float delta)
+ * }
+ * 
+ * class ObjectRenderer {
+ *     +explicit ObjectRenderer(const char* filepath)
+ *     +~ObjectRenderer()
+ *     +void render(ECS::World* world)
+ * }
+ * 
+ * class TextRenderer {
+ *     +TextRenderer()
+ *     +~TextRenderer()
+ *     +void render(ECS::World* world)
+ *     +void renderScoreTextComponents(ECS::World* world)
+ * }
+ * 
+ * class CameraSystem extends ECS::EntitySystem {
+ * }
+ * 
+ * class PlayerSystem extends ECS::EntitySystem {
+ * }
+ * 
+ * class EnemySystem extends ECS::EntitySystem {
+ * }
+ * 
+ * class AnimationSystem extends ECS::EntitySystem {
+ * }
+ * 
+ * class IdsMapSystem extends ECS::EntitySystem {
+ * }
+ * 
+ * class PhysicSystem extends ECS::EntitySystem {
+ * }
+ * 
+ * class TileSystem extends ECS::EntitySystem {
+ * }
+ * 
+ * class FlagSystem extends ECS::EntitySystem {
+ * }
+ * 
+ * GameManager *-- ECS::World : composes
+ * GameManager *-- GameMap : composes
+ * GameManager *-- SoundSystem : composes
+ * GameManager *-- ECS::EntitySystem : composes
+ * GameManager *-- MapRenderer : composes
+ * GameManager *-- TextureRenderer : composes
+ * GameManager *-- EnemiesRenderer : composes
+ * GameManager *-- ObjectRenderer : composes
+ * GameManager *-- TextRenderer : composes
+ * 
+ * ECS::World *-- ECS::Entity
+ * ECS::World *-- CameraSystem 
+ * ECS::World *-- PlayerSystem
+ * ECS::World *-- EnemySystem
+ * ECS::World *-- AnimationSystem
+ * ECS::World *-- IdsMapSystem
+ * ECS::World *-- PhysicSystem
+ * ECS::World *-- TileSystem
+ * ECS::World *-- FlagSystem
+ * 
  * @enduml
  */
 

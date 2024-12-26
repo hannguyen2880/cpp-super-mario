@@ -1,19 +1,19 @@
 /**
  * @startuml
- * class EntitySystem {
+ * class ECS::EntitySystem {
  *     + void configure(World *world) <<abstract>>
  *     + void unconfigure(World *world) <<abstract>>
  *     + void tick(World *world, ECS::DefaultTickData data) <<abstract>>
  * }
  * 
- * class EventSubscriber {
+ * class ECS::EventSubscriber {
  *     + void receive(World *world, const Event &event) <<abstract>>
  * }
  * 
  * class CollisionWithFinalPoleEvent {
  * }
  * 
- * class FlagSystem extends EntitySystem {
+ * class FlagSystem extends EntitySystem, EventSubscriber {
  *     + FlagSystem()
  *     + ~FlagSystem()
  *     + void configure(World *world) <<override>>
@@ -22,9 +22,7 @@
  *     + void receive(World *world, const CollisionWithFinalPoleEvent &event) <<override>>
  * }
  * 
- * FlagSystem "1" *-- "1" ECS::Entity
- * FlagSystem <|.. EventSubscriber : implements
- * EventSubscriber <|.. CollisionWithFinalPoleEvent
+ * FlagSystem *-- CollisionWithFinalPoleEvent : composes
  * @enduml
  */
 

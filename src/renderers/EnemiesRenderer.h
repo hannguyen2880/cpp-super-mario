@@ -1,6 +1,9 @@
 /**
  * @startuml
- * class EnemiesRenderer {
+ * class Renderer {
+ * }
+ * 
+ * class EnemiesRenderer extends Renderer {
  *     +explicit EnemiesRenderer(const char* filepath)
  *     +~EnemiesRenderer()
  *     +void renderUnderTileEnemies(ECS::World* world, float delta)

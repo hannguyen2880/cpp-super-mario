@@ -1,15 +1,31 @@
 /**
  * @startuml
- * class EnemySystem {
+ * class ECS::EntitySystem {
+ *     +void configure(ECS::World* world)
+ *     +void unconfigure(ECS::World* world)
+ *     +void tick(ECS::World* world, float delta)
+ * }
+ * 
+ * class ECS::EventSubscriber {
+ * }
+ * 
+ * class KillEnemyEvent {
+ * }
+ * 
+ * class EnemyCollectableCollisionEvent {
+ * }
+ * 
+ * class EnemySystem extends ECS::EventSubscriber {
  *     +EnemySystem()
- *     +void tick(World* world, float delta) <<override>>
  *     +void configure(World* world) <<override>>
  *     +void unconfigure(World* world) <<override>>
- *     +void receive(World* world, const KillEnemyEvent& killEnemyEvent) <<override>>
- *     +void receive(World* world, const EnemyCollectableCollisionEvent& event) <<override>>
- *     +virtual ~EnemySystem()
- *     -void manageEnemyEntities(World* world)
+ *     +void tick(World* world, float delta) <<override>>
+ *     +void receive(World* world, const Event& event) <<override>>
+ *     +~EnemySystem()
  * }
+ * 
+ * EnemySystem *-- KillEnemyEvent : composes
+ * EnemySystem *-- EnemyCollectableCollisionEvent : composes
  * @enduml
  */
 

@@ -1,11 +1,17 @@
 /**
  * @startuml
- * class AnimationSystem {
- *     +AnimationSystem()
- *     +void tick(World* world, float delta) <<override>>
- *     +void configure(World* world) <<override>>
- *     +void unconfigure(World* world) <<override>>
- *     +~AnimationSystem()
+ * class ECS::EntitySystem {
+ *     +void configure(ECS::World* world)
+ *     +void unconfigure(ECS::World* world)
+ *     +void tick(ECS::World* world, float delta)
+ * }
+ * 
+ * class IdsMapSystem extends ECS::EntitySystem {
+ *     +IdsMapSystem()
+ *     +~IdsMapSystem()
+ *     +void configure(ECS::World* world) <<override>>
+ *     +void unconfigure(ECS::World* world) <<override>>
+ *     +void tick(ECS::World* world, ECS::DefaultTickData data) <<override>>
  * }
  * @enduml
  */

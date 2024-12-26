@@ -6,9 +6,6 @@
  *     // Add other states as needed
  * }
  * 
- * class Texture2D {
- * }
- * 
  * class ImageButton {
  * }
  * 
@@ -40,7 +37,6 @@
  * }
  * 
  * BeforeGameScreen "1" *-- "1" PanelState
- * BeforeGameScreen "1" *-- "1" Texture2D
  * BeforeGameScreen "1" *-- "1" ImageButton
  * BeforeGameScreen "1" *-- "1" FontButton
  * @enduml

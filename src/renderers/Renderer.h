@@ -9,6 +9,8 @@
  *     -std::unordered_map<TextureId, Texture2D> textures_
  *     -std::unordered_map<TextureId, Vector2> texturePositions_
  * }
+ * 
+ * Renderer ..> TextureId : uses
  * @enduml
  */
 #ifndef MARIO_MAKER_RENDERER_H

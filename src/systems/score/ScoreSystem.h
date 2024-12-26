@@ -1,9 +1,6 @@
 /**
  * @startuml
- * class EntitySystem {
- *     + void configure(World *world) <<abstract>>
- *     + void unconfigure(World *world) <<abstract>>
- *     + void tick(World *world, ECS::DefaultTickData data) <<abstract>>
+ * class ECS::EntitySystem {
  * }
  * 
  * class EventSubscriber {

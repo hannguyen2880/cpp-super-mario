@@ -19,6 +19,15 @@
  *     -static GameplayMode gameplayMode
  *     -static Character character
  * }
+ * 
+ * class GameConfig {
+ * }
+ * 
+ * class GameState {
+ * }
+ * 
+ * Game *-- GameConfig : composes
+ * Game *-- GameState : composes
  * @enduml
  */
 

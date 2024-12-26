@@ -3,12 +3,7 @@
  * class Screen {
  * }
  * 
- * class Texture2D {
- * }
- * 
- * class Rectangle {
- * }
- * 
+
  * class ImageButton {
  * }
  * 
@@ -35,8 +30,6 @@
  *     - ImageButton scoreboardButton
  * }
  * 
- * MenuScreen "1" *-- "1" Texture2D
- * MenuScreen "1" *-- "1" Rectangle
  * MenuScreen "1" *-- "1" ImageButton
  * @enduml
  */

@@ -1,6 +1,12 @@
 /**
  * @startuml
- * class MapRenderer {
+ * class Renderer {
+ * }
+ * 
+ * class GameMap {
+ * }
+ * 
+ * class MapRenderer extends Renderer {
  *     +MapRenderer(GameMap *map, const char* filepath)
  *     +void render(ECS::World* world, float delta)
  *     +virtual ~MapRenderer()
@@ -10,9 +16,10 @@
  *     -void renderOtherEntities(ECS::World *pWorld, float d)
  *     -GameMap map_
  * }
+ * 
+ * MapRenderer *-- GameMap : composes
  * @enduml
  */
-
 
 #ifndef MARIO_MAKER_MAPRENDERER_H
 #define MARIO_MAKER_MAPRENDERER_H

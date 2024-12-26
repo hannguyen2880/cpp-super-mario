@@ -8,8 +8,6 @@
  *     // Add other styles as needed
  * }
  * 
- * class Color {
- * }
  * 
  * class FontButton extends Button {
  *     + FontButton()
@@ -29,7 +27,6 @@
  * }
  * 
  * FontButton "1" *-- "1" ButtonStyle
- * FontButton "1" *-- "1" Color
  * @enduml
  */
 

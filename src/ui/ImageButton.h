@@ -3,11 +3,6 @@
  * class Button {
  * }
  * 
- * class Texture2D {
- * }
- * 
- * class Color {
- * }
  * 
  * class ImageButton extends Button {
  *     + ImageButton()
@@ -22,8 +17,6 @@
  *     - Color tint
  * }
  * 
- * ImageButton "1" *-- "1" Texture2D
- * ImageButton "1" *-- "1" Color
  * @enduml
  */
 

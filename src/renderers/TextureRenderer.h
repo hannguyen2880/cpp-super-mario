@@ -1,6 +1,9 @@
 /**
  * @startuml
- * class TextureRenderer {
+ * class Renderer {
+ * }
+ * 
+ * class TextureRenderer extends Renderer {
  *     +explicit TextureRenderer(const char* filepath)
  *     +~TextureRenderer()
  *     +void renderTexture(TextureId textureId, Rectangle dstRect, bool flipH = false, bool flipV = false)

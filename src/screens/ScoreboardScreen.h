@@ -3,9 +3,7 @@
  * class Screen {
  * }
  * 
- * class Texture2D {
- * }
- * 
+
  * class ImageButton {
  * }
  * 
@@ -29,7 +27,6 @@
  *     - float textRightMargin
  * }
  * 
- * ScoreboardScreen "1" *-- "1" Texture2D
  * ScoreboardScreen "1" *-- "1" ImageButton
  * @enduml
  */

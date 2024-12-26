@@ -3,9 +3,7 @@
  * class Screen {
  * }
  * 
- * class Texture2D {
- * }
- * 
+
  * class ImageButton {
  * }
  * 
@@ -21,7 +19,6 @@
  *     - ImageButton mainMenuButton
  * }
  * 
- * PauseScreen "1" *-- "1" Texture2D
  * PauseScreen "1" *-- "1" ImageButton
  * @enduml
  */

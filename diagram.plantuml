@@ -1,29 +1,76 @@
-@startuml out/diagram 
-!include src/game/GameConfig.h
-!include src/game/Game.h
+@startuml out/diagram_2 
+' ' !include src/game/GameConfig.h
+' ' !include src/game/Game.h
+' !include src/game/GameManager.h
+' ' !include src/game/State/ScoreboardState.h
+' ' !include src/game/State/MainMenuState.h
+' ' !include src/game/State/InstructionState.h
+' ' !include src/game/State/BeforeGameState.h
+' ' !include src/game/State/GameplayState.h
+' ' !include src/game/State/PauseState.h
+' ' !include src/game/State/GameState.h
+' !include src/systems/score/ScoreSystem.h
+' !include src/systems/tile/TileSystem.h
+' !include src/systems/player/PlayerSystem.h
+' !include src/systems/IdsMap/IdsMapSystem.h
+' !include src/systems/enemy/EnemySystem.h
+' !include src/systems/timer/TimerSystem.h
+' !include src/systems/animation/AnimationSystem.h
+' !include src/systems/physics/PhysicSystem.h
+' !include src/systems/flag/FlagSystem.h
+' !include src/systems/sound/SoundSystem.h
+' !include src/systems/camera/CameraSystem.h
+' !include src/audio/AudioIds.h
+' !include src/audio/AudioManager.h
+' ' !include src/components/Components.h
+' !include src/events/Events.h
+' !include src/map/GameMap.h
+' !include src/renderers/TextRenderer.h
+' !include src/renderers/Renderer.h
+' !include src/renderers/MapRenderer.h
+' !include src/renderers/TextureId.h
+' !include src/renderers/ObjectRenderer.h
+' !include src/renderers/TextureRenderer.h
+' !include src/renderers/EnemiesRenderer.h
+' ' !include src/ui/ButtonStyle.h
+' ' !include src/ui/Button.h
+' ' !include src/ui/ImageButton.h
+' ' !include src/ui/FontButton.h
+' ' !include src/screens/Screen.h
+' ' !include src/screens/MenuScreen.h
+' ' !include src/screens/InstructionScreen.h
+' ' !include src/screens/BeforeGameScreen.h
+' ' !include src/screens/GamePlayScreen.h
+' ' !include src/screens/PauseScreen.h
+' ' !include src/screens/ScoreboardScreen.h
+' @enduml
+
+
+' !include src/game/GameConfig.h
+' !include src/game/Game.h
 !include src/game/GameManager.h
-!include src/game/State/ScoreboardState.h
-!include src/game/State/MainMenuState.h
-!include src/game/State/InstructionState.h
-!include src/game/State/BeforeGameState.h
-!include src/game/State/GameplayState.h
-!include src/game/State/PauseState.h
-!include src/game/State/GameState.h
-!include src/systems/score/ScoreSystem.h
-!include src/systems/tile/TileSystem.h
-!include src/systems/player/PlayerSystem.h
-'!include src/systems/IdsMap/IdsMapSystem.h
-!include src/systems/enemy/EnemySystem.h
-!include src/systems/timer/TimerSystem.h
-!include src/systems/animation/AnimationSystem.h
-!include src/systems/physics/PhysicSystem.h
-!include src/systems/flag/FlagSystem.h
-!include src/systems/sound/SoundSystem.h
-!include src/systems/camera/CameraSystem.h
-!include src/audio/AudioIds.h
-!include src/audio/AudioManager.h
-!include src/components/Components.h
-!include src/events/Events.h
+' !include src/game/State/ScoreboardState.h
+' !include src/game/State/MainMenuState.h
+' !include src/game/State/InstructionState.h
+' !include src/game/State/BeforeGameState.h
+' !include src/game/State/GameplayState.h
+' !include src/game/State/PauseState.h
+' !include src/game/State/GameState.h
+' !include src/systems/score/ScoreSystem.h
+' !include src/systems/tile/TileSystem.h
+' !include src/systems/player/PlayerSystem.h
+' !include src/systems/IdsMap/IdsMapSystem.h
+' !include src/systems/enemy/EnemySystem.h
+' !include src/systems/timer/TimerSystem.h
+' !include src/systems/animation/AnimationSystem.h
+' !include src/systems/physics/PhysicSystem.h
+' !include src/systems/flag/FlagSystem.h
+' !include src/systems/sound/SoundSystem.h
+' !include src/systems/camera/CameraSystem.h
+' !include src/audio/AudioIds.h
+' !include src/audio/AudioManager.h
+' !include src/components/Components.h
+' !include src/events/Events.h
 !include src/map/GameMap.h
 !include src/renderers/TextRenderer.h
 !include src/renderers/Renderer.h
@@ -32,15 +79,15 @@
 !include src/renderers/ObjectRenderer.h
 !include src/renderers/TextureRenderer.h
 !include src/renderers/EnemiesRenderer.h
-!include src/ui/ButtonStyle.h
-!include src/ui/Button.h
-!include src/ui/ImageButton.h
-!include src/ui/FontButton.h
-!include src/screens/Screen.h
-!include src/screens/MenuScreen.h
-!include src/screens/InstructionScreen.h
-!include src/screens/BeforeGameScreen.h
-!include src/screens/GamePlayScreen.h
-!include src/screens/PauseScreen.h
-!include src/screens/ScoreboardScreen.h
+' !include src/ui/ButtonStyle.h
+' !include src/ui/Button.h
+' !include src/ui/ImageButton.h
+' !include src/ui/FontButton.h
+' !include src/screens/Screen.h
+' !include src/screens/MenuScreen.h
+' !include src/screens/InstructionScreen.h
+' !include src/screens/BeforeGameScreen.h
+' !include src/screens/GamePlayScreen.h
+' !include src/screens/PauseScreen.h
+' !include src/screens/ScoreboardScreen.h
 @enduml

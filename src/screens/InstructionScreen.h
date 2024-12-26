@@ -2,9 +2,6 @@
  * @startuml
  * !include Screen.h
  * 
- * class Texture2D {
- * }
- * 
  * class ImageButton {
  * }
  * 
@@ -25,7 +22,6 @@
  *     - bool isAnimating
  * }
  * 
- * InstructionScreen "1" *-- "1" Texture2D
  * InstructionScreen "1" *-- "1" ImageButton
  * @enduml
  */

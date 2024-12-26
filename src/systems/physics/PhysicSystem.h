@@ -15,8 +15,6 @@
  *     -void checkYEnemyCollision(Entity *ent1, Entity *ent2)
  *     -void checkCollisionWithSolidObject(Entity *ent1, Entity *ent2)
  * }
- * 
- * PhysicSystem <|-- EntitySystem
  * @enduml
  */
 

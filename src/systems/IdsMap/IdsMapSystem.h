@@ -1,26 +1,20 @@
 /**
  * @startuml
- * namespace ECS {
- *     class EntitySystem {
- *         + void configure(World *world) <<abstract>>
- *         + void unconfigure(World *world) <<abstract>>
- *     }
- * 
- *     class World {
- *     }
+ * class ECS::EntitySystem {
+ *     + void configure(World *world) <<abstract>>
+ *     + void unconfigure(World *world) <<abstract>>
+ *     + void tick(World *world, ECS::DefaultTickData data) <<abstract>>
  * }
  * 
  * class IdsMapSystem extends ECS::EntitySystem {
- *     + IdsMapSystem()
- *     + ~IdsMapSystem()
- *     + void configure(World *world) <<override>>
- *     + void unconfigure(World *world) <<override>>
+ *     +IdsMapSystem()
+ *     +~IdsMapSystem()
+ *     +void configure(ECS::World* world) <<override>>
+ *     +void unconfigure(ECS::World* world) <<override>>
+ *     +void tick(ECS::World* world, ECS::DefaultTickData data) <<override>>
  * }
- * 
- * IdsMapSystem "1" *-- "1" ECS::World
  * @enduml
  */
-
 
 #ifndef MARIO_MAKER_IDSMAPSYSTEM_H
 #define MARIO_MAKER_IDSMAPSYSTEM_H
