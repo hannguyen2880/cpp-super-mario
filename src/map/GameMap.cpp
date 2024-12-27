@@ -1,11 +1,7 @@
-#include <cmath>
-#include <iostream>
-#include "../Constants.h"
+
 #include "GameMap.h"
 
-GameMap::GameMap(std::string filename)
-:name(filename)
-{
+GameMap::GameMap(std::string filename) :name(filename) {
     loaded_ = false;
     width_ = 0;
     height_ = 0;
@@ -15,45 +11,57 @@ GameMap::~GameMap() {
     for (int i = 0; i < width_; i++)
     {
         delete[] graphicsLayer_[i];
-        delete[] backgroundLayer_[i];
+        delete[] decorationLayer_[i];
     }
+    delete[] graphicsLayer_;
+    delete[] decorationLayer_;
 }
 
+//using 2D array to store the tile id of each tile
 void GameMap::loadMap(ECS::World* world) {
     tmx::Map map;
-    if(map.load(name))
-    {
-        // Get Map sizes
-        loadMapBasicInfo(map.getTileCount());
+    try {
+        if (map.load(name)) {
+            // Get Map sizes
+            loadMapBasicInfo(map.getTileCount());
 
-        // Load properties
-        loadProperties(map.getProperties());
+            // Load properties
+            loadProperties(map.getProperties());
 
-        // Load layers
-        std::set<unsigned int> usedTiles = loadLayers(map.getLayers(), world);
+            // Load layers
+            std::set<unsigned int> usedTiles = loadLayers(map.getLayers(), world);
 
-        // Load tileset
-        loadMapTiles(const_cast<std::vector<tmx::Tileset> &>(map.getTilesets()), usedTiles);
-    } else {
-        throw "Cannot load map from " + name;
+            // Load tileset
+            loadMapTiles(const_cast<std::vector<tmx::Tileset> &>(map.getTilesets()), usedTiles);
+
+        } else {
+            throw std::runtime_error("Cannot load map from " + name);
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 
     this->loaded_ = true;
 }
 
-void GameMap::loadMapBasicInfo(const tmx::Vector2u &orientation) {
+bool GameMap::isMapLoaded() {
+        return loaded_;
+}
+
+//Get Map Sizes
+void GameMap::loadMapBasicInfo(const tmx::Vector2u& orientation) {
     width_ = orientation.x;
     height_ = orientation.y;
 
     graphicsLayer_ = new unsigned int*[width_];
-    backgroundLayer_ = new unsigned int*[width_];
-    for (int i = 0; i < width_; i++)
-    {
+    decorationLayer_ = new unsigned int*[width_];
+    for (int i = 0; i < width_; i++) {
         graphicsLayer_[i] = new unsigned int[height_];
-        backgroundLayer_[i] = new unsigned int[height_];
+        decorationLayer_[i] = new unsigned int[height_];
     }
 }
 
+//Load properties (extract: spawn position of mario)
 void GameMap::loadProperties(const std::vector<tmx::Property> properties) {
     Vector2 marioSpawn;
     for (const tmx::Property& property : properties)
@@ -67,9 +75,10 @@ void GameMap::loadProperties(const std::vector<tmx::Property> properties) {
     }
 
     spawnPositionP1_ = marioSpawn;
-    spawnPostionP2_ = Vector2{marioSpawn.x - 2, marioSpawn.y};
+    spawnPositionP2_ = Vector2{marioSpawn.x - 2, marioSpawn.y};
 }
 
+//Load layers (extract: tile id of each tile)
 std::set<unsigned int> GameMap::loadLayers(const std::vector<tmx::Layer::Ptr>& layers, ECS::World* world) {
     std::set<unsigned int> usedTilesSet;
 
@@ -93,13 +102,13 @@ std::set<unsigned int> GameMap::loadLayers(const std::vector<tmx::Layer::Ptr>& l
         else if(layer->getType() == tmx::Layer::Type::Tile)
         {
             unsigned int** mapToLoad;
-            if (layer->getName() == "background")
-            {
-                mapToLoad = backgroundLayer_;
-            } else if (layer->getName() == "graphics")
+            if (layer->getName() == "graphics")
             {
                 mapToLoad = graphicsLayer_;
-            }
+            } else if (layer->getName() == "decoration")
+            {
+                mapToLoad = decorationLayer_;
+            } 
 
             const auto& tileLayer = layer->getLayerAs<tmx::TileLayer>();
             const auto & tiles = tileLayer.getTiles();
@@ -133,17 +142,19 @@ Texture2D GameMap::getTexture(const std::string& path, tmx::Vector2u tilePositio
     return texture2D;
 }
 
-void GameMap::loadMapTiles(std::vector<tmx::Tileset> &tileset, const std::set<unsigned int>& usedTiles) {
-    const auto& tiles = tileset.at(0).getTiles();
-    for(const auto& tile : tiles)
-    {
-        if (usedTiles.count(tile.ID))
-        {
-            Texture2D texture2D = getTexture(tile.imagePath, tile.imagePosition, tile.imageSize);
-            TileTexture pTileTexture = static_cast<TileTexture>(malloc(sizeof(TileTexture)));
-            pTileTexture->texture = texture2D;
-            pTileTexture->id = tile.ID;
-            mapTextureTable_.insert(std::make_pair(tile.ID, pTileTexture));
+void GameMap::loadMapTiles(const std::vector<tmx::Tileset>& tilesets, const std::set<unsigned int>& usedTiles) {
+    for (const auto& tileset : tilesets) {
+        const auto& tiles = tileset.getTiles();
+        for (const auto& tile : tiles) {
+            if (usedTiles.count(tile.ID)) {
+                std::cout << "Tile ID: " << tile.ID << std::endl;
+                std::cout << "Tile Image Path: " << tile.imagePath << std::endl << std::endl;
+                Texture2D texture2D = getTexture(tile.imagePath, tile.imagePosition, tile.imageSize);
+                TileTexture pTileTexture = static_cast<TileTexture>(malloc(sizeof(TileTexture)));
+                pTileTexture->texture = texture2D;
+                pTileTexture->id = tile.ID;
+                mapTextureTable_.insert(std::make_pair(tile.ID, pTileTexture));
+            }
         }
     }
 }
@@ -154,6 +165,7 @@ Texture2D GameMap::getTexture(unsigned int id)
     if (it != mapTextureTable_.end()){
         return it->second->texture;
     } else {
+        std::cout << "Texture not found" << std::endl << "\n\n\n\n";
         throw "Texture not found";
     }
 }
@@ -179,15 +191,15 @@ const Vector2 &GameMap::getSpawnPositionP1() const {
 }
 
 const Vector2 &GameMap::getSpawnPositionP2() const {
-    return spawnPostionP2_;
+    return spawnPositionP2_;
 }
 
 unsigned int **GameMap::getGraphicsLayer() const {
     return graphicsLayer_;
 }
 
-unsigned int **GameMap::getBackgroundLayer() const {
-    return backgroundLayer_;
+unsigned int **GameMap::getDecorationLayer() const {
+    return decorationLayer_;
 }
 
 const std::map<unsigned int, TileTexture> &GameMap::getTextureTable() const {
@@ -202,11 +214,7 @@ int GameMap::getPixelWidth() const {
     return width_ * 32;
 }
 
-void GameMap::loadTileEntity(
-        ECS::Entity* ent,
-        tmx::FloatRect AABB,
-        std::vector<tmx::Property> properties,
-        std::string layerName) {
+void GameMap::loadTileEntity(ECS::Entity* ent, tmx::FloatRect AABB, std::vector<tmx::Property> properties, std::string layerName) {
     // Adjust coordinates
     float x = std::round((AABB.left * 2) / 32) * 32;
     float y = std::round((AABB.top * 2) / 32) * 32;
@@ -218,7 +226,7 @@ void GameMap::loadTileEntity(
         width = GAME_TILE_SIZE * n;
     }
 
-    if (std::round(AABB.width) <= TILE_SIZE + 2) {
+    if (std::round(AABB.height) <= TILE_SIZE + 2) {
         height = GAME_TILE_SIZE;
     } else {
         int n = (int) std::round(AABB.height / 16);
@@ -230,25 +238,43 @@ void GameMap::loadTileEntity(
     ent->assign<TileComponent>();
     if (layerName == "pipes") {
         ent->assign<PipeComponent>();
+        float spawn_y_piranha = aabb->top();
+        ECS::World* world = ent->getWorld();
+        bool hasPiranhaPlant = false;
+        bool horizontal = false;
         for (auto prop : properties) {
             if (prop.getName() == "has_piranha_plant" && prop.getBoolValue()) {
-                ECS::World* world = ent->getWorld();
-                createPiranhaPlant(world, aabb->getCenterX(), aabb->top());
-            }
+               hasPiranhaPlant = true;
+            } else if (prop.getName() == "isTall") {
+                if (prop.getBoolValue()) {
+                    spawn_y_piranha -= GAME_TILE_SIZE;
+                }
+            } 
         }
-    } else if (layerName == "bricks") ent->assign<BrickComponent>();
+        if (hasPiranhaPlant) {
+            createPiranhaPlant(world, aabb->getCenterX(), spawn_y_piranha);
+        } 
+    } 
+    else if (layerName == "bricks") ent->assign<BrickComponent>();
     else if (layerName == "ground") ent->assign<GroundComponent>();
     else if (layerName == "square_brick") ent->assign<SquareBrick>();
     else if (layerName == "question_block") {
         ent->assign<QuestionBlockComponent>();
         ent->remove<AABBComponent>();
         ent->assign<AABBComponent>(Rectangle{x, y + 0.5f, width, height});
-    } else if (layerName == "enemies") {
+    } 
+    else if (layerName == "enemies") {
         ent->remove<TileComponent>();
         createEnemy(ent, properties);
-    } else if (layerName == "objects") {
+    } 
+    else if (layerName == "objects") {
         ent->remove<TileComponent>();
         createObject(ent, properties);
+    } 
+    else if (layerName == "escalator") {
+        ECS::World* world = ent->getWorld();
+        createEscalator(world, ent);
+        ent->remove<TileComponent>();
     }
 
     if (layerName == "bricks" || layerName == "question_block") {
@@ -265,26 +291,29 @@ void GameMap::loadTileEntity(
                     TextureId::QUESTION_BLOCK_3,
                     TextureId::QUESTION_BLOCK_2,
             }, 12);
-            if (!properties.empty()) {
-                auto questionComponent = ent->get<QuestionBlockComponent>();
+        }
+
+        if (!properties.empty()) {
+            auto questionComponent = ent->get<QuestionBlockComponent>();
                 for (const auto& property : properties) {
-                    if (property.getName() == "coins" && property.getBoolValue()) {
-                        questionComponent->coin = true;
-                    } else if (property.getName() == "super_mario_mushroom" && property.getBoolValue()) {
-                        questionComponent->superMarioMushroom = true;
-                    } else if (property.getName() == "mega_mushroom" && property.getBoolValue()) {
-                        questionComponent->megaMushroom = true;
-                    } else if (property.getName() == "one_up_mushroom" && property.getBoolValue()) {
-                        questionComponent->oneUpMushroom = true;
-                    } else if (property.getName() == "flame_mushroom" && property.getBoolValue()) {
-                        questionComponent->flameMushroom = true;
-                    }
+                        if (property.getName() == "coins" && property.getBoolValue()) {
+                            questionComponent->coin = true;
+                        } else if (property.getName() == "super_mario_mushroom" && property.getBoolValue()) {
+                            questionComponent->superMarioMushroom = true;
+                        } else if (property.getName() == "mega_mushroom" && property.getBoolValue()) {
+                            questionComponent->megaMushroom = true;
+                        } else if (property.getName() == "one_up_mushroom" && property.getBoolValue()) {
+                            questionComponent->oneUpMushroom = true;
+                        } else if (property.getName() == "flame_mushroom" && property.getBoolValue()) {
+                            questionComponent->flameMushroom = true;
+                        }
                 }
             }
-        }
+
         ent->assign<BounceComponent>();
     }
 }
+
 
 Enemy::BulletType getBulletType(const std::string stringType) {
     if (stringType == "B_BULLET_BILL") return Enemy::BulletType::B_BULLET_BILL;
@@ -386,7 +415,16 @@ void GameMap::setEnemyType(ECS::Entity *ent, std::string type) {
         }, 16);
         ent->assign<UnderTileComponent>();
     } else if (type == "RED_KOOPA_TROOPA") {
+        auto aabb = ent->get<AABBComponent>();
         ent->assign<EnemyComponent>(Enemy::Type::RED_KOOPA_TROOPA);
+        ent->assign<WalkComponent>();
+        aabb->setTop(aabb->top() - 16);
+        aabb->setHeight(48);
+        ent->assign<TextureComponent>(TextureId::RED_TURTLE_1);
+        ent->assign<AnimationComponent>(std::vector<TextureId>{
+                TextureId::RED_TURTLE_1,
+                TextureId::RED_TURTLE_2
+        }, 16);
         ent->assign<UnderTileComponent>();
     } else if (type == "TARTOSSO") {
         auto aabb = ent->get<AABBComponent>();
@@ -438,18 +476,18 @@ void GameMap::setEnemyType(ECS::Entity *ent, std::string type) {
 
 void GameMap::createPiranhaPlant(ECS::World* world, float spawnX, float spawnY) {
     auto piranhaPlant = world->create();
-    float  height = GAME_TILE_SIZE + GAME_TILE_SIZE / 2;
+    float height = GAME_TILE_SIZE + GAME_TILE_SIZE / 2;
     piranhaPlant->assign<FrozenComponent>();
     piranhaPlant->assign<EnemyComponent>(Enemy::PIRANHA_PLANT);
-    piranhaPlant->assign<AABBComponent>(Rectangle{spawnX - GAME_TILE_SIZE / 2, spawnY + height , GAME_TILE_SIZE, height});
     piranhaPlant->assign<SolidComponent>();
     piranhaPlant->assign<KineticComponent>();
+    piranhaPlant->assign<AABBComponent>(Rectangle{spawnX - GAME_TILE_SIZE / 2, spawnY + height, GAME_TILE_SIZE, height});
+    piranhaPlant->assign<VerticalGrowComponent>(256);
     piranhaPlant->assign<TextureComponent>(TextureId::PIRANHA_PLANT_1);
-    piranhaPlant->assign<VerticalGrowComponent>(384);
-    piranhaPlant->assign<AnimationComponent>(std::vector<TextureId>{
+        piranhaPlant->assign<AnimationComponent>(std::vector<TextureId>{
         TextureId::PIRANHA_PLANT_1,
         TextureId::PIRANHA_PLANT_2
-    }, 12);
+    }, 10);
     piranhaPlant->assign<UnderTileComponent>();
 }
 
@@ -529,8 +567,8 @@ void GameMap::createObject(ECS::Entity *entity, std::vector<tmx::Property> prope
                             TextureId::COIN_50_6,
                             TextureId::COIN_50_7,
                             TextureId::COIN_50_8,
-                    }, 12);
-                }
+                    }, 12); 
+                } 
             } else if (property.getName() == "left") {
                 if (property.getBoolValue()) entity->assign<PoleComponent>(Object::PoleDir::LEFT);
                 else entity->assign<PoleComponent>(Object::PoleDir::RIGHT);
@@ -546,11 +584,36 @@ ECS::Entity * GameMap::createParachute(ECS::Entity *entity) {
     parachute->assign<ObjectComponent>(Object::Type::PARACHUTE);
     parachute->assign<ParachuteComponent>(entity);
     parachute->assign<AABBComponent>(Rectangle{
-            aabb->getCenterX() - static_cast<float>(GAME_TILE_SIZE / 2),
-            aabb->top() + GAME_TILE_SIZE,
+            aabb->collisionBox_.x,
+            aabb->bottom(),
             GAME_TILE_SIZE,
             GAME_TILE_SIZE
     });
     parachute->assign<TextureComponent>(TextureId::PARACHUTE);
     return parachute;
+}
+
+void GameMap::createEscalator(ECS::World* world, ECS::Entity* entity) {
+    auto aabb = entity->get<AABBComponent>();
+    if (!aabb) {
+        std::cerr << "Error: AABBComponent not found for entity\n";
+        return;
+    }
+
+    auto escalator = world->create();
+    escalator->assign<ObjectComponent>(Object::Type::ESCALATOR);
+    escalator->assign<TileComponent>();
+    escalator->assign<AABBComponent>(Rectangle{
+        aabb->collisionBox_.x,
+        aabb->collisionBox_.y,
+        GAME_TILE_SIZE * 3,
+        GAME_TILE_SIZE / 2
+    });
+    escalator->assign<TextureComponent>(TextureId::ESCALATOR_1);
+    escalator->assign<SolidComponent>();
+    escalator->assign<KineticComponent>();
+    escalator->assign<VerticalGrowComponent>(640); 
+    escalator->assign<UnderTileComponent>();
+    escalator->assign<EscalatorComponent>(ESCALATOR_GROW_SPEED); 
+
 }
