@@ -71,9 +71,11 @@ WorldBuilder& WorldBuilder::initPlayers(ECS::World*& world_, GameMap*& pMap_, bo
     else {
         ECS::Entity* mario = world_->create();
         initMarioPlayer(mario, spawnPositionP1);
-        
+        mario->assign<LeadCameraComponent>();
+
         ECS::Entity* luigi = world_->create();
         initLuigiPlayer(luigi, spawnPositionP2);
+        
     }
     return *this;
 }
