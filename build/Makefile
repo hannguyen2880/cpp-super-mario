@@ -630,6 +630,30 @@ src/renderers/ObjectRenderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.s
 .PHONY : src/renderers/ObjectRenderer.cpp.s
 
+src/renderers/RendererFactory.o: src/renderers/RendererFactory.cpp.o
+.PHONY : src/renderers/RendererFactory.o
+
+# target to build an object file
+src/renderers/RendererFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o
+.PHONY : src/renderers/RendererFactory.cpp.o
+
+src/renderers/RendererFactory.i: src/renderers/RendererFactory.cpp.i
+.PHONY : src/renderers/RendererFactory.i
+
+# target to preprocess a source file
+src/renderers/RendererFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.i
+.PHONY : src/renderers/RendererFactory.cpp.i
+
+src/renderers/RendererFactory.s: src/renderers/RendererFactory.cpp.s
+.PHONY : src/renderers/RendererFactory.s
+
+# target to generate assembly for a file
+src/renderers/RendererFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mario_maker.dir/build.make CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.s
+.PHONY : src/renderers/RendererFactory.cpp.s
+
 src/renderers/TextRenderer.o: src/renderers/TextRenderer.cpp.o
 .PHONY : src/renderers/TextRenderer.o
 
@@ -1201,6 +1225,9 @@ help:
 	@echo "... src/renderers/ObjectRenderer.o"
 	@echo "... src/renderers/ObjectRenderer.i"
 	@echo "... src/renderers/ObjectRenderer.s"
+	@echo "... src/renderers/RendererFactory.o"
+	@echo "... src/renderers/RendererFactory.i"
+	@echo "... src/renderers/RendererFactory.s"
 	@echo "... src/renderers/TextRenderer.o"
 	@echo "... src/renderers/TextRenderer.i"
 	@echo "... src/renderers/TextRenderer.s"

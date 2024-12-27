@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/thinh/Source/repos/cpp-super-mario/src/renderers/EnemiesRenderer.cpp" "CMakeFiles/mario_maker.dir/src/renderers/EnemiesRenderer.cpp.o" "gcc" "CMakeFiles/mario_maker.dir/src/renderers/EnemiesRenderer.cpp.o.d"
   "/home/thinh/Source/repos/cpp-super-mario/src/renderers/MapRenderer.cpp" "CMakeFiles/mario_maker.dir/src/renderers/MapRenderer.cpp.o" "gcc" "CMakeFiles/mario_maker.dir/src/renderers/MapRenderer.cpp.o.d"
   "/home/thinh/Source/repos/cpp-super-mario/src/renderers/ObjectRenderer.cpp" "CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.o" "gcc" "CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.o.d"
+  "/home/thinh/Source/repos/cpp-super-mario/src/renderers/RendererFactory.cpp" "CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o" "gcc" "CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o.d"
   "/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.cpp" "CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o" "gcc" "CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o.d"
   "/home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.cpp" "CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o" "gcc" "CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o.d"
   "/home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.cpp" "CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o" "gcc" "CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o.d"

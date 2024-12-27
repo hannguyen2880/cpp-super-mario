@@ -293,10 +293,24 @@ CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thinh/Source/repos/cpp-super-mario/src/renderers/ObjectRenderer.cpp -o CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.s
 
+CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o: CMakeFiles/mario_maker.dir/flags.make
+CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/renderers/RendererFactory.cpp
+CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o -MF CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o.d -o CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/renderers/RendererFactory.cpp
+
+CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thinh/Source/repos/cpp-super-mario/src/renderers/RendererFactory.cpp > CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.i
+
+CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thinh/Source/repos/cpp-super-mario/src/renderers/RendererFactory.cpp -o CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.s
+
 CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.cpp
 CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o -MF CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o.d -o CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextRenderer.cpp
 
 CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.cpp
 CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o -MF CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o.d -o CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/renderers/TextureRenderer.cpp
 
 CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.cpp
 CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o -MF CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o.d -o CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/screens/BeforeGameScreen.cpp
 
 CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.cpp
 CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o -MF CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o.d -o CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/screens/GamePlayScreen.cpp
 
 CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/mario_maker.dir/src/screens/GamePlayScreen.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.cpp
 CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o -MF CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o.d -o CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/screens/InstructionScreen.cpp
 
 CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/mario_maker.dir/src/screens/InstructionScreen.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.cpp
 CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o -MF CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o.d -o CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/screens/MenuScreen.cpp
 
 CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/mario_maker.dir/src/screens/MenuScreen.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/PauseScreen.cpp
 CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o -MF CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o.d -o CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/screens/PauseScreen.cpp
 
 CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.i: cmake_force
@@ -394,7 +408,7 @@ CMakeFiles/mario_maker.dir/src/screens/PauseScreen.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.cpp
 CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o -MF CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o.d -o CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/screens/ScoreboardScreen.cpp
 
 CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.i: cmake_force
@@ -408,7 +422,7 @@ CMakeFiles/mario_maker.dir/src/screens/ScoreboardScreen.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/IdsMap/IdsMapSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.i: cmake_force
@@ -422,7 +436,7 @@ CMakeFiles/mario_maker.dir/src/systems/IdsMap/IdsMapSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/animation/AnimationSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/animation/AnimationSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.i: cmake_force
@@ -436,7 +450,7 @@ CMakeFiles/mario_maker.dir/src/systems/animation/AnimationSystem.cpp.s: cmake_fo
 CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/camera/CameraSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/camera/CameraSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.i: cmake_force
@@ -450,7 +464,7 @@ CMakeFiles/mario_maker.dir/src/systems/camera/CameraSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/enemy/EnemySystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/enemy/EnemySystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.i: cmake_force
@@ -464,7 +478,7 @@ CMakeFiles/mario_maker.dir/src/systems/enemy/EnemySystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/flag/FlagSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/flag/FlagSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.i: cmake_force
@@ -478,7 +492,7 @@ CMakeFiles/mario_maker.dir/src/systems/flag/FlagSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/physics/PhysicSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.i: cmake_force
@@ -492,7 +506,7 @@ CMakeFiles/mario_maker.dir/src/systems/physics/PhysicSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/player/PlayerSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.i: cmake_force
@@ -506,7 +520,7 @@ CMakeFiles/mario_maker.dir/src/systems/player/PlayerSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/score/ScoreSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/score/ScoreSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.i: cmake_force
@@ -520,7 +534,7 @@ CMakeFiles/mario_maker.dir/src/systems/score/ScoreSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/sound/SoundSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.i: cmake_force
@@ -534,7 +548,7 @@ CMakeFiles/mario_maker.dir/src/systems/sound/SoundSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/tile/TileSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.i: cmake_force
@@ -548,7 +562,7 @@ CMakeFiles/mario_maker.dir/src/systems/tile/TileSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.cpp
 CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o -MF CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o.d -o CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/systems/timer/TimerSystem.cpp
 
 CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.i: cmake_force
@@ -562,7 +576,7 @@ CMakeFiles/mario_maker.dir/src/systems/timer/TimerSystem.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/ui/FontButton.cpp
 CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o -MF CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o.d -o CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/ui/FontButton.cpp
 
 CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.i: cmake_force
@@ -576,7 +590,7 @@ CMakeFiles/mario_maker.dir/src/ui/FontButton.cpp.s: cmake_force
 CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: CMakeFiles/mario_maker.dir/flags.make
 CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.cpp
 CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o: CMakeFiles/mario_maker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o -MF CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o.d -o CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.o -c /home/thinh/Source/repos/cpp-super-mario/src/ui/ImageButton.cpp
 
 CMakeFiles/mario_maker.dir/src/ui/ImageButton.cpp.i: cmake_force
@@ -605,6 +619,7 @@ mario_maker_OBJECTS = \
 "CMakeFiles/mario_maker.dir/src/renderers/EnemiesRenderer.cpp.o" \
 "CMakeFiles/mario_maker.dir/src/renderers/MapRenderer.cpp.o" \
 "CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.o" \
+"CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o" \
 "CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o" \
 "CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o" \
 "CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o" \
@@ -646,6 +661,7 @@ mario_maker: CMakeFiles/mario_maker.dir/src/map/GameMap.cpp.o
 mario_maker: CMakeFiles/mario_maker.dir/src/renderers/EnemiesRenderer.cpp.o
 mario_maker: CMakeFiles/mario_maker.dir/src/renderers/MapRenderer.cpp.o
 mario_maker: CMakeFiles/mario_maker.dir/src/renderers/ObjectRenderer.cpp.o
+mario_maker: CMakeFiles/mario_maker.dir/src/renderers/RendererFactory.cpp.o
 mario_maker: CMakeFiles/mario_maker.dir/src/renderers/TextRenderer.cpp.o
 mario_maker: CMakeFiles/mario_maker.dir/src/renderers/TextureRenderer.cpp.o
 mario_maker: CMakeFiles/mario_maker.dir/src/screens/BeforeGameScreen.cpp.o
@@ -675,7 +691,7 @@ mario_maker: /usr/lib/x86_64-linux-gnu/libGLX.so
 mario_maker: /usr/lib/x86_64-linux-gnu/librt.a
 mario_maker: /usr/lib/x86_64-linux-gnu/libm.so
 mario_maker: CMakeFiles/mario_maker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Linking CXX executable mario_maker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/thinh/Source/repos/cpp-super-mario/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking CXX executable mario_maker"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mario_maker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
