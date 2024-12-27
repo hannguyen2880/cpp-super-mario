@@ -42,7 +42,7 @@ constexpr const char* PAUSE_BUTTON = "../assets/imgs/Buttons/PauseButton.png";
 constexpr const char* HOME_BUTTON = "../assets/imgs/Buttons/HomeButton.png";
 
 //map
-constexpr const char* HARD_MAP = "../assets/maps/map_1.tmx";
+constexpr const char* HARD_MAP = "../assets/maps/MidEASY.tmx";
 constexpr const char* MEDIUM_MAP = "../assets/maps/playground_world.tmx";
 constexpr const char* EASY_MAP = "../assets/maps/map_1.tmx";
 //......
