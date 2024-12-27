@@ -1,34 +1,5 @@
-/**
- * @startuml
- * class EntitySystem {
- *     + void configure(World *world) <<abstract>>
- *     + void unconfigure(World *world) <<abstract>>
- *     + void tick(World *world, ECS::DefaultTickData data) <<abstract>>
- * }
- * 
- * class EventSubscriber {
- *     + void receive(World *world, const Event &event) <<abstract>>
- * }
- * 
- * class BreakEvent {
- * }
- * 
- * class TileSystem extends EntitySystem {
- *     + TileSystem()
- *     + ~TileSystem()
- *     + void configure(World *world) <<override>>
- *     + void unconfigure(World *world) <<override>>
- *     + void tick(World *world, ECS::DefaultTickData data) <<override>>
- *     + void receive(World *world, const BreakEvent &event) <<override>>
- * }
- * 
- * TileSystem "1" *-- "1" ECS::Entity
- * TileSystem <|.. EventSubscriber : implements
- * EventSubscriber <|.. BreakEvent
- * @enduml
- */
-#ifndef MARIO_MAKER_TILESYSTEM_H
-#define MARIO_MAKER_TILESYSTEM_H
+#pragma once
+
 #include "ECS.h"
 #include "events/Events.h"
 #include "components/Components.h"
@@ -81,4 +52,4 @@ private:
 };
 
 
-#endif //MARIO_MAKER_TILESYSTEM_H
+

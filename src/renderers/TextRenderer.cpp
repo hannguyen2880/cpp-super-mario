@@ -25,7 +25,7 @@ void TextRenderer::render(ECS::World *world) {
                 s = "x " + s;
                 break;
             case Text::Type::TIMER:
-                renderTimerTextComponents(world);
+                //renderTimerTextComponents(world);
                 break;
             default:
                 break;
@@ -56,13 +56,13 @@ void TextRenderer::renderTimerTextComponents(ECS::World *world) {
             ECS::Entity* entity,
             ECS::ComponentHandle<TimerComponent> timerComponent,
             ECS::ComponentHandle<TextComponent> textComponent) {
-                std::cout << "Timer component: " << timerComponent->time << std::endl;
+                //std::cout << "Timer component: " << timerComponent->time << std::endl;
         if (timerComponent->active) {
             // Calculate the elapsed time
             auto currentTime = std::chrono::steady_clock::now();
             auto elapsedSeconds = std::chrono::duration_cast<std::chrono::seconds>(currentTime - lastUpdateTime).count();
 
-            std:: cout << "Elapsed seconds: " << elapsedSeconds << std::endl;
+           // std:: cout << "Elapsed seconds: " << elapsedSeconds << std::endl;
 
             // Update the timer
             if (elapsedSeconds > 0) {

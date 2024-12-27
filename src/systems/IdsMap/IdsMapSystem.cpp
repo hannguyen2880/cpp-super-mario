@@ -21,8 +21,6 @@ void IdsMapSystem::tick(World *world, ECS::DefaultTickData data) {
     if (kineticMapEnt) {
         ComponentHandle<SpacialHashMapComponent> kineticMap = kineticMapEnt->get<SpacialHashMapComponent>();
 
-        //fixme: there might be a more sofisticated way to update the map without clear it all the time
-        // idea: store prev position and compare it with actual position
         kineticMap->clear();
 
         for (auto entity : world->each<AABBComponent, KineticComponent, SolidComponent>()) {

@@ -135,14 +135,7 @@ WorldBuilder& WorldBuilder::initTextEntities(ECS::World*& world_, const int& scr
             Text::Type::SCORE_COUNTER,
             Vector2{screenWidth_ - 175.f, 20.0f},
             0);
-
-    auto timerText = world_->create();
-    timerText->assign<TextComponent>(
-            Text::Type::TIMER,
-            Vector2{screenWidth_ - 45.f, 20.0f},
-            360);
-    timerText->assign<TimerComponent>([&]() {}, 360, true); 
-
+            
     world_->registerSystem(new TimerSystem());
     world_->registerSystem(new ScoreSystem());
     return *this;
