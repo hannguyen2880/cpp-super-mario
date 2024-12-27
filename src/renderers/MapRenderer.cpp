@@ -3,10 +3,13 @@
 
 MapRenderer::~MapRenderer() {
     map_.unloadTextures();
+    for (auto& texture : backgroundtextures_) {
+        UnloadTexture(texture.second);
+    }
 }
 
-MapRenderer::MapRenderer(GameMap *map, const char* filepath)
-:map_(*map), Renderer(filepath)
+MapRenderer::MapRenderer(GameMap *map, const char* filepath1, int background)
+:map_(*map), Renderer(filepath1), background(background)
 {
     texturePositions_.insert({QUESTION_BLOCK_1, new Rectangle{368, 0, TILE_SIZE, TILE_SIZE}});
     texturePositions_.insert({QUESTION_BLOCK_2, new Rectangle{384, 0, TILE_SIZE, TILE_SIZE}});
@@ -34,6 +37,11 @@ MapRenderer::MapRenderer(GameMap *map, const char* filepath)
 
     texturePositions_.insert({BLACK_CANNON, new Rectangle{144, 0, TILE_SIZE, TILE_SIZE * 2}});
 
+    //Render escalator
+    texturePositions_.insert({ESCALATOR_1, new Rectangle{48, 16, TILE_SIZE, TILE_SIZE / 2}});
+    texturePositions_.insert({ESCALATOR_2, new Rectangle{48, 16, TILE_SIZE, TILE_SIZE / 2}});
+    texturePositions_.insert({ESCALATOR_3, new Rectangle{48, 16, TILE_SIZE, TILE_SIZE / 2}});
+    
     loadTextures();
 }
 
@@ -42,8 +50,46 @@ void MapRenderer::render(ECS::World* world, float delta) {
     renderOtherEntities(world, delta);
 }
 
-void MapRenderer::renderBackground(ECS::World* world) {
-    drawGraphicsLayer(map_.getBackgroundLayer(), world, false);
+void MapRenderer::loadBackgroundTextures() {
+    switch (background)
+    {
+        case 1:
+            backgroundtextures_[AUTUMN_EASY] = LoadTexture(AUTUMN_EASY);
+            break;
+        case 2:
+            backgroundtextures_[AUTUMN_MED] = LoadTexture(AUTUMN_MED);
+            break;
+        // case 3:
+        //     backgroundtextures_[AUTUMN_HARD] = LoadTexture(AUTUMN_HARD);
+        //     break;
+        default:
+            break;
+    }
+}
+
+void MapRenderer::renderBackground(ECS::World* world, int background) {
+    // Ensure textures are loaded
+    if (backgroundtextures_.empty()) {
+        loadBackgroundTextures();
+    }
+
+    switch (background) {
+        case 1:
+            DrawTexture(backgroundtextures_[AUTUMN_EASY], 0, 0, WHITE);
+            break;
+        case 2:
+            DrawTexture(backgroundtextures_[AUTUMN_MED], 0, 0, WHITE);
+            break;
+        //case 3:
+            // DrawTexture(backgroundtextures_[LANDSCAPE3], 0, 0, WHITE);
+           // break;
+        default:
+            break;
+    }
+}
+
+void MapRenderer::renderDecoration(ECS::World* world) {
+    drawGraphicsLayer(map_.getDecorationLayer(), world, false);
 }
 
 void MapRenderer::drawGraphicsLayer(unsigned int **mapToRender, ECS::World* world, bool graphics) {
@@ -116,4 +162,3 @@ void MapRenderer::renderOtherEntities(ECS::World *pWorld, float d) {
         }
     }
 }
-
