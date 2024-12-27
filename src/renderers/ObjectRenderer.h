@@ -1,19 +1,15 @@
-#pragma once 
+#pragma once
 
-#include "Renderer.h"
-#include "TextureId.h"
 #include "../components/Components.h"
 #include "ECS.h"
+#include "Renderer.h"
+#include "TextureId.h"
 
 class ObjectRenderer : public Renderer {
 public:
+  explicit ObjectRenderer(const char *filepath);
 
-    explicit ObjectRenderer(const char* filepath);
+  ~ObjectRenderer();
 
-    ~ObjectRenderer();
-
-    void render(ECS::World* world);
-
+  void render(ECS::World *world);
 };
-
-
