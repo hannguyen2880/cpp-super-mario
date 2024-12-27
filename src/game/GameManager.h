@@ -1,0 +1,88 @@
+#pragma once
+
+#include <raylib.h>
+#include "ECS.h"
+#include "../Constants.h"
+#include "../map/GameMap.h"
+#include "../audio/AudioManager.h"
+#include "renderers/MapRenderer.h"
+#include "renderers/TextureRenderer.h"
+#include "renderers/EnemiesRenderer.h"
+#include "renderers/ObjectRenderer.h"
+#include "renderers/TextRenderer.h"
+#include "systems/camera/CameraSystem.h"
+#include "systems/player/PlayerSystem.h"
+#include "systems/physics/PhysicSystem.h"
+#include "systems/animation/AnimationSystem.h"
+#include "systems/tile/TileSystem.h"
+#include "systems/timer/TimerSystem.h"
+#include "systems/enemy/EnemySystem.h"
+#include "systems/flag/FlagSystem.h"
+#include "systems/IdsMap/IdsMapSystem.h"
+#include "systems/score/ScoreSystem.h"
+#include "systems/sound/SoundSystem.h"
+#include "State/GameState.h"
+#include "Game.h"
+#include "GameConfig.h"
+#include "WorldBuilder.h"
+#include "../renderers/RendererFactory.h"
+#include "../ui/ImageButton.h"
+#include "../game/State/MainMenuState.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+class GameManager {
+public:
+    GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer, int background);
+
+    ~GameManager();
+
+    void Init();
+
+    void Update();
+
+    void Draw();
+
+    void cleanup();
+
+    bool NeedsRestart() const;
+
+    GameMap *getMap() const;
+    void saveScore();
+    void printScore();
+
+    void setPause(bool pause) { this->pause = pause; }
+    bool isPaused() const { return pause; }
+
+private:
+    void initWorld();
+    void handleInput(); //need to be fixed
+    void render(float d);
+    void updateMusicStream();
+    void restartGame();
+
+
+    bool run;
+    bool pause;
+    bool restart;
+    bool secondPlayer;
+    const char* mapName;
+    ECS::World* world_;
+    GameMap* pMap_;
+    size_t cameraId_;
+    const int screenWidth_;
+    const int screenHeight_;
+    int background;
+    
+    double previous;
+    double lag;
+
+    ECS::EntitySystem* animationSystem_;
+    SoundSystem* soundSystem_;
+    MapRenderer* mapRenderer;
+    TextureRenderer* textureRenderer;
+    EnemiesRenderer* enemiesRenderer;
+    ObjectRenderer* objectRenderer;
+    TextRenderer* textRenderer_;
+};

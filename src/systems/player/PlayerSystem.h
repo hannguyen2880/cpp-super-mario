@@ -1,0 +1,47 @@
+#pragma once
+
+#include "ECS.h"
+#include "events/Events.h"
+#include <raylib.h>
+
+using namespace ECS;
+
+class PlayerSystem :
+        public EntitySystem,
+        public EventSubscriber<EnemyCollisionEvent>,
+        public EventSubscriber<PLayerCollectableCollisionEvent>{
+public:
+    PlayerSystem();
+
+    void configure(World* world) override;
+
+    void unconfigure(World* world) override;
+
+    void tick(World* world, float delta) override;
+
+    void setAnimation(Entity* playerEntity, PlayerState state);
+
+    void receive(World* world, const EnemyCollisionEvent& enemyCollisionEvent) override;
+
+    void receive(World* world, const PLayerCollectableCollisionEvent& pLayerCollectableCollisionEvent) override;
+private:
+
+    void eatMushroom(Entity *pEntity, Collectible::Type type);
+
+    void handleFrozenTransform(Entity* entity);
+
+    TextureId getRightTransitionAnimation(Entity* entity, Collectible::Type mushroom, bool isMario);
+
+    bool isSuperTexture(TextureId textureId);
+
+    bool isFlameTexture(TextureId textureId);
+
+    bool isMegaTexture(TextureId textureId);
+
+    void movePlayer(Entity* player);
+
+    void shrink(Entity *player);
+
+    void createFireBullet(World *world, Entity *entity);
+};
+
