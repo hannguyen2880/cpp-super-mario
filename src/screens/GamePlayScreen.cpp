@@ -81,6 +81,8 @@ void GameplayScreen::Draw() {
 
 void GameplayScreen::Unload() {
     std::cout << "DEBUG: GameplayScreen Unload\n";
+    gameManager->saveScore();
+    gameManager->printScore();
 }
 
 GameplayScreen::~GameplayScreen() {

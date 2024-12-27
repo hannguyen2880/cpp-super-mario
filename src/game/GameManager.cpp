@@ -20,8 +20,6 @@ GameManager::GameManager(const char* mapName, const int screenWidth, const int s
 }
 
 GameManager::~GameManager() {
-    printScore();
-    saveScore();
     cleanup();
 }
 
@@ -149,7 +147,6 @@ void GameManager::handleInput() {
 }
 
 void GameManager::render(float d) {
-    printScore();
     mapRenderer->renderBackground(world_, background);
     mapRenderer->renderDecoration(world_);
     textureRenderer->renderTextureEntities(world_, d);
@@ -168,9 +165,9 @@ void GameManager::updateMusicStream() {
 void GameManager::saveScore() {
 
     std::ofstream fileOut;
-    const char* filePath = "score.txt";
+    const char* filePath = "../assets/file/score.txt";
     //append score to file, then the endline character
-    fileOut.open(filePath);
+    fileOut.open(filePath, std::ios::app);
     if (!fileOut.is_open()) {
          throw std::runtime_error("Could not open file for writing");
     }
@@ -184,9 +181,9 @@ void GameManager::saveScore() {
             default:
                 break;
         }
-        fileOut.close();
+        
     }
-    
+    fileOut.close();
 }
 
 void GameManager::printScore() {
@@ -195,7 +192,7 @@ void GameManager::printScore() {
 
         switch (textComponent->type) {
             case Text::Type::SCORE_COUNTER:
-                //std::cout << "Score: " << textComponent->getValue() << std::endl;
+                std::cout << "Score: " << textComponent->getValue() << std::endl;
                 break;
             default:
                 break;

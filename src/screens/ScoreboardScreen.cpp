@@ -1,6 +1,9 @@
 #include "ScoreboardScreen.h"
 #include "../game/Game.h"
 #include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <string>
 #include "../game/State/MainMenuState.h"
 
 
@@ -45,11 +48,7 @@ void ScoreboardScreen::Init() {
     textVerticalSpacing = frameHeight;
     textLeftMargin = frame_positionX_1st + 50;
     textRightMargin= frame_positionX_1st + frameWidth - 100;
-    std::string defaultName = "NULL";
-    int defaultScore = 0;
-    for(int i = 0; i < 5; i++){
-        players.push_back(make_pair(defaultName, defaultScore));
-    }
+    loadScores();
 }
 
 void ScoreboardScreen::Update() {
@@ -85,4 +84,37 @@ void ScoreboardScreen::Unload() {
 
 ScoreboardScreen::~ScoreboardScreen() {
     Unload();
+}
+
+void ScoreboardScreen::loadScores() {
+    std::ifstream fileIn;
+    fileIn.open("../assets/file/score.txt");
+    if (!fileIn.is_open()) {
+        throw std::runtime_error("Could not open file for reading");
+    }
+    std::string line;
+    std::string defaultName = "MARIO";
+    // push player names and scores to players vector
+    int i = 0;
+    while (getline(fileIn, line)) {
+        players.push_back(make_pair(defaultName, stoi(line)));
+        i++;
+    }
+    fileIn.close();
+
+    if (i < 5) {
+        for (int j = i; j < 5; j++) {
+            players.push_back(make_pair(defaultName, 0));
+        }
+    }
+
+    // sort the players vector by score
+    sort(players.begin(), players.end(), [](std::pair<std::string, int> a, std::pair<std::string, int> b) {
+        return a.second > b.second;
+    });
+     // remove the rest of the scores
+    if (players.size() > 5) {
+        players.erase(players.begin() + 5, players.end());
+
+    }
 }

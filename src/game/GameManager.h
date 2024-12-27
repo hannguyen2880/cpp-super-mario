@@ -49,6 +49,8 @@ public:
     bool NeedsRestart() const;
 
     GameMap *getMap() const;
+    void saveScore();
+    void printScore();
 
 private:
     void initWorld();
@@ -56,8 +58,7 @@ private:
     void render(float d);
     void updateMusicStream();
     void restartGame();
-    void saveScore();
-    void printScore();
+
 
     bool run;
     bool pause;
