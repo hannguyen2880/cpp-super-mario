@@ -52,6 +52,9 @@ public:
     void saveScore();
     void printScore();
 
+    void setPause(bool pause) { this->pause = pause; }
+    bool isPaused() const { return pause; }
+
 private:
     void initWorld();
     void handleInput(); //need to be fixed

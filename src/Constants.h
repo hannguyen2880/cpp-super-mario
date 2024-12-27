@@ -46,7 +46,7 @@ constexpr const char* NO_BUTTON = "../assets/imgs/Buttons/NoButton.png";
 constexpr const char* SCOREBOARD_BUTTON = "../assets/imgs/Buttons/ScoreboardButton.png";
 constexpr const char* START_GAME_BUTTON = "../assets/imgs/Buttons/StartGameButton.png";
 constexpr const char* PAUSE_BUTTON = "../assets/imgs/Buttons/PauseButton.png";
-//constexpr const char* RESUME_BUTTON = "../assets/imgs/Buttons/ResumeButton.png";
+constexpr const char* RESUME_BUTTON = "../assets/imgs/Buttons/ResumeButton.png";
 constexpr const char* HOME_BUTTON = "../assets/imgs/Buttons/HomeButton.png";
 
 //map

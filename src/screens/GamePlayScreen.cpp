@@ -9,7 +9,9 @@ GameplayScreen::GameplayScreen()
       currentMode(GameConfig::getInstance().getGameplayMode()),
       currentCharacter(GameConfig::getInstance().getCharacter()),
       isPaused(false),
-      homeButton(HOME_BUTTON, 0, 45) {}
+      homeButton(HOME_BUTTON, 0, 45),
+      pauseButton(PAUSE_BUTTON, 0, 100),
+      resumeButton(RESUME_BUTTON, 0, 100) {}
 
 void GameplayScreen::Init() {
     CreateGameManager();
@@ -61,12 +63,24 @@ void GameplayScreen::Update() {
             CreateGameManager();
             gameManager->Init();
         } else {
+            if (pauseButton.Update() && !isPaused) {
+                isPaused = true;
+                gameManager->setPause(true);
+            }
+            
+            if (resumeButton.Update() && isPaused) {
+                isPaused = false;
+                gameManager->setPause(false);
+            }
+
             if (homeButton.Update()) {
-                //std::cout << "Home button pressed\n\n\n\n";
                 Game::SetState(std::make_unique<MainMenuState>());
                 return;
             }
-            gameManager->Update();
+
+            if (!isPaused) {
+                gameManager->Update();
+            }
         }
     }
 }
@@ -74,8 +88,14 @@ void GameplayScreen::Update() {
 void GameplayScreen::Draw() {
     if (gameManager) {
         gameManager->Draw();
+        homeButton.Draw();
+        
+        if (isPaused) {
+            resumeButton.Draw();
+        } else {
+            pauseButton.Draw();
+        }
     }
-    homeButton.Draw();
 }
 
 void GameplayScreen::Unload() {
