@@ -48,7 +48,6 @@ void GameplayScreen::CreateGameManager() {
         secondPlayer,
         background
     );
-    gameManager->Init();
 }
 
 void GameplayScreen::Update() {

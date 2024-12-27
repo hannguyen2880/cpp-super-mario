@@ -108,7 +108,7 @@
     <property name="type" value="GOOMBA"/>
    </properties>
   </object>
-  <object id="229" x="896" y="112.333" width="16" height="16">
+  <object id="229" x="959.667" y="112.333" width="16" height="16">
    <properties>
     <property name="isBig" type="bool" value="false"/>
     <property name="left" type="bool" value="true"/>
