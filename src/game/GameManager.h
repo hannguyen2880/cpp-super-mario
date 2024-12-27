@@ -26,6 +26,8 @@
 #include "GameConfig.h"
 #include "WorldBuilder.h"
 #include "../renderers/RendererFactory.h"
+#include "../ui/ImageButton.h"
+#include "../game/State/MainMenuState.h"
 #include <iostream>
 #include <fstream>
 #include <string>

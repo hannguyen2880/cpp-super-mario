@@ -32,7 +32,7 @@ void TextRenderer::render(ECS::World *world) {
 
         const char *pchar = s.c_str();
 
-        DrawTextEx(textFont, pchar, textComponent->position, textFont.baseSize, 1, RED);
+        DrawTextEx(textFont, pchar, textComponent->position, textFont.baseSize, 1, WHITE);
     }
 }
 

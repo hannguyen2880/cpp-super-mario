@@ -65,6 +65,10 @@ void GameManager::Update() {
 
 void GameManager::Draw() {
     if (!run) return;
+    if (!mapRenderer || !textureRenderer || !enemiesRenderer) {
+        std::cerr << "Critical renderer is null!" << std::endl;
+        return;
+    }
     ClearBackground(RAYWHITE);
 
     auto camera = world_->getById(cameraId_)->get<CameraComponent>();
@@ -81,15 +85,8 @@ void GameManager::Draw() {
 void GameManager::cleanup() {
     if (world_) {
         world_->destroyWorld();
-        delete world_;
         world_ = nullptr;
     }
-    delete pMap_;
-    delete mapRenderer;
-    delete textureRenderer;
-    delete enemiesRenderer;
-    delete objectRenderer;
-    delete textRenderer_;
     pMap_ = nullptr;
     mapRenderer = nullptr;
     textureRenderer = nullptr;
@@ -146,7 +143,7 @@ void GameManager::handleInput() {
                 if (IsKeyDown(KEY_LEFT_SHIFT)) playerComponent->sprint = true;
                 if (IsKeyUp(KEY_LEFT_SHIFT)) playerComponent->sprint = false;
             } else if (ent->has<LuigiComponent>()) {
-
+                
             }
         }
     }
@@ -167,7 +164,6 @@ void GameManager::render(float d) {
     enemiesRenderer->renderOverTileEnemies(world_, d);
     textRenderer_->renderScoreTextComponents(world_);
 }
-
 
 void GameManager::updateMusicStream() {
     UpdateMusicStream(soundSystem_->getCurrentMusic());
@@ -203,7 +199,7 @@ void GameManager::printScore() {
 
         switch (textComponent->type) {
             case Text::Type::SCORE_COUNTER:
-                std::cout << "Score: " << textComponent->getValue() << std::endl;
+                //std::cout << "Score: " << textComponent->getValue() << std::endl;
                 break;
             default:
                 break;

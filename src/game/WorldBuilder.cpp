@@ -16,7 +16,7 @@ void WorldBuilder::initMarioPlayer(ECS::Entity *&player, Vector2 position) {
                     32,
                     32});
     player->assign<TextureComponent>(MARIO_STAND);
-    player->assign<LeadCameraComponent>();
+    //player->assign<LeadCameraComponent>();
     player->assign<CommandComponent>(std::map<Command, int> {
             {JUMP, KEY_UP},
             {MOVE_LEFT, KEY_LEFT},
@@ -57,12 +57,6 @@ void WorldBuilder::initLuigiPlayer(ECS::Entity *&player, Vector2 position) {
 WorldBuilder& WorldBuilder::initPlayers(ECS::World*& world_, GameMap*& pMap_, bool secondPlayer) {
     Vector2 spawnPositionP1 = pMap_->getSpawnPositionP1();
     Vector2 spawnPositionP2 = pMap_->getSpawnPositionP2();
-    // ECS::Entity* mario = world_->create();
-    // initMarioPlayer(mario, spawnPositionP1);
-    // if (secondPlayer) {
-    //     ECS::Entity* luigi = world_->create();
-    //     initLuigiPlayer(luigi, spawnPositionP2);
-    // }
     if (!secondPlayer) {
         ECS::Entity* player = world_->create();
         if (GameConfig::getInstance().getCharacter() == Character::MARIO) {
@@ -72,6 +66,7 @@ WorldBuilder& WorldBuilder::initPlayers(ECS::World*& world_, GameMap*& pMap_, bo
             std::cout << "DEBUG: Creating Luigi" << std::endl;
             initLuigiPlayer(player, spawnPositionP1);
         }
+        player->assign<LeadCameraComponent>();
     }
     else {
         ECS::Entity* mario = world_->create();

@@ -14,7 +14,7 @@ private:
     Character currentCharacter;
     bool isPaused;
     int background;
-    ImageButton homeButton;
+    ImageButton* homeButton;
     void CreateGameManager();
 
 public:

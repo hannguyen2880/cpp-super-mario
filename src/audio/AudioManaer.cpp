@@ -1,4 +1,5 @@
 #include "AudioManager.h"
+#include <iostream>
 
 AudioManager::AudioManager() {
     // Sounds
@@ -31,6 +32,7 @@ AudioManager::~AudioManager() {
     }
 
     for (auto musicIt = musicMap_.begin(); musicIt != musicMap_.end(); musicIt++) {
+        std::cout << "Unloading music" << std::endl;
         UnloadMusicStream(musicIt->second);
     }
 }

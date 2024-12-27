@@ -5,6 +5,7 @@
 #include "../Constants.h"
 #include "GameConfig.h"
 #include "../State.h"
+#include "../ui/ImageButton.h"
 
 class Game {
 private:
@@ -12,9 +13,12 @@ private:
     static GameDifficulty difficulty;
     static GameplayMode gameplayMode;
     static Character character;
+    //static bool isHomeButtonLoaded;
+    //static ImageButton* homeButton;
     
 public:
     Game(){};
+    ~Game();
     static void Init();
     static void Update();
     static void Draw();
