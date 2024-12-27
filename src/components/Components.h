@@ -619,11 +619,17 @@ struct KineticEntitiesMapComponent {};
 
 struct TimerComponent {
 
-    TimerComponent(std::function<void(void)> callback, int time)
-    : time(time), callback(std::move(callback)) {}
+
+
+    TimerComponent(std::function<void(void)> callback, int time, bool active = true)
+
+    : time(time), callback(std::move(callback)), active(active) {}
 
     int time;
+
     std::function<void(void)> callback;
+
+    bool active;
 
 };
 
@@ -836,7 +842,7 @@ struct GameTextComponent {
 
     GameTextComponent(const Vector2 &position, std::string text) : position(position), text(text) {}
 
-    [[nodiscard]] bool destroy() {
+    bool destroy() {
         timeToLive--;
         return timeToLive < 0;
     }

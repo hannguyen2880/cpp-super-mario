@@ -71,9 +71,11 @@ WorldBuilder& WorldBuilder::initPlayers(ECS::World*& world_, GameMap*& pMap_, bo
     else {
         ECS::Entity* mario = world_->create();
         initMarioPlayer(mario, spawnPositionP1);
-        
+        mario->assign<LeadCameraComponent>();
+
         ECS::Entity* luigi = world_->create();
         initLuigiPlayer(luigi, spawnPositionP2);
+        
     }
     return *this;
 }
@@ -133,13 +135,8 @@ WorldBuilder& WorldBuilder::initTextEntities(ECS::World*& world_, const int& scr
             Text::Type::SCORE_COUNTER,
             Vector2{screenWidth_ - 175.f, 20.0f},
             0);
-
-    auto timerText = world_->create();
-    timerText->assign<TextComponent>(
-            Text::Type::TIMER,
-            Vector2{screenWidth_ - 45.f, 20.0f},
-            360);
-
+            
+    world_->registerSystem(new TimerSystem());
     world_->registerSystem(new ScoreSystem());
     return *this;
 }
@@ -161,7 +158,7 @@ WorldBuilder& WorldBuilder::registerSystems(ECS::World*& world_,const int& scree
     world_->registerSystem(new IdsMapSystem());
     world_->registerSystem(new PhysicSystem());
     world_->registerSystem(new TileSystem());
-    world_->registerSystem(new TimerSystem());
+    //world_->registerSystem(new TimerSystem());
     world_->disableSystem(world_->registerSystem(new FlagSystem()));
     soundSystem_ = dynamic_cast<SoundSystem *>(world_->registerSystem(new SoundSystem()));
     return *this;

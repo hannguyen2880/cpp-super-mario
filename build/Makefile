@@ -724,30 +724,6 @@ src/game/State/MainMenuState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/MainMenuState.cpp.s
 .PHONY : src/game/State/MainMenuState.cpp.s
 
-src/game/State/PauseState.o: src/game/State/PauseState.cpp.o
-.PHONY : src/game/State/PauseState.o
-
-# target to build an object file
-src/game/State/PauseState.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/PauseState.cpp.o
-.PHONY : src/game/State/PauseState.cpp.o
-
-src/game/State/PauseState.i: src/game/State/PauseState.cpp.i
-.PHONY : src/game/State/PauseState.i
-
-# target to preprocess a source file
-src/game/State/PauseState.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/PauseState.cpp.i
-.PHONY : src/game/State/PauseState.cpp.i
-
-src/game/State/PauseState.s: src/game/State/PauseState.cpp.s
-.PHONY : src/game/State/PauseState.s
-
-# target to generate assembly for a file
-src/game/State/PauseState.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/PauseState.cpp.s
-.PHONY : src/game/State/PauseState.cpp.s
-
 src/game/State/ScoreboardState.o: src/game/State/ScoreboardState.cpp.o
 .PHONY : src/game/State/ScoreboardState.o
 
@@ -1107,30 +1083,6 @@ src/screens/MenuScreen.s: src/screens/MenuScreen.cpp.s
 src/screens/MenuScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/MenuScreen.cpp.s
 .PHONY : src/screens/MenuScreen.cpp.s
-
-src/screens/PauseScreen.o: src/screens/PauseScreen.cpp.o
-.PHONY : src/screens/PauseScreen.o
-
-# target to build an object file
-src/screens/PauseScreen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/PauseScreen.cpp.o
-.PHONY : src/screens/PauseScreen.cpp.o
-
-src/screens/PauseScreen.i: src/screens/PauseScreen.cpp.i
-.PHONY : src/screens/PauseScreen.i
-
-# target to preprocess a source file
-src/screens/PauseScreen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/PauseScreen.cpp.i
-.PHONY : src/screens/PauseScreen.cpp.i
-
-src/screens/PauseScreen.s: src/screens/PauseScreen.cpp.s
-.PHONY : src/screens/PauseScreen.s
-
-# target to generate assembly for a file
-src/screens/PauseScreen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/screens/PauseScreen.cpp.s
-.PHONY : src/screens/PauseScreen.cpp.s
 
 src/screens/ScoreboardScreen.o: src/screens/ScoreboardScreen.cpp.o
 .PHONY : src/screens/ScoreboardScreen.o
@@ -1532,9 +1484,6 @@ help:
 	@echo "... src/game/State/MainMenuState.o"
 	@echo "... src/game/State/MainMenuState.i"
 	@echo "... src/game/State/MainMenuState.s"
-	@echo "... src/game/State/PauseState.o"
-	@echo "... src/game/State/PauseState.i"
-	@echo "... src/game/State/PauseState.s"
 	@echo "... src/game/State/ScoreboardState.o"
 	@echo "... src/game/State/ScoreboardState.i"
 	@echo "... src/game/State/ScoreboardState.s"
@@ -1580,9 +1529,6 @@ help:
 	@echo "... src/screens/MenuScreen.o"
 	@echo "... src/screens/MenuScreen.i"
 	@echo "... src/screens/MenuScreen.s"
-	@echo "... src/screens/PauseScreen.o"
-	@echo "... src/screens/PauseScreen.i"
-	@echo "... src/screens/PauseScreen.s"
 	@echo "... src/screens/ScoreboardScreen.o"
 	@echo "... src/screens/ScoreboardScreen.i"
 	@echo "... src/screens/ScoreboardScreen.s"
