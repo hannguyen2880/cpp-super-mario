@@ -1,5 +1,4 @@
-#ifndef MARIO_MAKER_SOUNDSYSTEM_H
-#define MARIO_MAKER_SOUNDSYSTEM_H
+#pragma once
 #include "ECS.h"
 #include "audio/AudioManager.h"
 #include "audio/AudioIds.h"
@@ -32,5 +31,3 @@ private:
     AudioManager* audioManager_;
 };
 
-
-#endif //MARIO_MAKER_SOUNDSYSTEM_H

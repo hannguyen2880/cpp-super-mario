@@ -1,4 +1,4 @@
-#include "GamePlayState.h"
+#include "GameplayState.h"
 #include "../../screens/GamePlayScreen.h"
 
 void GameplayState::Init() {

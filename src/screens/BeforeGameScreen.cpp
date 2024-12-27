@@ -1,6 +1,6 @@
 #include "BeforeGameScreen.h"
 #include "../game/Game.h"
-#include "../game/State/GamePlayState.h"
+#include "../game/State/GameplayState.h"
 #include "../game/State/MainMenuState.h"
 
 BeforeGameScreen::BeforeGameScreen()
@@ -50,7 +50,7 @@ void BeforeGameScreen::Update() {
     if (currentPanel == PanelState::RESUME_PANEL) {
         if (yesButton.Update()) {
             Game::SetState(std::make_unique<GameplayState>());
-            Game::getConfig().setGameplayMode(GameplayMode::RESUME_GAME);
+            GameConfig::getInstance().setGameplayMode(GameplayMode::RESUME_GAME);
         }
         if (noButton.Update()) {
             currentPanel = PanelState::PLAYER_COUNT_PANEL;
@@ -60,13 +60,13 @@ void BeforeGameScreen::Update() {
     }
     else if (currentPanel == PanelState::PLAYER_COUNT_PANEL) {
         if (singlePlayerButton.Update()) {
-            Game::getConfig().setGameplayMode(GameplayMode::SINGLE_PLAYER);
+            GameConfig::getInstance().setGameplayMode(GameplayMode::SINGLE_PLAYER);
             currentPanel = PanelState::CHARACTER_SELECTION_PANEL;
             isAnimating = true;
             panelCurrentY = 600;
         }
         if (multiPlayerButton.Update()) {
-            Game::getConfig().setGameplayMode(GameplayMode::MULTI_PLAYER);
+            GameConfig::getInstance().setGameplayMode(GameplayMode::MULTI_PLAYER);
             currentPanel = PanelState::DIFFICULTY_PANEL;
             isAnimating = true;
             panelCurrentY = 600;
@@ -74,13 +74,13 @@ void BeforeGameScreen::Update() {
     }
     else if (currentPanel == PanelState::CHARACTER_SELECTION_PANEL) {
         if (marioButton.Update()) {
-            Game::getConfig().setCharacter(Character::MARIO);
+            GameConfig::getInstance().setCharacter(Character::MARIO);
             currentPanel = PanelState::DIFFICULTY_PANEL;
             isAnimating = true;
             panelCurrentY = 600;
         }
         if (luigiButton.Update()) {
-            Game::getConfig().setCharacter(Character::LUIGI);
+            GameConfig::getInstance().setCharacter(Character::LUIGI);
             currentPanel = PanelState::DIFFICULTY_PANEL;
             isAnimating = true;
             panelCurrentY = 600;

@@ -4,19 +4,16 @@
 
 class GameConfig {
 public:
-    static GameConfig& getInstance() {
-        static GameConfig instance;
-        return instance;
-    }
+    static GameConfig& getInstance();
 
-    void setDifficulty(GameDifficulty difficulty) { this->difficulty = difficulty; }
-    GameDifficulty getDifficulty() const { return difficulty; }
+    void setDifficulty(GameDifficulty difficulty);
+    GameDifficulty getDifficulty() const;
 
-    void setGameplayMode(GameplayMode mode) { this->gameplayMode = mode; }
-    GameplayMode getGameplayMode() const { return gameplayMode; }
+    void setGameplayMode(GameplayMode mode);
+    GameplayMode getGameplayMode() const;
 
-    void setCharacter(Character character) { this->character = character; }
-    Character getCharacter() const { return character; }
+    void setCharacter(Character character);
+    Character getCharacter() const;
 
 private:
     GameConfig() = default;

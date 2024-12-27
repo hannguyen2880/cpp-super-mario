@@ -528,7 +528,9 @@ void PlayerSystem::movePlayer(Entity *player) {
                 kinetic->accY_ = 0;
                 if (player->has<BottomCollisionComponent>()) {
                     playerState = PlayerState::STANDING;
+                    //std::cout << "STANDING" << std::endl;
                 } else {
+                    //std::cout << "JUMPING" << std::endl;
                     playerState = PlayerState::JUMPING;
                 }
                 break;
@@ -671,6 +673,7 @@ void PlayerSystem::receive(World *world, const EnemyCollisionEvent &enemyCollisi
                         }
                     });
             world->emit<SoundEvent>(SoundEvent{SoundId::MARIO_DIE});
+            std::cout << "GAME OVER" << std::endl;
         } else {
             if (player->has<LeadCameraComponent>()) {
                 player->remove<LeadCameraComponent>();

@@ -1,5 +1,5 @@
-#ifndef MARIO_MAKER_TILESYSTEM_H
-#define MARIO_MAKER_TILESYSTEM_H
+#pragma once
+
 #include "ECS.h"
 #include "events/Events.h"
 #include "components/Components.h"
@@ -46,7 +46,10 @@ private:
     void manageCannons(World *world);
 
     void spawnEntityFromCannon(World *world, Enemy::BulletType type, Rectangle rectangle, bool b);
+
+    void manageEscalators(World *world);
+ 
 };
 
 
-#endif //MARIO_MAKER_TILESYSTEM_H
+

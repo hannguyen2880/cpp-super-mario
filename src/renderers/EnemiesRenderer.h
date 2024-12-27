@@ -1,5 +1,4 @@
-#ifndef MARIO_MAKER_ENEMIESRENDERER_H
-#define MARIO_MAKER_ENEMIESRENDERER_H
+#pragma once
 
 #include "Renderer.h"
 #include "../Constants.h"
@@ -22,4 +21,3 @@ private:
 };
 
 
-#endif //MARIO_MAKER_ENEMIESRENDERER_H

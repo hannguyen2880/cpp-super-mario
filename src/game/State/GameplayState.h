@@ -1,10 +1,11 @@
 #pragma once
 #include "GameState.h"
-#include "../State.h"
+#include "State.h"
 
 class GameplayState : public GameState {
 private:
     GameplayScreen* gameplayScreen;
+
 public:
     void Init() override;
     void Update() override;

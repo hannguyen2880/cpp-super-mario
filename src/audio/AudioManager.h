@@ -2,7 +2,7 @@
 #define MARIO_MAKER_AUDIOMANAGER_H
 #include <raylib.h>
 #include <unordered_map>
-#include "AudioIds.h"
+#include "../audio/AudioIds.h"
 
 class AudioManager {
 public:

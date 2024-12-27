@@ -1,5 +1,4 @@
-#ifndef MARIO_MAKER_TEXTURERENDERER_H
-#define MARIO_MAKER_TEXTURERENDERER_H
+#pragma once
 
 #include <unordered_map>
 #include <raylib.h>
@@ -25,9 +24,6 @@ public:
 private:
 
     void renderEntity(ECS::Entity *entity, float d);
-
-    void renderRotationEntity(TextureId textureId, Rectangle destRect, int rotation);
+    
 };
 
-
-#endif //MARIO_MAKER_TEXTURERENDERER_H

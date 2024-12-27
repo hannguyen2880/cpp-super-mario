@@ -12,6 +12,8 @@ void TileSystem::tick(World *world, float delta) {
         ent->get<BounceComponent>()->hit = true;
     }
 
+    //manageEscalators(world);
+
     manageCannons(world);
 
     manageGrowComponents(world);
@@ -144,8 +146,16 @@ void TileSystem::configure(World *world) {
 }
 
 void TileSystem::manageGrowComponents(World *world) {
+     // Process entities with VerticalGrowComponent, excluding escalators
     for (auto ent : world->each<VerticalGrowComponent, AABBComponent, TileComponent>()) {
         auto grow = ent->get<VerticalGrowComponent>();
+        auto object = ent->get<ObjectComponent>();
+
+        // Skip escalators
+        if (object && object->type == Object::Type::ESCALATOR) {
+            continue;
+        }
+
         if (!grow->finished()) {
             ent->get<AABBComponent>()->collisionBox_.y -= MUSHROOM_GROW_SPEED;
         } else {
@@ -161,6 +171,10 @@ void TileSystem::manageGrowComponents(World *world) {
         }
     }
 
+    // Handle escalators separately
+    manageEscalators(world);
+
+    // Process entities with HorizontalGrowComponent
     world->each<HorizontalGrowComponent, AABBComponent>([=](
             Entity* entity,
             ComponentHandle<HorizontalGrowComponent> growComponent,
@@ -251,7 +265,10 @@ void TileSystem::manageBounceComponents(World *world) {
             bounceComponent->hit = false;
             if (ent->has<QuestionBlockComponent>()) {
                 auto questionComponent = ent->get<QuestionBlockComponent>();
-                if (questionComponent->coin) createCoin(world, ent);
+                if (questionComponent->coin) {
+                    createCoin(world, ent);
+                    world->emit<AddScoreEvent>(AddScoreEvent(100, ent->get<AABBComponent>()->getCenter()));
+                }
                 if (questionComponent->superMarioMushroom) spawnSuperMarioMushroom(world, ent);
                 if (questionComponent->megaMushroom) spawnMegaMushroom(world, ent);
                 if (questionComponent->flameMushroom) spawnFlameMushroom(world, ent);
@@ -362,4 +379,33 @@ void TileSystem::spawnEntityFromCannon(World *world, Enemy::BulletType type, Rec
         default:
             break;
     }
+}
+
+void TileSystem::manageEscalators(World* world) { 
+    world->each<ObjectComponent, VerticalGrowComponent, AABBComponent>([&](
+            Entity* entity,
+            ComponentHandle<ObjectComponent> object,
+            ComponentHandle<VerticalGrowComponent> growComponent,
+            ComponentHandle<AABBComponent> aabb) {
+        if (object->type == Object::Type::ESCALATOR) {
+            if (!growComponent->finished()) {
+                float deltaY = growComponent->isGoingUp() ? -ESCALATOR_GROW_SPEED : ESCALATOR_GROW_SPEED;
+                aabb->collisionBox_.y += deltaY;
+
+                // Adjust player position if on escalator
+                for (auto player : world->each<PlayerComponent, AABBComponent>()) {
+                    auto playerAABB = player->get<AABBComponent>();
+                    if (playerAABB->collisionBox_.x < aabb->collisionBox_.x + aabb->collisionBox_.width &&
+                        playerAABB->collisionBox_.x + playerAABB->collisionBox_.width > aabb->collisionBox_.x &&
+                        playerAABB->collisionBox_.y < aabb->collisionBox_.y + aabb->collisionBox_.height &&
+                        playerAABB->collisionBox_.y + playerAABB->collisionBox_.height + 5.0> aabb->collisionBox_.y) {
+                            //std::cout << "Player on escalator" << std::endl;
+                            playerAABB->collisionBox_.y += deltaY;
+                    }
+                }
+            } else {
+                growComponent->escalatorWait();
+            }
+        }
+    });
 }

@@ -1,5 +1,5 @@
-#ifndef MARIO_MAKER_TIMERSYSTEM_H
-#define MARIO_MAKER_TIMERSYSTEM_H
+#pragma once 
+
 #include "ECS.h"
 #include "components/Components.h"
 
@@ -21,4 +21,3 @@ public:
 };
 
 
-#endif //MARIO_MAKER_TIMERSYSTEM_H

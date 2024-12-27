@@ -1,5 +1,5 @@
-#ifndef MARIO_MAKER_PLAYERSYSTEM_H
-#define MARIO_MAKER_PLAYERSYSTEM_H
+#pragma once
+
 #include "ECS.h"
 #include "events/Events.h"
 #include <raylib.h>
@@ -45,5 +45,3 @@ private:
     void createFireBullet(World *world, Entity *entity);
 };
 
-
-#endif //MARIO_MAKER_PLAYERSYSTEM_H

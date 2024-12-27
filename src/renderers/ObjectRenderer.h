@@ -1,5 +1,5 @@
-#ifndef MARIO_MAKER_OBJECTRENDERER_H
-#define MARIO_MAKER_OBJECTRENDERER_H
+#pragma once 
+
 #include "Renderer.h"
 #include "TextureId.h"
 #include "../components/Components.h"
@@ -17,4 +17,3 @@ public:
 };
 
 
-#endif //MARIO_MAKER_OBJECTRENDERER_H

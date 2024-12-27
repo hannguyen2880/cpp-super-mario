@@ -748,6 +748,30 @@ src/game/State/ScoreboardState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/State/ScoreboardState.cpp.s
 .PHONY : src/game/State/ScoreboardState.cpp.s
 
+src/game/WorldBuilder.o: src/game/WorldBuilder.cpp.o
+.PHONY : src/game/WorldBuilder.o
+
+# target to build an object file
+src/game/WorldBuilder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/WorldBuilder.cpp.o
+.PHONY : src/game/WorldBuilder.cpp.o
+
+src/game/WorldBuilder.i: src/game/WorldBuilder.cpp.i
+.PHONY : src/game/WorldBuilder.i
+
+# target to preprocess a source file
+src/game/WorldBuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/WorldBuilder.cpp.i
+.PHONY : src/game/WorldBuilder.cpp.i
+
+src/game/WorldBuilder.s: src/game/WorldBuilder.cpp.s
+.PHONY : src/game/WorldBuilder.s
+
+# target to generate assembly for a file
+src/game/WorldBuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/game/WorldBuilder.cpp.s
+.PHONY : src/game/WorldBuilder.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -867,6 +891,54 @@ src/renderers/ObjectRenderer.s: src/renderers/ObjectRenderer.cpp.s
 src/renderers/ObjectRenderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/ObjectRenderer.cpp.s
 .PHONY : src/renderers/ObjectRenderer.cpp.s
+
+src/renderers/Renderer.o: src/renderers/Renderer.cpp.o
+.PHONY : src/renderers/Renderer.o
+
+# target to build an object file
+src/renderers/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/Renderer.cpp.o
+.PHONY : src/renderers/Renderer.cpp.o
+
+src/renderers/Renderer.i: src/renderers/Renderer.cpp.i
+.PHONY : src/renderers/Renderer.i
+
+# target to preprocess a source file
+src/renderers/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/Renderer.cpp.i
+.PHONY : src/renderers/Renderer.cpp.i
+
+src/renderers/Renderer.s: src/renderers/Renderer.cpp.s
+.PHONY : src/renderers/Renderer.s
+
+# target to generate assembly for a file
+src/renderers/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/Renderer.cpp.s
+.PHONY : src/renderers/Renderer.cpp.s
+
+src/renderers/RendererFactory.o: src/renderers/RendererFactory.cpp.o
+.PHONY : src/renderers/RendererFactory.o
+
+# target to build an object file
+src/renderers/RendererFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/RendererFactory.cpp.o
+.PHONY : src/renderers/RendererFactory.cpp.o
+
+src/renderers/RendererFactory.i: src/renderers/RendererFactory.cpp.i
+.PHONY : src/renderers/RendererFactory.i
+
+# target to preprocess a source file
+src/renderers/RendererFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/RendererFactory.cpp.i
+.PHONY : src/renderers/RendererFactory.cpp.i
+
+src/renderers/RendererFactory.s: src/renderers/RendererFactory.cpp.s
+.PHONY : src/renderers/RendererFactory.s
+
+# target to generate assembly for a file
+src/renderers/RendererFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/super-mario.dir/build.make CMakeFiles/super-mario.dir/src/renderers/RendererFactory.cpp.s
+.PHONY : src/renderers/RendererFactory.cpp.s
 
 src/renderers/TextRenderer.o: src/renderers/TextRenderer.cpp.o
 .PHONY : src/renderers/TextRenderer.o
@@ -1415,6 +1487,9 @@ help:
 	@echo "... src/game/State/ScoreboardState.o"
 	@echo "... src/game/State/ScoreboardState.i"
 	@echo "... src/game/State/ScoreboardState.s"
+	@echo "... src/game/WorldBuilder.o"
+	@echo "... src/game/WorldBuilder.i"
+	@echo "... src/game/WorldBuilder.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -1430,6 +1505,12 @@ help:
 	@echo "... src/renderers/ObjectRenderer.o"
 	@echo "... src/renderers/ObjectRenderer.i"
 	@echo "... src/renderers/ObjectRenderer.s"
+	@echo "... src/renderers/Renderer.o"
+	@echo "... src/renderers/Renderer.i"
+	@echo "... src/renderers/Renderer.s"
+	@echo "... src/renderers/RendererFactory.o"
+	@echo "... src/renderers/RendererFactory.i"
+	@echo "... src/renderers/RendererFactory.s"
 	@echo "... src/renderers/TextRenderer.o"
 	@echo "... src/renderers/TextRenderer.i"
 	@echo "... src/renderers/TextRenderer.s"

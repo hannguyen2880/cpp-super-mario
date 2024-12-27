@@ -1,6 +1,7 @@
 #include "InstructionScreen.h"
 #include "../game/Game.h"
 #include "../game/State/MainMenuState.h"
+#include <iostream>
 
 InstructionScreen::InstructionScreen()
     :backButton(BACK_BUTTON, 570, 17)
@@ -58,6 +59,7 @@ void InstructionScreen::Draw() {
 }
 
 InstructionScreen::~InstructionScreen() {
+    std::cout << "InstructionScreen destroyed" << std::endl;
     Unload();
 }
 

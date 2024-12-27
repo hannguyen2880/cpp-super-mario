@@ -1,8 +1,8 @@
-#ifndef MARIO_MAKER_TEXTRENDERER_H
-#define MARIO_MAKER_TEXTRENDERER_H
+#pragma once
 #include <raylib.h>
 #include "ECS.h"
 #include "../components/Components.h"
+#include <chrono>
 
 class TextRenderer {
 public:
@@ -15,9 +15,8 @@ public:
 
     void renderScoreTextComponents(ECS::World *world);
 
+    void renderTimerTextComponents(ECS::World *world);
+
 private:
     Font textFont;
 };
-
-
-#endif //MARIO_MAKER_TEXTRENDERER_H

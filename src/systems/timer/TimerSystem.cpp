@@ -4,9 +4,10 @@ void TimerSystem::tick(World *world, float delta) {
     EntitySystem::tick(world, delta);
 
     world->each<TimerComponent>([&](Entity* entity, ComponentHandle<TimerComponent> timer) {
+        std::cout << "Timer tick\n";
         if (timer->time > 0) {
             timer->time--;
-            if (timer->time == 0) timer->callback();
+            if (timer->time == 0 && timer->callback) timer->callback();
         } else {
             entity->remove<TimerComponent>();
         }

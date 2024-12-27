@@ -13,3 +13,17 @@ This project is developed as part of the Object-Oriented Programming course at H
 2. Pham Bao Kha
 3. Vo Hoang Nam
 4. Nguyen Duc Thinh
+
+## Demo
+Check out our gameplay demo video:
+[![Super Mario Bros Demo](https://www.youtube.com/watch?v=veTCaxuuDWY)
+
+### Features Demonstrated
+- Multiple character selection (Mario/Luigi)
+- Multiple Player
+- Three difficulty levels
+- Power-ups system
+- Enemy AI
+- Smooth camera movement
+- Particle effects
+- Score system
