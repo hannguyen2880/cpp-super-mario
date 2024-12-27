@@ -152,10 +152,9 @@
  */
 
 
-#ifndef MARIO_MAKER_GAME_H
-#define MARIO_MAKER_GAME_H
+#pragma once
+
 #include <raylib.h>
-#include <iostream>
 #include "ECS.h"
 #include "../Constants.h"
 #include "../map/GameMap.h"
@@ -179,5 +178,62 @@
 #include "State/GameState.h"
 #include "Game.h"
 #include "GameConfig.h"
+#include "WorldBuilder.h"
+#include "../renderers/RendererFactory.h"
+#include "../ui/ImageButton.h"
+#include "../game/State/MainMenuState.h"
+#include <iostream>
+#include <fstream>
+#include <string>
 
-]
+class GameManager {
+public:
+    GameManager(const char* mapName, const int screenWidth, const int screenHeight, bool secondPlayer, int background);
+
+    ~GameManager();
+
+    void Init();
+
+    void Update();
+
+    void Draw();
+
+    void cleanup();
+
+    bool NeedsRestart() const;
+
+    GameMap *getMap() const;
+    void saveScore();
+    void printScore();
+
+private:
+    void initWorld();
+    void handleInput(); //need to be fixed
+    void render(float d);
+    void updateMusicStream();
+    void restartGame();
+
+
+    bool run;
+    bool pause;
+    bool restart;
+    bool secondPlayer;
+    const char* mapName;
+    ECS::World* world_;
+    GameMap* pMap_;
+    size_t cameraId_;
+    const int screenWidth_;
+    const int screenHeight_;
+    int background;
+    
+    double previous;
+    double lag;
+
+    ECS::EntitySystem* animationSystem_;
+    SoundSystem* soundSystem_;
+    MapRenderer* mapRenderer;
+    TextureRenderer* textureRenderer;
+    EnemiesRenderer* enemiesRenderer;
+    ObjectRenderer* objectRenderer;
+    TextRenderer* textRenderer_;
+};
