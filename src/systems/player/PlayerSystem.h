@@ -1,40 +1,5 @@
-/**
- * @startuml
- * class EntitySystem {
- *     + void configure(World *world) <<abstract>>
- *     + void unconfigure(World *world) <<abstract>>
- *     + void tick(World *world, ECS::DefaultTickData data) <<abstract>>
- * }
- * 
- * class EventSubscriber {
- *     + void receive(World *world, const Event &event) <<abstract>>
- * }
- * 
- * class EnemyCollisionEvent {
- * }
- * 
- * class PlayerCollectableCollisionEvent {
- * }
- * 
- * class PlayerSystem extends EntitySystem {
- *     + PlayerSystem()
- *     + ~PlayerSystem()
- *     + void configure(World *world) <<override>>
- *     + void unconfigure(World *world) <<override>>
- *     + void tick(World *world, ECS::DefaultTickData data) <<override>>
- *     + void receive(World *world, const EnemyCollisionEvent &event) <<override>>
- *     + void receive(World *world, const PlayerCollectableCollisionEvent &event) <<override>>
- * }
- * 
- * PlayerSystem "1" *-- "1" ECS::Entity
- * PlayerSystem <|.. EventSubscriber : implements
- * EventSubscriber <|.. EnemyCollisionEvent
- * EventSubscriber <|.. PlayerCollectableCollisionEvent
- * @enduml
- */
+#pragma once
 
-#ifndef MARIO_MAKER_PLAYERSYSTEM_H
-#define MARIO_MAKER_PLAYERSYSTEM_H
 #include "ECS.h"
 #include "events/Events.h"
 #include <raylib.h>
@@ -80,5 +45,3 @@ private:
     void createFireBullet(World *world, Entity *entity);
 };
 
-
-#endif //MARIO_MAKER_PLAYERSYSTEM_H

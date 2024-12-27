@@ -67,12 +67,13 @@ void GameManager::Draw() {
 
     auto camera = world_->getById(cameraId_)->get<CameraComponent>();
     BeginMode2D(camera.get().camera);
-    
+
     render(static_cast<float>(lag / MS_PER_UPDATE));
     
     EndMode2D();
     
     textRenderer_->render(world_);
+    textRenderer_->renderTimerTextComponents(world_);
     
 }
 
@@ -111,6 +112,7 @@ void GameManager::initWorld() {
                 .registerSystems(world_, screenWidth_, screenHeight_, pMap_, animationSystem_, soundSystem_)
                 .initTextEntities(world_, screenWidth_)
                 .startMusic(world_);
+
 }
 
 void GameManager::handleInput() {
@@ -141,9 +143,6 @@ void GameManager::handleInput() {
             }
         }
     }
-
-    // fixme: doesn't work properly
-    // if (IsKeyReleased(KEY_ENTER)) restartGame();
 }
 
 void GameManager::render(float d) {
@@ -156,6 +155,7 @@ void GameManager::render(float d) {
     mapRenderer->render(world_, d);
     enemiesRenderer->renderOverTileEnemies(world_, d);
     textRenderer_->renderScoreTextComponents(world_);
+    //textRenderer_->renderTimerTextComponents(world_);
 }
 
 void GameManager::updateMusicStream() {

@@ -139,7 +139,9 @@ WorldBuilder& WorldBuilder::initTextEntities(ECS::World*& world_, const int& scr
             Text::Type::TIMER,
             Vector2{screenWidth_ - 45.f, 20.0f},
             360);
+    timerText->assign<TimerComponent>([&]() {}, 360, true); 
 
+    world_->registerSystem(new TimerSystem());
     world_->registerSystem(new ScoreSystem());
     return *this;
 }
@@ -161,7 +163,7 @@ WorldBuilder& WorldBuilder::registerSystems(ECS::World*& world_,const int& scree
     world_->registerSystem(new IdsMapSystem());
     world_->registerSystem(new PhysicSystem());
     world_->registerSystem(new TileSystem());
-    world_->registerSystem(new TimerSystem());
+    //world_->registerSystem(new TimerSystem());
     world_->disableSystem(world_->registerSystem(new FlagSystem()));
     soundSystem_ = dynamic_cast<SoundSystem *>(world_->registerSystem(new SoundSystem()));
     return *this;

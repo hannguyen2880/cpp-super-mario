@@ -1,19 +1,5 @@
-/**
- * @startuml
- * class TimerSystem {
- *     +TimerSystem()
- *     +~TimerSystem() <<override>>
- *     +void tick(World* world, float delta)
- *     +void configure(World* world) <<override>>
- *     +void unconfigure(World* world) <<override>>
- * }
- * 
- * TimerSystem <|-- EntitySystem
- * @enduml
- */
+#pragma once 
 
-#ifndef MARIO_MAKER_TIMERSYSTEM_H
-#define MARIO_MAKER_TIMERSYSTEM_H
 #include "ECS.h"
 #include "components/Components.h"
 
@@ -35,4 +21,3 @@ public:
 };
 
 
-#endif //MARIO_MAKER_TIMERSYSTEM_H
