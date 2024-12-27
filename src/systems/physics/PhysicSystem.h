@@ -18,6 +18,7 @@
  * @enduml
  */
 
+
 #ifndef MARIO_MAKER_PHYSICSYSTEM_H
 #define MARIO_MAKER_PHYSICSYSTEM_H
 #include <raylib.h>
@@ -81,6 +82,10 @@ private:
     void checkYEnemyCollision(Entity *ent1, Entity *ent2);
 
     void checkCollisionWithSolidObject(Entity *ent1, Entity *ent2);
+
+    void jumpOverEnemy(Entity* player, Entity* enemy);
+
+    void enemyOverPlayer(Entity* player, Entity* enemy);
 };
 
 
