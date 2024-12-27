@@ -15,6 +15,7 @@ private:
     bool isPaused;
     int background;
     ImageButton homeButton;
+    ImageButton pauseButton, resumeButton;
     void CreateGameManager();
 
 public:

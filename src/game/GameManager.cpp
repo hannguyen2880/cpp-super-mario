@@ -44,7 +44,7 @@ void GameManager::Init() {
 }
 
 void GameManager::Update() {
-    if (!run || WindowShouldClose()) return;
+    if (!run || WindowShouldClose() || pause) return;
 
     double current = GetTime();
     double elapsed = current - previous;
