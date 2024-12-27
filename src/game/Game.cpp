@@ -40,7 +40,7 @@ void Game::Run() {
         Draw();
     }
     
-    Unload();
+    //Unload();
     CloseAudioDevice();
     CloseWindow();
 }

@@ -9,10 +9,11 @@ GameplayScreen::GameplayScreen()
       currentMode(GameConfig::getInstance().getGameplayMode()),
       currentCharacter(GameConfig::getInstance().getCharacter()),
       isPaused(false),
-      homeButton(nullptr) {}
+      homeButton(HOME_BUTTON, 0, 45),
+      gameManager(nullptr),
+      background(0) {}
 
 void GameplayScreen::Init() {
-    homeButton = new ImageButton(HOME_BUTTON, 0, 45);
     CreateGameManager();
     std::cout << "DEBUG: GameplayScreen Init\n";
 }
@@ -49,19 +50,24 @@ void GameplayScreen::CreateGameManager() {
         secondPlayer,
         background
     );
-    gameManager->Init();
+    //gameManager->Init();
 }
 
 void GameplayScreen::Update() {
     if (gameManager) {
         if (gameManager->NeedsRestart()) {
+            // Cleanup old game manager
             gameManager->cleanup();
             gameManager.reset();
+            
+            // Create new game manager
             CreateGameManager();
             gameManager->Init();
         } else {
-            if (homeButton && homeButton->Update()) {  // Add null check
+            if (homeButton.Update()) {
+                //std::cout << "Home button pressed\n\n\n\n";
                 Game::SetState(std::make_unique<MainMenuState>());
+                return;
             }
             gameManager->Update();
         }
@@ -72,20 +78,15 @@ void GameplayScreen::Draw() {
     if (gameManager) {
         gameManager->Draw();
     }
-    if (homeButton) {  // Add null check
-        homeButton->Draw();
-    }
+    homeButton.Draw();
 }
 
 void GameplayScreen::Unload() {
-    if (homeButton) {
-        delete homeButton;
-        homeButton = nullptr;
-    }
     std::cout << "DEBUG: GameplayScreen Unload\n";
+    gameManager->saveScore();
+    gameManager->printScore();
 }
 
 GameplayScreen::~GameplayScreen() {
-    Unload();
     std::cout << "DEBUG: GameplayScreen Destructor\n";
 }
