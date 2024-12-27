@@ -16,7 +16,7 @@ This project is developed as part of the Object-Oriented Programming course at H
 
 ## Demo
 Check out our gameplay demo video:
-[![Super Mario Bros Demo](https://www.youtube.com/watch?v=veTCaxuuDWY)
+[![Super Mario Bros Demo]()](https://www.youtube.com/watch?v=veTCaxuuDWY)
 
 ### Features Demonstrated
 - Multiple character selection (Mario/Luigi)
