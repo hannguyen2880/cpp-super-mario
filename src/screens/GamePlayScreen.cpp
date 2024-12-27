@@ -65,11 +65,11 @@ void GameplayScreen::Update() {
             if (homeButton.Update()) {
                 //std::cout << "Home button pressed\n\n\n\n";
                 Game::SetState(std::make_unique<MainMenuState>());
+                return;
             }
             gameManager->Update();
         }
     }
-    
 }
 
 void GameplayScreen::Draw() {

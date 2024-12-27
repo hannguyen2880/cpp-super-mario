@@ -36,6 +36,8 @@ void MenuScreen::Init() {
     mario = LoadTexture(MARIO_MENU);
     cloud = LoadTexture(CLOUD);
     
+    std::cout << "MenuScreen initialized" << std::endl;
+
     isLoading = !firstLaunchCompleted;
     if (isLoading) {
         firstLaunchCompleted = true;
@@ -92,6 +94,8 @@ void MenuScreen::Update() {
             cloud2MovingRight = true;
         }
     }
+
+    //std::cout << "MenuScreen updated" << std::endl;
 
     if (!isLoading) {
         if (playButton.Update()) {

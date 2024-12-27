@@ -20,8 +20,9 @@ constexpr const char* RESUMEGAME_PANEL = "../assets/imgs/ResumeGamePanel.png";
 constexpr const char* MENU_BACKGROUND = "../assets/imgs/Screen_background.png";
 
 //background
-constexpr const char* AUTUMN = "../assets/tilesets/autumn.png";
-constexpr const char* AUTUMNMIDNIGHT = "../assets/tilesets/autumn_midnight.png";
+constexpr const char* AUTUMN_EASY = "../assets/tilesets/autumn_easy.png";
+constexpr const char* AUTUMN_MED = "../assets/tilesets/autumn.png";
+constexpr const char* AUTUMN_HARD = "../assets/tilesets/autumn_midnight.png";
 
 //scoreboard
 constexpr const char* SCOREBOARD_BACKGROUND = "../assets/imgs/BackgroundScoreboard.png";
@@ -50,7 +51,7 @@ constexpr const char* HOME_BUTTON = "../assets/imgs/Buttons/HomeButton.png";
 
 //map
 constexpr const char* HARD_MAP = "../assets/maps/map_1.tmx";
-constexpr const char* MEDIUM_MAP = "../assets/maps/MEDIUM.tmx";
+constexpr const char* MEDIUM_MAP = "../assets/maps/MidEASY.tmx";
 //constexpr const char* EASY_MAP = "../assets/maps/playground_world.tmx";
 constexpr const char* EASY_MAP = "../assets/maps/EASY.tmx";
 

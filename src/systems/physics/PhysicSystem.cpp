@@ -444,15 +444,23 @@ void PhysicSystem::checkXEnemyCollision(Entity *ent1, Entity *ent2) {
 
     if (ent1->has<PlayerComponent>() && ent2->has<EnemyComponent>()) {
         EnemyCollisionEvent event{ent1, ent2};
+        std::cout << "Player collided with enemy 1\n";
         if (!ent1->has<FrozenComponent>()) world->emit<EnemyCollisionEvent>(event);
-    } else if (ent1->has<EnemyComponent>() && ent2->has<PlayerComponent>()) {
+        std::cout << "Player collided with enemy 2\n";
+    } 
+    else if (ent1->has<EnemyComponent>() && ent2->has<PlayerComponent>()) {
         EnemyCollisionEvent event{ent2, ent1};
+        std::cout << "Player collided with enemy 3\n";
         if (!ent2->has<FrozenComponent>()) world->emit<EnemyCollisionEvent>(event);
-    } else if (ent1->has<FireBulletComponent>() && ent2->has<EnemyComponent>()) {
+        std::cout << "Player collided with enemy 4\n";
+    } 
+    else if (ent1->has<FireBulletComponent>() && ent2->has<EnemyComponent>()) {
         world->emit<KillEnemyEvent>(KillEnemyEvent(ent2, true));
-    } else if (ent2->has<FireBulletComponent>() && ent1->has<EnemyComponent>()) {
+    } 
+    else if (ent2->has<FireBulletComponent>() && ent1->has<EnemyComponent>()) {
         world->emit<KillEnemyEvent>(KillEnemyEvent(ent1, true));
-    } else if (ent1->has<EnemyComponent>() && ent2->has<EnemyComponent>()) {
+    } 
+    else if (ent1->has<EnemyComponent>() && ent2->has<EnemyComponent>()) {
         Enemy::Type enemy1 = ent1->get<EnemyComponent>()->type_;
         Enemy::Type enemy2 = ent2->get<EnemyComponent>()->type_;
 
@@ -622,7 +630,7 @@ void PhysicSystem::checkCollisionWithCollectible(Entity *ent1, Entity *ent2) {
     }
 }
 
-void jumpOverEnemy(Entity* player, Entity* enemy) {
+void PhysicSystem::jumpOverEnemy(Entity* player, Entity* enemy) {
     World* world = player->getWorld();
     Enemy::Type type = enemy->get<EnemyComponent>()->type_;
 
@@ -642,7 +650,7 @@ void jumpOverEnemy(Entity* player, Entity* enemy) {
     }
 }
 
-void enemyOverPlayer(Entity* player, Entity* enemy) {
+void PhysicSystem::enemyOverPlayer(Entity* player, Entity* enemy) {
     World* world = player->getWorld();
 
     EnemyCollisionEvent event{player, enemy};

@@ -673,6 +673,7 @@ void PlayerSystem::receive(World *world, const EnemyCollisionEvent &enemyCollisi
                         }
                     });
             world->emit<SoundEvent>(SoundEvent{SoundId::MARIO_DIE});
+            std::cout << "GAME OVER" << std::endl;
         } else {
             if (player->has<LeadCameraComponent>()) {
                 player->remove<LeadCameraComponent>();
