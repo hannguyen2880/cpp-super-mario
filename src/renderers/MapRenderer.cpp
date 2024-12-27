@@ -59,9 +59,9 @@ void MapRenderer::loadBackgroundTextures() {
         case 2:
             backgroundtextures_[AUTUMN_MED] = LoadTexture(AUTUMN_MED);
             break;
-        // case 3:
-        //     backgroundtextures_[AUTUMN_HARD] = LoadTexture(AUTUMN_HARD);
-        //     break;
+        case 3:
+            backgroundtextures_[AUTUMN_HARD] = LoadTexture(AUTUMN_HARD);
+            break;
         default:
             break;
     }
@@ -80,9 +80,9 @@ void MapRenderer::renderBackground(ECS::World* world, int background) {
         case 2:
             DrawTexture(backgroundtextures_[AUTUMN_MED], 0, 0, WHITE);
             break;
-        //case 3:
-            // DrawTexture(backgroundtextures_[LANDSCAPE3], 0, 0, WHITE);
-           // break;
+        case 3:
+            DrawTexture(backgroundtextures_[AUTUMN_HARD], 0, 0, WHITE);
+           break;
         default:
             break;
     }

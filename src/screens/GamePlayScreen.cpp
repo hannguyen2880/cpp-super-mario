@@ -9,9 +9,7 @@ GameplayScreen::GameplayScreen()
       currentMode(GameConfig::getInstance().getGameplayMode()),
       currentCharacter(GameConfig::getInstance().getCharacter()),
       isPaused(false),
-      homeButton(HOME_BUTTON, 0, 45),
-      gameManager(nullptr),
-      background(0) {}
+      homeButton(HOME_BUTTON, 0, 45) {}
 
 void GameplayScreen::Init() {
     CreateGameManager();
@@ -50,7 +48,6 @@ void GameplayScreen::CreateGameManager() {
         secondPlayer,
         background
     );
-    //gameManager->Init();
 }
 
 void GameplayScreen::Update() {

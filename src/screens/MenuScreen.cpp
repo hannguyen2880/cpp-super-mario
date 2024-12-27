@@ -11,11 +11,11 @@ MenuScreen::MenuScreen() : playButton(START_GAME_BUTTON, 228, 159),
                            scoreboardButton(SCOREBOARD_BUTTON, 228, 319) {
     originalMarioX = 55;
     originalMarioY = 199;
-    cloud1X = 684;
+    cloud1X = 400;
     cloud1Y = 68;
     cloud1Speed = 0.5f;
     cloud1MovingRight = true;
-    cloud2X = 950;
+    cloud2X = 700;
     cloud2Y = 27;
     cloud2Speed = 0.75f;
     cloud2MovingRight = true;
@@ -77,7 +77,7 @@ void MenuScreen::Update() {
         }
     } else {
         cloud1X -= cloud1Speed;
-        if (cloud1X <= 640) {
+        if (cloud1X <= 380) {
             cloud1MovingRight = true;
         }
     }
@@ -90,7 +90,7 @@ void MenuScreen::Update() {
         }
     } else {
         cloud2X -= cloud2Speed;
-        if (cloud2X <= 640) {
+        if (cloud2X <= 380) {
             cloud2MovingRight = true;
         }
     }

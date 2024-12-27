@@ -40,7 +40,7 @@ void GameManager::Init() {
     //using tileset type to load the correct tileset
 
     initWorld();
-    //SetTargetFPS(60);
+    SetTargetFPS(60);
 }
 
 void GameManager::Update() {

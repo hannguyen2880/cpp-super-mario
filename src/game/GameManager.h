@@ -83,4 +83,3 @@ private:
     ObjectRenderer* objectRenderer;
     TextRenderer* textRenderer_;
 };
-
