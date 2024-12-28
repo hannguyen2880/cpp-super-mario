@@ -27,3 +27,19 @@ Check out our gameplay demo video:
 - Smooth camera movement
 - Particle effects
 - Score system
+
+## Set up
+- Language: C++
+- Library: raylib
+- External: tmxlite, ECS
+
+## 🛠️ How to Get Started?
+**Clone the Repository**:
+   ```bash
+   git clone https://github.com/hannguyen2880/cpp-super-mario.git
+   mkdir build
+   cd build
+   cmake ..
+   make
+   ./super-mario
+   ```
